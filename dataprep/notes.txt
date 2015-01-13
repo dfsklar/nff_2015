@@ -1,0 +1,44 @@
+Questions that only arts orgs were invited to answer:
+
+
+[arts_org_type] What type of cultural organization are you? Please check the one discipline that is most representative:  {CTqVs64m5w}
+
+
+[arts_audience_dev] In 2013, did your organization make a meaningful investment in any of the following strategies to develop and engage audiences/visitors? Select all that apply:  {U2ntDCb4Tm\0} [Collecting data on audience/visitor preferences and behaviors]
+   ** This is one where they are invited to select one-or-more **
+
+
+
+[arts_audience_dev_results] What results are you seeing from your investment(s) in audience/visitor development and engagement? Select all that apply: {0C23d9Np87\0} [Our audience/visitor base grew]
+                            ***   one-or-more
+
+
+
+*********
+STRANGE SITUATION:  The 'staff-related action" question has an identical arts-based flavor.  The question is the same and the set of answers appears to be the same.  This is the only arts-centric survey question that is identical to a general-population survey question.  Why was the split done if the answers are the same?
+
+[action_staff.16] Have you taken any of the following staff-related actions in the last 12 months, or do you plan to take any of them in the next 12 months? Please check all that apply: | None of the above {9GkNUHgxAh_16\1} [PLANNING for next 12 mos.]
+**********
+
+
+
+[arts_competition] Building and retaining audiences/visitors is, for many cultural organizations, stymied by increased competition from new cultural organizations, free artistic alternatives or non-arts options. What has been the impact of increased competition on your organization? Select all that apply: {Uu33CHvqOK\0} [Decline in overall attendance]
+                            ***   one-or-more
+
+
+[arts_grantmaking_receive] In 2013, did you receive funding for...? (Please check all that apply) {OvmnQpbM6a\0} [Expanding programs]
+                            ***   one-or-more
+
+
+[arts_grantmaking_practices] Which of the following grantmaking practices have you experienced in the past year? Select all that apply: {rKoTFzfkQW\0} [Applied for a grant that restricted allowable overhead rate]
+                            ***   one-or-more
+
+
+
+incomplete 734 rows
+complete 1419 of a total of 2153 records
+So still large percentage incomplete (34%).
+What is the schedule for delivery of a
+more complete data set?
+
+
