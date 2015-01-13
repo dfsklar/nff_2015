@@ -126,7 +126,7 @@
       "state": {
         "title": "Respondents by State",
         "renderer": "table",
-        "css": { width: "317px" },
+        "css": { width: "317px" }
       },
 
       // "abort": { special: "ABORT" },
@@ -466,7 +466,7 @@
           'deficit 1%-5%': chroma(window.nfforg.colors.BAD).hex(),
           'deficit 5%-10%': chroma(window.nfforg.colors.BAD).hex(),
           'deficit 10%-25%': chroma(window.nfforg.colors.BADVERY).hex(),
-          'deficit > 25%': chroma(window.nfforg.colors.BADVERY).hex(),
+          'deficit > 25%': chroma(window.nfforg.colors.BADVERY).hex()
         },
         "key_order": [
           'surplus > 25%',
