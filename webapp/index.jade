@@ -1,0 +1,476 @@
+html
+  head
+    title NFF 2014 Survey Analyzer
+    meta(charset='utf-8')
+    meta(property="og:image", content="http://nffdemo.sklardevelopment.com/assets/images/nff_logo_square_noBG.png")
+    link(rel='stylesheet', href='style.css')
+    link(rel='stylesheet', href='print.css')
+    link(rel='stylesheet', href='compare.css')
+    link(rel='stylesheet', href='utils/qtips.css')
+    script(src='jquery-1.11.0.js')
+    script(src='jquery.svg.min.js')
+    script(src='utils/qtips.js')
+    script(src='sugar.min.js')
+    script(src='raphael.js')
+    script(src='highcharts/highcharts-3.0.10-full.js')
+    // script(src='highcharts/highcharts.js')
+    script(src='utils/chroma.min.js')
+    script(src='utils/fontspy.js')
+    script(src='utils/rgbcolor.js')
+    script(src='utils/StackBlur.js')
+    script(src='utils/canvg.js')
+    script(src='utils/history.js')
+    include sharethis.html
+    script(src='namespaces.js')
+    script(src='colors.js')
+
+    script(src='enum_expander.js')
+
+    script(src='slopeidea/data_acted_human_capital.js')
+    script(src='slopeidea/data_acted_management.js')
+    script(src='slopeidea/data_acted_services.js')
+
+    script(src='data.json')
+    script(src='realdata.json')
+
+
+    script(src='indexer.js')
+
+    script(src='slopeidea/engine.js')
+
+    script(src='renderers/table.js')
+    script(src='renderers/bar.js')
+    script(src='renderers/forthcoming.js')
+    script(src='renderers/barset.js')
+    script(src='renderers/barset2.js')
+    script(src='renderers/highchartspec.js')
+    script(src='renderers/stacked_single_bar.js')
+    script(src='renderers/actions_planned_taken.js')
+    script(src='renderers/trendslope.js')
+
+    script(src='render_manager.js')
+
+    script(src='filter.js')
+    script(src='events.js')
+    script(src='export.js')
+    script(src='filterarea.js')
+    script(src='launch.js')
+    link(href='http://fonts.googleapis.com/css?family=Old+Standard+TT:400italic|Open+Sans:300,600|Roboto+Condensed:400,700|Roboto:400,700' rel='stylesheet' type='text/css')
+    include googleanalytics.html
+  body
+    // Next line simply helps ensure pinnable image is found by pinterest even when on localhost server
+    img.offscreen(src='http://nffdemo.sklardevelopment.com/assets/images/nff_logo_square_noBG.png')
+    .fontspy-tester-hidden Testing width of hidden text to determine font-loading
+    .offscreen.div-for-highchart
+    canvas.offscreen.canvas-for-export
+
+
+    .testarea
+      .foo
+        .foo
+          .showcase-diagrams
+
+
+    .body-inner
+      .content-area
+
+        .header.fixed
+          .header-content
+            .button-hamburger
+            .bar-horiz.major
+            .year 2014
+            .title 
+              a.logo(href='http://nonprofitfinancefund.org/', target='_blank')
+              .year-smaller 2014
+              .span STATE
+              .span-end OF THE NONPROFIT SECTOR
+            .bar-horiz.minor
+            .holder-nav-bar
+          .filtration-active-reminder
+            .print
+              .note FILTERS IN EFFECT:
+              .dynamic-area
+            .web
+              .message Filters are <b>ON</b>. You can view or clear the current filter selections in the sidebar on the right.
+
+
+
+        .header.full-height
+          .header-content
+            a.logo(href='http://nonprofitfinancefund.org/', target='_blank')
+            a.logotext(href='http://nonprofitfinancefund.org/', target='_blank') Nonprofit<br/>Finance Fund
+            img.logo(src='assets/images/nff_logo_noBG.png')
+            //.button-contact
+            //  .image-envelope
+            //  .text contact
+            .bar-horiz.major
+            .year 2014
+            img.title-as-image(src="assets/images/shadowtitle.png")
+            .title(href='http://nonprofitfinancefund.org/', target='_blank')
+              .year-smaller 2014
+              .span-start STATE OF THE
+              .span-end NONPROFIT SECTOR
+            .bar-horiz.minor
+            .holder-nav-bar
+              #nav-bar
+                .button.toc Contents
+                .button.share Share
+                //
+                // If print is to be done without a webapp reload: .button.print print
+                // Otherwise:
+                a.button.print(href='tobefilledindynamically', target="_blank") print
+                //
+                a.button(href='http://visitor.r20.constantcontact.com/manage/optin/ea?v=001hDXaORE2PUSkoICPFNZechgYRqUlF7YXDOc1Koq0OA2NdBpUJshNerrAJbUhnoAVAK2bpk-kdlHLVzCoTS_zfZJDhflflcL6', target="_blank") get nff news
+                .button.about-nff about
+                .button.about-analyzer how to use
+                .button.contact contact
+                .menu-horiz-share
+                  include menu-horiz-share.html
+          .filtration-active-reminder
+            .print
+              .alarm FILTERS ARE IN EFFECT
+              .note Note: this page's charts reflect only organizations meeting these criteria:
+              .dynamic-area
+            .web
+              .message Filters are <b>ON</b>. You can view or clear the current filter selections in the sidebar on the right.
+
+
+
+        #table-of-contents
+          .button-openclose
+            span TOC    
+            span.triangle.when-closed &#x25B6
+            span.triangle.when-opened &#x25BC
+          .toc-title TABLE OF CONTENTS
+          .toc-body
+            .toc-body-table
+              .toc-body-left.toc-body-segment
+              .toc-body-right.toc-body-segment
+
+        #filtration-too-tight No respondents meet the current set of filters.
+
+        #viz-area
+          .loading
+
+
+        .thanks-to-funders
+          p 2014 survey generously supported by<br/> the Bank of America Charitable Foundation and the Ford Foundation.
+          .logo-section
+            img.logo.bankofamer(src="assets/images/BAC-Color-Horizontal_300px.jpg")
+            img.logo.ford(src="assets/images/FordFoundation.jpg")
+
+        .thanks-to-funders.minor
+          p Special arts portion of Survey generously supported by the Doris Duke Charitable Foundation.
+          .logo-section
+            img.logo.doris(src="assets/images/ddcf.png")
+            
+        .copyright-footer
+          &copy;2014 Nonprofit Finance Fund. All rights reserved. 
+
+        .hidden-area
+
+                    
+                      
+
+          .showcase-bar-table#overview
+            .showcase-bar-row
+              .showcase.resp-count
+                .title Total<br/>Respondents
+                .bigdata.super 5,019
+                // .bar-horiz
+                .comment
+              .showcase.top-state
+                .title Serving low-income communities
+                .bigdata.super 70%
+                .bar-horiz
+                .comment Of total respondents
+              .showcase.top-sector
+                .title Responses<br/>from
+                .bigdata 50 States &amp; Puerto Rico
+                .bar-horiz
+                .comment A nationwide effort
+
+          .showcase-bar-table#overview-when-filtered
+            .showcase-bar-row
+              .showcase.resp-count
+                .title Total Respondents in this filtered set
+                .bigdata.super.fill-in-from-first-chart XXXX
+                // .bar-horiz
+                .comment
+
+          .showcase-bar-table#overview-when-compared
+            .showcase-bar-row
+              .showcase
+                .title Total Respondents in the Survey
+                .bigdata.super 5019
+                // .bar-horiz
+                .comment
+              .showcase.resp-count
+                .title Total Respondents in filtered set
+                .bigdata.super.fill-in-from-first-chart XXXX
+                // .bar-horiz
+                .comment
+
+          .showcase-bar-table#artsculturecount
+            .showcase-bar-row
+              .showcase.resp-count
+                .title Total Respondents in filtered set
+                .bigdata.super.fill-in-from-first-chart XXXXX
+                .comment
+
+          .showcase-bar-table#artsculturecount-when-compared
+            .showcase-bar-row
+              .showcase
+                .title Total Respondents in the Arts Sector
+                .bigdata.super 919
+                // .bar-horiz
+                .comment
+              .showcase.resp-count
+                .title Total Respondents in filtered set
+                .bigdata.super.fill-in-from-first-chart XXXX
+                // .bar-horiz
+                .comment
+
+          .showcase-bar-table#demand
+            .showcase-bar-row
+              .showcase
+                .title Alarming trend
+                .bigdata.super 80%
+                .bar-horiz
+                .comment reported increased demand
+              .showcase
+                .title Overwhelming need
+                .bigdata.super 56%
+                .bar-horiz
+                .comment cannot meet demand
+              .showcase
+                .title Worse for lifelines
+                .bigdata.super 87%
+                .bar-horiz
+                .comment reported increased demand
+
+
+          .showcase-bar-table#challresp
+            .showcase-bar-row
+              .showcase
+                .title Top challenge<br/>&nbsp;
+                .bigdata.smaller Long-term financial sustainability
+              .showcase
+                .title Partnering to<br/>cut admin costs
+                .bigdata.super 26%
+                .bar-horiz
+                .comment Up from 12% in '10 survey
+              .showcase
+                .title Using reserve funds<br/>&nbsp;
+                .bigdata.super 20%
+                .bar-horiz
+                .comment Down from 34% in 2009
+
+
+          .showcase-bar-table#finanstory
+            .showcase-bar-row
+              .showcase
+                .title Cash is not the same as liquidity
+                .showcase-diagram.liquidity
+                  .message Having cash doesn't necessarily mean that it's available for use.<br/>Calculating months of unrestricted liquid net assets (ULNA) is a good measure for<br/>what's actually available to pay the bills.<br/><a href='http://nonprofitfinancefund.org/financial-terms/undesignated-unrestricted-net-assets' target=_blank>Click here to see how to calculate your ULNA.</a>
+
+
+          .showcase-bar-table#govfund
+            .showcase-bar-row
+              .showcase
+                .title State government
+                .bigdata.super 32%
+                .bar-horiz
+                .comment Received payment more than a month late
+              .showcase
+                .title Time taken from programs
+                .bigdata.super 27%
+                .bar-horiz
+                .comment spent 100+ hours/month on administration
+
+
+          .showcase-bar-table#dataimpact
+            .showcase-bar-row
+              .showcase
+                .title Support
+                .bigdata.super 71%
+                .bar-horiz
+                .comment say funders rarely/never fund impact measurement costs
+              .showcase
+                .title Program productivity
+                .bigdata.super 78%
+                .bar-horiz
+                .comment collect program data
+              .showcase
+                .title Challenges
+                .bigdata.super 46%
+                .bar-horiz
+                .comment say insufficient staff/time hinder impact measurement
+
+
+          .showcase-bar-table#fundprac
+            .showcase-bar-row
+              .showcase
+                .title Dialogue with Funders<br/>&nbsp;
+                .bigdata.super 53%
+                .bar-horiz
+                .comment say "program expansion" is the easiest topic to broach
+              .showcase
+                .title most funding sources...<br/>&nbsp;
+                .bigdata never or<br/>rarely
+                .bar-horiz
+                .comment ...cover the full cost of programs
+              .showcase.force-width
+                .title Are you covering full costs?
+                .showcase-diagram.full-costs
+                  .box-top
+                    .contents Program Costs
+                  .box-bottom
+                    .contents
+                       p Operating Expenses
+                       p Fixed Asset Additions
+                       p Debt Principal
+                       p Depreciation
+                       p Working Capital
+                       p Reserves
+
+
+
+          .showcase-bar-table#lending
+            .showcase-bar-row
+              .showcase
+                .title How many rely on loans?
+                .bigdata 47%
+                .bar-horiz
+                .comment had loans/lines of credit
+              .showcase
+                .title How is debt used?
+                .bigdata 44%
+                .bar-horiz
+                .comment used debt to manage<br/>gaps/unevenness in revenue
+
+
+
+      #filter-area-placeholder
+      #filter-area
+        .tabs
+          .tab.filter FILTER<a class=infotip href=# title="Applying filters can reveal how different groups of respondents compare. You can select any number of filters at once."></a>
+          .tab.compare COMPARE<a class=infotip href=# title="Want to compare Lifeline organizations in New England to the nation as a whole?  You can use this section to compare a given subset of respondents against the entire pool of respondents.  Just select and apply filtering criteria to specify the subset that you want to compare against the whole survey pool."></a>
+        .forms
+          .form.sidebar#filter
+            .hint.scroll-up
+              .label &#x25B2
+            .hint.scroll-down
+              .label &#x25BC
+            .buttons
+              .button.apply.disabled
+              .button.clear.disabled
+            .section-holder-clipper
+              .section-holder
+          .form.sidebar#compare
+            .hint.scroll-up
+              .label &#x25B2
+            .hint.scroll-down
+              .label &#x25BC
+            .buttons
+              .button.apply.disabled
+              .button.clear.disabled
+            .section-holder-clipper
+              .section-holder
+                p Use the checkboxes below to specify the subset of respondents that you would like to isolate to compare against the full set of respondents.
+
+
+    .overlay.previous-surveys
+      .content
+        .button-close
+        .title Survey Results for Previous Years
+        .message Previous years' results for the State of the Sector surveys, all the way back to the first one in 2009, are available&nbsp;
+          a(href='http://nonprofitfinancefund.org/past-survey-results', target="_blank") by clicking here.
+
+    .overlay.share
+      .content
+        .button-close
+        .title Share this Website with Peers and Colleagues
+        .message Yada yada yada...
+
+    .overlay.about-this-survey--recession
+      .content
+        .button-close
+        .title ABOUT THE SURVEY
+        .message
+          p When the recession hit in 2008, we at Nonprofit Finance Fund saw a ripple of trauma spread across the nonprofit sector. Communities were suffering, leading to compounding challenges for the people and organizations dedicated to serving them. Yet collective efforts to understand the extent of that suffering were decentralized and largely anecdotal. We asked ourselves: how could NFF activate the community into a collective response? We recognized that we needed to be more rapid and systematic in how we sourced and shared information about what nonprofits and the communities they serve needed most. We also hoped to shift the dialogue towards finding solutions. Finally, we sought to blend our heart-felt reactions to what our clients were facing with a more unbiased point of view, challenging personal observations by gathering inclusive data.
+          p Thus began NFF’s Annual State of the Sector Survey, which gathers anonymous data on the trends, challenges, and strategies of the nonprofit community. Nonprofit leaders have come to view the survey as a collective organizing effort and an important loudspeaker for the sector, taking great care to share their story with the field. Our Survey is a knowledge-building effort intended to combine practical advice, research, and social change. And we’ve made progress over the years: <a href="http://nonprofitfinancefund.org/state-of-the-sector-survey-usage" target=_blank>click here to see how the survey has been used by nonprofits, funders, and advocates to support organizational and system-wide change</a>.
+          p A special thanks to the more than 8,000 participating nonprofits and our many survey partners, who have all made the survey possible over the 6 years that we’ve been doing this. If you’re a nonprofit, funder, advocate, or umbrella organization, please email us at <a href="mailto:survey@nff.org">survey@nff.org</a> if you’d like to participate or support our efforts in 2015!
+          p <b>Additional text copy should be present here, but vertical room is becoming precious and editing may be necessary.</b>
+
+
+
+
+    .overlay.about-this-survey
+      .content
+        .button-close
+        .title ABOUT NFF AND THE SURVEY
+        .message
+          p 
+          p 
+          p 
+
+
+    .overlay.contact
+      .content
+        .button-close
+        .title Contact us at survey@nff.org
+        .message
+          p Have a press inquiry, question, or interest in supporting our survey in the future as a participant or sponsor? Please email us at <a href="mailto:survey@nff.org">survey@nff.org</a>.
+          p For all other questions, feel free to <a href='http://nff.org/contact-us' target=_blank>call or contact us at any of our local offices</a>.
+
+
+
+    // ABOUT NFF (updated 08-March)
+    .overlay.about-nff
+      .content
+        .button-close
+        .title About NFF
+        .message
+          p <a href="http://nff.org" target="_blank">Nonprofit Finance Fund<sup>&reg;</sup></a> (NFF<sup>&reg;</sup>) unlocks the potential of mission-driven organizations through <a href="http://nff.org/loans-financing/loans" target=_blank>tailored investments</a>, <a href="http://nonprofitfinancefund.org/nff-consulting-1-1-advice-and-guidance" target=_blank>strategic advice</a>, and <a href="http://nonprofitfinancefund.org/tools-resources" target=_blank>accessible insights</a>.  Our mission is to help great organizations stay in balance, so that they’re able to adapt to changing financial circumstances and grown and innovate when they’re ready. (To learn more, visit <a target=_blank href='http://nff.org'>nff.org</a>!) When the recession hit in 2008, we saw a ripple of trauma spread across the nonprofit sector. Communities were suffering, leading to compounding challenges for the people and organizations dedicated to serving them. We asked ourselves: how could NFF activate the community into a collective response, help source solutions, and blend our heart-felt reactions to human experiences with a more unbiased point of view? Thus began our Annual State of the Nonprofit Sector Survey, which gathers anonymous data on nonprofit challenges and strategies. Leaders have come to view the survey as a loudspeaker for the sector, taking great care to share their story. Our Survey is intended to combine practical advice, data, and action: <a target=_blank href='http://nonprofitfinancefund.org/state-of-the-sector-survey-usage'>click here to see how the survey has been used by nonprofits, funders, and advocates to support change</a>.
+          p NFF’s deepest thanks to the 8,000+ participating nonprofits and our many survey partners, who have all made the survey possible over the last 6 years. <a target=_blank href='http://nonprofitfinancefund.org/past-survey-results'>Click here to see previous years’ results.</a> If you’re a nonprofit, funder, advocate, or umbrella organization, please email us at <a href="mailto:survey@nff.org">survey@nff.org</a> if you’d like to participate in the future!
+          p <b>Special Features in 2014</b>
+          ul
+            li Arts, Culture, and Humanities Feature: we’ve included additional responses unique to arts &amp; culture nonprofits. When filtering, you can select the ‘arts, culture, and humanities’ sector to see a drop-down of subsectors. 
+            li Trends over Time: see our display of responses to the same questions over time.
+            li Compare: use the "Compare" tab to see how a filter you select compares to the national results.
+
+
+
+
+    // ABOUT ANALYZER (updated 08-March)
+    .overlay.about-analyzer
+      .content
+        .button-close
+        .title How to Use this Analyzer
+        .message
+          p The Survey Analyzer is an online resource that anyone can use to filter our 2014 State of the Nonprofit Sector Survey.  We created this filtering tool to open up access, give people a chance to focus on what’s most relevant for them, and reveal variations between different groups of nonprofits. For example, are the challenges of government funding different from state to state? Do organizations serving low-income communities face different problems than their counterparts? 
+          p But data alone doesn’t provide definitive answers; instead, it can help nonprofits, supporters, researchers, and others ask better questions, shape dialogue, and challenge their assumptions about what nonprofits need to continue their work building healthier communities.
+          p <b>How to Filter</b>
+          ul
+            li Click the categories you'd like to filter by.   (Options include sector, geography, size, and more.)
+            li Check the options you’re interested in focusing in on. (Interested in New York or Minnesota?)
+            li Then click Apply Filters to see the results.
+            li To reset, select Clear All Filters
+            li Use the "Compare" tab to see how a filter you select compares to the national results.
+          p Individual charts can be downloaded as a picture by clicking on the 'Download' link in the upper right hand corner of each chart.
+          p <b>Credits</b>
+          ul
+            li Producer: Anjali Deshmukh, NFF
+            li Visual/UI design: Jason Blackheart, Vizify
+            li Engineering: David F. Sklar, Vizify
+
+
+
+    .overlay.export
+      .content
+        .button-close
+        .title Export/Download High-Resolution Image
+        .message 
+          p Below is a thumbnail fragment of a HIGH-RESOLUTION image of the chart.  To download the complete high-resolution image, just right-click on the image and perform a "Save as..." to your local file system.
+          img.img-for-export

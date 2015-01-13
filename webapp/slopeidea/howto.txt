@@ -1,0 +1,19 @@
+TO BUILD A NEW SLOPECHART
+
+Edit download.pl and extract_for_js.pl and create the new @fields variable.
+
+perl download.pl
+
+Choose a unique name for the chart such as "management"; let that be XXXXX
+
+perl extract_for_js.pl > data_acted_{XXXXX}.js
+
+
+
+
+
+http://api.survey.nonprofitfinancefund.org/v1/stats?key=dfetTN6E&qs=year/plan_expand_geo
+  will get you just the answer for one particular option in the human-capital chart.
+
+
+

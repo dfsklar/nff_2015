@@ -1,0 +1,41 @@
+(function() {
+
+  // This type of barset joins several graphs together
+  // into a single bar graph (only ONE coord sys) 
+  // with each "category" being a
+  // cluster of bars.
+
+  // Mandatory:  chart.otherCharts array of charts
+  window.nfforg.renderers.barset2 = function($root, chart, options) {
+
+    options = options || {};
+
+    options.legend = { enabled: true, reversed: true, verticalAlign: "top" };
+
+    if (chart.series.count() == 1) {
+
+      chart.series[0].name = chart["title-subchart"];
+
+      // Bring over the series data from all the other charts that are being merged.
+      chart.otherCharts.each(function(nameOtherChart){
+        var otherChart = window.nfforg.database.charts[nameOtherChart];
+        var seriesClone = Object.clone(otherChart.series[0]);
+        seriesClone.name = otherChart["title-subchart"];
+        chart.series.push(seriesClone);
+      });
+
+      // Remove all colors from the series data
+      chart.series.each(function(SERIES){
+        SERIES.data.each(function(X){
+          delete X["color"];
+        });
+      });
+
+    }
+
+    //options.extraHeight = -50;
+
+    window.nfforg.renderers.bar($root, chart, options);
+  };
+
+})();

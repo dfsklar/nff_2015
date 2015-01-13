@@ -1,0 +1,26 @@
+#icdcountdown_cdwidgetbox_220 {
+  padding: 16px;
+  font-family: arial;
+  font-size: 28px;
+  background-color: blue;
+  color: white;
+}
+
+#icdcountdown_cdwidgetbox_220 .widget_middle_220 {
+  text-align: center;
+  font-size: 38px;
+}
+
+#icdcountdown_cdwidgetbox_220 .icdcountdown_title {
+  font-size: 25px;
+  margin-bottom: 18px;
+  text-align: center;
+}  
+
+#ct_disp_minutes_220 {
+   display: none;
+}
+#ct_disp_seconds_220 {
+   display: none;
+}
+

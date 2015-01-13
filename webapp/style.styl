@@ -1,0 +1,1195 @@
+width-white-area = 733px
+width-filter-area = 225px
+width-body-inner = width-white-area + width-filter-area + 10
+font-prose = 'Open Sans'
+
+Blue1 = #162682
+Blue2 = #24B2FF
+Blue3 = #A1E0FF
+DarkerGray = #5D7683
+Orange1 = #FF9980
+Orange2 = #FF724F
+Orange3 = #FFAE15
+FilterRed = #FF2445
+
+CompareColor = rgb(254, 226, 172)
+
+FilterSectionActiveColor = rgb(61,61,61)
+
+NFFgreengray = #556b73
+
+.header.fixed
+  .holder-nav-bar
+    max-height 27px
+    overflow hidden
+  
+
+
+.filtration-active-reminder
+  display none
+  &.opened
+    display block
+  .print
+    display none
+
+
+
+
+
+///////////
+// INFOTIPS
+//
+a.infotip
+  cursor default
+  width 14px
+  height 14px
+  background-size 100% 100%
+  background-image url('assets/images/160px-Infobox_info_icon.svg.png')
+  display block
+  position absolute
+  top 6px
+  left 6px
+  opacity 0.7
+#filter-area
+  .infotip
+    opacity 1 !important
+    position static
+    width 13px
+    height 13px
+    display inline-block
+    opacity 1
+    margin-left 7px
+    background-image url('assets/images/160px-Infobox_info_icon.lighter.svg.png')
+
+
+
+
+/////////////////
+// FILTER AREA FADE-IN
+// should be hidden until things are set up
+#filter-area
+  #filter, .tabs
+    opacity 0
+  &.ready
+    #filter, .tabs
+      opacity 1  
+
+
+#filter-area
+  .form
+    display none
+    &.active
+      display block
+
+  .tabs
+  .section-holder-clipper
+    overflow hidden
+
+  .section-holder
+    -webkit-transition -webkit-transform 0.1s
+    -moz-transition -moz-transform 0.1s
+    -ms-transition -ms-transform 0.1s
+    transition transform 0.1s
+    .section 
+      .title
+        cursor pointer
+    &.scrolled
+      -webkit-transform translate(0px, -200px)
+      -moz-transform translate(0px, -200px)
+      -ms-transform translate(0px, -200px)
+      transform translate(0px, -200px)
+      
+
+
+html
+  &.frozen
+    pointer-events none 
+    // overflow hidden
+
+body
+  background-color rgb(242,240,228)
+  font-family arial
+  text-align center
+  margin 0px
+
+.loading
+  margin-left auto
+  margin-right auto
+  margin-bottom 30px
+  display block
+  width 60px
+  height 60px
+  background-size 100% 100%
+  background-image url('assets/images/loader.gif')
+
+
+.offscreen
+  position absolute
+  left -9999px
+  top  -9999px
+
+#table-of-contents .button-openclose
+  display none !important
+
+
+body.narrow-width
+  #viz-area
+    padding-top 95px
+    .chart-holder
+      width 100% !important
+
+#filter-area
+  .hint
+    display none
+    position absolute
+    opacity 1
+    z-index 9999
+    background-color orange
+    font-size 12px
+    color white
+    padding-bottom 0
+    padding-top 8
+    width 100%
+    height 25px
+    cursor pointer
+    &.scroll-up
+      top 100px
+    &.scroll-down
+      bottom 0px
+    &.shown
+      display block
+      
+  &.hidden
+    opacity 0
+
+  .form
+    p
+      color white
+      font-size 12px
+      margin-top 0px
+      margin-bottom 15px
+      margin-left 15px
+      margin-right 15px
+      text-align left
+    &.dirty
+      .button.apply
+        -webkit-transition background-color 0.4s
+        -moz-transition background-color 0.4s
+        -ms-transition background-color 0.4s
+        background-color #eb9b2e
+        color white
+        cursor pointer
+        &.throb
+          background-color #ffd265
+        &:before
+          content "APPLY FILTERS" !important
+    &.computing
+      .button
+        &:before
+          content "..." !important
+    &.clean
+    &.dirty
+      .button.clear
+        background-color maroon
+        color white
+        cursor pointer
+    &.clean
+      .button.apply
+        color white
+        border 1px solid orange
+        &:before
+          content "FILTERS ACTIVE"
+    .button.apply
+      &:before
+        content "NO FILTERS"
+    .button.clear
+      &:before
+        content "CLEAR FILTERS"
+    .button
+      width 72px
+
+.body-inner
+  -webkit-transition -webkit-transform 0.5s
+  -moz-transition -moz-transform 0.5s
+  -ms-transition -ms-transform 0.5s
+  transition transform 0.5s
+  //-webkit-transform-origin center 200px
+  //-moz-transform-origin center 200px
+  //-ms-transform-origin center 200px
+  //transform-origin center 200px
+  &.shrunken
+    //-webkit-transform scale(0.8)
+    //-moz-transform scale(0.8)
+    //-ms-transform scale(0.8)
+    //transform scale(0.8)
+    opacity 0.1
+  display inline-block
+  margin-left auto
+  margin-right auto
+  padding-top 0px
+  padding-bottom 0px
+  .content-area
+    display inline-block
+    max-width width-white-area
+    #filtration-too-tight
+      display none
+      color red
+      font-size 25px
+      padding 80px
+      &.visible
+        display block
+
+#viz-area
+  padding-top 15px
+  padding-left 0px
+  padding-right 0px
+  overflow hidden
+  -webkit-transition opacity 0.3s
+  -moz-transition opacity 0.3s
+  &.invisible
+    opacity 0
+
+
+
+
+#filter-area-placeholder
+  display inline-block
+  opacity 0
+
+#filter-area
+  display none
+
+#filter-area
+#filter-area-placeholder
+  font-family Roboto Condensed
+  vertical-align top
+  width width-filter-area
+  height 100%
+  box-shadow -2px 0px 3px rgba(50,50,50,0.4)
+  background-color FilterSectionActiveColor
+  padding 0px
+  z-index 999
+  .note-to-self
+    padding 10px
+    margin-top 70px
+    color white
+  .form
+    .buttons
+      padding-top 15px
+      padding-bottom 15px
+      text-align center
+      .button 
+        font-size 10px
+        display inline-block
+        &.apply
+          margin-right 18px
+        border 1px solid grey
+        padding 8px
+        color #9f9f9f
+  .list-active-values
+    display none
+    color orange
+    font-size 12px
+    margin-bottom 5px
+  .section 
+    border-bottom 0px solid rgba(0,0,0,0) !important
+    position relative
+    padding-top 8px
+    padding-bottom 3px
+    &.has-active-values
+      .no-active-values
+        display none
+      .list-active-values
+        display block
+    &.opened
+      .button-openclose
+        -webkit-transform rotate(90deg)
+        -moz-transform rotate(90deg)
+      .area-value-checkboxes
+        height auto
+        padding-left 5px
+        padding-right 5px
+        padding-top 12px
+        padding-bottom 10px
+      .no-active-values
+      .list-active-values
+        display none
+    &.span
+      .chkholder
+        display inline-block
+        width 49px
+    margin-top 3px
+    margin-bottom 0px
+    border-top 1px solid grey
+    .button-openclose
+      color #999999
+      font-size 13px
+      position absolute
+      top 7px
+      right 7px
+      cursor pointer
+    .no-active-values
+      color grey
+      font-size 11px
+    .title 
+      text-transform uppercase
+      font-size 12px
+      margin-bottom 2px
+      color white
+    .area-value-checkboxes
+      height 0px
+      padding 0px
+      overflow hidden
+      margin-top 2px
+      form
+        margin-bottom 1px
+      background-color rgb(77,77,77)
+      .subarea-value-checkboxes
+        display none
+        &.opened
+          display block
+        padding-left 15px
+        .chktext
+          font-size 11px !important
+      .chkholder
+        .checkbox
+        .chktext
+          color #D0D0D0
+          font-size 12px
+        &.checked
+          .chktext
+            color orange
+        &.partial
+          input
+            opacity 0.2
+  .tabs
+    .tab
+      font-family Roboto Condensed
+      display inline-block
+      padding-top 12px
+      padding-bottom 12px
+      text-align center
+      width 50%
+      font-size 18px
+      background-color black
+      color #c0c0c0
+      cursor pointer
+      &.active
+        color white
+        background-color FilterSectionActiveColor
+        cursor default
+
+h1
+  font-size 48px
+  color navy
+  margin-bottom 40px
+  font-family font-prose, Arial
+
+
+
+.content-area
+  background-color white
+
+
+    
+    
+
+  // ********** THE "2014 STATE OF SECTOR" HEADER (FULL WIDTH, NON-FIXED)
+  .header
+    position relative
+    padding 0px
+    &.betrayed
+      z-index 0 !important
+      opacity 0 !important
+    .button-contact
+      cursor pointer
+      position absolute
+      top 33px
+      right 20px
+      .image-envelope
+        position relative
+        margin-right 8px
+        width 32px
+        height 32px
+        background-size 100% 100%
+        background-image url('assets/images/envelope.png')
+      .text
+        position relative
+        margin-left -8px
+        font-size 9px
+    img.logo
+      // note-this-is-used-only-for-print-mode
+      // see-print-stylesheet-for-formatting
+      display none
+    a.logo
+      position absolute
+      top 38px
+      left 25px
+      width 800px * 0.14
+      height 553px * 0.14
+      background-size 100% 100%
+      background-image url('assets/images/nff_logo_noBG.png')
+    a.logotext
+      display none
+      position absolute
+      top 53px
+      left 17px
+      width 80px
+      text-align right
+      opacity 0.7
+      color rgb(85,107,115)
+      font-size 11px
+      font-family Roboto Condensed
+      line-height 105%
+    background-color rgb(226,227,222)
+    .header-content
+      padding-top 15px
+      padding-bottom 0px
+      padding-left 20px
+      padding-right 20px
+    .bar-horiz
+      &.major 
+        width 100%
+        height 8px
+        background-color black
+        margin-bottom 10px
+      &.minor
+        width 100%
+        height 1px
+        background-color #151515
+        margin-top 5px
+
+    .filtration-active-reminder
+      background-color white
+      border 3px solid orange
+      padding 10px
+      .web
+        font-family Roboto Condensed
+        font-size 13px
+      color black
+      .alarm
+        font-size 20px
+      .dynamic-area
+        font-size 12px
+        padding 10px
+        margin-left auto
+        margin-right auto
+        width 75%
+        .descr
+          text-align left
+      span.upper
+        text-transform uppercase
+
+    #nav-bar
+      padding-top 10px
+      text-align center
+      a
+        text-decoration none
+      .button
+        font-family Roboto Condensed
+        font-size 12px
+        padding-top 3px
+        padding-bottom 11px
+        padding-left 13px
+        padding-right 13px
+        display inline-block
+        text-transform uppercase
+        color black
+        cursor pointer
+    .year-smaller
+      display inline-block
+      margin-right 11px
+    .year
+      display none
+      font-family Old Standard TT
+      font-style italic
+      font-weight 400
+      font-size 30px
+      text-align center
+      text-shadow 3px 3px 3px rgb(204,204,204)
+      margin-bottom -10px
+    img.title-as-image
+      position absolute
+      width 389px
+      top 31px
+      left 170px
+    .title
+      pointer-events none
+      opacity 0
+      position relative
+      font-family Roboto Condensed
+      font-weight bold
+      line-height 100%
+      padding-left 155px
+      padding-bottom 6px
+      font-size 44px
+      max-width 400px
+      text-align left
+      text-shadow 3px 3px 3px rgb(204,204,204)
+      .span-start
+        display inline-block
+      .span-end
+        display block
+
+
+    // HEADER FIXED
+    &.fixed
+      #nav-bar
+        .button
+          padding-bottom: 4px
+      .title
+        opacity 1
+        width 100%
+        max-width inherit
+        text-align center
+        padding-left 0px
+        padding-top 3px
+        .year-smaller 
+        .span
+        .span-end
+          font-size 29px
+        .span
+        .span-end
+          display inline-block
+          padding-right 7px
+      a.logo
+        display inline-block
+        margin-right 10px
+        position static
+        background-image url('assets/images/nff_logo_noBG.png')
+        left 12px
+        width 800px * 0.06
+        height 553px * 0.06
+      box-shadow 0px 2px 3px rgba(50,50,50,0.4)
+      display none
+      z-index 997
+      background-color rgb(226,227,222)
+      .header-content
+        padding-bottom 1px !important
+        padding-top 3px !important
+      .bar-horiz
+        &.major
+          height 4px
+      #nav-bar
+        padding-top 2px !important
+        padding-bottom 2px !important
+        .button    
+          color #555555 !important
+      .button-hamburger
+        display none !important
+        cursor pointer
+        position absolute
+        top 24px
+        right 12px
+        width 24px
+        height 24px
+        background-image url('assets/images/hamburger.png')
+        background-size 100% 100%
+      .button-contact
+        top 16px
+        right 10px
+        .image-envelope
+          width 24px
+          height 24px
+        .text
+          display none
+      .filtration-active-reminder
+        margin-top 4px
+        padding 4px
+        font-size 12px
+        .note
+          width 325px
+          margin-left auto
+          margin-right auto
+          text-align left
+          font-weight bold
+        .alarm
+          display none
+        .dynamic-area
+          padding 3px
+          width 325px
+
+      &.shown
+        display block
+        position fixed
+        top 0
+        left 0
+      .bar-horiz
+        &.major
+          height 4px
+          margin-bottom 5px
+        &.minor
+          margin-top 3px
+      .year
+        display none
+      .year-smaller
+        display inline-block
+        font-size 25px
+        margin-right 9px
+      .title
+        font-size 25px
+      .logo
+        top 22px
+        width 80px * 0.4
+        height 60px * 0.4
+
+body.narrow-width
+  .header.full-height
+    height 50px !important
+
+.section
+  padding-top 20px
+  padding-bottom 40px
+  padding-left 12px
+  padding-right 12px
+  border-bottom 2px solid grey
+  text-align left
+
+#viz-area .section:first-child
+  padding-top 0px !important
+  
+.section-title
+.section-commentary
+  padding-left 12px
+  padding-right 12px
+  margin-top 3px
+  margin-bottom 0px
+  font-size 16px
+  font-family font-prose, Arial
+  font-style italic
+  color black
+  opacity 0.7
+.section-title
+  color black
+  padding-top 150px
+  line-height 100%
+  font-size 34px
+  font-family font-prose, Arial
+  font-weight 600
+  margin-top 15px
+
+
+.chart-holder
+.showcase-bar-table
+  width width-white-area - 24
+
+
+
+@media screen and (max-width: 742px)
+  .header
+    .button-contact
+      display none
+
+@media screen and (max-width: 683px)
+  .header
+    .title
+      .year-smaller
+      .span
+      .span-end
+        display inline-block !important
+        font-size 14px !important
+        position relative
+      .span
+        padding-right 5px !important
+
+      font-size 14px !important
+
+
+.showcase-bar-table
+  display table
+  border-collapse separate
+  border-spacing 10px
+.showcase-bar-row
+  display table-row
+  margin-top 20px
+  .showcase 
+    display table-cell
+    background-color rgb(226,227,222)
+    padding 10px
+    font-family "Roboto Condensed"    
+    width 29%
+    text-align center
+    .title
+      font-size 18px
+      line-height 110%
+      text-transform uppercase
+      color rgba(0,0,0,0.4)
+    .bigdata
+      margin-top 13px
+      font-size 38px
+      &.super
+        font-size 73px
+        margin-bottom 2px
+      line-height 90%
+      color black
+      &.smaller
+        font-size 28px
+        margin-top 13px
+    .bar-horiz
+      display inline-block
+      background-color grey
+      opacity 0.3
+      width 50%
+      text-align center
+      height 2px
+      margin-top 15px
+      margin-bottom 8px
+    .comment
+      font-size 15px
+      line-height 110%
+      font-family font-prose
+      font-style italic
+    
+
+.chart
+  background-color white
+  position relative
+  z-index 80
+  font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  display inline-block
+  vertical-align top
+  padding 10px
+  margin-top 20px
+  margin-left 10px
+  border 1px solid #EEEEEE
+  .display
+    font-size 26px
+    padding 30px
+  .chart-header
+    position relative
+    margin-left 15px
+    margin-right 15px
+    padding-top 8px
+    padding-left 0px
+    border-bottom 1px solid grey
+    .usagetip
+      font-size 14px
+      position relative
+      color Blue2
+      margin-bottom 7px
+      border-top 1px solid grey
+      padding-top 7px
+      text-align left
+    .title
+      font-family Roboto Condensed
+      font-size 18px
+      line-height 105%
+      text-align left
+      text-transform uppercase
+      margin-bottom 10px
+    .buttons
+      position absolute
+      top -2px
+      right 18px
+      a.button
+        display inline-block
+        width 22px * 0.8
+        height 18px * 0.8
+        cursor pointer
+        //background-size cover
+        //background-repeat no-repeat
+        &.export
+          font-family Roboto Condensed
+          font-size 11px
+          color #CBCBCB
+          //background-image url('assets/images/export_icon.png')
+        &.print
+          display none
+          //background-image url('assets/images/print_icon_grey.png')
+          //margin-right 6px
+  .respcount
+    position absolute
+    right 12px
+    bottom 10px
+    color black
+    font-size 10px
+    text-align: right
+  .valblock
+    display inline-block
+    border-bottom 1px solid #CCCCCC
+    border-right 1px solid #CCCCCC
+    padding-top 1px
+    padding-bottom 0px
+    padding-right 8px
+    padding-left 8px
+    table
+      width 79px
+      font-size 11px
+    td
+    .key
+      text-align left
+    .val
+      text-align right
+
+  
+.hidden-area
+  display none
+
+.rendering-table
+  padding-top 10px
+  padding-left 13px
+  padding-bottom 20px
+  width 100%
+
+
+.fontspy-tester-hidden
+  font-family Roboto Condensed
+  font-size 50px
+  position absolute
+  opacity 0
+
+
+
+.overlay
+  pointer-events all
+  background-color #556B73
+  -webkit-transition -webkit-transform 0.5s
+  -moz-transition       -moz-transform 0.5s
+  -ms-transition         -ms-transform 0.5s
+  transition                 transform 0.5s
+  -webkit-transform translate(0px,3000px)
+  -moz-transform translate(0px,3000px)
+  -ms-transform translate(0px,3000px)
+  transform translate(0px,3000px)
+  display block
+  margin-left auto
+  margin-right auto
+  width 680px
+  // height 680px
+  top 70px
+  &.displayed
+    -webkit-transform translate(0,0)
+    -moz-transform translate(0,0)
+    -ms-transform translate(0,0)
+    transform translate(0,0)
+  position fixed
+  z-index 999
+  color white
+  .button-close
+    border 2px solid white
+    cursor pointer
+    width 32px  
+    height 32px  
+    position absolute
+    top 40px
+    right 40px
+    background-image url("assets/images/cross.png")
+    background-size 60% 60%
+    background-repeat no-repeat
+    background-position center center
+  .content
+    padding-top 36px
+    padding-left 60px
+    padding-right 45px
+  .title 
+    text-align left
+    font-family Roboto Condensed
+    font-weight bold
+    font-size 32px
+    margin-bottom 40px
+  .message
+    padding-right 12px
+    text-align left
+    font-family font-prose
+    font-size 14px
+    margin-bottom 20px
+    overflow auto
+    a 
+      color orange
+  
+.overlay.about-analyzer
+.overlay.about-this-survey
+  .message
+    font-size 14px  !important
+
+.hidden
+  display none
+
+
+#table-of-contents
+  background-color NFFgreengray
+  position relative
+  z-index 9999
+  color white
+  &.opened
+    padding 6px
+    .button-openclose
+      opacity 1
+    .toc-body
+      height auto
+      padding-bottom 9px
+    .toc-title
+      margin-top 10px
+      font-size 17px
+      margin-bottom 10px
+      display none 
+    .button-openclose
+      .when-closed
+        display none
+      .when-opened
+        display inline-block
+  text-align left
+  padding 0px
+  font-family Roboto Condensed
+  font-size 14px
+  .button-openclose
+    opacity 0.3
+    cursor pointer
+    .when-closed
+      display inline-block
+    .when-opened
+      display none
+  .toc-title
+    padding-left 25px
+    display none
+  .toc-body
+    padding-left 25px
+    padding-bottom 0px
+    -webkit-transition height 1s
+    overflow hidden
+    height 0px
+  .toc-section    
+    cursor pointer
+    display block
+    font-size 13px
+    margin-top 7px
+    color white
+    text-decoration none !important
+    span
+      margin-left 4px
+      opacity 0.8
+    &.feature
+      margin-top 15px
+      font-size 17px
+      color Orange3
+  .toc-chart
+    display none
+    padding-left 12px
+  
+
+a:hover
+a:visited
+  border none
+  outline none
+  text-decoration none
+a
+  text-decoration none !important
+
+
+
+.menu-horiz-share
+  border-radius 5px
+  border 1px solid #d3d3da
+  position absolute
+  z-index 10001
+  padding 3px
+  padding-top 7px !important
+  background-color #e2e3de
+  box-shadow 3px 3px 3px rgba(50,50,50,0.4)
+  bottom -53px
+  left 176px
+  display none
+  .triangle
+    border 1px solid #d3d3da
+    box-shadow 3px 3px 3px rgba(50,50,50,0.4)
+    -webkit-transform rotate(45deg)
+    -moz-transform rotate(45deg)
+    transform rotate(45deg)
+    width 15px
+    height 15px
+    position absolute
+    background-color #e2e3de
+    top -7px
+    left 35px
+    z-index 9997
+  .coverup
+    width 40px
+    height 20px
+    position absolute
+    background-color #e2e3de
+    top 0px
+    left 30px
+    z-index 9998
+  span
+    position relative
+    z-index 9999
+  &.visible
+    display block
+  .message
+    position relative
+    z-index 999999
+    text-align left
+    margin-top 4px
+    margin-bottom 3px
+    padding-left 5px 
+    padding-right 8px
+    font-size 12px
+    display none
+  .share-curfilter
+    display none
+
+  // Modifications if we're showing two rows of share buttons: unfiltered and filtered
+  &.filtering-in-effect
+    .share-curfilter, .message
+      display block !important
+    bottom -145px
+
+
+
+.tooltipsy
+  border-radius 6px
+  background-color black
+  color white
+  padding 7px
+  font-size 12px
+  max-width 220px
+  text-align left
+
+
+.copyright-footer
+  color grey
+  padding-top 20px
+  padding-bottom 40px
+
+
+.viz
+  position relative
+  // z-index 85
+  background-color white
+  .vizoverlap
+    position absolute
+    top 0
+    left 0
+    width 100%
+    height 100%
+
+.section.feature
+  padding-top 30px
+  padding-bottom 40px
+  background-color rgb(85,107,115)
+  .section-title
+    color white
+  .section-commentary
+    color #e2e3de
+    a
+      color white
+  .chart-header
+    .title
+      color black
+    .filterspec
+      color white
+
+
+
+.showcase
+  &.force-width
+    max-width 170px
+    max-height 50px
+    overflow hidden
+
+
+
+
+  .showcase-diagram.full-costs
+    margin-top 13px
+    font-family Roboto Condensed
+    font-size 13px
+    .box-top
+      padding-top 28px
+      padding-bottom 28px
+      border-top 1px solid black
+      border-bottom 1px solid black
+      border-left 1px solid black
+      border-right 1px solid black
+      text-align center
+    .box-bottom
+      padding-top 8px
+      padding-bottom 4px
+      border-bottom 1px solid black
+      border-left 1px solid black
+      border-right 1px solid black
+      text-align center
+      p
+        margin-top 0px
+        margin-bottom 0px
+
+
+
+
+  .showcase-diagram.liquidity
+    .message
+      padding-top 15px
+      padding-bottom 0px
+    table
+      margin-left auto
+      margin-right auto
+      color navy
+      td
+        font-size 17px
+        text-align center
+      td.middle
+        font-size 40px
+        padding-left 20px
+        padding-right 20px
+      td.right
+        p
+          margin-top 0px
+          margin-bottom 3px
+        hr 
+          margin-top 2px
+          margin-bottom 0px
+
+      
+    
+.thanks-to-funders
+  p
+    margin-top 50px
+    font-size 20px
+    text-align center
+    padding 15px
+  .logo-section
+    margin-left auto    
+    margin-right auto
+    text-align center
+    img.logo
+      height 65px
+      &.bankofamer
+        margin-right 100px
+  &.minor
+    margin-bottom 40px
+    p
+      margin-top 35px
+      font-size 16px
+      margin-bottom 0px  
+    img.logo
+      height 70px
+  
+
+
+#nav-bar .button.toc
+  &.opened
+    color white
+    background-color NFFgreengray
+.header.fixed
+  #nav-bar .button.toc
+    &.opened
+      background-color inherit
+
+
+
+.why-am-i-empty
+  margin-top 30px
+  margin-left 25px
+  margin-right 25px
+  background-color white
+  border 2px solid orange
+  padding 20px
+
+
+
+.toc-body-segment
+  vertical-align top
+  padding 0px
+  display inline-block
+  width 260px
+

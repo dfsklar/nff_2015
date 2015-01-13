@@ -1,0 +1,23 @@
+bring the 2014 state of the sector should align with "Get nff news"
+
+mini-header needs to meet spec (centering of both logo and text together)
+
+close space between secttitle and sectsubtitle by 4 or 5 pixels
+line height tighter 
+
+close space couple of pixels between subtitle and showcase grid
+
+tighten space between showcase grid and first actual chart
+
+bignums can be much bigger when non-wrapping
+
+showcase:
+    give more vert height to content, and less to the bottom commentary
+    "truly a national effort" down a point
+
+Feature bg color should expand all the way left/right and all the way to top of the bar.
+
+"Filters active" 1px solid orange border
+
+"Filters are on" section:  2px orange, no grey padding underneath
+

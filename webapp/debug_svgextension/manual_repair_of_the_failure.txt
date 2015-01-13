@@ -1,0 +1,180 @@
+This manual repair was done in:  http://svg-edit.googlecode.com/svn/branches/2.6/editor/svg-editor.html#ungroup
+
+<svg width="1200" height="600" xmlns="http://www.w3.org/2000/svg">
+ <desc>Created with Highcharts 3.0.9</desc>
+ <defs>
+  <clipPath id="highcharts-115">
+   <rect fill="none" x="0" y="0" width="1139" height="514" id="svg_1"/>
+  </clipPath>
+ </defs>
+ <g>
+  <title>Layer 1</title>
+  <g class="highcharts-axis" id="svg_24">
+   <text x="13" y="277" text-anchor="middle" transform="rotate(270 13 277)" fill="#4d759e" font-weight="bold" font-size="12px" font-family="Arial" id="svg_25">
+    <tspan x="13" id="svg_26">Percentage</tspan>
+   </text>
+  </g>
+  <g class="highcharts-series highcharts-tracker" transform="translate(43,20) scale(1 1)" clip-path="url(#highcharts-115)" id="svg_28">
+   <rect fill="#c2dae3" x="36" y="322" width="10" height="193" id="svg_29"/>
+   <rect fill="#c2dae3" x="199" y="348" width="10" height="167" id="svg_30"/>
+   <rect fill="#c2dae3" x="361" y="65" width="10" height="450" id="svg_31"/>
+   <rect fill="#c2dae3" x="524" y="309" width="10" height="206" id="svg_32"/>
+   <rect fill="#c2dae3" x="687" y="399" width="10" height="116" id="svg_33"/>
+   <rect fill="#c2dae3" x="849" y="451" width="10" height="64" id="svg_34"/>
+   <rect fill="#c2dae3" x="1012" y="425" width="10" height="90" id="svg_35"/>
+  </g>
+  <g class="highcharts-markers" transform="translate(43,20) scale(1 1)" id="svg_36"/>
+  <g class="highcharts-series highcharts-tracker" transform="translate(43,20) scale(1 1)" clip-path="url(#highcharts-115)" id="svg_37">
+   <rect fill="#a2d2e9" x="52" y="194" width="10" height="321" id="svg_38"/>
+   <rect fill="#a2d2e9" x="215" y="348" width="10" height="167" id="svg_39"/>
+   <rect fill="#a2d2e9" x="377" y="130" width="10" height="385" id="svg_40"/>
+   <rect fill="#a2d2e9" x="540" y="361" width="10" height="154" id="svg_41"/>
+   <rect fill="#a2d2e9" x="703" y="412" width="10" height="103" id="svg_42"/>
+   <rect fill="#a2d2e9" x="866" y="438" width="10" height="77" id="svg_43"/>
+   <rect fill="#a2d2e9" x="1028" y="438" width="10" height="77" id="svg_44"/>
+  </g>
+  <g class="highcharts-markers" transform="translate(43,20) scale(1 1)" id="svg_45"/>
+  <g class="highcharts-series highcharts-tracker" transform="translate(43,534) scale(1 1)" clip-path="url(#highcharts-115)" id="svg_46">
+   <rect fill="#83caee" x="68" y="297" width="10" height="218" id="svg_47"/>
+   <rect fill="#83caee" x="231" y="348" width="10" height="167" id="svg_48"/>
+   <rect fill="#83caee" x="394" y="91" width="10" height="424" id="svg_49"/>
+   <rect fill="#83caee" x="556" y="309" width="10" height="206" id="svg_50"/>
+   <rect fill="#83caee" x="719" y="399" width="10" height="116" id="svg_51"/>
+   <rect fill="#83caee" x="882" y="451" width="10" height="64" id="svg_52"/>
+   <rect fill="#83caee" x="1045" y="438" width="10" height="77" id="svg_53"/>
+  </g>
+  <g class="highcharts-markers" transform="translate(43,20) scale(1 1)" id="svg_54"/>
+  <g class="highcharts-series highcharts-tracker" transform="translate(43,534) scale(1 0.001)" clip-path="url(#highcharts-115)" id="svg_55">
+   <rect fill="#63c2f4" x="85" y="258" width="10" height="257" id="svg_56"/>
+   <rect fill="#63c2f4" x="247" y="348" width="10" height="167" id="svg_57"/>
+   <rect fill="#63c2f4" x="410" y="104" width="10" height="411" id="svg_58"/>
+   <rect fill="#63c2f4" x="573" y="309" width="10" height="206" id="svg_59"/>
+   <rect fill="#63c2f4" x="735" y="412" width="10" height="103" id="svg_60"/>
+   <rect fill="#63c2f4" x="898" y="438" width="10" height="77" id="svg_61"/>
+   <rect fill="#63c2f4" x="1061" y="451" width="10" height="64" id="svg_62"/>
+  </g>
+  <g class="highcharts-markers" transform="translate(43,20) scale(1 1)" id="svg_63"/>
+  <g class="highcharts-series highcharts-tracker" transform="translate(43,534) scale(1 0.001)" clip-path="url(#highcharts-115)" id="svg_64">
+   <rect fill="#43baf9" x="101" y="219" width="10" height="296" id="svg_65"/>
+   <rect fill="#43baf9" x="264" y="361" width="10" height="154" id="svg_66"/>
+   <rect fill="#43baf9" x="426" y="104" width="10" height="411" id="svg_67"/>
+   <rect fill="#43baf9" x="589" y="297" width="10" height="218" id="svg_68"/>
+   <rect fill="#43baf9" x="752" y="399" width="10" height="116" id="svg_69"/>
+   <rect fill="#43baf9" x="914" y="438" width="10" height="77" id="svg_70"/>
+   <rect fill="#43baf9" x="1077" y="515" width="10" height="0" id="svg_71"/>
+  </g>
+  <g class="highcharts-markers" transform="translate(43,20) scale(1 1)" id="svg_72"/>
+  <g class="highcharts-series highcharts-tracker" transform="translate(43,534) scale(1 0.001)" clip-path="url(#highcharts-115)" id="svg_73">
+   <rect fill="#24b2ff" x="117" y="309" width="10" height="206" id="svg_74"/>
+   <rect fill="#24b2ff" x="280" y="387" width="10" height="128" id="svg_75"/>
+   <rect fill="#24b2ff" x="443" y="142" width="10" height="373" id="svg_76"/>
+   <rect fill="#24b2ff" x="605" y="271" width="10" height="244" id="svg_77"/>
+   <rect fill="#24b2ff" x="768" y="387" width="10" height="128" id="svg_78"/>
+   <rect fill="#24b2ff" x="931" y="425" width="10" height="90" id="svg_79"/>
+   <rect fill="#24b2ff" x="1093" y="399" width="10" height="116" id="svg_80"/>
+  </g>
+  <g class="highcharts-markers" transform="translate(43,20) scale(1 1)" id="svg_81"/>
+  <g class="highcharts-legend" id="svg_82">
+   <rect rx="5" ry="5" fill="none" x="419.5" y="556.5" width="337" height="23" stroke="#909090" id="svg_83"/>
+   <g id="svg_84">
+    <g id="svg_85">
+     <g class="highcharts-legend-item" id="svg_86">
+      <text x="448" y="574" text-anchor="start" fill="#274b6d" font-size="12px" font-family="Arial" id="svg_87">
+       <tspan x="21" id="svg_88">2009</tspan>
+      </text>
+      <rect rx="2" ry="2" fill="#c2dae3" x="427" y="563" width="16" height="12" id="svg_89"/>
+     </g>
+     <g class="highcharts-legend-item" id="svg_90">
+      <text x="503" y="574" text-anchor="start" fill="#274b6d" font-size="12px" font-family="Arial" id="svg_91">
+       <tspan x="21" id="svg_92">2010</tspan>
+      </text>
+      <rect rx="2" ry="2" fill="#a2d2e9" x="482" y="563" width="16" height="12" id="svg_93"/>
+     </g>
+     <g class="highcharts-legend-item" id="svg_94">
+      <text x="558" y="574" text-anchor="start" fill="#274b6d" font-size="12px" font-family="Arial" id="svg_95">
+       <tspan x="21" id="svg_96">2011</tspan>
+      </text>
+      <rect rx="2" ry="2" fill="#83caee" x="537" y="563" width="16" height="12" id="svg_97"/>
+     </g>
+     <g class="highcharts-legend-item" id="svg_98">
+      <text x="613" y="574" text-anchor="start" fill="#274b6d" font-size="12px" font-family="Arial" id="svg_99">
+       <tspan x="21" id="svg_100">2012</tspan>
+      </text>
+      <rect rx="2" ry="2" fill="#63c2f4" x="592" y="563" width="16" height="12" id="svg_101"/>
+     </g>
+     <g class="highcharts-legend-item" id="svg_102">
+      <text x="668" y="574" text-anchor="start" fill="#274b6d" font-size="12px" font-family="Arial" id="svg_103">
+       <tspan x="21" id="svg_104">2013</tspan>
+      </text>
+      <rect rx="2" ry="2" fill="#43baf9" x="647" y="563" width="16" height="12" id="svg_105"/>
+     </g>
+     <g class="highcharts-legend-item" id="svg_106">
+      <text x="723" y="574" text-anchor="start" fill="#274b6d" font-size="12px" font-family="Arial" id="svg_107">
+       <tspan x="21" id="svg_108">2014</tspan>
+      </text>
+      <rect rx="2" ry="2" fill="#24b2ff" x="702" y="563" width="16" height="12" id="svg_109"/>
+     </g>
+    </g>
+   </g>
+  </g>
+  <g class="highcharts-axis-labels" id="svg_110">
+   <text x="124.35714" y="548" text-anchor="middle" fill="#666" font-size="11px" font-family="Arial" id="svg_111">
+    <tspan x="124.35714" id="svg_112">$0 - 250K</tspan>
+   </text>
+   <text x="287.07143" y="548" text-anchor="middle" fill="#666" font-size="11px" font-family="Arial" id="svg_113">
+    <tspan x="287.07143" id="svg_114">$250K - 500K</tspan>
+   </text>
+   <text x="449.78571" y="548" text-anchor="middle" fill="#666" font-size="11px" font-family="Arial" id="svg_115">
+    <tspan x="449.78571" id="svg_116">$500K - $2M</tspan>
+   </text>
+   <text x="612.5" y="548" text-anchor="middle" fill="#666" font-size="11px" font-family="Arial" id="svg_117">
+    <tspan x="612.5" id="svg_118">$2 - $5M</tspan>
+   </text>
+   <text x="775.21429" y="548" text-anchor="middle" fill="#666" font-size="11px" font-family="Arial" id="svg_119">
+    <tspan x="775.21429" id="svg_120">$5M - $10M</tspan>
+   </text>
+   <text x="937.92857" y="548" text-anchor="middle" fill="#666" font-size="11px" font-family="Arial" id="svg_121">
+    <tspan x="937.92857" id="svg_122">$10M - 20M</tspan>
+   </text>
+   <text x="1100.64286" y="548" text-anchor="middle" fill="#666" font-size="11px" font-family="Arial" id="svg_123">
+    <tspan x="1100.64286" id="svg_124">&gt; $20M</tspan>
+   </text>
+  </g>
+  <g class="highcharts-axis-labels" id="svg_125">
+   <text x="35" y="539.84375" text-anchor="end" fill="#666" font-size="11px" font-family="Arial" id="svg_126">
+    <tspan x="35" id="svg_127">0</tspan>
+   </text>
+   <text x="35" y="475.59375" text-anchor="end" fill="#666" font-size="11px" font-family="Arial" id="svg_128">
+    <tspan x="35" id="svg_129">5</tspan>
+   </text>
+   <text x="35" y="411.34375" text-anchor="end" fill="#666" font-size="11px" font-family="Arial" id="svg_130">
+    <tspan x="35" id="svg_131">10</tspan>
+   </text>
+   <text x="35" y="347.09375" text-anchor="end" fill="#666" font-size="11px" font-family="Arial" id="svg_132">
+    <tspan x="35" id="svg_133">15</tspan>
+   </text>
+   <text x="35" y="282.84375" text-anchor="end" fill="#666" font-size="11px" font-family="Arial" id="svg_134">
+    <tspan x="35" id="svg_135">20</tspan>
+   </text>
+   <text x="35" y="218.59375" text-anchor="end" fill="#666" font-size="11px" font-family="Arial" id="svg_136">
+    <tspan x="35" id="svg_137">25</tspan>
+   </text>
+   <text x="35" y="154.34375" text-anchor="end" fill="#666" font-size="11px" font-family="Arial" id="svg_138">
+    <tspan x="35" id="svg_139">30</tspan>
+   </text>
+   <text x="35" y="90.09375" text-anchor="end" fill="#666" font-size="11px" font-family="Arial" id="svg_140">
+    <tspan x="35" id="svg_141">35</tspan>
+   </text>
+   <text x="35" y="25.84375" text-anchor="end" fill="#666" font-size="11px" font-family="Arial" id="svg_142">
+    <tspan x="35" id="svg_143">40</tspan>
+   </text>
+  </g>
+  <g class="highcharts-tooltip" id="svg_144">
+   <rect rx="3" ry="3" fill="none" x="1.5" y="-997.5" width="16" height="16" fill-opacity="0.85" stroke="black" stroke-opacity="0.05" stroke-width="5" id="svg_145"/>
+   <rect rx="3" ry="3" fill="none" x="1.5" y="-997.5" width="16" height="16" fill-opacity="0.85" stroke="black" stroke-opacity="0.1" stroke-width="3" id="svg_146"/>
+   <rect rx="3" ry="3" fill="none" x="1.5" y="-997.5" width="16" height="16" fill-opacity="0.85" stroke="black" stroke-opacity="0.15" id="svg_147"/>
+   <rect rx="3" ry="3" fill="rgb(255,255,255)" x="0.5" y="-998.5" width="16" height="16" fill-opacity="0.85" id="svg_148"/>
+   <text x="8" y="-978" fill="#333333" font-size="12px" font-family="Arial" id="svg_149"/>
+  </g>
+ </g>
+</svg>

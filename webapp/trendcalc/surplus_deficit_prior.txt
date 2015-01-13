@@ -1,0 +1,43 @@
+[{"data": {"node": {"count": 17602, "total_count": 19845, "perc": 0.8869740488788108, "label": "Number of Responses"}, "children": 
+
+
+
+FY2008
+[{"node": {"count": 974, "perc": 0.05533462106578798, "question_key": 
+"year", "label": "2009", "key": "2009", "order": "1"}, "children": [
+{"node": {"count": 388, "perc": 0.39835728952772076, "question_key": "surplus_deficit_prior", "label": "An operating surplus", "key": "surplus", "order": "1"}}, {"node": {"count": 275, "perc": 0.28234086242299794, "question_key": "surplus_deficit_prior", "label": "Break-even financial results, where revenue matches expenses", "key": "break_even", "order": "2"}}, {"node": {"count": 311, "perc": 0.3193018480492813, "question_key": "surplus_deficit_prior", "label": "An operating deficit", "key": "deficit", "order": "2"}}]},
+
+
+
+
+FY2009
+ {"node": {"count": 836, "perc": 0.04749460288603568, "question_key": 
+"year", "label": "2010", "key": "2010", "order": "2"}, "children": 
+[{"node": {"count": 459, "perc": 0.5490430622009569, "question_key": "surplus_deficit_prior", "label": "An operating surplus", "key": "surplus", "order": "1"}},
+ {"node": {"count": 0, "perc": 0.0, "question_key": "surplus_deficit_prior", "label": "An operating deficit", "key": "deficit", "order": "2"}}, 
+{"node": {"count": 377, "perc": 0.45095693779904306, "question_key": "surplus_deficit_prior", "label": "Break-even financial results, where revenue matches expenses", "key": "break_even", "order": "2"}}]}, 
+
+
+FY2010
+{"node": {"count": 1878, "perc": 0.10669242131575957, "question_key": 
+"year", "label": "2011", "key": "2011", "order": "3"}, "children": [
+{"node": {"count": 821, "perc": 0.4371671991480298, "question_key": "surplus_deficit_prior", "label": "An operating surplus", "key": "surplus", "order": "1"}}, {"node": {"count": 644, "perc": 0.34291799787007454, "question_key": "surplus_deficit_prior", "label": "An operating deficit", "key": "deficit", "order": "2"}}, {"node": {"count": 413, "perc": 0.21991480298189564, "question_key": "surplus_deficit_prior", "label": "Break-even financial results, where revenue matches expenses", "key": "break_even", "order": "2"}}]}, 
+
+
+
+
+// FY2011 
+{"node": {"count": 4019, "perc": 0.2283263265538007, "question_key": 
+"year", "label": "2012", "key": "2012", "order": "4"}, "children": [{"node": {"count": 1778, "perc": 0.44239860661856184, "question_key": "surplus_deficit_prior", "label": "An operating surplus", "key": "surplus", "order": "1"}}, {"node": {"count": 1005, "perc": 0.25006220452848965, "question_key": "surplus_deficit_prior", "label": "Break-even financial results, where revenue matches expenses", "key": "break_even", "order": "2"}}, {"node": {"count": 1236, "perc": 0.3075391888529485, "question_key": "surplus_deficit_prior", "label": "An operating deficit", "key": "deficit", "order": "2"}}]}, 
+
+
+
+// FY 2012
+{"node": {"count": 5407, "perc": 0.3071810021588456, "question_key": 
+"year", "label": "2013", "key": "2013", "order": "5"}, "children": [{"node": {"count": 2172, "perc": 0.40170149805807287, "question_key": "surplus_deficit_prior", "label": "An operating surplus", "key": "surplus", "order": "1"}}, {"node": {"count": 1684, "perc": 0.3114481228037729, "question_key": "surplus_deficit_prior", "label": "Break-even financial results, where revenue matches expenses", "key": "break_even", "order": "2"}}, {"node": {"count": 1551, "perc": 0.28685037913815425, "question_key": "surplus_deficit_prior", "label": "An operating deficit", "key": "deficit", "order": "2"}}]}, {"node": {"count": 4488, "perc": 0.2549710260197705, "question_key": 
+
+
+"year", "label": "2014", "key": "2014", "order": "6"}, "children": [
+{"node": {"count": 1813, "perc": 0.4039661319073084, "question_key": "surplus_deficit_prior", "label": "An operating surplus", "key": "surplus", "order": "1"}}, 
+{"node": {"count": 1275, "perc": 0.2840909090909091, "question_key": "surplus_deficit_prior", "label": "An operating deficit", "key": "deficit", "order": "2"}}, 
+{"node": {"count": 1400, "perc": 0.31194295900178254, "question_key": "surplus_deficit_prior", "label": "Break-even financial results, where revenue matches expenses", "key": "break_even", "order": "2"}}]}]}, "id": "year/surplus_deficit_prior"}]

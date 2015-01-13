@@ -1,0 +1,32 @@
+
+Let's focus on compare that is not about TIME but only about criteria such as sector, state, etc.
+
+A compare is nothing more than simultaneously having two separate filtersets, and drawing a single chart twice, each with a different filterset.
+
+Currently, we have this idea of window.nfforg.filtrationCurrent, a global filterset.
+
+We are going to now have the ability to set that value to an array!
+
+   filtrationCurrent[0] will be "left side" of compare, filtrationCurrent[1] will be "right side".
+
+A chart's renderer will thus have the optional parameter of a filtration set index.
+
+------
+HOW THIS WORKS:  window.nfforg.indexAndFilterDatabase 
+
+   Modifies the actual global-DB chart object, these fields are reset/rebuilt:
+          chart.series
+          chart.yValueTotal
+          chart.valueSet
+          chart.keyList
+
+Thus, to do compare we really need to create two separate chart objects per "actual chart", so they can have different filtrations.
+
+Currently, all our charts are stored in:  window.nfforg.database.charts.
+
+When in compare mode, we will do this:
+
+     window.nfforg.database.chartsComparison = { "left": [...],  "right": [...] }
+
+Thus, indexAndFilterDatabase needs to be passed which charts array it should work on.
+
