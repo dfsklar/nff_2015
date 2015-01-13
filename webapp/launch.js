@@ -62,6 +62,12 @@ $(function() {
     $('#filter-area .form#filter').addClass('active');
   }
 
+  // if MSIE8, hide all overlays because the use of transforms to place the offscreen is not going to work on IE8
+  if (navigator.userAgent.has("MSIE 8")) {
+    console.log("IE8");
+    $('.overlay').css('display','none');
+  }
+
   // Needed to await font loading?  Maybe not.  Need a better approach
   // to ensure geometries are calculated properly.
   setTimeout(function(){
