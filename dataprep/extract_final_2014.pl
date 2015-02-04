@@ -5,23 +5,19 @@ $processingLimit = 99999;
 @fieldsMultChoice = (
                      'lmi_(.*)',   # 1 or blank are the only legal values
                      'challenge_(.*)',
-                     # from 2014 but no longer valid: 'funding_gov_(.*)',
+                     'funding_gov_(.*)',
                      'funding_all_gov_(.*)',  # seems to be about how the org responds to late incoming payments (e.g. "delay payment to my vendors", etc)
-                     # from 2014 but no longer valid: 'data_collect_(.*)',
-                     # from 2014 but no longer valid: 'arts_grants_(.*)',
+                     'data_collect_(.*)',
+                     'arts_grants_(.*)',
                      'dialog_(.*)',
-                     # from 2014 but no longer valid: 'loan_no_(.*)',
+                     'loan_no_(.*)',
                      'loan_yes_(.*)',
-                     'addtl_debt_fin_(.*)',  # NEW 2015!
-                     'future_debt_fin_(.*)',  # NEW 2015!
-                     'unmet_demand_svc_(.*)',  # NEW 2015!
-                     # from 2014 but no longer valid: 'loan_want_(.*)',
-                     # from 2014 but no longer valid: 'arts_comp_resp_(.*)',
-                     # from 2014 but no longer valid: 'arts_comp_(.*)',
-                     'arts_audience_dev_results_(.*)',   # NEW 2015 (or name change)
+                     'loan_want_(.*)',
+                     'arts_comp_resp_(.*)',
+                     'arts_comp_(.*)',
+                     'arts_aud_rslts_(.*)',
                      'arts_aud_(.*)',
-                     'arts_funder_(.*)',   # NEW 2015 (or name change) *** BUT I HAVEN'T TAGGED THESE YET ***
-                     # from 2014 but no longer valid: 'arts_funding_(.*)'
+                     'arts_funding_(.*)'
                     );
 @regexFieldsMultChoice;
 foreach $strPattern (@fieldsMultChoice) {
