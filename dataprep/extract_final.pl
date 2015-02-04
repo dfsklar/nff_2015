@@ -10,8 +10,10 @@ $processingLimit = 99999;
                      # from 2014 but no longer valid: 'data_collect_(.*)',
                      # from 2014 but no longer valid: 'arts_grants_(.*)',
                      'dialog_(.*)',
+                     'arts_source_competition_(.*)',   # NEW 2015!
                      # from 2014 but no longer valid: 'loan_no_(.*)',
                      'loan_yes_(.*)',
+                     'debt_fin_applied_no_debt_(.*)',  # NEW 2015!
                      'addtl_debt_fin_(.*)',  # NEW 2015!
                      'future_debt_fin_(.*)',  # NEW 2015!
                      'unmet_demand_svc_(.*)',  # NEW 2015!
