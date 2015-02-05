@@ -3,7 +3,7 @@ local $/ = "\r";
 
 print "window.nfforg.database_unindexed.respondents = [ \n";
 
-$processingLimit = 99999;
+$processingLimit = 99;  #999;
 
 @fieldsMultChoice = (
                      'lmi_(.*)',   # 1 or blank are the only legal values
@@ -222,7 +222,7 @@ sub emitTimeframeBasedValue {
 
   my $atleastone;
 
-  my $tryprefix_arts = ($base eq "action_staff");
+  my $tryprefix_arts = '';    # In 2014 this was:  ($base eq "action_staff");  
   my $forceprefix_arts = ($options eq "arts_only");
 
   if ($forceprefix_arts) {
