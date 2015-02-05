@@ -1,0 +1,1544 @@
+(function() {
+  
+  var HALFWIDTH = "317px";
+  var FULLWIDTH = "670px";
+
+  var colorRangesForInterleave = 
+        [
+          chroma.scale([window.nfforg.colors.Blue3, window.nfforg.colors.Blue1]),
+          chroma.scale([chroma("#e2e3de"), "#000000"])
+        ];
+  
+
+
+  /*
+    THIS DEFINES AND ORDERS AND CATEGORIZES ALL CHARTS/TABLES
+  */
+
+  window.nfforg.database_unindexed = 
+
+  {
+    "sections": {
+      "About the Respondents": {
+        "showcase": "overview",
+        "commentary": "Nonprofit Finance Fund’s annual survey asks nonprofits in the US about their programs, financial health, and management strategies. In this first section is a profile of the core characteristics of respondents, such their state, sector, and size."
+      },
+      "Demand for Programs/Services": {
+        "showcase": "demand",
+        "commentary": "Nonprofits understand how the people in their communities are doing. More demand for services suggests that a greater number of people need help than they did the year before. Reports of increase in demand for services have continued since 2008."
+      },
+      "Financial Story": {
+        "showcase": "finanstory",
+        commentary: "Every organization has different financial needs. But no matter what you do, it’s critical to have cash in the bank to pay your bills, with some extra left over in case a disaster hits &mdash; whether it’s an economic downturn, hurricane, or broken boiler."
+      },
+      "Challenges and Responses": {
+        "showcase": "challresp",
+        "commentary": "Nonprofit managers struggle to implement long-term solutions while fulfilling short-term needs. Nonetheless, they’re improving efficiency, innovating, and saving when they can."
+      },
+      "Government Funding": {
+        showcase: "govfund",
+        "commentary": "Our government plays a critical role in protecting us from poverty, hunger, and much more. And it pays nonprofits to carry out many of these services. Unfortunately, government funding comes with hidden costs for many nonprofits."
+      },
+      "Data and Impact": {
+        showcase: "dataimpact",
+        "commentary": "The people serving our communities want to do more than cope with social problems. They want to eliminate them. But understanding what works takes significant resources, coordination, and permission from supporters that failure is OK on the road to success."
+      },
+      "Funder Practices": {
+        "showcase": "fundprac",
+        "commentary": "What kinds of resources do nonprofits need to succeed? And what are the types of funding that are actually available?"
+      },
+      "Financial Outlook": {
+        "showcase-bar-goes-here": false
+      },
+      "Lending to Nonprofits": {
+        "showcase": "lending",
+        "commentary": "Common loans for nonprofits are for facilities, working capital and equipment."
+      },
+      "Feature: Arts & Culture NPOs": {
+        "showcase": "artsculturecount",
+        "commentary": "Nonprofits that identified their sector as \“Arts/Culture/Humanities\” received an additional set of sector-specific questions, shown below. This section has been pre-filtered to summarize the responses of only the nonprofits in this sector.  You can narrow the scope of this section even further by adding filters of your own, using the Filter sidebar at the right.",
+        "extra-class": "feature"
+      },
+      "Feature: Trends over Time": {
+        "disable-when-filters-on": true,
+        "commentary": "Since 2009, we’ve asked a core set of the same questions every year. These responses can draw attention to what has changed or stayed the same over time. For more detail, reach out to us at <a href=\"mailto:survey@nff.org\">survey@nff.org</a>.",
+        "extra-class": "feature"
+      }
+    },
+
+
+
+
+    
+    charts: {
+
+
+
+      "org_type": {
+        section: "About the Respondents",
+        "title": "Respondents by Sector",
+        "title-mini": "Sector",
+        "renderer": "bar",
+        "highchart_formatting": {
+          chart: { marginLeft: 200, spacingLeft: 0 }
+        },
+        "key_order": [
+          "Arts/Culture/Humanities",
+          "Civil Rights/Social Action/Advocacy",
+          "Community Development",
+          "Education",
+          "Environment and Animals",
+          "Foundation",
+          "Health",
+          "House of Worship",
+          "Human Services",
+          "International/Foreign Affairs",
+          "Mutual/Membership Benefit",
+          "Public/Societal Benefit",
+          "Workforce Development",
+          "Other",
+          "Unknown/Unclassified"
+        ],
+        "value_massager": function(val){
+          if (val.has('please speci'))
+            return 'Other';
+          if (val.has('Civil Rights'))
+            return 'Civil Rights/Social Action/Advocacy';
+          if (val.has('Arts,'))
+            return 'Arts/Culture/Humanities';
+          if (val.has('Public,'))
+            return 'Public/Societal Benefit';
+          if (val.has('Internation'))
+            return 'International/Foreign Affairs';
+          if (val.has('Unknown'))
+            return 'Unknown/Unclassified';
+          return val;
+        },
+        "css": { width: HALFWIDTH }
+      },
+
+
+
+
+
+
+
+      "state": {
+        "title": "Respondents by State",
+        "renderer": "table",
+        "css": { width: "317px" }
+      },
+
+      // "abort": { special: "ABORT" },
+
+      "opp_exp_max": {
+        "title": "FY2014 Operating Expense",
+        "title-mini": "Operating Expense",
+        "info-tip": "Operating expense is a useful measure for understanding an organization’s size.",
+        "renderer": "bar",
+        "value_massager": function(val){
+          val = val.replace(",000,000","M");
+          val = val.replace(",000,001","M");
+          val = val.replace(",000","K");
+          val = val.replace(",001","K");
+          val = val.replace("-"," -- ").replace("Greater than",">");
+          return val;
+        },
+        "highchart_formatting": {
+          chart: { marginLeft: 120, spacingLeft: 0 }
+        },
+        "key_order": [
+          "> $20M",
+          "$10M -- $20M",
+          "$5M -- $10M",
+          "$2M -- $5M",
+          "$1M -- $2M",
+          "$500K -- $1M",
+          "$250K -- $500K",
+          "$100K -- $250K",
+          "$50K -- $100K",
+          "$0 -- $50K"
+        ],
+        "css": { width: HALFWIDTH }
+      },
+
+      "year_founded_range": {
+        "title": "Year Founded",
+        "title-mini": "Year Founded",
+        "renderer": "bar",
+        "value_massager": function(val){
+          return val.replace('_',' ').replace('> 2010','2010-2014');
+        },
+        key_order: [
+          "1750-1899",
+          "1900-1949",
+          "1950-1964",
+          "1965-1979",
+          "1980-1989",
+          "1990-1999",
+          "2000-2009",
+          "2010-2012",
+          "2013-2015"
+        ],
+        "css": { width: HALFWIDTH }
+      },
+
+      "employee_count_fte_range": {
+        "title": "# of full-time employees",
+        "title-mini": "# FULL-TIME EMPLOYEES",
+        value_massager: function(val) {
+          if (val=="5-Mar")
+            return "3-5";
+          if (val=="15-Jun")
+            return "6-15";
+          return val.replace('_',' ');
+        },
+        key_order: [
+          "0-2",
+          "3-5",
+          "6-15",
+          "16-50",
+          "51-150",
+          "151-300",
+          "> 300"
+        ],
+        "renderer": "bar",
+        "css": { width: HALFWIDTH }
+      },
+
+      "employee_count_pte_range": {
+        "title": "# of part-time employees",
+        "title-mini": "# PART-TIME EMPLOYEES",
+        value_massager: function(val) {
+          if (val=="5-Mar")
+            return "3-5";
+          if (val=="15-Jun")
+            return "6-15";
+          return val.replace('_',' ');
+        },
+        key_order: [
+          "0-2",
+          "3-5",
+          "6-15",
+          "16-50",
+          "51-150",
+          "151-300",
+          "> 300"
+        ],
+        "renderer": "bar",
+        "css": { width: HALFWIDTH }
+      },
+
+      "lifeline": {
+        "title": "Lifeline Organization",
+        "renderer": "stacked_single_bar",
+        "info-tip": "These organizations identified themselves as providing critical services to people in need.",
+        "key_order": [ 'No', 'Yes' ],
+        "color_by_key": {
+          'Yes': chroma(window.nfforg.colors.YES).hex(),
+          'No' : chroma(window.nfforg.colors.NO).hex()
+        },
+        "css": { width: FULLWIDTH } //, height: "110px" }
+      },
+
+      "lmi_serve_expanded": {
+        "title": "Serving low-income communities",
+        "title-mini": "Serves low-income communities",
+        "renderer": "stacked_single_bar",
+        "inner_size": "30%",
+        "color_by_key": {
+          'Exclusively': chroma(window.nfforg.colors.YES).hex(),
+          'Primarily': chroma(window.nfforg.colors.MIDDLE).hex(),
+          'Neither' : chroma(window.nfforg.colors.NO).hex()
+        },
+        "value_massager": function(val){
+          if (val.has('primarily'))
+            return 'Primarily';
+          if (val.has('exclusively'))
+            return 'Exclusively';
+          return 'Neither';
+        },
+        "key_order": [ 'Neither', 'Primarily', 'Exclusively'],
+        "css": { width: FULLWIDTH, height: "110px" }
+      },
+
+      "lmi_loc": {
+        "title": "Located in low-income communities",
+        "title-mini": "Located in low-income community",
+        "renderer": "stacked_single_bar",
+        "key_order": [ 'No', 'Yes' ],
+        "color_by_key": {
+          'Yes': chroma(window.nfforg.colors.YES).hex(),
+          'No' : chroma(window.nfforg.colors.NO).hex()
+        },
+        "css": { width: FULLWIDTH, height: "110px" }
+      },
+
+
+
+
+
+
+
+
+
+
+      // DEMAND
+
+      "lmi_": {
+        "section": "Demand for Programs/Services",
+        "title": "NPOs say the most critical community needs are...",
+        "highchart_formatting": {
+          chart: { marginLeft: 300, spacingLeft: 0 }
+        },
+        "key_order": Object.keys(window.nfforg.MAPenumToEnglish.lmi_),
+        "renderer": "one_or_more",
+        "value_massager": function(val){
+          if (val.has('access to retail'))
+            return 'Access to commercial goods and services';
+          if (val.has('Recreational'))
+            return 'Access to recreational opportunities';
+          return val;
+        },
+        "css": { width: FULLWIDTH }
+      },
+
+      "past_demand_serv": {
+        "title": "In 2013,<br/>service/program demand...",
+        "renderer": "bar",
+        "highchart_formatting": {
+          chart: { marginLeft: 140, spacingLeft: 0 }
+        },
+        "color_by_key": {
+          'significantly increased': chroma(window.nfforg.colors.BADVERY).hex(),
+          'slightly increased':  chroma(window.nfforg.colors.BAD).hex(),
+          'stayed the same': chroma(window.nfforg.colors.NEUTRAL).hex(),
+          'slightly decreased': chroma(window.nfforg.colors.GOOD).hex(),
+          'significantly decreased': chroma(window.nfforg.colors.GOODVERY).hex()
+        },
+        "key_order": [
+          'significantly increased', 
+          'slightly increased', 
+          'stayed the same',
+          'slightly decreased', 
+          'significantly decreased'
+        ],
+        "css": { width: HALFWIDTH }
+      },
+
+      "met_past_demand_serv": {
+        "title": "Able to meet 2013 demand?",
+        "renderer": "stacked_single_bar",
+        "color_by_key": {
+          'Yes': chroma(window.nfforg.colors.DISPARAGINGYES).hex(),
+          'No' : chroma(window.nfforg.colors.DISPARAGINGNO).hex()
+        },
+        "css": { width: HALFWIDTH, height: "120px" }
+      },
+
+      "fut_demand_serv": {
+        "title": "In 2014, service/program<br/>demand will...",
+        "renderer": "bar",
+        "value_massager": function(val){
+          return val.replace('will ','');
+        },
+        "highchart_formatting": {
+          chart: { marginLeft: 140, spacingLeft: 0 }
+        },
+        "color_by_key": {
+          'significantly increase': chroma(window.nfforg.colors.BADVERY).hex(),
+          'slightly increase':  chroma(window.nfforg.colors.BAD).hex(),
+          'stay the same': chroma(window.nfforg.colors.NEUTRAL).hex(),
+          'slightly decrease': chroma(window.nfforg.colors.GOOD).hex(),
+          'significantly decrease': chroma(window.nfforg.colors.GOODVERY).hex()
+        },
+        "key_order": [
+          'significantly increase',
+          'slightly increase', 
+          'stay the same',
+          'slightly decrease', 
+          'significantly decrease'
+        ],
+        "css": { width: HALFWIDTH }
+      },
+
+      "meet_fut_demand_serv": {
+        "title": "Will be able to meet<br/>2014 demand?",
+        "renderer": "stacked_single_bar",
+        "color_by_key": {
+          'Yes': chroma(window.nfforg.colors.DISPARAGINGYES).hex(),
+          'No' : chroma(window.nfforg.colors.DISPARAGINGNO).hex()
+        },
+        "css": { width: HALFWIDTH, height: "120px" }
+      },
+
+
+
+
+
+
+      // FINANCIAL STORY
+
+
+      "surplus_deficit_prior": {
+        "section": "Financial Story",
+        "css": { width: "317px" },
+        "title": "Ended FY'13 with...",
+        "renderer": "bar",
+        "highchart_formatting": {
+          chart: { marginLeft: 140, spacingLeft: 0 }
+        },
+        "value_massager": function(val) {
+          if (val.has('break-even'))
+            return 'break-even financials';
+          return val;
+        },
+        "key_order": [
+          'operating surplus',
+          'break-even financials',
+          'operating deficit'
+        ],
+        "css": { width: HALFWIDTH }
+      },
+
+      "surplus_deficit_current": {
+        "css": { width: "317px" },
+        "title": "Anticipate ending FY'14 with...",
+        "renderer": "bar",
+        "highchart_formatting": {
+          chart: { marginLeft: 140, spacingLeft: 0 }
+        },
+        "value_massager": function(val) {
+          if (val.has('break-even'))
+            return 'break-even financials';
+          return val;
+        },
+        "key_order": [
+          'operating surplus',
+          'break-even financials',
+          'operating deficit',
+          'unable to predict'
+        ]
+      },
+
+      "months_cash": {
+        "title": "Months of Cash<br/>Readily Available",
+        "info-tip": "The number of months the organization could operate with current cash reserves. The cash position at some point in time (usually at fiscal year end) divided by the average monthly operating expense before depreciation.",
+        "renderer": "bar",
+        "value_massager": function(val) {
+          return val.replace(' of cash','').replace('More than','>').replace('Less than','<');
+        },
+        "highchart_formatting": {
+          chart: { marginLeft: 90, spacingLeft: 0 }
+        },
+        "key_order": [
+          '> 6 months',
+          '6 months',
+          '5 months',
+          '4 months',
+          '3 months',
+          '2 months',
+          '1 month',
+          '< 1 month'
+        ],
+        "css": { width: HALFWIDTH }
+      },
+
+      "surplus_prior_perc": {
+        "title": "% Surplus/Deficit for FY'13",
+        "info-tip": "Organizations were asked to share the size of their surpluses or deficits.",
+        "renderer": "bar",
+        "highchart_formatting": {
+          chart: { marginLeft: 125, spacingLeft: 0 }
+        },
+        "value_massager": function(val) {
+          if (!(val.has("deficit")))
+            val = "surplus " + val;
+          val = val.replace('.01','').replace('greater than','>');
+          return val;
+        },
+        "color_by_key": {
+          'surplus > 25%': chroma(window.nfforg.colors.GOODVERY).hex(),
+          'surplus 10%-25%': chroma(window.nfforg.colors.GOODVERY).hex(),
+          'surplus 5%-10%': chroma(window.nfforg.colors.GOOD).hex(),
+          'surplus 1%-5%': chroma(window.nfforg.colors.GOOD).hex(),
+          'surplus 1% or less':  chroma(window.nfforg.colors.NEUTRAL).hex(),
+          'deficit 1% or less':  chroma(window.nfforg.colors.NEUTRAL).hex(),
+          'deficit 1%-5%': chroma(window.nfforg.colors.BAD).hex(),
+          'deficit 5%-10%': chroma(window.nfforg.colors.BAD).hex(),
+          'deficit 10%-25%': chroma(window.nfforg.colors.BADVERY).hex(),
+          'deficit > 25%': chroma(window.nfforg.colors.BADVERY).hex()
+        },
+        "key_order": [
+          'surplus > 25%',
+          'surplus 10%-25%',
+          'surplus 5%-10%',
+          'surplus 1%-5%',
+          'surplus 1% or less',
+          'deficit 1% or less',
+          'deficit 1%-5%',
+          'deficit 5%-10%',
+          'deficit 10%-25%',
+          'deficit > 25%'
+        ],
+        "css": { width: HALFWIDTH }
+      },
+
+
+
+
+
+
+
+
+
+
+
+      // CHALLENGES AND RESPONSES
+
+
+      "challenge_": {
+        "section": "Challenges and Responses",
+        "title": "Greatest Challenges", // ... that my ORGANIZATION is facing
+        "key_order": Object.keys(window.nfforg.MAPenumToEnglish.challenge_),
+        "renderer": "one_or_more",
+        "highchart_formatting": {
+          chart: { marginLeft: 320, spacingLeft: 0 }
+        },
+        "css": { width: FULLWIDTH }
+      },
+
+
+      "action_service": {
+        "title": "Services and Programs: Actions Taken and Planned",
+        "key_order": Object.keys(window.nfforg.MAPenumToEnglish.action_service),
+        "renderer": "actions_planned_taken",
+        "css": { width: FULLWIDTH }
+      },
+
+      "action_staff": {
+        "key_order": Object.keys(window.nfforg.MAPenumToEnglish.action_staff),
+        "title": "Human Capital: Actions Taken and Planned",
+        "renderer": "actions_planned_taken",
+        "css": { width: FULLWIDTH }
+      },
+
+      "action_management": {
+        "title": "Finance and Operations: Actions Taken and Planned",
+        "key_order": Object.keys(window.nfforg.MAPenumToEnglish.action_management),
+        "renderer": "actions_planned_taken",
+        "css": { width: FULLWIDTH }
+      },
+
+
+
+
+
+
+
+      // GOV'T FUNDING
+
+      "funding_gov_": {
+        "section": "Government Funding",
+        "title": "Respondents reported government Funding/Contracts from...",
+        "highchart_formatting": {
+          chart: { marginLeft: 140, spacingLeft: 0 }
+        },
+        "key_order": Object.keys(window.nfforg.MAPenumToEnglish.funding_gov_),
+        "renderer": "one_or_more",
+        "css": { width: FULLWIDTH }
+      },
+
+
+
+
+
+      "funding_gov_days_late": {
+        "title": "Gov’t payments are received...",
+        "renderer": "barset",
+        "show-percentage-only": true,
+        "title-subchart": "FEDERAL",
+        "value_massager": function(val) {
+          return val.replace('scheduled payment date','schedule').replace("More than", ">");
+        },
+        "highchart_formatting": {
+          chart: { marginLeft: 130, spacingLeft: 0 }
+        },
+        "color_by_key": {
+          'Ahead of schedule': chroma(window.nfforg.colors.GOODVERY).hex(),
+          'On schedule': chroma(window.nfforg.colors.GOOD).hex(),
+          '1-30 days late': chroma(window.nfforg.colors.NEUTRAL).hex(),
+          '31-90 days late': chroma(window.nfforg.colors.BAD).hex(),
+          '> 90 days late': chroma(window.nfforg.colors.BADVERY).hex()
+        },
+        "key_order": [
+          'Ahead of schedule',
+          'On schedule',
+          '1-30 days late',
+          '31-90 days late',
+          '> 90 days late'
+        ],
+        "css": { width: FULLWIDTH },
+        "otherCharts": [ "funding_gov_state_days_late", "funding_gov_loc_days_late"]
+      },
+
+      "funding_gov_state_days_late": {
+        "show-percentage-only": true,
+        "title": "When receive<br/>STATE payments",
+        "title-subchart": "STATE",
+        "renderer": "none",  // Merged with FEDERAL by the barset renderer
+        "value_massager": function(val) {
+          return val.replace('scheduled payment date','schedule');
+        },
+        "highchart_formatting": {
+          chart: { marginLeft: 330, spacingLeft: 0, marginRight: 200 }
+        },
+        "color_by_key": {
+          'Ahead of schedule': chroma(window.nfforg.colors.GOODVERY).hex(),
+          'On schedule': chroma(window.nfforg.colors.GOOD).hex(),
+          '1-30 days late': chroma(window.nfforg.colors.NEUTRAL).hex(),
+          '31-90 days late': chroma(window.nfforg.colors.BAD).hex(),
+          'More than 90 days late': chroma(window.nfforg.colors.BADVERY).hex()
+        },
+        "key_order": [
+          'Ahead of schedule',
+          'On schedule',
+          '1-30 days late',
+          '31-90 days late',
+          'More than 90 days late'
+        ],
+        "css": { width: HALFWIDTH }
+      },
+
+      "funding_gov_loc_days_late": {
+        "show-percentage-only": true,
+        "section": "Government Funding",
+        "title": "When receive<br/>LOCAL payments",
+        "title-subchart": "LOCAL",
+        "renderer": "none",
+        "value_massager": function(val) {
+          return val.replace('scheduled payment date','schedule');
+        },
+        "highchart_formatting": {
+          chart: { marginLeft: 130, spacingLeft: 0 }
+        },
+        "color_by_key": {
+          'Ahead of schedule': chroma(window.nfforg.colors.GOODVERY).hex(),
+          'On schedule': chroma(window.nfforg.colors.GOOD).hex(),
+          '1-30 days late': chroma(window.nfforg.colors.NEUTRAL).hex(),
+          '31-90 days late': chroma(window.nfforg.colors.BAD).hex(),
+          'More than 90 days late': chroma(window.nfforg.colors.BADVERY).hex()
+        },
+        "key_order": [
+          'Ahead of schedule',
+          'On schedule',
+          '1-30 days late',
+          '31-90 days late',
+          'More than 90 days late'
+        ],
+        "css": { width: HALFWIDTH }
+      },
+
+
+
+      "funding_all_gov_": {
+        "title": "How NPOs manage government payment delays",
+        "denominator_required_field": "funding_gov_",
+        "denominator_required_field__negative_values": [ "none" ],
+        "renderer": "one_or_more",
+        "key_order": Object.keys(window.nfforg.MAPenumToEnglish.funding_all_gov_),
+        "highchart_formatting": {
+          chart: { marginLeft: 360, spacingLeft: 0 }
+        },
+        "css": { width: FULLWIDTH }
+      },
+
+
+
+
+
+      "aicr_fed_range": {
+        "title": "Average indirect cost rate paid by government",
+        "info-tip": "This graph represents the average allowable indirect cost rate (AICR) or overhead/administrative cost rate that nonprofits say the government covers when they receive a contract or grant. Every organization must budget for overhead, which includes things like facility maintenance, phones, savings, and all the diffused costs that aren’t strictly tied to program delivery.",
+        "renderer": "barset",
+        "show-percentage-only": true,
+        "title-subchart": "FEDERAL",
+        "highchart_formatting": {
+          chart: { marginLeft: 130, spacingLeft: 0 }
+        },
+        value_massager: function(val) {
+          if (val=="9-Apr")
+            return "4-9%";
+          if (val=="15-Oct")
+            return "10-15%";
+          return val.replace('_',' ')+"%";
+        },
+        "key_order": [ '0-3%', '4-9%', '10-15%', '16-25%', '26-50%', '> 51%' ],
+        "otherCharts": [ "aicr_state_range", "aicr_loc_range"],
+        "css": { width: FULLWIDTH }
+      },
+      "aicr_state_range": {
+        "title": "Average indirect cost rate<br/>paid by State gov't",
+        "show-percentage-only": true,
+        "title-subchart": "STATE",
+        "info-tip": "This graph represents the average allowable indirect cost rate (AICR) or overhead/administrative cost rate that nonprofits say the government covers when they receive a contract or grant. Every organization must budget for overhead, which includes things like facility maintenance, phones, savings, and all the diffused costs that aren’t strictly tied to program delivery.",
+        "renderer": "none",
+        value_massager: function(val) {
+          if (val=="9-Apr")
+            return "4-9%";
+          if (val=="15-Oct")
+            return "10-15%";
+          return val.replace('_',' ')+"%";
+        },
+        "key_order": [ '0-3%', '4-9%', '10-15%', '16-25%', '26-50%', '> 51%' ],
+        "css": { width: HALFWIDTH }
+      },
+      "aicr_loc_range": {
+        "title": "Average indirect cost rate<br/>paid by Local gov't",
+        "show-percentage-only": true,
+        "title-subchart": "LOCAL",
+        "renderer": "none",
+        value_massager: function(val) {
+          if (val=="9-Apr")
+            return "4-9%";
+          if (val=="15-Oct")
+            return "10-15%";
+          return val.replace('_',' ')+"%";
+        },
+        "key_order": [ '0-3%', '4-9%', '10-15%', '16-25%', '26-50%', '> 51%' ],
+        "css": { width: HALFWIDTH }
+      },
+
+
+
+
+
+      // AICR TRENDING
+      // In last 5 years, average indirect cost rate paid by government has...
+
+      "aicr_fed_trend": {
+        "title": "In last 5 years, average indirect cost rate paid by government has...",
+        "info-tip": "This graph represents recent trends in the average allowable indirect cost rate (AICR) or overhead/administrative cost rate that nonprofits say the government covers when they receive a contract or grant. Every organization must budget for overhead, which includes things like facility maintenance, phones, savings, and all the diffused costs that aren’t strictly tied to program delivery.",
+        "renderer": "barset",
+        "show-percentage-only": true,
+        "title-subchart": "FEDERAL",
+        "key_order": [ 'Increased', 'Stayed the Same', 'Declined' ],
+        "color_by_key": {
+          'Increased': chroma(window.nfforg.colors.GOODVERY).hex(),
+          'Stayed the Same': chroma(window.nfforg.colors.NEUTRAL).hex(),
+          'Declined': chroma(window.nfforg.colors.BADVERY).hex()
+        },
+        "highchart_formatting": {
+          chart: { marginLeft: 130, spacingLeft: 0 }
+        },
+        "otherCharts": [ "aicr_state_trend", "aicr_loc_trend"],
+        "css": { width: FULLWIDTH }
+      },
+      "aicr_state_trend": {
+        "title": "Average indirect cost rate<br/>paid by State gov't",
+        "show-percentage-only": true,
+        "key_order": [ 'Increased', 'Stayed the Same', 'Declined' ],
+        "title-subchart": "STATE",
+        "color_by_key": {
+          'Increased': chroma(window.nfforg.colors.GOODVERY).hex(),
+          'Stayed the Same': chroma(window.nfforg.colors.NEUTRAL).hex(),
+          'Declined': chroma(window.nfforg.colors.BADVERY).hex()
+        },
+        "info-tip": "This graph represents the average allowable indirect cost rate (AICR) or overhead/administrative cost rate that nonprofits say the government covers when they receive a contract or grant. Every organization must budget for overhead, which includes things like facility maintenance, phones, savings, and all the diffused costs that aren’t strictly tied to program delivery.",
+        "renderer": "none",
+        "css": { width: HALFWIDTH }
+      },
+      "aicr_loc_trend": {
+        "title": "Average indirect cost rate<br/>paid by Local gov't",
+        "show-percentage-only": true,
+        "key_order": [ 'Increased', 'Stayed the Same', 'Declined' ],
+        "color_by_key": {
+          'Increased': chroma(window.nfforg.colors.GOODVERY).hex(),
+          'Stayed the Same': chroma(window.nfforg.colors.NEUTRAL).hex(),
+          'Declined': chroma(window.nfforg.colors.BADVERY).hex()
+        },
+        "title-subchart": "LOCAL",
+        "renderer": "none",
+        "css": { width: HALFWIDTH }
+      },
+
+
+
+
+
+      "funding_fed_trend": {
+        "title": "In last 5 years, my NPO's gov't funding has...",
+        "title-subchart": "FEDERAL",
+        "highchart_formatting": {
+          chart: { marginLeft: 130, spacingLeft: 0 }
+        },
+        "renderer": "barset",
+        "show-percentage-only": true,
+        "key_order": [
+          'Increased',
+          'Stayed the Same',
+          'Declined'
+        ],
+        "color_by_key": {
+          'Increased': chroma(window.nfforg.colors.GOODVERY).hex(),
+          'Stayed the Same': chroma(window.nfforg.colors.NEUTRAL).hex(),
+          'Declined': chroma(window.nfforg.colors.BADVERY).hex()
+        },
+        otherCharts: [ 'funding_state_trend', 'funding_loc_trend' ],
+        "css": { width: FULLWIDTH }
+      },
+
+      "funding_state_trend": {
+        "title": "In last 5 years, my NPO's<br/>State funding has...",
+        "show-percentage-only": true,
+        "title-subchart": "STATE",
+        "renderer": "none",
+        "key_order": [
+          'Increased',
+          'Stayed the Same',
+          'Declined'
+        ],
+        "color_by_key": {
+          'Increased': chroma(window.nfforg.colors.GOODVERY).hex(),
+          'Stayed the Same': chroma(window.nfforg.colors.NEUTRAL).hex(),
+          'Declined': chroma(window.nfforg.colors.BADVERY).hex()
+        },
+        "css": { width: HALFWIDTH }
+      },
+
+      "funding_loc_trend": {
+        "title": "In last 5 years, my NPO's<br/>Local funding has...",
+        "show-percentage-only": true,
+        "title-subchart": "LOCAL",
+        "renderer": "none",
+        "key_order": [
+          'Increased',
+          'Stayed the Same',
+          'Declined'
+        ],
+        "color_by_key": {
+          'Increased': chroma(window.nfforg.colors.GOODVERY).hex(),
+          'Stayed the Same': chroma(window.nfforg.colors.NEUTRAL).hex(),
+          'Declined': chroma(window.nfforg.colors.BADVERY).hex()
+        },
+        "css": { width: HALFWIDTH }
+      },
+
+
+
+
+      'funding_reporting_hours_range': {
+        "title": "Hours-per-month spent managing government grants/contracts",
+        "renderer": "bar",
+        "info-tip": "These hours per month are <i>not</i> time spent on delivering services to people in need. Instead, it represents the time the entire staff spends on applications, reports, documentation, and other administration activities.",
+        value_massager: function(val) {
+          if (val=="19-Oct")
+            return "10-19";
+          return val.replace('_',' ');
+        },
+        "key_order": [
+          "0-9",
+          "10-19",
+          "20-29",
+          "30-39",
+          "40-49",
+          "50-59",
+          "60-69",
+          "70-79",
+          "80-89",
+          "90-99",
+          "100-150",
+          "151-299",
+          "> 300"
+        ],
+        "css": { width: FULLWIDTH }
+      },
+
+
+
+
+
+
+
+
+
+
+      // DATA AND IMPACT
+
+      "impact_action_eval": {
+        "section": "Data and Impact",
+        "title": "Uses external evaluator<br/>to assess effectiveness",
+        "renderer": "bar",
+        "key_order": [
+          "Regularly",
+          "Sometimes",
+          "Rarely",
+          "Never"
+        ],
+        "css": { width: HALFWIDTH }
+      },
+      "impact_action_prog_data": {
+        "title": "Collects data on<br/>program productivity",
+        "renderer": "bar",
+        "key_order": [
+          "Regularly",
+          "Sometimes",
+          "Rarely",
+          "Never"
+        ],
+        "css": { width: HALFWIDTH }
+      },
+      "impact_action_lives_data": {
+        "title": "Collects long-term data on<br/>impact on clients",
+        "renderer": "bar",
+        "key_order": [
+          "Regularly",
+          "Sometimes",
+          "Rarely",
+          "Never"
+        ],
+        "css": { width: HALFWIDTH }
+      },
+      "impact_action_cmty_data": {
+        "title": "Collects long-term data on<br/>impact on communities",
+        "renderer": "bar",
+        "key_order": [
+          "Regularly",
+          "Sometimes",
+          "Rarely",
+          "Never"
+        ],
+        "css": { width: HALFWIDTH }
+      },
+      
+      "impact_funder_request": {
+        "title": "# of Funders asking for<br/>impact metrics in reports",
+        "renderer": "bar",
+        "key_order": [
+          "All",
+          "Half or more",
+          "Less than half",
+          "None"
+        ],
+        "value_massager": function(val){
+          return val.replace(' of our funders','');
+        },
+        "css": { width: HALFWIDTH }
+      },
+
+      "impact_funder_metrics": {
+        "title": "\"Do metrics funders ask for<br/>help us assess impact?\"",
+        "renderer": "bar",
+        "key_order": [
+          "Strongly Agree",
+          "Mostly Agree",
+          "Somewhat Agree",
+          "Somewhat Disagree",
+          "Mostly Disagree",
+          "Strongly Disagree"
+        ],
+        "highchart_formatting": {
+          chart: { marginLeft: 150, spacingLeft: 0 }
+        },
+        "css": { width: HALFWIDTH }
+      },
+
+      "impact_funder_cost": {
+        "title": "How often do funders cover <br/>costs of impact measurement?",
+        "key_order": [
+          "Always",
+          "Often",
+          "Sometimes",
+          "Rarely",
+          "Never"
+        ],
+        "renderer": "bar",
+        "css": { width: HALFWIDTH }
+      },
+
+      "data_collect_": {
+        "title": "Top Barriers to impact measurement",
+        "key_order": Object.keys(window.nfforg.MAPenumToEnglish.data_collect_),
+        "highchart_formatting": {
+          chart: { marginLeft: 425, spacingLeft: 0 }
+        },
+        "value_massager": function(val){
+          if (val.has('not sure'))
+            return 'Not sure';
+          return val;
+        },
+        "renderer": "one_or_more",
+        "css": { width: FULLWIDTH }
+      },
+
+
+
+
+
+
+
+
+      // FUNDER PRACTICES
+
+      "dialog_": {
+        "section": "Funder Practices",
+        "title": "My NPO can have open dialogue with funders about...",
+        "renderer": "one_or_more",
+        "key_order": Object.keys(window.nfforg.MAPenumToEnglish.dialog_),
+        "highchart_formatting": {
+          chart: { marginLeft: 350, spacingLeft: 0 }
+        },
+        "css": { width: FULLWIDTH }
+      },
+
+
+      // NEXT SET OF CHARTS IS COMBINED INTO ONE MULTI-SERIES BAR CHART
+      "funding_fed_full_cost": {
+        "show-percentage-only": true,
+        "title": "How often do funders cover the full cost of projects they fund?",
+        "usagetip": "TIP: Click on any option in the legend to turn off its visibility.",
+        "title-subchart": "Federal",
+        otherCharts: [ 
+          "funding_state_full_cost", 
+          "funding_local_full_cost", 
+          "funding_foundation_full_cost", 
+          "funding_corporation_full_cost",
+          "funding_individual_full_cost"
+        ],
+        value_massager: function(val){
+          if (val.has('N/A'))
+            return 'N/A';
+          return val;
+        },
+        "key_order": [
+          "Always",
+          "Often",
+          "Sometimes",
+          "Rarely",
+          "Never",
+          "N/A"
+        ],
+        "renderer": "barset2",
+        "css": { width: FULLWIDTH }
+      },
+      "funding_state_full_cost": {
+        "show-percentage-only": true,
+        "title": "How often do states <br/>cover the full costs of programs they fund?",
+        "title-subchart": "State",
+        value_massager: function(val){
+          if (val.has('N/A'))
+            return 'N/A';
+          return val;
+        },
+        "key_order": [
+          "Always",
+          "Often",
+          "Sometimes",
+          "Rarely",
+          "Never",
+          "N/A"
+        ],
+        "renderer": "none",
+        "css": { width: FULLWIDTH }
+      },
+
+      "funding_local_full_cost": {
+        "show-percentage-only": true,
+        "title": "How often do localities <br/>cover the full costs of programs they fund?",
+        "title-subchart": "Local",
+        value_massager: function(val){
+          if (val.has('N/A'))
+            return 'N/A';
+          return val;
+        },
+        "key_order": [
+          "Always",
+          "Often",
+          "Sometimes",
+          "Rarely",
+          "Never",
+          "N/A"
+        ],
+        "renderer": "none",
+        "css": { width: FULLWIDTH }
+      },
+
+      "funding_foundation_full_cost": {
+        "show-percentage-only": true,
+        "title": "How often do private/community organizations <br/>cover the full costs of programs they fund?",
+        "title-subchart": "Foundation",
+        value_massager: function(val){
+          if (val.has('N/A'))
+            return 'N/A';
+          return val;
+        },
+        "key_order": [
+          "Always",
+          "Often",
+          "Sometimes",
+          "Rarely",
+          "Never",
+          "N/A"
+        ],
+        "renderer": "none",
+        "css": { width: FULLWIDTH }
+      },
+
+      "funding_corporation_full_cost": {
+        "show-percentage-only": true,
+        "title": "How often do corporations <br/>cover the full costs of programs they fund?",
+        "title-subchart": "Corporation",
+        value_massager: function(val){
+          if (val.has('N/A'))
+            return 'N/A';
+          return val;
+        },
+        "key_order": [
+          "Always",
+          "Often",
+          "Sometimes",
+          "Rarely",
+          "Never",
+          "N/A"
+        ],
+        "renderer": "none",
+        "css": { width: FULLWIDTH }
+      },
+
+      "funding_individual_full_cost": {
+        "show-percentage-only": true,
+        "title": "How often do individuals <br/>cover the full costs of programs they fund?",
+        "title-subchart": "Individual",
+        value_massager: function(val){
+          if (val.has('N/A'))
+            return 'N/A';
+          return val;
+        },
+        "key_order": [
+          "Always",
+          "Often",
+          "Sometimes",
+          "Rarely",
+          "Never",
+          "N/A"
+        ],
+        "renderer": "none",
+        "css": { width: FULLWIDTH }
+      },
+
+
+
+
+      expense_gos_perc_range: {
+        title: "% annual operating expense<br/>covered by general operating support",
+        "info-tip": "General operating support is income that can be used flexibly, without restrictions defined by the funding source.",
+        renderer: "bar",
+        value_massager: function(val) {
+          if (val=="20-Nov")
+            return "11-20%";
+          if (val=="15-Jun")
+            return "6-15%";
+          return val.replace('_',' ')+"%";
+        },
+        key_order: [
+          "0-10%",
+          "11-20%",
+          "21-30%",
+          "31-40%",
+          "41-50%",
+          "51-60%",
+          "61-70%",
+          "71-80%",
+          "81-90%",
+          "91-100%"
+        ],
+        "css": { width: HALFWIDTH }
+      },
+
+
+
+
+
+      // FINANCIAL OUTLOOK
+
+      "current_year_client_outlook": {
+        "section": "Financial Outlook",
+        "title": "2014 Outlook for the<br/>Community the NPO Serves",
+        "renderer": "bar",
+        "key_order": [ 
+          'Harder than 2013', 
+          'More or less the same as 2013', 
+          'Easier than 2013'
+        ],
+        "highchart_formatting": {
+          chart: { marginLeft: 180, spacingLeft: 0 }
+        },
+        "css": { width: HALFWIDTH }
+      },
+
+      "current_year_org_outlook": {
+        "title": "2014 Outlook for the NPO<br/>&nbsp;",
+        "renderer": "bar",
+        "highchart_formatting": {
+          chart: { marginLeft: 180, spacingLeft: 0 }
+        },
+        "key_order": [ 
+          'Harder than 2013', 
+          'More or less the same as 2013', 
+          'Easier than 2013'
+        ],
+        "css": { width: HALFWIDTH }
+      },
+
+
+
+
+
+
+      // LENDING TO NONPROFITS
+
+      "loan_yn": {
+        "section": "Lending to Nonprofits",
+        "title": "Has loan or line of credit",
+        "renderer": "stacked_single_bar",
+        "key_order": [ 'No', 'Yes' ],
+        "color_by_key": {
+          'Yes': chroma(window.nfforg.colors.YES).hex(),
+          'No' : chroma(window.nfforg.colors.NO).hex()
+        },
+        "css": { width: FULLWIDTH, height: "110px" }
+      },
+      "loan_no_": {
+        "title": "Reasons not using a loan/line of credit",
+        "renderer": "one_or_more",
+        "denominator_required_field": "loan_yn",
+        "denominator_required_field__negative_values": [ "Yes" ],
+        "key_order": Object.keys(window.nfforg.MAPenumToEnglish.loan_no_),
+        "highchart_formatting": {
+          chart: { marginLeft: 300, spacingLeft: 0 }
+        },
+        "css": { width: FULLWIDTH }
+      },
+
+      "loan_yes_": {
+        "title": "Currently using loan/line of credit to...",
+        "renderer": "one_or_more",
+        "denominator_required_field": "loan_yn",
+        "denominator_required_field__negative_values": [ "No" ],
+        "key_order": Object.keys(window.nfforg.MAPenumToEnglish.loan_yes_),
+        "highchart_formatting": {
+          chart: { marginLeft: 340, spacingLeft: 0 }
+        },
+        "css": { width: FULLWIDTH }
+      },
+
+      "loan_want_": {
+        "title": "NPOs without a loan/line of credit want it to...",
+        special: "INTERNAL",
+        "denominator_required_field": "loan_no_",
+        "denominator_required_field__negative_values": [ "need", "unsure_use" ],
+        "key_order": Object.keys(window.nfforg.MAPenumToEnglish.loan_want_),
+        "renderer": "one_or_more",
+        "highchart_formatting": {
+          chart: { marginLeft: 340, spacingLeft: 0 }
+        },
+        "css": { width: FULLWIDTH }
+      },
+
+
+
+
+
+
+
+
+
+
+      "arts_org_type": {
+        "section": "Feature: Arts & Culture NPOs",
+        "denominator_required_field": "arts_org_type",
+        "title": "Arts & Culture: Respondents by Sub-Sector",
+        "renderer": "bar",
+        "key_order": Object.keys(window.nfforg.MAPenumToEnglish.arts_org_type),
+        "value_massager": function(val){
+          return val
+            .replace(/ non-museum/, " - non-museum")
+            .replace(/ non-orch/, " - non-orch")
+            .replace(/, please specify/, "")
+            .replace("and/or", "/")
+            .replace("Other", "Other arts/culture/humanities")
+            .replace(/:/, "")
+          ;
+        },
+        "css": { width: FULLWIDTH }
+      },
+
+      "arts_action_staff": {
+        "denominator_required_field": "arts_org_type",
+        "key_order": Object.keys(window.nfforg.MAPenumToEnglish.arts_action_staff),
+        "title": "Arts & Culture: Human Capital Actions Taken and Planned",
+        "usagetip": "This survey question was presented to all NPOs across all sectors (see the 'Challenges and Responses' section above).  However, Arts/Culture/Humanities respondents received additional options related to their management of artists. Below, you’ll see this group's responses to these sector-specific options in addition to their responses to the full set.",
+        "renderer": "actions_planned_taken",
+        "css": { width: FULLWIDTH }
+      },
+
+      "arts_aud_": {
+        "denominator_required_field": "arts_org_type",
+        "key_order": Object.keys(window.nfforg.MAPenumToEnglish.arts_aud_),
+        "title": "Arts & Culture: In 2013, my NPO made meaningful investment in <br/>the following audience/visitor development strategies",
+        "renderer": "one_or_more",
+        "highchart_formatting": {
+          chart: { marginLeft: 450, spacingLeft: 0 }
+        },
+        "value_massager": function(val){
+          return val.replace(", please explain","");
+        },
+        "css": { width: FULLWIDTH }
+      },
+
+      "arts_aud_rslts_": {
+        "denominator_required_field": "arts_aud_",
+        "denominator_required_field__negative_values": [ "none" ],
+        "title": "Arts & Culture: Result of investments in <br/>audience/visitor development strategies",
+        "renderer": "one_or_more",
+        "highchart_formatting": {
+          chart: { marginLeft: 450, spacingLeft: 0 }
+        },
+        "key_order": Object.keys(window.nfforg.MAPenumToEnglish.arts_aud_rslts_),
+        NONEED_value_massager: function(val){
+          if (val.has('know'))
+            return val; //return "Don't know";
+          else
+            return val.replace(", please explain","");
+        },
+        "css": { width: FULLWIDTH }
+      },
+
+      "arts_comp_": {
+        "denominator_required_field": "arts_org_type",
+        "title": "Arts & Culture: Impact of increased competition in the arts & culture marketplace",
+        "renderer": "one_or_more",
+        "key_order": Object.keys(window.nfforg.MAPenumToEnglish.arts_comp_),
+        "info-tip": "Building and retaining audiences/visitors can be stymied by increased competition from new cultural organizations, free artistic alternatives or non-arts options. Are arts &amp; culture nonprofits feeling any effects from increased competition?",
+        "highchart_formatting": {
+          chart: { marginLeft: 280, spacingLeft: 0 }
+        },
+        "css": { width: FULLWIDTH }
+      },
+
+      "arts_comp_resp_": {
+        "denominator_required_field": "arts_comp_",
+        "denominator_required_field__negative_values": [ "none" ],
+        "title": "Arts & Culture: How did NPOs experiencing increased competition<br/>respond to it?",
+        "renderer": "one_or_more",
+        "key_order": Object.keys(window.nfforg.MAPenumToEnglish.arts_comp_resp_),
+        "highchart_formatting": {
+          chart: { marginLeft: 320, spacingLeft: 0 }
+        },
+        "value_massager": function(val){
+          if (val.has('know'))
+            return "Don't know";
+          else
+            return val.replace(", please explain","");
+        },
+        "css": { width: FULLWIDTH }
+      },
+
+      "arts_funding_": {
+        "denominator_required_field": "arts_org_type",
+        "key_order": Object.keys(window.nfforg.MAPenumToEnglish.arts_funding_),
+        title: "Arts & Culture: In 2013, my NPO received funding for...",
+        "renderer": "one_or_more",
+        "highchart_formatting": {
+          chart: { marginLeft: 340, spacingLeft: 0 }
+        },
+        "css": { width: FULLWIDTH }
+      },
+
+      "arts_grants_": {
+        "denominator_required_field": "arts_org_type",
+        "title": "Arts & Culture: Grantmaking practices experienced in 2013",
+        "renderer": "one_or_more",
+        "key_order": Object.keys(window.nfforg.MAPenumToEnglish.arts_grants_),
+        "highchart_formatting": {
+          chart: { marginLeft: 400, spacingLeft: 0 }
+        },
+        "value_massager": function(val){
+          if (val.has('know'))
+            return "Don't know";
+          else
+            return val.replace(", please explain","").replace(/funder.s/,"funder's").replace('by a funder','');
+        },
+        "css": { width: FULLWIDTH }
+      },
+
+
+
+
+
+
+
+
+
+
+      // "Feature: Trends over Time"
+
+      "trendovertime_opexp": {
+        section: "Feature: Trends over Time",
+        "title": "Operating Expense for Fiscal Years",
+        "info-tip": "This graph shows trends in the size of organizations that responded to the survey over time.",
+        usagetip: "TIP: Click on any year in the legend to turn off its visibility.",
+        "renderer": "highchartspec",
+        colorRanges: colorRangesForInterleave,
+        chartspec: {"legend":{"enabled":true},"credits":{"enabled":false},"chart":{"type":"column", spacingTop: 20, "spacingLeft":0,"spacingRight":25,"marginRight":18,"spacingBottom":20},"title":{"text":""},"subtitle":{"text":""},"xAxis":{"categories":["$0 - 250K","$250K - 500K","$500K - $2M","$2 - $5M","$5M - $10M","$10M - 20M","> $20M"]},"yAxis":{"min":0,"title":{"text":"Percentage"}},"tooltip":{"headerFormat":"<span style=\"font-size:10px\">{point.key}</span><table>","pointFormat":"<tr><td style=\"xxxxcolor:{series.color};padding:0\">{series.name}: </td><td style=\"padding:0\"><b>{point.y:.0f}%</b></td></tr>","footerFormat":"</table>","shared":true,"useHTML":true},"plotOptions":{"column":{"pointPadding":0.2,"borderWidth":0}},"series":[{"name":"2008","color":"#c2dae3","data":[15,13,35,16,9,5,7]},{"name":"2009","color":"#a2d2e9","data":[25,13,30,12,8,6,6]},{"name":"2010","color":"#83caee","data":[17,13,33,16,9,5,6]},{"name":"2011","color":"#63c2f4","data":[20,13,32,16,8,6,5]},{"name":"2012","color":"#43baf9","data":[22,11,30,16,9,6,7]},{"name":"2013","color":"#24b2ff","data":[16,10,29,19,10,7,9]}]},
+        "css": { width: FULLWIDTH }
+      },
+
+      // http://api.survey.nonprofitfinancefund.org/v1/stats?key=dfetTN6E&qs=year/lifeline
+      "trendovertime_lifeline": {
+        "title": "Respondents identifying as lifeline",
+        usagetip: "TIP: Click on any year in the legend to turn off its visibility.",
+        colorRanges: colorRangesForInterleave,
+        "renderer": "highchartspec",
+        chartspec: {"legend":{"enabled":true},"credits":{"enabled":false},"chart":{"type":"column","spacingLeft":0,"spacingRight":0,"marginRight":0,"spacingBottom":10},"title":{"text":""},"subtitle":{"text":""},"xAxis":{"categories":["Yes"]},"yAxis":{"min":0,"title":{"text":"Percentage"}},"tooltip":{"headerFormat":"<span style=\"font-size:10px\">{point.key}</span><table>","pointFormat":"<tr><td style=\"color:{series.color};padding:0\">{series.name}: </td><td style=\"padding:0\"><b>{point.y:.0f}%</b></td></tr>","footerFormat":"</table>","shared":true,"useHTML":true},"plotOptions":{"column":{"pointPadding":0.2,"borderWidth":0}},"series":[{"name":"2009","color":"#c2dae3","data":[44]},{"name":"2010","color":"#a2d2e9","data":[40]},{"name":"2011","color":"#83caee","data":[49]},{"name":"2012","color":"#63c2f4","data":[42]},{"name":"2013","color":"#43baf9","data":[52]},{"name":"2014","color":"#24b2ff","data":[52]}]},
+        "css": { width: FULLWIDTH }
+      },
+
+      // http://api.survey.nonprofitfinancefund.org/v1/stats?key=dfetTN6E&qs=year/past_demand_serv
+      // API delivered weird numbers so this is ENTIRELY hand-built from a spreadsheet sent by Anjali
+      "trendovertime_demand": {
+        "title": "Demand for services/programs...",
+        usagetip: "TIP: Click on any year in the legend to turn off its visibility.",
+        colorRanges: colorRangesForInterleave,
+        "renderer": "highchartspec",
+        chartspec: {
+          "legend":{"enabled":true},"credits":{"enabled":false},"chart":{"type":"column","spacingLeft":0,"spacingRight":0,"marginRight":0,"spacingBottom":10},"title":{"text":""},"subtitle":{"text":""},"xAxis":{"categories":["Increased","Stayed the same","Decreased"]},
+          "yAxis":{"min":0,"title":{"text":"Percentage"}},"tooltip":{"headerFormat":"<span style=\"font-size:10px\">{point.key}</span><table>","pointFormat":"<tr><td style=\"xxxcolor:{series.color};padding:0\">{series.name}: </td><td style=\"padding:0\"><b>{point.y:.0f}%</b></td></tr>","footerFormat":"</table>","shared":true,"useHTML":true},"plotOptions":{"column":{"pointPadding":0.2,"borderWidth":0}},
+          "series":[
+            {"name":"2008","color":"#c2dae3","data":[73,21,5]},
+            {"name":"2009","color":"#a2d2e9","data":[70,20,10]},
+            {"name":"2010","color":"#83caee","data":[77,16,7]},
+            {"name":"2011","color":"#63c2f4","data":[84,12,4]},
+            {"name":"2012","color":"#43baf9","data":[78,18,4]},
+            {"name":"2013","color":"#43baf9","data":[80,18,3]}
+          ]},
+        "css": { width: FULLWIDTH }
+      },
+
+
+      // http://api.survey.nonprofitfinancefund.org/v1/stats?key=dfetTN6E&qs=year/met_past_demand_serv
+      "trendovertime_meetdemand": {
+        "title": "Respondents that could not meet<br/>demand for services/programs",
+        usagetip: "TIP: Click on any year in the legend to turn off its visibility.",
+        colorRanges: colorRangesForInterleave,
+        "renderer": "highchartspec",
+        chartspec: {"legend":{"enabled":true},"credits":{"enabled":false},"chart":{"type":"column","spacingLeft":0,"spacingRight":0,"marginRight":0,"spacingBottom":10},"title":{"text":""},"subtitle":{"text":""},"xAxis":{"categories":["Unable to meet demand"]},"yAxis":{"min":0,"title":{"text":"Percentage"}},"tooltip":{"headerFormat":"<span style=\"font-size:10px\">{point.key}</span><table>","pointFormat":"<tr><td style=\"xxxcolor:{series.color};padding:0\">{series.name}: </td><td style=\"padding:0\"><b>{point.y:.0f}%</b></td></tr>","footerFormat":"</table>","shared":true,"useHTML":true},
+                    "plotOptions":
+                    {
+                      "column":{
+                        // stacking:"normal",
+                        pointPadding:0.2,
+                        borderWidth:0
+                      }
+                    },
+                    "series":[{"name":"2009","color":"#a2d2e9","data":[100-56]},{"name":"2010","color":"#83caee","data":[100-51]},{"name":"2011","color":"#63c2f4","data":[100-52]},{"name":"2012","color":"#43baf9","data":[100-48]},{"name":"2013","color":"#24b2ff","data":[100-44]}]},
+        "css": { width: FULLWIDTH }
+      },
+
+
+
+      // http://api.survey.nonprofitfinancefund.org/v1/stats?key=dfetTN6E&qs=year/surplus_deficit_prior
+      "trendovertime_prevfiscal": {
+        "title": "Ended the previous fiscal year with...",
+        colorRanges: colorRangesForInterleave,
+        usagetip: "TIP: Click on any year in the legend to turn off its visibility.",
+        "renderer": "highchartspec",
+        chartspec: {"legend":{"enabled":true},"credits":{"enabled":false},"chart":{"type":"column","spacingLeft":0,"spacingRight":0,"marginRight":0,"spacingBottom":10},"title":{"text":""},"subtitle":{"text":""},"xAxis":{"categories":["Operating Surplus","Break-even financials","Operating Deficit"]},"yAxis":{"min":0,"title":{"text":"Percentage"}},"tooltip":{"headerFormat":"<span style=\"font-size:10px\">{point.key}</span><table>","pointFormat":"<tr><td style=\"xxxcolor:{series.color};padding:0\">{series.name}: </td><td style=\"padding:0\"><b>{point.y:.0f}%</b></td></tr>","footerFormat":"</table>","shared":true,"useHTML":true},"plotOptions":{"column":{"pointPadding":0.2,"borderWidth":0}},"series":[{"name":"2009","color":"#c2dae3","data":[40,28,32]},{"name":"2010","color":"#a2d2e9","data":[35,29,36]},{"name":"2011","color":"#83caee","data":[44,22,34]},{"name":"2012","color":"#63c2f4","data":[44,25,31]},{"name":"2013","color":"#43baf9","data":[40,31,29]},{"name":"2014","color":"#24b2ff","data":[40,31,28]}]},
+        "css": { width: FULLWIDTH }
+      },
+      
+      "trendovertime_acted_services": {
+        "title": "Services and Programs: Actions Taken the Previous Year",
+        usagetip: "TIP: Hover your cursor over a line or action to see more detail.",
+        "renderer": "trendslope",
+        data: window.nfforg.data_acted_services,
+        chartName: "action_services_abbrev",
+        yCoordFudgings: {
+          4: -15,
+          2: -15,
+          36: -20,
+          43: -2,
+          52: -20,
+          47: -35,
+          49: -13,
+          17: -13,
+          15: -13,
+          "acted_new_org_tech": {start: -24, end:0}
+        },
+        preEnumMappings: {
+        },
+        "css": { width: FULLWIDTH }
+      },
+
+
+      "trendovertime_actedhumancapital": {
+        "title": "Human Capital: Actions Taken the Previous Year",
+        usagetip: "TIP: Hover your cursor over a line or action to see more detail.",
+        "renderer": "trendslope",
+        data: window.nfforg.data_acted_human_capital,
+        chartName: "action_staff",
+        yCoordFudgings: {
+          25: -15,
+          27: 12,
+          34: -8,
+          10: -10,
+          4: -8,
+          "acted_gave_raises": {start: +25, end: 0}
+        },
+        preEnumMappings: {
+          replaced_staff: "replace_staff",
+          froze_staff: "freeze_staff"
+        },
+        "css": { width: FULLWIDTH }
+      },
+      
+      "trendovertime_acted_management": {
+        "title": "Finance and Operations: Actions Taken the Previous Year",
+        usagetip: "TIP: Hover your cursor over a line or action to see more detail.",
+        "renderer": "trendslope",
+        data: window.nfforg.data_acted_management,
+        chartName: "action_management",
+        yCoordFudgings: {
+          23: -15,
+          25: 20,
+          26: 20,
+          19: -20
+        },
+        preEnumMappings: {
+        },
+        "css": { width: FULLWIDTH }
+      },
+      
+      "trendovertime_curyearclientoutlook": {
+        "title": "The year ahead: Financial outlook for the community the NPO serves",
+        "usagetip": "TIP: Click on any option in the legend to turn off its visibility.",
+        colorRanges: colorRangesForInterleave,
+        "renderer": "highchartspec",
+        chartspec: {"legend":{"enabled":true},"credits":{"enabled":false},"chart":{"type":"column","spacingLeft":0,"spacingRight":0,"marginRight":0,"spacingBottom":10},"title":{"text":""},"subtitle":{"text":""},"xAxis":{"categories":["Easier than prior year","Same as prior year","Harder than prior year"]},"yAxis":{"min":0,"title":{"text":"Percentage"}},"tooltip":{"headerFormat":"<span style=\"font-size:10px\">{point.key}</span><table>","pointFormat":"<tr><td style=\"color:{series.color};padding:0\">{series.name}: </td><td style=\"padding:0\"><b>{point.y:.0f}%</b></td></tr>","footerFormat":"</table>","shared":true,"useHTML":true},"plotOptions":{"column":{"pointPadding":0.2,"borderWidth":0}},"series":[{"name":"2010","color":"#a2d2e9","data":[6,40,54]},{"name":"2011","color":"#83caee","data":[9,53,39]},{"name":"2012","color":"#63c2f4","data":[9,55,36]},{"name":"2013","color":"#43baf9","data":[10,62,27]},{"name":"2014","color":"#43baf9","data":[11,59,30]}]},
+        "css": {width: FULLWIDTH}
+        },
+
+      "trendovertime_curyearorgoutlook": {
+        "title": "The year ahead: Financial outlook for the NPO",
+        "usagetip": "TIP: Click on any option in the legend to turn off its visibility.",
+        "renderer": "highchartspec",
+        colorRanges: colorRangesForInterleave,
+        chartspec: {"legend":{"enabled":true},"credits":{"enabled":false},"chart":{"type":"column","spacingLeft":0,"spacingRight":0,"marginRight":0,"spacingBottom":10},"title":{"text":""},"subtitle":{"text":""},"xAxis":{"categories":["Easier than prior year","Same as prior year","Harder than prior year"]},"yAxis":{"min":0,"title":{"text":"Percentage"}},"tooltip":{"headerFormat":"<span style=\"font-size:10px\">{point.key}</span><table>","pointFormat":"<tr><td style=\"color:{series.color};padding:0\">{series.name}: </td><td style=\"padding:0\"><b>{point.y:.0f}%</b></td></tr>","footerFormat":"</table>","shared":true,"useHTML":true},"plotOptions":{"column":{"pointPadding":0.2,"borderWidth":0}},"series":[{"name":"2010","color":"#a2d2e9","data":[12,39,50]},{"name":"2011","color":"#83caee","data":[14,45,41]},{"name":"2012","color":"#63c2f4","data":[13,46,41]},{"name":"2013","color":"#43baf9","data":[16,47,37]},{"name":"2014","color":"#43baf9","data":[16,44,40]}]},
+        "css": {width: FULLWIDTH}
+      }
+
+    }
+
+  };
+
+})();

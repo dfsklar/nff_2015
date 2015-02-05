@@ -3,7 +3,7 @@ local $/ = "\r";
 
 print "window.nfforg.database_unindexed.respondents = [ \n";
 
-$processingLimit = 200; #9999999;
+$processingLimit = 9999999;
 
 @fieldsMultChoice = (
                      'lmi_(.*)',   # 1 or blank are the only legal values
@@ -371,7 +371,9 @@ while (<STDIN>) {
 
   @fields = split(/\t/, $_);
   next if ($fields[0] =~ /^status$/i);
-  #  We now include all surveys regardless of status:  next if ($fields[1] =~ /^Incomplete/);
+
+  # For now, ignore all incomplete survey-result rows
+  next if ($fields[0] =~ /^Incomplete/i);
 
 
   if ( ! ($fields[1] =~ /\d\d\d\d\d\d\d\d/) ) {

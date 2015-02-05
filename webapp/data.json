@@ -132,7 +132,7 @@
       // "abort": { special: "ABORT" },
 
       "opp_exp_max": {
-        "title": "FY2013 Operating Expense",
+        "title": "FY2014 Operating Expense",
         "title-mini": "Operating Expense",
         "info-tip": "Operating expense is a useful measure for understanding an organization’s size.",
         "renderer": "bar",
@@ -177,54 +177,9 @@
           "1980-1989",
           "1990-1999",
           "2000-2009",
-          "2010-2014"
+          "2010-2012",
+          "2013-2015"
         ],
-        "css": { width: HALFWIDTH }
-      },
-
-      "employee_count_fte_range": {
-        "title": "# of full-time employees",
-        "title-mini": "# FULL-TIME EMPLOYEES",
-        value_massager: function(val) {
-          if (val=="5-Mar")
-            return "3-5";
-          if (val=="15-Jun")
-            return "6-15";
-          return val.replace('_',' ');
-        },
-        key_order: [
-          "0-2",
-          "3-5",
-          "6-15",
-          "16-50",
-          "51-150",
-          "151-300",
-          "> 300"
-        ],
-        "renderer": "bar",
-        "css": { width: HALFWIDTH }
-      },
-
-      "employee_count_pte_range": {
-        "title": "# of part-time employees",
-        "title-mini": "# PART-TIME EMPLOYEES",
-        value_massager: function(val) {
-          if (val=="5-Mar")
-            return "3-5";
-          if (val=="15-Jun")
-            return "6-15";
-          return val.replace('_',' ');
-        },
-        key_order: [
-          "0-2",
-          "3-5",
-          "6-15",
-          "16-50",
-          "51-150",
-          "151-300",
-          "> 300"
-        ],
-        "renderer": "bar",
         "css": { width: HALFWIDTH }
       },
 
@@ -382,7 +337,7 @@
       "surplus_deficit_prior": {
         "section": "Financial Story",
         "css": { width: "317px" },
-        "title": "Ended FY'13 with...",
+        "title": "Ended FY'14 with...",
         "renderer": "bar",
         "highchart_formatting": {
           chart: { marginLeft: 140, spacingLeft: 0 }
@@ -402,7 +357,7 @@
 
       "surplus_deficit_current": {
         "css": { width: "317px" },
-        "title": "Anticipate ending FY'14 with...",
+        "title": "Anticipate ending FY'15 with...",
         "renderer": "bar",
         "highchart_formatting": {
           chart: { marginLeft: 140, spacingLeft: 0 }
@@ -444,7 +399,7 @@
       },
 
       "surplus_prior_perc": {
-        "title": "% Surplus/Deficit for FY'13",
+        "title": "% Surplus/Deficit for FY'14",
         "info-tip": "Organizations were asked to share the size of their surpluses or deficits.",
         "renderer": "bar",
         "highchart_formatting": {
