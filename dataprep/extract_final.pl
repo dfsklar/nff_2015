@@ -3,7 +3,7 @@ local $/ = "\r";
 
 print "window.nfforg.database_unindexed.respondents = [ \n";
 
-$processingLimit = 99;  #999;
+$processingLimit = 200; #9999999;
 
 @fieldsMultChoice = (
                      'lmi_(.*)',   # 1 or blank are the only legal values
