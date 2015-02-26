@@ -84,8 +84,8 @@
         },
         "key_order": [
           "Arts/Culture/Humanities",
-          "Civil Rights/Social Action/Advocacy",
           "Community Development",
+          "Early Childhood Education",
           "Education",
           "Environment and Animals",
           "Foundation",
@@ -95,23 +95,30 @@
           "International/Foreign Affairs",
           "Mutual/Membership Benefit",
           "Public/Societal Benefit",
+          "Veterans' Services",
           "Workforce Development",
-          "Other",
-          "Unknown/Unclassified"
+          "Youth Development",
+          "Other"
+          // ,
+          // "Unknown/Unclassified"
         ],
         "value_massager": function(val){
           if (val.has('please speci'))
             return 'Other';
-          if (val.has('Civil Rights'))
-            return 'Civil Rights/Social Action/Advocacy';
           if (val.has('Arts,'))
             return 'Arts/Culture/Humanities';
+          if (val.has('Vetera'))
+            return "Veterans' Services";
+          if (val.has('Early Chi'))
+            return "Early Childhood Education";
           if (val.has('Public,'))
             return 'Public/Societal Benefit';
           if (val.has('Internation'))
             return 'International/Foreign Affairs';
-          if (val.has('Unknown'))
-            return 'Unknown/Unclassified';
+          if (val.has('Youth D'))
+            return 'Youth Development';
+          if (val.has('Other'))
+            return 'Other';
           return val;
         },
         "css": { width: HALFWIDTH }
