@@ -87,7 +87,7 @@
 
     challenge_: {
       demand: "Meeting community demand for services or programs",
-      div_funding: "Diversifying funding sources",
+      //Killed in 2015?  div_funding: "Diversifying funding sources",
       cut_gov_fund: "Cuts in government funding",
       delay_gov_fund: "Delays in government funding",
       longterm_sust: "Achieving long-term financial sustainability",
