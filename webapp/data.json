@@ -509,7 +509,7 @@
 
       // GOV'T FUNDING
 
-      "funding_gov_": {
+      "gov_payment_sources_": {
         "section": "Government Funding",
         "title": "Respondents reported government Funding/Contracts from...",
         "highchart_formatting": {

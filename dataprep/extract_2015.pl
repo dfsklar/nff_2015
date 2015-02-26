@@ -8,7 +8,7 @@ $processingLimit = 9999999;
 @fieldsMultChoice = (
                      'lmi_(.*)',   # 1 or blank are the only legal values
                      'challenge_(.*)',
-                     # from 2014 but no longer valid: 'funding_gov_(.*)',
+                     'gov_payment_sources_(.*)',  # in 2014 was named: 'funding_gov_(.*)'
                      'funding_all_gov_(.*)',  # seems to be about how the org responds to late incoming payments (e.g. "delay payment to my vendors", etc)
                      # from 2014 but no longer valid: 'data_collect_(.*)',
                      # from 2014 but no longer valid: 'arts_grants_(.*)',

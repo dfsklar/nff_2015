@@ -226,9 +226,9 @@
 
 
     funding_gov_: {
-      yn: "Federal",
-      state_yn: "State",
-      local_yn: "Local",
+      fed: "Federal",
+      state: "State",
+      local: "Local",
       none: "None of the above"
     },
 
