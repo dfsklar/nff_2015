@@ -259,6 +259,12 @@
             return 'Access to commercial goods and services';
           if (val.has('Recreational'))
             return 'Access to recreational opportunities';
+          if (true/*IN DEVELOPMENT*/) {
+            // DURING DEVELOPMENT: We want to verify that the returned value is definitely in this chart's official list of keys!
+            if ( ! this.key_order.find(val)) {
+              console.log("FAILURE: The val " + val + " is not found in the official list of keys for: " + this.title);
+            }
+          }
           return val;
         },
         "css": { width: FULLWIDTH }

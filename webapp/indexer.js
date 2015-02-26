@@ -273,7 +273,7 @@ is used at runtime when filtering is applied.
               if (org[chartname]) {
                 if (!hasValueMassageBeenDone) {
                   if (chart.value_massager) {
-                    org[chartname] = org[chartname].map(chart.value_massager);
+                    org[chartname] = org[chartname].map(chart.value_massager, chart);
                   }
                 }
                 org[chartname].each(function(action){

@@ -24,8 +24,9 @@
       seniorcare: "Senior care",
       schools: "Strong, well-performing schools",
       substanceabuse: "Substance abuse services",
-      other_yn: "Other",
-      na: "N/A"
+      youthdevel: "Youth development",
+      veteransvc: "Veterans' services",
+      other_yn: "Other"
     },
 
     arts_funding_: {
