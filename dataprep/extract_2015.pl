@@ -27,6 +27,11 @@ $processingLimit = 9999999;
                      'arts_aud_(.*)',
                      'arts_funder_(.*)',   # NEW 2015 (or name change) *** BUT I HAVEN'T TAGGED THESE YET ***
                      # from 2014 but no longer valid: 'arts_funding_(.*)'
+                     
+                     # New approach for handling the plan/taken mult choice
+                     'action_prog_service(.*)',
+                     'action_ops_finance(.*)',
+                     'action_staff(.*)'
                     );
 @regexFieldsMultChoice;
 foreach $strPattern (@fieldsMultChoice) {
@@ -111,7 +116,29 @@ $multchoicesets{'action_staff'} = ["acted_hire_staff",	"plan_hire_staff",	"acted
                                    "acted_dec_fees", "plan_dec_fees",#//only for arts
                                    "acted_staff_na_2014",	"plan_staff_na_2014"];
 $multchoicesets{'action_management'} = ["acted_collab_admin",	"plan_collab_admin",	"acted_merge",	"plan_merge",	"acted_change_fundraising",	"plan_change_fundraising",	"acted_earned_revenue",	"plan_earned_revenue",	"acted_advocacy",	"plan_advocacy",	"acted_alt_funds",	"plan_alt_funds",	"acted_add_reserve",	"plan_add_reserve",	"acted_use_reserve",	"plan_use_reserve",	"acted_capital_camp",	"plan_capital_camp",	"acted_org_restructure",	"plan_org_restructure",	"acted_strat_plan",	"plan_strat_plan",	"acted_fin_consultants",	"plan_fin_consultants",	"acted_tech_upgrade",	"plan_tech_upgrade",	"acted_borrow_board",	"plan_borrow_board",	"acted_delay_vendors",	"plan_delay_vendors",	"acted_buy_facility",	"plan_buy_facility",	"acted_lease_facility",	"plan_lease_facility",	"acted_sell_facility",	"plan_sell_facility",	"acted_na_mgmt_2014", "plan_na_mgmt_2014"];
-$multchoicesets{'action_service'} = ["acted_add_prog",	"plan_add_prog",	"acted_red_prog",	"plan_red_prog",	"acted_expand_geo",	"plan_expand_geo",	"acted_red_geo",	"plan_red_geo",	"acted_inc_clients",	"plan_inc_clients",	"acted_dec_clients",	"plan_dec_clients",	"acted_inc_serv_per",	"plan_inc_serv_per",	"acted_dec_serv_per",	"plan_dec_serv_per",	"acted_collab_serv",	"plan_collab_serv",	"acted_new_org_tech",	"plan_new_org_tech",	"acted_new_serv_tech",	"plan_new_serv_tech",	"acted_na_serv",	"plan_na_serv"];
+
+
+
+sub autogenMultChoiceSet_takenplanned {
+  my($base) = $_[0];
+  my($maxidx) = $_[1];
+  my(@lst) = ();
+  for (my $i=0; $i <= $maxidx; $i++) {
+    push(@lst, "$base".".".$i.".TAKEN");
+    push(@lst, "$base".".".$i.".PLANNING");
+  }
+
+  return \@lst;
+}
+
+#$xyz = &autogenMultChoiceSet_takenplanned("action_prog_service",13);
+#$multchoicesets{'action_prog_service'} = @$xyz;
+
+#die @{$multchoicesets{'action_prog_service'}};
+
+
+
+
 
 
 %converters;
@@ -147,8 +174,13 @@ for (my $i=0; $i < $#fields; $i++) {
   }else{
     # The only part of the field that is desired if the field came from row #2 is
     # the part that lies in square brackets:
+    $origField = $fields[$i];
     if ($fields[$i] =~ /\[(.*?)\]/) {
       $fields[$i] = $1;
+      $fields[$i] .= ".TAKEN" if ($origField =~ /\[TAKEN/);
+      $fields[$i] .= ".PLANNING" if ($origField =~ /\[PLANN/);
+      print STDERR $fields[$i] . "\n";
+      # THESE ARE PROPERLY GENERATED AS:  action_prog_service.0.TAKEN  action_prog_service.0.PLANNING ...
     }else{
       # This is benign.  Some of the very first columns have no "[...]" format e.g. "IP Address".
     }
@@ -185,7 +217,7 @@ foreach $colheader (@fields) {
           $multchoicesets{$fieldkey} = ();
         }
         push (@{$multchoicesets{$fieldkey}}, $valueEnglish);
-        print STDERR "$valueEnglish\n";
+        #print STDERR "$valueEnglish\n";
         $fieldkeys{$colheader} = $colidx;
         last;
       }
@@ -215,8 +247,8 @@ foreach $colheader (@fields) {
 # Used for planning vs already-acted field sets
 # Example parameter would be:  "action_staff"
 sub emitTimeframeBasedValue {
-  my $base = $_[0];
-  my $basefordisplay = $base;
+  my $base = $_[0] . "(.*)";
+  my $basefordisplay = $_[0];
   my $options = $_[1];
   my $thisenum;
 
@@ -237,20 +269,28 @@ sub emitTimeframeBasedValue {
   #  FIRST:  HANDLE "acted" (past tense)
 
   my $prefix;
-  my $onlyHandleIf = qr/acted_(.*)/;
+  my $onlyHandleIf;
 
   my %converter = %{$converters{$base}};
+
+  # die @{$multchoicesets{$base."(.*)"}};
+
+  # Example of a good lookup in the fieldkeys:  $fieldkeys{"action_prog_service.1.TAKEN"}
 
   # PREVIOUS YEAR
   $prefix = "";
   $result .= "\t\tlast: [ ";
-  $onlyHandleIf = qr/acted_(.*)/;
+  $onlyHandleIf = qr/(.*)\.TAKEN/;
   foreach $generatedfieldname (@{$multchoicesets{$base}}) {
     next if ( ! ($generatedfieldname =~ $onlyHandleIf) );
     $thisenum = $1;
     $thisenum = $converter{$thisenum} if ($converter{$thisenum});
     $value1 = "";
     $value2 = "";
+
+    $generatedfieldname = $basefordisplay . $generatedfieldname;
+    # die $generatedfieldname;
+
     if (! $forceprefix_arts) {
       if ($fieldkeys{$generatedfieldname}) {
         $value1 = $fields[$fieldkeys{$generatedfieldname}];
@@ -275,13 +315,14 @@ sub emitTimeframeBasedValue {
 
   $prefix = "";
   $result .= "\t\tnext: [ ";
-  $onlyHandleIf = qr/plan_(.*)/;
+  $onlyHandleIf = qr/(.*)\.PLANNING/;
   foreach $generatedfieldname (@{$multchoicesets{$base}}) {
     next if ( ! ($generatedfieldname =~ $onlyHandleIf) );
     $thisenum = $1;
     $thisenum = $converter{$thisenum} if ($converter{$thisenum});
     $value1 = "";
     $value2 = "";
+    $generatedfieldname = $basefordisplay . $generatedfieldname;
     if (! $forceprefix_arts) {
       if ($fieldkeys{$generatedfieldname}) {
         $value1 = $fields[$fieldkeys{$generatedfieldname}];
@@ -301,6 +342,8 @@ sub emitTimeframeBasedValue {
   $result .= " ]\n";
 
   $result .= "\t},\n";
+
+  # die $result;
 
   print $result if ($atleastone);
 }
@@ -386,14 +429,14 @@ while (<STDIN>) {
 
 
   &emitTimeframeBasedValue("action_staff");
-  &emitTimeframeBasedValue("action_staff", "arts_only");
-  &emitTimeframeBasedValue("action_management");
-  &emitTimeframeBasedValue("action_service");
+  #&emitTimeframeBasedValue("action_staff", "arts_only");
+  #&emitTimeframeBasedValue("action_management");
+
+  &emitTimeframeBasedValue("action_prog_service");
 
 
   # MULTIPLE-CHOICE FIELDS BASED ON REGEX PATTERNS (e.g. "lmi_(.*)")
   foreach $goodfield (keys(%multchoicesets)) {
-    next if ($goodfield =~ /^action_/);
     &emitMultColBasedValue($goodfield);
   }
   

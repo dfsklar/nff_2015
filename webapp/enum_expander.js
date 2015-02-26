@@ -233,9 +233,9 @@
     },
 
     action_staff: {
-      hire_staff: "Hire staff for new positions",
-      red_staff: "Reduce staff",
-      replace_staff: "Make replacement hires",
+      ".1": "Hire staff for new positions",
+      ".2": "Reduce staff",
+      ".3": "Make replacement hires",
       freeze_staff: "Freeze all replacement hires",
       kept_staff: "Retain all existing personnel",
       gave_raises: "Give raises",
