@@ -181,21 +181,21 @@
       no_other_yn: "Other"
     },
 
-    funding_all_gov_: {
-      delay_resp: "Use reserves",
-      delay_vendors: "Delay payments to vendors and/or creditors",
+    funding_all_gov_delay_: {
+      resp: "Use reserves",
+      vendors: "Delay payments to vendors and/or creditors",
       board_loan: "Borrow from personal funds of our leadership or board",
-      delay_partner_loan: "Borrow from partner or parent organization",
-      delay_loc: "Rely on a loan, line of credit, or other type of debt",
-      delay_red_serv: "Reduce services",
-      delay_red_staff: "Downsize staff-related costs",
-      delay_red_opp_cost: "Downsize non-staff-related operating costs (e.g., rent, office supplies)",
-      delay_emergency_grant: "Ask for emergency grant / Pull from other program funding",
-      delay_ready: "Budget for delays in advance",
-      delay_reserves: "Use other unrestricted or earned income",
-      delay_payroll: "Delay payroll for all or part of the staff",
-      delay_na: "N/A",
-      delay_other_yn: "Other"
+      partner_loan: "Borrow from partner or parent organization",
+      loc: "Rely on a loan, line of credit, or other type of debt",
+      red_serv: "Reduce services",
+      red_staff: "Downsize staff-related costs",
+      red_opp_cost: "Downsize non-staff-related operating costs (e.g., rent, office supplies)",
+      emergency_grant: "Ask for emergency grant / Pull from other program funding",
+      ready: "Budget for delays in advance",
+      reserves: "Use other unrestricted or earned income",
+      payroll: "Delay payroll for all or part of the staff",
+      na: "N/A",
+      other_yn: "Other"
     },
 
     arts_comp_resp_: {

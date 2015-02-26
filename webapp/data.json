@@ -612,12 +612,12 @@
 
 
 
-      "funding_all_gov_": {
+      "funding_all_gov_delay_": {
         "title": "How NPOs manage government payment delays",
-        "denominator_required_field": "funding_gov_",
-        "denominator_required_field__negative_values": [ "none" ],
+//        "denominator_required_field": "funding_gov_",
+//        "denominator_required_field__negative_values": [ "none" ],
         "renderer": "one_or_more",
-        "key_order": Object.keys(window.nfforg.MAPenumToEnglish.funding_all_gov_),
+        "key_order": Object.keys(window.nfforg.MAPenumToEnglish.funding_all_gov_delay_),
         "highchart_formatting": {
           chart: { marginLeft: 360, spacingLeft: 0 }
         },
