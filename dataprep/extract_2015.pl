@@ -109,16 +109,12 @@ foreach $strPattern (@fieldsMultChoice) {
 
 
 %multchoicesets;
-$multchoicesets{'action_staff'} = ["acted_hire_staff",	"plan_hire_staff",	"acted_red_staff",	"plan_red_staff",	"acted_replaced_staff",	"plan_replace_staff",	"acted_froze_staff",	"plan_freeze_staff",	"acted_kept_staff",	"plan_kept_staff",	"acted_gave_raises",	"plan_gave_raises",	"acted_red_salaries",	"plan_red_salaries",	"acted_inc_staff_bens",	"plan_inc_staff_bens",	"acted_red_staff_bens",	"plan_red_staff_bens",	"acted_volunteers",	"plan_volunteers",	"acted_red_staff_hours",	"plan_red_staff_hours",	"acted_board",	"plan_board",	"acted_leader_succession",	"plan_leader_succession",	"acted_exec_coaching",	"plan_exec_coaching",	"acted_staff_profdev",	"plan_staff_profdev",	"acted_networking",	"plan_networking", 
-                                   "acted_inc_artists", "plan_inc_artists",  #//only for arts
-                                   "acted_dec_artists", "plan_dec_artists",#//only for arts
-                                   "acted_inc_fees", "plan_inc_fees",#//only for arts
-                                   "acted_dec_fees", "plan_dec_fees",#//only for arts
-                                   "acted_staff_na_2014",	"plan_staff_na_2014"];
+
 $multchoicesets{'action_management'} = ["acted_collab_admin",	"plan_collab_admin",	"acted_merge",	"plan_merge",	"acted_change_fundraising",	"plan_change_fundraising",	"acted_earned_revenue",	"plan_earned_revenue",	"acted_advocacy",	"plan_advocacy",	"acted_alt_funds",	"plan_alt_funds",	"acted_add_reserve",	"plan_add_reserve",	"acted_use_reserve",	"plan_use_reserve",	"acted_capital_camp",	"plan_capital_camp",	"acted_org_restructure",	"plan_org_restructure",	"acted_strat_plan",	"plan_strat_plan",	"acted_fin_consultants",	"plan_fin_consultants",	"acted_tech_upgrade",	"plan_tech_upgrade",	"acted_borrow_board",	"plan_borrow_board",	"acted_delay_vendors",	"plan_delay_vendors",	"acted_buy_facility",	"plan_buy_facility",	"acted_lease_facility",	"plan_lease_facility",	"acted_sell_facility",	"plan_sell_facility",	"acted_na_mgmt_2014", "plan_na_mgmt_2014"];
 
 
 
+##### UNUSED !!!!
 sub autogenMultChoiceSet_takenplanned {
   my($base) = $_[0];
   my($maxidx) = $_[1];
@@ -131,21 +127,13 @@ sub autogenMultChoiceSet_takenplanned {
   return \@lst;
 }
 
-#$xyz = &autogenMultChoiceSet_takenplanned("action_prog_service",13);
-#$multchoicesets{'action_prog_service'} = @$xyz;
-
-#die @{$multchoicesets{'action_prog_service'}};
-
-
-
 
 
 
 %converters;
-$converters{'action_staff'} = {
-                               replaced_staff => "replace_staff",
-                               froze_staff => "freeze_staff"
-                              };
+
+
+
 
 
 # Change for 2015: the headers are now found in TWO ROWS.
@@ -252,6 +240,8 @@ sub emitTimeframeBasedValue {
   my $options = $_[1];
   my $thisenum;
 
+  # print STDERR "*****************************************\n";
+
   my $atleastone;
 
   my $tryprefix_arts = '';    # In 2014 this was:  ($base eq "action_staff");  
@@ -281,14 +271,19 @@ sub emitTimeframeBasedValue {
   $prefix = "";
   $result .= "\t\tlast: [ ";
   $onlyHandleIf = qr/(.*)\.TAKEN/;
-  foreach $generatedfieldname (@{$multchoicesets{$base}}) {
-    next if ( ! ($generatedfieldname =~ $onlyHandleIf) );
+  
+  #print STDERR $base . "\n";
+  #print STDERR @{$multchoicesets{$base}} . "\n";
+
+  foreach $_generatedfieldname (@{$multchoicesets{$base}}) {
+    next if ( ! ($_generatedfieldname =~ $onlyHandleIf) );
+    #print STDERR " --- " . $_generatedfieldname . "\n";
     $thisenum = $1;
     $thisenum = $converter{$thisenum} if ($converter{$thisenum});
     $value1 = "";
     $value2 = "";
 
-    $generatedfieldname = $basefordisplay . $generatedfieldname;
+    $generatedfieldname = $basefordisplay . $_generatedfieldname;
     # die $generatedfieldname;
 
     if (! $forceprefix_arts) {
@@ -316,13 +311,13 @@ sub emitTimeframeBasedValue {
   $prefix = "";
   $result .= "\t\tnext: [ ";
   $onlyHandleIf = qr/(.*)\.PLANNING/;
-  foreach $generatedfieldname (@{$multchoicesets{$base}}) {
-    next if ( ! ($generatedfieldname =~ $onlyHandleIf) );
+  foreach $_generatedfieldname (@{$multchoicesets{$base}}) {
+    next if ( ! ($_generatedfieldname =~ $onlyHandleIf) );
     $thisenum = $1;
     $thisenum = $converter{$thisenum} if ($converter{$thisenum});
     $value1 = "";
     $value2 = "";
-    $generatedfieldname = $basefordisplay . $generatedfieldname;
+    $generatedfieldname = $basefordisplay . $_generatedfieldname;
     if (! $forceprefix_arts) {
       if ($fieldkeys{$generatedfieldname}) {
         $value1 = $fields[$fieldkeys{$generatedfieldname}];
@@ -432,11 +427,12 @@ while (<STDIN>) {
   #&emitTimeframeBasedValue("action_staff", "arts_only");
   #&emitTimeframeBasedValue("action_management");
 
-  &emitTimeframeBasedValue("action_prog_service");
+  # &emitTimeframeBasedValue("action_prog_service");
 
 
   # MULTIPLE-CHOICE FIELDS BASED ON REGEX PATTERNS (e.g. "lmi_(.*)")
   foreach $goodfield (keys(%multchoicesets)) {
+    next if $goodfield =~ /action_/;
     &emitMultColBasedValue($goodfield);
   }
   

@@ -486,22 +486,21 @@
       },
 
 
-      "action_service": {
-        "title": "Services and Programs: Actions Taken and Planned",
-        "key_order": Object.keys(window.nfforg.MAPenumToEnglish.action_service),
-        "renderer": "actions_planned_taken",
-        "css": { width: FULLWIDTH }
-      },
-
-      // ACTION_STAFF should be here
-
-      "action_management": {
-        "title": "Finance and Operations: Actions Taken and Planned",
-        "key_order": Object.keys(window.nfforg.MAPenumToEnglish.action_management),
-        "renderer": "actions_planned_taken",
-        "css": { width: FULLWIDTH }
-      },
-
+//      "action_service": {
+//        "title": "Services and Programs: Actions Taken and Planned",
+//        "key_order": Object.keys(window.nfforg.MAPenumToEnglish.action_service),
+//        "renderer": "actions_planned_taken",
+//        "css": { width: FULLWIDTH }
+//      },
+//
+//      // ACTION_STAFF should be here
+//
+//      "action_management": {
+//        "title": "Finance and Operations: Actions Taken and Planned",
+//        "key_order": Object.keys(window.nfforg.MAPenumToEnglish.action_management),
+//        "renderer": "actions_planned_taken",
+//        "css": { width: FULLWIDTH }
+//      },
 
 
 
@@ -1342,175 +1341,11 @@
             return val.replace(", please explain","").replace(/funder.s/,"funder's").replace('by a funder','');
         },
         "css": { width: FULLWIDTH }
-      },
-
-
-
-
-
-
-
-
-
-
-      // "Feature: Trends over Time"
-
-      "trendovertime_opexp": {
-        section: "Feature: Trends over Time",
-        "title": "Operating Expense for Fiscal Years",
-        "info-tip": "This graph shows trends in the size of organizations that responded to the survey over time.",
-        usagetip: "TIP: Click on any year in the legend to turn off its visibility.",
-        "renderer": "highchartspec",
-        colorRanges: colorRangesForInterleave,
-        chartspec: {"legend":{"enabled":true},"credits":{"enabled":false},"chart":{"type":"column", spacingTop: 20, "spacingLeft":0,"spacingRight":25,"marginRight":18,"spacingBottom":20},"title":{"text":""},"subtitle":{"text":""},"xAxis":{"categories":["$0 - 250K","$250K - 500K","$500K - $2M","$2 - $5M","$5M - $10M","$10M - 20M","> $20M"]},"yAxis":{"min":0,"title":{"text":"Percentage"}},"tooltip":{"headerFormat":"<span style=\"font-size:10px\">{point.key}</span><table>","pointFormat":"<tr><td style=\"xxxxcolor:{series.color};padding:0\">{series.name}: </td><td style=\"padding:0\"><b>{point.y:.0f}%</b></td></tr>","footerFormat":"</table>","shared":true,"useHTML":true},"plotOptions":{"column":{"pointPadding":0.2,"borderWidth":0}},"series":[{"name":"2008","color":"#c2dae3","data":[15,13,35,16,9,5,7]},{"name":"2009","color":"#a2d2e9","data":[25,13,30,12,8,6,6]},{"name":"2010","color":"#83caee","data":[17,13,33,16,9,5,6]},{"name":"2011","color":"#63c2f4","data":[20,13,32,16,8,6,5]},{"name":"2012","color":"#43baf9","data":[22,11,30,16,9,6,7]},{"name":"2013","color":"#24b2ff","data":[16,10,29,19,10,7,9]}]},
-        "css": { width: FULLWIDTH }
-      },
-
-      // http://api.survey.nonprofitfinancefund.org/v1/stats?key=dfetTN6E&qs=year/lifeline
-      "trendovertime_lifeline": {
-        "title": "Respondents identifying as lifeline",
-        usagetip: "TIP: Click on any year in the legend to turn off its visibility.",
-        colorRanges: colorRangesForInterleave,
-        "renderer": "highchartspec",
-        chartspec: {"legend":{"enabled":true},"credits":{"enabled":false},"chart":{"type":"column","spacingLeft":0,"spacingRight":0,"marginRight":0,"spacingBottom":10},"title":{"text":""},"subtitle":{"text":""},"xAxis":{"categories":["Yes"]},"yAxis":{"min":0,"title":{"text":"Percentage"}},"tooltip":{"headerFormat":"<span style=\"font-size:10px\">{point.key}</span><table>","pointFormat":"<tr><td style=\"color:{series.color};padding:0\">{series.name}: </td><td style=\"padding:0\"><b>{point.y:.0f}%</b></td></tr>","footerFormat":"</table>","shared":true,"useHTML":true},"plotOptions":{"column":{"pointPadding":0.2,"borderWidth":0}},"series":[{"name":"2009","color":"#c2dae3","data":[44]},{"name":"2010","color":"#a2d2e9","data":[40]},{"name":"2011","color":"#83caee","data":[49]},{"name":"2012","color":"#63c2f4","data":[42]},{"name":"2013","color":"#43baf9","data":[52]},{"name":"2014","color":"#24b2ff","data":[52]}]},
-        "css": { width: FULLWIDTH }
-      },
-
-      // http://api.survey.nonprofitfinancefund.org/v1/stats?key=dfetTN6E&qs=year/past_demand_serv
-      // API delivered weird numbers so this is ENTIRELY hand-built from a spreadsheet sent by Anjali
-      "trendovertime_demand": {
-        "title": "Demand for services/programs...",
-        usagetip: "TIP: Click on any year in the legend to turn off its visibility.",
-        colorRanges: colorRangesForInterleave,
-        "renderer": "highchartspec",
-        chartspec: {
-          "legend":{"enabled":true},"credits":{"enabled":false},"chart":{"type":"column","spacingLeft":0,"spacingRight":0,"marginRight":0,"spacingBottom":10},"title":{"text":""},"subtitle":{"text":""},"xAxis":{"categories":["Increased","Stayed the same","Decreased"]},
-          "yAxis":{"min":0,"title":{"text":"Percentage"}},"tooltip":{"headerFormat":"<span style=\"font-size:10px\">{point.key}</span><table>","pointFormat":"<tr><td style=\"xxxcolor:{series.color};padding:0\">{series.name}: </td><td style=\"padding:0\"><b>{point.y:.0f}%</b></td></tr>","footerFormat":"</table>","shared":true,"useHTML":true},"plotOptions":{"column":{"pointPadding":0.2,"borderWidth":0}},
-          "series":[
-            {"name":"2008","color":"#c2dae3","data":[73,21,5]},
-            {"name":"2009","color":"#a2d2e9","data":[70,20,10]},
-            {"name":"2010","color":"#83caee","data":[77,16,7]},
-            {"name":"2011","color":"#63c2f4","data":[84,12,4]},
-            {"name":"2012","color":"#43baf9","data":[78,18,4]},
-            {"name":"2013","color":"#43baf9","data":[80,18,3]}
-          ]},
-        "css": { width: FULLWIDTH }
-      },
-
-
-      // http://api.survey.nonprofitfinancefund.org/v1/stats?key=dfetTN6E&qs=year/met_past_demand_serv
-      "trendovertime_meetdemand": {
-        "title": "Respondents that could not meet<br/>demand for services/programs",
-        usagetip: "TIP: Click on any year in the legend to turn off its visibility.",
-        colorRanges: colorRangesForInterleave,
-        "renderer": "highchartspec",
-        chartspec: {"legend":{"enabled":true},"credits":{"enabled":false},"chart":{"type":"column","spacingLeft":0,"spacingRight":0,"marginRight":0,"spacingBottom":10},"title":{"text":""},"subtitle":{"text":""},"xAxis":{"categories":["Unable to meet demand"]},"yAxis":{"min":0,"title":{"text":"Percentage"}},"tooltip":{"headerFormat":"<span style=\"font-size:10px\">{point.key}</span><table>","pointFormat":"<tr><td style=\"xxxcolor:{series.color};padding:0\">{series.name}: </td><td style=\"padding:0\"><b>{point.y:.0f}%</b></td></tr>","footerFormat":"</table>","shared":true,"useHTML":true},
-                    "plotOptions":
-                    {
-                      "column":{
-                        // stacking:"normal",
-                        pointPadding:0.2,
-                        borderWidth:0
-                      }
-                    },
-                    "series":[{"name":"2009","color":"#a2d2e9","data":[100-56]},{"name":"2010","color":"#83caee","data":[100-51]},{"name":"2011","color":"#63c2f4","data":[100-52]},{"name":"2012","color":"#43baf9","data":[100-48]},{"name":"2013","color":"#24b2ff","data":[100-44]}]},
-        "css": { width: FULLWIDTH }
-      },
-
-
-
-      // http://api.survey.nonprofitfinancefund.org/v1/stats?key=dfetTN6E&qs=year/surplus_deficit_prior
-      "trendovertime_prevfiscal": {
-        "title": "Ended the previous fiscal year with...",
-        colorRanges: colorRangesForInterleave,
-        usagetip: "TIP: Click on any year in the legend to turn off its visibility.",
-        "renderer": "highchartspec",
-        chartspec: {"legend":{"enabled":true},"credits":{"enabled":false},"chart":{"type":"column","spacingLeft":0,"spacingRight":0,"marginRight":0,"spacingBottom":10},"title":{"text":""},"subtitle":{"text":""},"xAxis":{"categories":["Operating Surplus","Break-even financials","Operating Deficit"]},"yAxis":{"min":0,"title":{"text":"Percentage"}},"tooltip":{"headerFormat":"<span style=\"font-size:10px\">{point.key}</span><table>","pointFormat":"<tr><td style=\"xxxcolor:{series.color};padding:0\">{series.name}: </td><td style=\"padding:0\"><b>{point.y:.0f}%</b></td></tr>","footerFormat":"</table>","shared":true,"useHTML":true},"plotOptions":{"column":{"pointPadding":0.2,"borderWidth":0}},"series":[{"name":"2009","color":"#c2dae3","data":[40,28,32]},{"name":"2010","color":"#a2d2e9","data":[35,29,36]},{"name":"2011","color":"#83caee","data":[44,22,34]},{"name":"2012","color":"#63c2f4","data":[44,25,31]},{"name":"2013","color":"#43baf9","data":[40,31,29]},{"name":"2014","color":"#24b2ff","data":[40,31,28]}]},
-        "css": { width: FULLWIDTH }
-      },
-      
-      "trendovertime_acted_services": {
-        "title": "Services and Programs: Actions Taken the Previous Year",
-        usagetip: "TIP: Hover your cursor over a line or action to see more detail.",
-        "renderer": "trendslope",
-        data: window.nfforg.data_acted_services,
-        chartName: "action_services_abbrev",
-        yCoordFudgings: {
-          4: -15,
-          2: -15,
-          36: -20,
-          43: -2,
-          52: -20,
-          47: -35,
-          49: -13,
-          17: -13,
-          15: -13,
-          "acted_new_org_tech": {start: -24, end:0}
-        },
-        preEnumMappings: {
-        },
-        "css": { width: FULLWIDTH }
-      },
-
-
-      "trendovertime_actedhumancapital": {
-        "title": "Human Capital: Actions Taken the Previous Year",
-        usagetip: "TIP: Hover your cursor over a line or action to see more detail.",
-        "renderer": "trendslope",
-        data: window.nfforg.data_acted_human_capital,
-        chartName: "action_staff",
-        yCoordFudgings: {
-          25: -15,
-          27: 12,
-          34: -8,
-          10: -10,
-          4: -8,
-          "acted_gave_raises": {start: +25, end: 0}
-        },
-        preEnumMappings: {
-          replaced_staff: "replace_staff",
-          froze_staff: "freeze_staff"
-        },
-        "css": { width: FULLWIDTH }
-      },
-      
-      "trendovertime_acted_management": {
-        "title": "Finance and Operations: Actions Taken the Previous Year",
-        usagetip: "TIP: Hover your cursor over a line or action to see more detail.",
-        "renderer": "trendslope",
-        data: window.nfforg.data_acted_management,
-        chartName: "action_management",
-        yCoordFudgings: {
-          23: -15,
-          25: 20,
-          26: 20,
-          19: -20
-        },
-        preEnumMappings: {
-        },
-        "css": { width: FULLWIDTH }
-      },
-      
-      "trendovertime_curyearclientoutlook": {
-        "title": "The year ahead: Financial outlook for the community the NPO serves",
-        "usagetip": "TIP: Click on any option in the legend to turn off its visibility.",
-        colorRanges: colorRangesForInterleave,
-        "renderer": "highchartspec",
-        chartspec: {"legend":{"enabled":true},"credits":{"enabled":false},"chart":{"type":"column","spacingLeft":0,"spacingRight":0,"marginRight":0,"spacingBottom":10},"title":{"text":""},"subtitle":{"text":""},"xAxis":{"categories":["Easier than prior year","Same as prior year","Harder than prior year"]},"yAxis":{"min":0,"title":{"text":"Percentage"}},"tooltip":{"headerFormat":"<span style=\"font-size:10px\">{point.key}</span><table>","pointFormat":"<tr><td style=\"color:{series.color};padding:0\">{series.name}: </td><td style=\"padding:0\"><b>{point.y:.0f}%</b></td></tr>","footerFormat":"</table>","shared":true,"useHTML":true},"plotOptions":{"column":{"pointPadding":0.2,"borderWidth":0}},"series":[{"name":"2010","color":"#a2d2e9","data":[6,40,54]},{"name":"2011","color":"#83caee","data":[9,53,39]},{"name":"2012","color":"#63c2f4","data":[9,55,36]},{"name":"2013","color":"#43baf9","data":[10,62,27]},{"name":"2014","color":"#43baf9","data":[11,59,30]}]},
-        "css": {width: FULLWIDTH}
-        },
-
-      "trendovertime_curyearorgoutlook": {
-        "title": "The year ahead: Financial outlook for the NPO",
-        "usagetip": "TIP: Click on any option in the legend to turn off its visibility.",
-        "renderer": "highchartspec",
-        colorRanges: colorRangesForInterleave,
-        chartspec: {"legend":{"enabled":true},"credits":{"enabled":false},"chart":{"type":"column","spacingLeft":0,"spacingRight":0,"marginRight":0,"spacingBottom":10},"title":{"text":""},"subtitle":{"text":""},"xAxis":{"categories":["Easier than prior year","Same as prior year","Harder than prior year"]},"yAxis":{"min":0,"title":{"text":"Percentage"}},"tooltip":{"headerFormat":"<span style=\"font-size:10px\">{point.key}</span><table>","pointFormat":"<tr><td style=\"color:{series.color};padding:0\">{series.name}: </td><td style=\"padding:0\"><b>{point.y:.0f}%</b></td></tr>","footerFormat":"</table>","shared":true,"useHTML":true},"plotOptions":{"column":{"pointPadding":0.2,"borderWidth":0}},"series":[{"name":"2010","color":"#a2d2e9","data":[12,39,50]},{"name":"2011","color":"#83caee","data":[14,45,41]},{"name":"2012","color":"#63c2f4","data":[13,46,41]},{"name":"2013","color":"#43baf9","data":[16,47,37]},{"name":"2014","color":"#43baf9","data":[16,44,40]}]},
-        "css": {width: FULLWIDTH}
       }
 
     }
-
+    
+      
   };
 
 })();
