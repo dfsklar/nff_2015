@@ -287,6 +287,29 @@ is used at runtime when filtering is applied.
           }else{
             // REGULAR ACCUMULATOR
             respondentsFiltered.each(function(org){
+              if (chart["denominator_required_field"]) {
+                if (!(org[chart["denominator_required_field"]])) {
+                  // This is a respondent who should not even be considered at all.
+                  // She made it through the "regular" filter but this extra
+                  // chart-specific filtration caught her.
+                  return;
+                }
+                else{
+                  // This is a respondent who did provide an answer for the required dependency field,
+                  // but is it possible her reply included a value that is considered "negative" meaning
+                  // its presence disqualifies this respondent?
+                  if (chart["denominator_required_field__negative_values"]) {
+                    var shouldDisqual = false;
+                    chart["denominator_required_field__negative_values"].each(function(TRY){
+                      if ([].add(org[chart["denominator_required_field"]]).find(TRY)) 
+                        shouldDisqual = true;
+                    });
+                    if (shouldDisqual) {
+                      return;
+                    }
+                  }
+                }
+              }
               if (!hasValueMassageBeenDone) {
                 if (chart.value_massager) {
                   if (org[chartname])
