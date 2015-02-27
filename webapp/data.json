@@ -493,12 +493,12 @@
         "css": { width: FULLWIDTH }
       },
 
-//      "action_management": {
-//        "title": "Finance and Operations: Actions Taken and Planned",
-//        "key_order": Object.keys(window.nfforg.MAPenumToEnglish.action_management),
-//        "renderer": "actions_planned_taken",
-//        "css": { width: FULLWIDTH }
-//      },
+      "action_ops_finance": {
+        "title": "Finance and Operations: Actions Taken and Planned",
+        "key_order": Object.keys(window.nfforg.MAPenumToEnglish.action_ops_finance),
+        "renderer": "actions_planned_taken",
+        "css": { width: FULLWIDTH }
+      },
 
 
 

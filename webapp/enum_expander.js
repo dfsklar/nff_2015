@@ -297,26 +297,28 @@
       staff_na_2014: "N/A"
     },
 
-    action_management: {
-      collab_admin: "Collaborate with another organization\n to reduce administrative expenses",
-      merge: "Merge with another organization",
-      change_fundraising: "Change how you raise and spend money",
-      earned_revenue: "Pursue an earned revenue venture",
-      advocacy: "Advocate to government on behalf\n of your organization's cause", //?
-      alt_funds: "Seek funding other than grants and contracts,\n such as loans or other investments",  //?
-      add_reserve: "Add to reserve funds",
-      use_reserve: "Use reserve funds",
-      capital_camp: "Launch a capital campaign",
-      org_restructure: "Undergo organizational restructuring",
-      strat_plan: "Conduct long-term strategic or financial planning",
-      fin_consultants: "Use outside help to improve financial knowledge or capacity",
-      tech_upgrade: "Upgrade hardware or software to improve organizational efficiency",
-      borrow_board: "Borrow from board members or staff to pay current expenses",
-      delay_vendors: "Delay vendor payments",
-      buy_facility: "Purchase a facility, or renovate a facility you own",
-      lease_facility: "Lease a facility, or renovate a facility you lease",
-      sell_facility: "Sell a facility",
-      na_mgmt_2014: "N/A"
+    action_ops_finance: {
+      ".0": "Collaborate with another organization\n to reduce administrative expenses",
+      ".1": "Merge with another organization",
+      ".2": "Change how you raise and spend money",
+      ".3": "Pursue an earned revenue venture",
+      ".4": "Advocate to government on behalf\n of your organization's cause", //?
+      ".5": "Seek funding other than grants and contracts,\n such as loans or other investments",  //?
+      ".6": "Add to reserve funds",
+      ".7": "Use reserve funds",
+      ".8": "Launch a capital campaign",
+      ".9": "Undergo organizational restructuring",
+      ".10": "Conduct long-term strategic or financial planning",
+      ".11": "Use outside help to improve financial knowledge or capacity",
+      ".12": "Upgrade hardware or software to improve organizational efficiency",
+      ".13": "Delay vendor payments",
+      ".14": "Purchase a facility, or renovate a facility you own",
+      ".15": "Lease a facility, or renovate a facility you lease",
+      ".16": "Sell a facility",
+      ".17": "Renovate a facility that you lease or own",
+      ".18": "Pursue funding that requires measurement/achievement of outcomes",
+      ".19": "Receive funding that requires measurement/achievement of outcomes",
+      ".20": "None of the above"
     },
 
     current_year_org_outlook_: {
