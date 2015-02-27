@@ -46,6 +46,10 @@ foreach $strPattern (@fieldsMultChoice) {
 @fieldstoemit = (
                  'orgid', 'state', 
                  'org_type', 
+                 'debt_fin',
+                 'debt_fin_amt',
+                 'addtl_debt_fin',
+                 'addtl_debt_fin_amt',
                  'arts_org_type',
                  'arts_decline_revenue',
                  'lmi_serve_expanded',   # Full long text, with <strong>primarily</strong>, <strong>exclusively</strong>, etc

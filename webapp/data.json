@@ -1287,7 +1287,7 @@
 
       // LENDING TO NONPROFITS
 
-      "loan_yn": {
+      "debt_fin": {
         "section": "Lending to Nonprofits",
         "title": "Has loan or line of credit",
         "renderer": "stacked_single_bar",
@@ -1296,8 +1296,79 @@
           'Yes': chroma(window.nfforg.colors.YES).hex(),
           'No' : chroma(window.nfforg.colors.NO).hex()
         },
-        "css": { width: FULLWIDTH, height: "110px" }
+        "css": { width: HALFWIDTH, height: "110px" }
       },
+
+      "debt_fin_amt": {
+        "title": "Amount of outstanding debt<br/>or line of credit",
+        "title-mini": "Operating Expense",
+        "renderer": "bar",
+        "value_massager": function(val){
+          val = val.replace(",000,000","M");
+          val = val.replace(",000,001","M");
+          val = val.replace(",000","K");
+          val = val.replace(",001","K");
+          val = val.replace("-"," -- ").replace("Greater than",">");
+          return val;
+        },
+        "highchart_formatting": {
+          chart: { marginLeft: 120, spacingLeft: 0 }
+        },
+        "key_order": [
+          "> $10M",
+          "$5M -- $10M",
+          "$2M -- $5M",
+          "$1M -- $2M",
+          "$500K -- $1M",
+          "$250K -- $500K",
+          "$100K -- $250K",
+          "$50K -- $100K",
+          "$0 -- $50K"
+        ],
+        "css": { width: HALFWIDTH }
+      },
+
+      "addtl_debt_fin": {
+        "title": "Needs or anticipates<br/>additional debt/financing",
+        "renderer": "stacked_single_bar",
+        "key_order": [ 'No', 'Yes' ],
+        "color_by_key": {
+          'Yes': chroma(window.nfforg.colors.YES).hex(),
+          'No' : chroma(window.nfforg.colors.NO).hex()
+        },
+        "css": { width: HALFWIDTH, height: "110px" }
+      },
+
+      "addtl_debt_fin_amt": {
+        "title": "Amount of additional debt",
+        "title-mini": "Operating Expense",
+        "renderer": "bar",
+        "value_massager": function(val){
+          val = val.replace(",000,000","M");
+          val = val.replace(",000,001","M");
+          val = val.replace(",000","K");
+          val = val.replace(",001","K");
+          val = val.replace("-"," -- ").replace("Greater than",">");
+          return val;
+        },
+        "highchart_formatting": {
+          chart: { marginLeft: 120, spacingLeft: 0 }
+        },
+        "key_order": [
+          "> $10M",
+          "$5M -- $10M",
+          "$2M -- $5M",
+          "$1M -- $2M",
+          "$500K -- $1M",
+          "$250K -- $500K",
+          "$100K -- $250K",
+          "$50K -- $100K",
+          "$0 -- $50K"
+        ],
+        "css": { width: HALFWIDTH }
+      },
+
+
       "loan_no_": {
         "title": "Reasons not using a loan/line of credit",
         "renderer": "one_or_more",
