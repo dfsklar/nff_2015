@@ -3,13 +3,13 @@ $(function() {
   window.nfforg.mapFilterSectionIdToHumanText = {
     "state": "State",
     "org_type": "Sector",
-    "opp_exp_max": "Operating expense",
-    "lifeline": "Lifeline",
-    "lmi_serve_expanded": "Serves low-income communities",
-    "lmi_loc": "Located in low-income communities",
-    "year_founded_range": "Year founded",
-    "employee_count_fte_range": "# full-time employees",
-    "employee_count_pte_range": "# part-time employees"
+    //"opp_exp_max": "Operating expense",
+    //"lifeline": "Lifeline",
+    //"lmi_serve_expanded": "Serves low-income communities",
+    //"lmi_loc": "Located in low-income communities",
+    //"year_founded_range": "Year founded",
+    //"employee_count_fte_range": "# full-time employees",
+    //"employee_count_pte_range": "# part-time employees"
   };
 
 
@@ -213,27 +213,36 @@ $(function() {
       window.nfforg.createFilterSection($rootdiv, "org_type", "div",
                                         Object.keys(window.nfforg.database.charts.org_type.valueSet).sortBy().exclude("Other").exclude('Unknown/Unclassified').include("Other").include("Unknown/Unclassified"),
                                        curFiltration);
+
       window.nfforg.createFilterSection($rootdiv, "opp_exp_max", "div",
                                         window.nfforg.database.charts.opp_exp_max.key_order,
                                        curFiltration);
+
       window.nfforg.createFilterSection($rootdiv, "lifeline", "span",
                                         [ "Yes", "No" ],
                                        curFiltration);
+
       window.nfforg.createFilterSection($rootdiv, "lmi_serve_expanded", "div",
                                         window.nfforg.database.charts.lmi_serve_expanded.key_order.reverse(),
                                        curFiltration);
+
       window.nfforg.createFilterSection($rootdiv, "lmi_loc", "span",
                                         [ "Yes", "No" ],
                                        curFiltration);
+
       window.nfforg.createFilterSection($rootdiv, "year_founded_range", "div",
                                         window.nfforg.database.charts.year_founded_range.key_order,
                                        curFiltration);
-      window.nfforg.createFilterSection($rootdiv, "employee_count_fte_range", "div",
+
+      if (false) {
+        window.nfforg.createFilterSection($rootdiv, "employee_count_fte_range", "div",
                                         window.nfforg.database.charts.employee_count_fte_range.key_order,
                                        curFiltration);
-      window.nfforg.createFilterSection($rootdiv, "employee_count_pte_range", "div",
+        window.nfforg.createFilterSection($rootdiv, "employee_count_pte_range", "div",
                                         window.nfforg.database.charts.employee_count_pte_range.key_order,
                                        curFiltration);
+      }
+
       setTimeout(function(){
         $('#filter-area').addClass('ready');
       }, 2000);
