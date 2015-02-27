@@ -688,16 +688,16 @@
       // In last 5 years, average indirect cost rate paid by government has...
 
       "aicr_fed_trend": {
-        "title": "In last 5 years, average indirect cost rate paid by government has...",
+        "title": "In last 3 years, average indirect cost rate paid by government has...",
         "info-tip": "This graph represents recent trends in the average allowable indirect cost rate (AICR) or overhead/administrative cost rate that nonprofits say the government covers when they receive a contract or grant. Every organization must budget for overhead, which includes things like facility maintenance, phones, savings, and all the diffused costs that aren’t strictly tied to program delivery.",
         "renderer": "barset",
         "show-percentage-only": true,
         "title-subchart": "FEDERAL",
-        "key_order": [ 'Increased', 'Stayed the Same', 'Declined' ],
+        "key_order": [ 'Increased', 'Stayed the Same', 'Decreased' ],
         "color_by_key": {
           'Increased': chroma(window.nfforg.colors.GOODVERY).hex(),
           'Stayed the Same': chroma(window.nfforg.colors.NEUTRAL).hex(),
-          'Declined': chroma(window.nfforg.colors.BADVERY).hex()
+          'Decreased': chroma(window.nfforg.colors.BADVERY).hex()
         },
         "highchart_formatting": {
           chart: { marginLeft: 130, spacingLeft: 0 }
@@ -708,12 +708,12 @@
       "aicr_state_trend": {
         "title": "Average indirect cost rate<br/>paid by State gov't",
         "show-percentage-only": true,
-        "key_order": [ 'Increased', 'Stayed the Same', 'Declined' ],
+        "key_order": [ 'Increased', 'Stayed the Same', 'Decreased' ],
         "title-subchart": "STATE",
         "color_by_key": {
           'Increased': chroma(window.nfforg.colors.GOODVERY).hex(),
           'Stayed the Same': chroma(window.nfforg.colors.NEUTRAL).hex(),
-          'Declined': chroma(window.nfforg.colors.BADVERY).hex()
+          'Decreased': chroma(window.nfforg.colors.BADVERY).hex()
         },
         "info-tip": "This graph represents the average allowable indirect cost rate (AICR) or overhead/administrative cost rate that nonprofits say the government covers when they receive a contract or grant. Every organization must budget for overhead, which includes things like facility maintenance, phones, savings, and all the diffused costs that aren’t strictly tied to program delivery.",
         "renderer": "none",
@@ -722,11 +722,11 @@
       "aicr_loc_trend": {
         "title": "Average indirect cost rate<br/>paid by Local gov't",
         "show-percentage-only": true,
-        "key_order": [ 'Increased', 'Stayed the Same', 'Declined' ],
+        "key_order": [ 'Increased', 'Stayed the Same', 'Decreased' ],
         "color_by_key": {
           'Increased': chroma(window.nfforg.colors.GOODVERY).hex(),
           'Stayed the Same': chroma(window.nfforg.colors.NEUTRAL).hex(),
-          'Declined': chroma(window.nfforg.colors.BADVERY).hex()
+          'Decreased': chroma(window.nfforg.colors.BADVERY).hex()
         },
         "title-subchart": "LOCAL",
         "renderer": "none",
