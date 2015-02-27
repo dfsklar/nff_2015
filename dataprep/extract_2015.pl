@@ -81,6 +81,10 @@ foreach $strPattern (@fieldsMultChoice) {
                  'aicr_state_trend',
                  'aicr_loc_trend',
 
+                 'plan_replace_gov_funding_fed',
+                 'plan_replace_gov_funding_state',
+                 'plan_replace_gov_funding_loc',
+
                  'surplus_deficit_prior',
                  'surplus_deficit_current',
                  'surplus_prior_perc',  #This and its deficit compatriot are mut-excl to be considered a single chart

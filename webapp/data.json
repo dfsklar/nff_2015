@@ -688,7 +688,8 @@
       // In last 5 years, average indirect cost rate paid by government has...
 
       "aicr_fed_trend": {
-        "title": "In last 3 years, average indirect cost rate paid by government has...",
+        "title--notsure": "In last 3 years, average indirect cost rate paid by government has...",
+        "title": "In last 5 years, my NPO's gov't funding has...",
         "info-tip": "This graph represents recent trends in the average allowable indirect cost rate (AICR) or overhead/administrative cost rate that nonprofits say the government covers when they receive a contract or grant. Every organization must budget for overhead, which includes things like facility maintenance, phones, savings, and all the diffused costs that aren’t strictly tied to program delivery.",
         "renderer": "barset",
         "show-percentage-only": true,
@@ -735,66 +736,107 @@
 
 
 
-
-
-      "funding_fed_trend": {
-        "title": "In last 5 years, my NPO's gov't funding has...",
+      "plan_replace_gov_funding_fed": {
+        "title": "Plan to replace gov't funding with non-gov't funding",
+        "renderer": "barset",
+        "show-percentage-only": true,
         "title-subchart": "FEDERAL",
+        "key_order": [ 'Yes', 'No' ],
+        "color_by_key": {
+          'No': chroma(window.nfforg.colors.GOODVERY).hex(),
+          'Yes': chroma(window.nfforg.colors.BADVERY).hex()
+        },
         "highchart_formatting": {
           chart: { marginLeft: 130, spacingLeft: 0 }
         },
-        "renderer": "barset",
-        "show-percentage-only": true,
-        "key_order": [
-          'Increased',
-          'Stayed the Same',
-          'Declined'
-        ],
-        "color_by_key": {
-          'Increased': chroma(window.nfforg.colors.GOODVERY).hex(),
-          'Stayed the Same': chroma(window.nfforg.colors.NEUTRAL).hex(),
-          'Declined': chroma(window.nfforg.colors.BADVERY).hex()
-        },
-        otherCharts: [ 'funding_state_trend', 'funding_loc_trend' ],
+        "otherCharts": [ "plan_replace_gov_funding_state", "plan_replace_gov_funding_loc"],
         "css": { width: FULLWIDTH }
       },
-
-      "funding_state_trend": {
-        "title": "In last 5 years, my NPO's<br/>State funding has...",
+      "plan_replace_gov_funding_state": {
+        "title": "Plan to replace gov't funding with non-gov't funding",
+        "renderer": "none",
         "show-percentage-only": true,
         "title-subchart": "STATE",
-        "renderer": "none",
-        "key_order": [
-          'Increased',
-          'Stayed the Same',
-          'Declined'
-        ],
+        "key_order": [ 'Yes', 'No' ],
         "color_by_key": {
-          'Increased': chroma(window.nfforg.colors.GOODVERY).hex(),
-          'Stayed the Same': chroma(window.nfforg.colors.NEUTRAL).hex(),
-          'Declined': chroma(window.nfforg.colors.BADVERY).hex()
+          'No': chroma(window.nfforg.colors.GOODVERY).hex(),
+          'Yes': chroma(window.nfforg.colors.BADVERY).hex()
         },
         "css": { width: HALFWIDTH }
       },
-
-      "funding_loc_trend": {
-        "title": "In last 5 years, my NPO's<br/>Local funding has...",
+      "plan_replace_gov_funding_loc": {
+        "title": "Plan to replace gov't funding with non-gov't funding",
+        "renderer": "none",
         "show-percentage-only": true,
         "title-subchart": "LOCAL",
-        "renderer": "none",
-        "key_order": [
-          'Increased',
-          'Stayed the Same',
-          'Declined'
-        ],
+        "key_order": [ 'Yes', 'No' ],
         "color_by_key": {
-          'Increased': chroma(window.nfforg.colors.GOODVERY).hex(),
-          'Stayed the Same': chroma(window.nfforg.colors.NEUTRAL).hex(),
-          'Declined': chroma(window.nfforg.colors.BADVERY).hex()
+          'No': chroma(window.nfforg.colors.GOODVERY).hex(),
+          'Yes': chroma(window.nfforg.colors.BADVERY).hex()
         },
         "css": { width: HALFWIDTH }
       },
 
+
+
+
+//      "funding_fed_trend": {
+//        "title": "In last 5 years, my NPO's gov't funding has...",
+//        "title-subchart": "FEDERAL",
+//        "highchart_formatting": {
+//          chart: { marginLeft: 130, spacingLeft: 0 }
+//        },
+//        "renderer": "barset",
+//        "show-percentage-only": true,
+//        "key_order": [
+//          'Increased',
+//          'Stayed the Same',
+//          'Declined'
+//        ],
+//        "color_by_key": {
+//          'Increased': chroma(window.nfforg.colors.GOODVERY).hex(),
+//          'Stayed the Same': chroma(window.nfforg.colors.NEUTRAL).hex(),
+//          'Declined': chroma(window.nfforg.colors.BADVERY).hex()
+//        },
+//        otherCharts: [ 'funding_state_trend', 'funding_loc_trend' ],
+//        "css": { width: FULLWIDTH }
+//      },
+//
+//      "funding_state_trend": {
+//        "title": "In last 5 years, my NPO's<br/>State funding has...",
+//        "show-percentage-only": true,
+//        "title-subchart": "STATE",
+//        "renderer": "none",
+//        "key_order": [
+//          'Increased',
+//          'Stayed the Same',
+//          'Declined'
+//        ],
+//        "color_by_key": {
+//          'Increased': chroma(window.nfforg.colors.GOODVERY).hex(),
+//          'Stayed the Same': chroma(window.nfforg.colors.NEUTRAL).hex(),
+//          'Declined': chroma(window.nfforg.colors.BADVERY).hex()
+//        },
+//        "css": { width: HALFWIDTH }
+//      },
+//
+//      "funding_loc_trend": {
+//        "title": "In last 5 years, my NPO's<br/>Local funding has...",
+//        "show-percentage-only": true,
+//        "title-subchart": "LOCAL",
+//        "renderer": "none",
+//        "key_order": [
+//          'Increased',
+//          'Stayed the Same',
+//          'Declined'
+//        ],
+//        "color_by_key": {
+//          'Increased': chroma(window.nfforg.colors.GOODVERY).hex(),
+//          'Stayed the Same': chroma(window.nfforg.colors.NEUTRAL).hex(),
+//          'Declined': chroma(window.nfforg.colors.BADVERY).hex()
+//        },
+//        "css": { width: HALFWIDTH }
+//      },
 
 
 
