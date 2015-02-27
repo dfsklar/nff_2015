@@ -987,6 +987,104 @@
 
 
 
+      "funding_vs_reporting_fed": {
+        "show-percentage-only": true,
+        "title": "Reporting Requirements in relation to the funding amounts",
+        "title-subchart": "Federal",
+        otherCharts: [ 
+          "funding_vs_reporting_state",
+          "funding_vs_reporting_local",
+          "funding_vs_reporting_foundation",
+          "funding_vs_reporting_individual"
+        ],
+        value_massager: function(val){
+          if (val.has('N/A'))
+            return 'N/A';
+          return val;
+        },
+        "key_order": [
+          "High",
+          "Proportional",
+          "Low",
+          "N/A"
+        ],
+        "renderer": "barset2",
+        "css": { width: FULLWIDTH }
+      },
+      "funding_vs_reporting_state": {
+        "show-percentage-only": true,
+        "title": "Reporting Requirements in relation to the funding amounts",
+        "title-subchart": "State",
+        "renderer": "none",
+        value_massager: function(val){
+          if (val.has('N/A'))
+            return 'N/A';
+          return val;
+        },
+        "key_order": [
+          "High",
+          "Proportional",
+          "Low",
+          "N/A"
+        ],
+        "css": { width: FULLWIDTH }
+      },
+      "funding_vs_reporting_local": {
+        "show-percentage-only": true,
+        "title": "Reporting Requirements in relation to the funding amounts",
+        "title-subchart": "Local",
+        "renderer": "none",
+        value_massager: function(val){
+          if (val.has('N/A'))
+            return 'N/A';
+          return val;
+        },
+        "key_order": [
+          "High",
+          "Proportional",
+          "Low",
+          "N/A"
+        ],
+        "css": { width: FULLWIDTH }
+      },
+      "funding_vs_reporting_foundation": {
+        "show-percentage-only": true,
+        "title": "Reporting Requirements in relation to the funding amounts",
+        "title-subchart": "Foundation",
+        "renderer": "none",
+        value_massager: function(val){
+          if (val.has('N/A'))
+            return 'N/A';
+          return val;
+        },
+        "key_order": [
+          "High",
+          "Proportional",
+          "Low",
+          "N/A"
+        ],
+        "css": { width: FULLWIDTH }
+      },
+      "funding_vs_reporting_individual": {
+        "show-percentage-only": true,
+        "title": "Reporting Requirements in relation to the funding amounts",
+        "title-subchart": "Individual",
+        "renderer": "none",
+        value_massager: function(val){
+          if (val.has('N/A'))
+            return 'N/A';
+          return val;
+        },
+        "key_order": [
+          "High",
+          "Proportional",
+          "Low",
+          "N/A"
+        ],
+        "css": { width: FULLWIDTH }
+      },
+
+
 
 
 
@@ -1005,6 +1103,10 @@
       },
 
 
+
+
+      // NEXT SET OF CHARTS IS COMBINED INTO ONE MULTI-SERIES BAR CHART
+      // NEXT SET OF CHARTS IS COMBINED INTO ONE MULTI-SERIES BAR CHART
       // NEXT SET OF CHARTS IS COMBINED INTO ONE MULTI-SERIES BAR CHART
       "funding_fed_full_cost": {
         "show-percentage-only": true,

@@ -57,6 +57,12 @@ foreach $strPattern (@fieldsMultChoice) {
                  'aicr_state_range',
                  'aicr_loc_range',
 
+                 'funding_vs_reporting_fed',
+                 'funding_vs_reporting_state',
+                 'funding_vs_reporting_local',
+                 'funding_vs_reporting_foundation',
+                 'funding_vs_reporting_individual',
+
                  'employee_count_fte_range',
                  'employee_count_pte_range',
 
