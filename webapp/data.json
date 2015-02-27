@@ -1368,19 +1368,19 @@
         "css": { width: HALFWIDTH }
       },
 
-
-      "loan_no_": {
-        "title": "Reasons not using a loan/line of credit",
+      "addtl_debt_fin_use_": {
+        "title": "Planned Uses of additional debt",
         "renderer": "one_or_more",
-        "denominator_required_field": "loan_yn",
-        "denominator_required_field__negative_values": [ "Yes" ],
-        "key_order": Object.keys(window.nfforg.MAPenumToEnglish.loan_no_),
+        "denominator_required_field": "addtl_debt_fin",
+        "denominator_required_field__negative_values": [ "No" ],
+        "key_order": Object.keys(window.nfforg.MAPenumToEnglish.addtl_debt_fin_use_),
         "highchart_formatting": {
           chart: { marginLeft: 300, spacingLeft: 0 }
         },
         "css": { width: FULLWIDTH }
       },
 
+/*
       "loan_yes_": {
         "title": "Currently using loan/line of credit to...",
         "renderer": "one_or_more",
@@ -1407,6 +1407,7 @@
       },
 
 
+*/
 
 
 

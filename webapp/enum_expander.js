@@ -142,14 +142,15 @@
       other_yn: "Other"
     },
 
-    loan_want_: {
+    addtl_debt_fin_use_: {
       exp_prog: "Expand programs or services",
       facility_exp: "Expand or renovate a facility my organization leases or owns",
       facility_new: "Purchase a facility",
       delays_gov: "Manage delays in payment from our government contracts",
-      tech: "Invest in technology such as computers or IT systems",
+      tech: "Invest in information technology",
       cashflow: "Manage gaps or unevenness in revenue",
       delays_grant: "Cover costs while waiting for a grant to come in",
+      emergloc: "Have a line of credit to handle emergencies",
       other_yn: "Other",
       unidentified: "(No response)"
     },
