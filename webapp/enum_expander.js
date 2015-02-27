@@ -302,6 +302,12 @@
       na_mgmt_2014: "N/A"
     },
 
+    current_year_org_outlook_: {
+      harder: "Harder than 2014",
+      easier: "Easier than 2014",
+      same: "About the same as 2014"
+    },
+
     action_service: {
       add_prog: "Add or expand programs/services",
       red_prog: "Reduce or eliminate programs/services",

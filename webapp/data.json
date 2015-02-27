@@ -1256,7 +1256,7 @@
 
       "current_year_client_outlook": {
         "section": "Financial Outlook",
-        "title": "2014 Outlook for the<br/>Community the NPO Serves",
+        "title": "2015 Outlook for the<br/>Community the NPO Serves",
         "renderer": "bar",
         "key_order": [ 
           'Harder than 2013', 
@@ -1269,17 +1269,14 @@
         "css": { width: HALFWIDTH }
       },
 
-      "current_year_org_outlook": {
-        "title": "2014 Outlook for the NPO<br/>&nbsp;",
-        "renderer": "bar",
+      "current_year_org_outlook_": {
+        "title": "2015 Outlook for the NPO<br/>&nbsp;",
+        "renderer": "one_or_more",
+        // "renderer": "bar",
         "highchart_formatting": {
           chart: { marginLeft: 180, spacingLeft: 0 }
         },
-        "key_order": [ 
-          'Harder than 2013', 
-          'More or less the same as 2013', 
-          'Easier than 2013'
-        ],
+        "key_order": Object.keys(window.nfforg.MAPenumToEnglish.current_year_org_outlook_),
         "css": { width: HALFWIDTH }
       },
 

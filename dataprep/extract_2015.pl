@@ -14,6 +14,9 @@ $processingLimit = 9999999;
                      'arts_grants_(.*)',
                      'dialog_(.*)',
                      'arts_source_competition_(.*)',   # NEW 2015!
+
+                     'current_year_org_outlook_(.*)',
+
                      # from 2014 but no longer valid: 'loan_no_(.*)',
                      'loan_yes_(.*)',
                      'debt_fin_applied_no_debt_(.*)',  # NEW 2015!
@@ -98,7 +101,6 @@ foreach $strPattern (@fieldsMultChoice) {
                  'months_cash',
 
                  'current_year_client_outlook',
-                 'current_year_org_outlook',
                  
                  'impact_action_eval',
                  'impact_action_prog_data',
