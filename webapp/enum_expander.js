@@ -156,13 +156,17 @@
 
     arts_grants_: {
       overhead_restr: "Applied for a grant that restricted allowable overhead rate",
+      got_unrestr: "Received unrestricted funding",
       surplus_bad: "Denied because of a track record of surpluses and savings",
       surplus_good: "Approved due to track record of strong financial management & surpluses",
       open_dialog: "Invited to discuss financial health and long-term financial needs",
       strategy_input: "Invited to give input on a funder's strategy",
+      help_change_habits: "Received capital to help change the way we raise/spend money",
+      help_build_reserves: "Received capital to build reserves",
       non_monetary: "Benefited from a funder's non-monetary resources or knowledge",
       streamline: "Benefited from a streamlined application/due-diligence process",
-      reporting_burden: "Faced reporting requirements that were outsized relative to the size of the grant"
+      reporting_burden: "Faced reporting requirements that were outsized relative to the size of the grant",
+      none: "None of the above"
     },
 
     data_collect_: {

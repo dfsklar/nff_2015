@@ -248,7 +248,9 @@ $(function() {
       }, 2000);
     }
     }
-    catch(e){}
+    catch(e){
+      console.log("FILTER SECTION could not be constructed -- exception occurred in filter.js");
+    }
   };
 
 
