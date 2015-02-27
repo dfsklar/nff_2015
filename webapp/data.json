@@ -642,7 +642,7 @@
             return "4-9%";
           if (val=="15-Oct")
             return "10-15%";
-          return val.replace('_',' ')+"%";
+          return val;  //.replace('_',' ')+"%";
         },
         "key_order": [ '0-3%', '4-9%', '10-15%', '16-25%', '26-50%', '> 51%' ],
         "otherCharts": [ "aicr_state_range", "aicr_loc_range"],
@@ -654,7 +654,7 @@
         "title-subchart": "STATE",
         "info-tip": "This graph represents the average allowable indirect cost rate (AICR) or overhead/administrative cost rate that nonprofits say the government covers when they receive a contract or grant. Every organization must budget for overhead, which includes things like facility maintenance, phones, savings, and all the diffused costs that aren’t strictly tied to program delivery.",
         "renderer": "none",
-        value_massager: function(val) {
+        value_massager_NOTNEEDED: function(val) {
           if (val=="9-Apr")
             return "4-9%";
           if (val=="15-Oct")
@@ -669,7 +669,7 @@
         "show-percentage-only": true,
         "title-subchart": "LOCAL",
         "renderer": "none",
-        value_massager: function(val) {
+        value_massager_NOTNEEDED: function(val) {
           if (val=="9-Apr")
             return "4-9%";
           if (val=="15-Oct")
