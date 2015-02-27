@@ -515,7 +515,7 @@
         "highchart_formatting": {
           chart: { marginLeft: 140, spacingLeft: 0 }
         },
-        "key_order": Object.keys(window.nfforg.MAPenumToEnglish.funding_gov_),
+        "key_order": Object.keys(window.nfforg.MAPenumToEnglish.gov_payment_sources_),
         "renderer": "one_or_more",
         "css": { width: FULLWIDTH }
       },

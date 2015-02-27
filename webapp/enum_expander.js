@@ -225,7 +225,7 @@
     },
 
 
-    funding_gov_: {
+    gov_payment_sources_: {
       fed: "Federal",
       state: "State",
       local: "Local",
