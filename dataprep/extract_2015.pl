@@ -20,6 +20,8 @@ $processingLimit = 9999999;
                      # from 2014 but no longer valid: 'loan_no_(.*)', 'loan_yes_(.*)',
                      'debt_fin_applied_no_debt_(.*)',  # NEW 2015!
                      'addtl_debt_fin_use_(.*)',  # NEW 2015!
+                     'debt_fin_no_3A(.*)',
+                     'debt_fin_no_(.*)',  # "Why aren't you considering taking on debt?"
                      'addtl_debt_fin_(.*)',  # NEW 2015!
                      'future_debt_fin_(.*)',  # NEW 2015!
                      'unmet_demand_svc_(.*)',  # NEW 2015!

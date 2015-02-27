@@ -122,12 +122,12 @@
       other_yn: "Other"
     },
 
-    loan_no_: {
-      need: "Do not need",
-      pending: "Applied, and a decision is pending",
-      denied: "Applied and were denied",
-      unsure_use: "Not sure how to use",
-      unsure_apply: "Not sure how to apply",
+    debt_fin_no_: {
+      noneedcurrently: "Do not need currently (but perhaps in future)",
+      never: "Do not need currently and throughout forseeable future",
+      averse: "Management is averse to debt",
+      noqual: "Do not feel lenders would find us qualified",
+      pasttrauma: "Past debt has traumatized our organization",
       other_yn: "Other"
     },
 

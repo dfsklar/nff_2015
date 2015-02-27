@@ -1301,7 +1301,8 @@
 
       "debt_fin_amt": {
         "title": "Amount of outstanding debt<br/>or line of credit",
-        "title-mini": "Operating Expense",
+        "denominator_required_field": "debt_fin",
+        "denominator_required_field__negative_values": [ "No" ],
         "renderer": "bar",
         "value_massager": function(val){
           val = val.replace(",000,000","M");
@@ -1380,19 +1381,20 @@
         "css": { width: FULLWIDTH }
       },
 
-/*
-      "loan_yes_": {
-        "title": "Currently using loan/line of credit to...",
+      "debt_fin_no_": {
+        "title": "Reasons an NPO currently has no debt",
         "renderer": "one_or_more",
-        "denominator_required_field": "loan_yn",
-        "denominator_required_field__negative_values": [ "No" ],
-        "key_order": Object.keys(window.nfforg.MAPenumToEnglish.loan_yes_),
+        //"denominator_required_field": "loan_yn",
+        //"denominator_required_field__negative_values": [ "No" ],
+        "key_order": Object.keys(window.nfforg.MAPenumToEnglish.debt_fin_no_),
         "highchart_formatting": {
           chart: { marginLeft: 340, spacingLeft: 0 }
         },
         "css": { width: FULLWIDTH }
       },
 
+
+/*
       "loan_want_": {
         "title": "NPOs without a loan/line of credit want it to...",
         special: "INTERNAL",
@@ -1405,8 +1407,6 @@
         },
         "css": { width: FULLWIDTH }
       },
-
-
 */
 
 
