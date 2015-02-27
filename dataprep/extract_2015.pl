@@ -47,6 +47,7 @@ foreach $strPattern (@fieldsMultChoice) {
                  'orgid', 'state', 
                  'org_type', 
                  'arts_org_type',
+                 'arts_decline_revenue',
                  'lmi_serve_expanded',   # Full long text, with <strong>primarily</strong>, <strong>exclusively</strong>, etc
                  'lmi_loc',  #Yes/No
                  'loan_yn',

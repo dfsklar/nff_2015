@@ -1352,8 +1352,8 @@
         "key_order": Object.keys(window.nfforg.MAPenumToEnglish.arts_org_type),
         "value_massager": function(val){
           return val
-            .replace(/ non-museum/, " - non-museum")
-            .replace(/ non-orch/, " - non-orch")
+            .replace(/^Visual.*non-museum/, "Visual art / craft - non-museum")
+            .replace(/^Music.*non-orchestra/, "Music - non-orchestra")
             .replace(/, please specify/, "")
             .replace("and/or", "/")
             .replace("Other", "Other arts/culture/humanities")
