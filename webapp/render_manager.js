@@ -38,11 +38,12 @@ $(function() {
 
   window.nfforg.createChartViz = function($section, chartname, charthash, chartkey) {
     var chart = charthash[chartkey];
-    var $chart = $('<div class="chart"><div class=chart-header><div class=title/><div class=buttons><a class="button print" target="nffprintsinglechart" href="/?mode=print&chart='+chartname+'"/><a download="nff_survey_2014_chart.png" class="button export">Download&nbsp;&#9660</a></div></div><div class="viz"/><div class=respcount/></div>');
+    var $chart = $('<div class="chart"><div class=chart-header><div class=uniqid/><div class=title/><div class=buttons><a class="button print" target="nffprintsinglechart" href="/?mode=print&chart='+chartname+'"/><a download="nff_survey_2014_chart.png" class="button export">Download&nbsp;&#9660</a></div></div><div class="viz"/><div class=respcount/></div>');
     if (chart.usagetip) {
       $chart.find('.chart-header').append($("<div class=usagetip>"+chart.usagetip+"</div>"));
     }
     $chart.find('.title').html(chart.title);
+    $chart.find('.uniqid').html(chartname);
     $chart.data('chart-source', chart);
     if (chart.yValueTotal) {
       // Anjali wants the words "total respondents" to be shown for mult-choice questions and planned/taken questions

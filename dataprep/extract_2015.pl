@@ -443,11 +443,8 @@ while (<STDIN>) {
 
 
   &emitTimeframeBasedValue("action_staff");
-  #&emitTimeframeBasedValue("action_staff", "arts_only");
-  #&emitTimeframeBasedValue("action_management");
-
-  # &emitTimeframeBasedValue("action_prog_service");
-
+  &emitTimeframeBasedValue("action_prog_service");
+  &emitTimeframeBasedValue("action_ops_finance");
 
   # MULTIPLE-CHOICE FIELDS BASED ON REGEX PATTERNS (e.g. "lmi_(.*)")
   foreach $goodfield (keys(%multchoicesets)) {

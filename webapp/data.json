@@ -486,15 +486,13 @@
       },
 
 
-//      "action_service": {
-//        "title": "Services and Programs: Actions Taken and Planned",
-//        "key_order": Object.keys(window.nfforg.MAPenumToEnglish.action_service),
-//        "renderer": "actions_planned_taken",
-//        "css": { width: FULLWIDTH }
-//      },
-//
-//      // ACTION_STAFF should be here
-//
+      "action_prog_service": {
+        "title": "Programs and Services: Actions Taken and Planned",
+        "key_order": Object.keys(window.nfforg.MAPenumToEnglish.action_prog_service),
+        "renderer": "actions_planned_taken",
+        "css": { width: FULLWIDTH }
+      },
+
 //      "action_management": {
 //        "title": "Finance and Operations: Actions Taken and Planned",
 //        "key_order": Object.keys(window.nfforg.MAPenumToEnglish.action_management),

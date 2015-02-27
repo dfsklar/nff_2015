@@ -256,6 +256,22 @@
       ".15": "None of the above"
     },
 
+    action_prog_service: {
+      ".0": "Add or expand programs/services",
+      ".1": "Reduce or eliminate programs/services",
+      ".2": "Expand geographies served",
+      ".3": "Reduce or significantly restructure geographies served",
+      ".4": "Increase the number of people served / audience served",
+      ".5": "Decrease the number of people served / audience served",
+      ".6": "Increase amount of service per client or programs per visitor/audience member",
+      ".7": "Decrease amount of service per client or programs per visitor/audience member",
+      ".8": "Collaborate with another organization to improve/increase programs or services offered",
+      ".9": "Use, purchase, or upgrade software specifically to capture data on program impact", 
+      ".10": "Upgrade hardware/software to improve service or program delivery", 
+      ".11": "Modify target demographics",
+      ".12": "Employ an integrated approach to holistically address client needs",
+      ".13": "None of the above"
+    },
 
     arts_action_staff: {
       hire_staff: "Hire staff for new positions",
