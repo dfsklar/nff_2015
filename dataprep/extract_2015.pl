@@ -60,11 +60,11 @@ foreach $strPattern (@fieldsMultChoice) {
                  'employee_count_fte_range',
                  'employee_count_pte_range',
 
-                 'funding_local_full_cost',
+                 'funding_loc_full_cost',
                  'funding_state_full_cost',
                  'funding_fed_full_cost',
                  'funding_foundation_full_cost',
-                 'funding_corporation_full_cost',
+                 # RETIRED AFTER 2014:  'funding_corporation_full_cost',
                  'funding_individual_full_cost',
 
                  'funding_fed_trend',

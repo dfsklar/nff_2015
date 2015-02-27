@@ -1013,9 +1013,8 @@
         "title-subchart": "Federal",
         otherCharts: [ 
           "funding_state_full_cost", 
-          "funding_local_full_cost", 
+          "funding_loc_full_cost", 
           "funding_foundation_full_cost", 
-          "funding_corporation_full_cost",
           "funding_individual_full_cost"
         ],
         value_massager: function(val){
@@ -1055,7 +1054,7 @@
         "css": { width: FULLWIDTH }
       },
 
-      "funding_local_full_cost": {
+      "funding_loc_full_cost": {
         "show-percentage-only": true,
         "title": "How often do localities <br/>cover the full costs of programs they fund?",
         "title-subchart": "Local",
@@ -1080,27 +1079,6 @@
         "show-percentage-only": true,
         "title": "How often do private/community organizations <br/>cover the full costs of programs they fund?",
         "title-subchart": "Foundation",
-        value_massager: function(val){
-          if (val.has('N/A'))
-            return 'N/A';
-          return val;
-        },
-        "key_order": [
-          "Always",
-          "Often",
-          "Sometimes",
-          "Rarely",
-          "Never",
-          "N/A"
-        ],
-        "renderer": "none",
-        "css": { width: FULLWIDTH }
-      },
-
-      "funding_corporation_full_cost": {
-        "show-percentage-only": true,
-        "title": "How often do corporations <br/>cover the full costs of programs they fund?",
-        "title-subchart": "Corporation",
         value_massager: function(val){
           if (val.has('N/A'))
             return 'N/A';
