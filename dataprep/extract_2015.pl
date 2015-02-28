@@ -36,7 +36,9 @@ $processingLimit = 9999999;
                      # New approach for handling the plan/taken mult choice
                      'action_prog_service(.*)',
                      'action_ops_finance(.*)',
-                     'action_staff(.*)'
+                     'action_staff(.*)',
+                     
+                     'metrics_collection(.*)'
                     );
 @regexFieldsMultChoice;
 foreach $strPattern (@fieldsMultChoice) {
@@ -72,6 +74,11 @@ foreach $strPattern (@fieldsMultChoice) {
                  'funding_vs_reporting_local',
                  'funding_vs_reporting_foundation',
                  'funding_vs_reporting_individual',
+
+                 'funders_want_metrics_in_reports',
+                 'funders_ask_for_metrics',
+                 'funders_demand_metrics_goals_output',
+                 'funders_demand_metrics_goals_outcome',
 
                  'employee_count_fte_range',
                  'employee_count_pte_range',
