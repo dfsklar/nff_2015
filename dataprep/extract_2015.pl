@@ -46,7 +46,7 @@ foreach $strPattern (@fieldsMultChoice) {
 
 
 @fieldstoemit = (
-                 'orgid', 'state', 
+                 'orgid', 'state', 'zip',
                  'org_type', 
                  'debt_fin',
                  'debt_fin_amt',
@@ -151,6 +151,15 @@ sub autogenMultChoiceSet_takenplanned {
 
 %converters;
 
+%algconverters;
+
+$algconverters{"zip"} = sub { 
+  my($x) = $_[0];
+  $x =~ s/\-.*$//;
+  $x = sprintf("%05d", $x);
+  die "BAD ZIP CODE: $x" if ! ($x =~ /^\d\d\d\d\d$/);
+  return $x;
+};
 
 
 
@@ -477,6 +486,9 @@ while (<STDIN>) {
         $value =~ s/\"$//;
         $value =~ s/^\s+//;
         $value =~ s/\s+$//;
+        if ($algconverters{$goodfield}) {
+          $value = $algconverters{$goodfield}($value);
+        }
         die $_ if ($value eq "health");
         print "\t\"$goodfield\" : \"$value\",\n";
       }
