@@ -1262,52 +1262,51 @@
 
 
 
-      expense_gos_perc_range: {
-        title: "% annual operating expense<br/>covered by general operating support",
-        "info-tip": "General operating support is income that can be used flexibly, without restrictions defined by the funding source.",
-        renderer: "bar",
-        value_massager: function(val) {
-          if (val=="20-Nov")
-            return "11-20%";
-          if (val=="15-Jun")
-            return "6-15%";
-          return val.replace('_',' ')+"%";
-        },
-        key_order: [
-          "0-10%",
-          "11-20%",
-          "21-30%",
-          "31-40%",
-          "41-50%",
-          "51-60%",
-          "61-70%",
-          "71-80%",
-          "81-90%",
-          "91-100%"
-        ],
-        "css": { width: HALFWIDTH }
-      },
-
+//      expense_gos_perc_range: {
+//        title: "% annual operating expense<br/>covered by general operating support",
+//        "info-tip": "General operating support is income that can be used flexibly, without restrictions defined by the funding source.",
+//        renderer: "bar",
+//        value_massager: function(val) {
+//          if (val=="20-Nov")
+//            return "11-20%";
+//          if (val=="15-Jun")
+//            return "6-15%";
+//          return val.replace('_',' ')+"%";
+//        },
+//        key_order: [
+//          "0-10%",
+//          "11-20%",
+//          "21-30%",
+//          "31-40%",
+//          "41-50%",
+//          "51-60%",
+//          "61-70%",
+//          "71-80%",
+//          "81-90%",
+//          "91-100%"
+//        ],
+//        "css": { width: HALFWIDTH }
+//      },
 
 
 
 
       // FINANCIAL OUTLOOK
 
-      "current_year_client_outlook": {
-        "section": "Financial Outlook",
-        "title": "2015 Outlook for the<br/>Community the NPO Serves",
-        "renderer": "bar",
-        "key_order": [ 
-          'Harder than 2013', 
-          'More or less the same as 2013', 
-          'Easier than 2013'
-        ],
-        "highchart_formatting": {
-          chart: { marginLeft: 180, spacingLeft: 0 }
-        },
-        "css": { width: HALFWIDTH }
-      },
+//      "current_year_client_outlook": {
+//        "section": "Financial Outlook",
+//        "title": "2015 Outlook for the<br/>Community the NPO Serves",
+//        "renderer": "bar",
+//        "key_order": [ 
+//          'Harder than 2013', 
+//          'More or less the same as 2013', 
+//          'Easier than 2013'
+//        ],
+//        "highchart_formatting": {
+//          chart: { marginLeft: 180, spacingLeft: 0 }
+//        },
+//        "css": { width: HALFWIDTH }
+//      },
 
       "current_year_org_outlook_": {
         "title": "2015 Outlook for the NPO<br/>&nbsp;",
@@ -1498,6 +1497,17 @@
         "css": { width: FULLWIDTH }
       },
 
+      "arts_decline_revenue": {
+        "title": "Arts & Culture: Experienced revenue decline",
+        "renderer": "stacked_single_bar",
+        "key_order": [ 'No', 'Yes' ],
+        "color_by_key": {
+          'Yes': chroma(window.nfforg.colors.YES).hex(),
+          'No' : chroma(window.nfforg.colors.NO).hex()
+        },
+        "css": { width: FULLWIDTH } //, height: "110px" }
+      },
+
       "arts_source_competition_": {
         "denominator_required_field": "arts_org_type",
         "key_order": Object.keys(window.nfforg.MAPenumToEnglish.arts_source_competition_),
@@ -1530,46 +1540,47 @@
         "css": { width: FULLWIDTH }
       },
 
-      "arts_comp_": {
-        "denominator_required_field": "arts_org_type",
-        "title": "Arts & Culture: Impact of increased competition in the arts & culture marketplace",
-        "renderer": "one_or_more",
-        "key_order": Object.keys(window.nfforg.MAPenumToEnglish.arts_comp_),
-        "info-tip": "Building and retaining audiences/visitors can be stymied by increased competition from new cultural organizations, free artistic alternatives or non-arts options. Are arts &amp; culture nonprofits feeling any effects from increased competition?",
-        "highchart_formatting": {
-          chart: { marginLeft: 280, spacingLeft: 0 }
-        },
-        "css": { width: FULLWIDTH }
-      },
+//      "arts_comp_": {
+//        "denominator_required_field": "arts_org_type",
+//        "title": "Arts & Culture: Impact of increased competition in the arts & culture marketplace",
+//        "renderer": "one_or_more",
+//        "key_order": Object.keys(window.nfforg.MAPenumToEnglish.arts_comp_),
+//        "info-tip": "Building and retaining audiences/visitors can be stymied by increased competition from new cultural organizations, free artistic alternatives or non-arts options. Are arts &amp; culture nonprofits feeling any effects from increased competition?",
+//        "highchart_formatting": {
+//          chart: { marginLeft: 280, spacingLeft: 0 }
+//        },
+//        "css": { width: FULLWIDTH }
+//      },
 
-      "arts_comp_resp_": {
-        "denominator_required_field": "arts_comp_",
-        "denominator_required_field__negative_values": [ "none" ],
-        "title": "Arts & Culture: How did NPOs experiencing increased competition<br/>respond to it?",
-        "renderer": "one_or_more",
-        "key_order": Object.keys(window.nfforg.MAPenumToEnglish.arts_comp_resp_),
-        "highchart_formatting": {
-          chart: { marginLeft: 320, spacingLeft: 0 }
-        },
-        "value_massager": function(val){
-          if (val.has('know'))
-            return "Don't know";
-          else
-            return val.replace(", please explain","");
-        },
-        "css": { width: FULLWIDTH }
-      },
+//      "arts_comp_resp_": {
+//        "denominator_required_field": "arts_comp_",
+//        "denominator_required_field__negative_values": [ "none" ],
+//        "title": "Arts & Culture: How did NPOs experiencing increased competition<br/>respond to it?",
+//        "renderer": "one_or_more",
+//        "key_order": Object.keys(window.nfforg.MAPenumToEnglish.arts_comp_resp_),
+//        "highchart_formatting": {
+//          chart: { marginLeft: 320, spacingLeft: 0 }
+//        },
+//        "value_massager": function(val){
+//          if (val.has('know'))
+//            return "Don't know";
+//          else
+//            return val.replace(", please explain","");
+//        },
+//        "css": { width: FULLWIDTH }
+//      },
 
-      "arts_funding_": {
-        "denominator_required_field": "arts_org_type",
-        "key_order": Object.keys(window.nfforg.MAPenumToEnglish.arts_funding_),
-        title: "Arts & Culture: In 2013, my NPO received funding for...",
-        "renderer": "one_or_more",
-        "highchart_formatting": {
-          chart: { marginLeft: 340, spacingLeft: 0 }
-        },
-        "css": { width: FULLWIDTH }
-      },
+
+//      "arts_funding_": {
+//        "denominator_required_field": "arts_org_type",
+//        "key_order": Object.keys(window.nfforg.MAPenumToEnglish.arts_funding_),
+//        title: "Arts & Culture: In 2013, my NPO received funding for...",
+//        "renderer": "one_or_more",
+//        "highchart_formatting": {
+//          chart: { marginLeft: 340, spacingLeft: 0 }
+//        },
+//        "css": { width: FULLWIDTH }
+//      },
 
       "arts_grants_": {
         "denominator_required_field": "arts_org_type",
