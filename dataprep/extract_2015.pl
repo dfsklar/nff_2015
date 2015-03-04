@@ -36,15 +36,13 @@ $processingLimit = 9999999;
                      # New approach for handling the plan/taken mult choice
                      'action_prog_service(.*)',
                      'action_ops_finance(.*)',
-                     'action_staff(.*)',
-                     
-                     'metrics_collection(.*)'
+                     'action_staff(.*)'
                     );
+
 @regexFieldsMultChoice;
 foreach $strPattern (@fieldsMultChoice) {
   push(@regexFieldsMultChoice, qr/$strPattern/);
 }
-
 
 
 @fieldstoemit = (
@@ -123,7 +121,19 @@ foreach $strPattern (@fieldsMultChoice) {
 
                  'impact_funder_request',  # All of our funders, ...
                  'impact_funder_metrics',  # Strongly Agree, ...
-                 'impact_funder_cost'  # sometimes, never, rarely
+                 'impact_funder_cost',  # sometimes, never, rarely
+
+                 'metrics_collection.0',
+                 'metrics_collection.1',
+                 'metrics_collection.2',
+                 'metrics_collection.3',
+                 'metrics_collection.4'
+
+                 #'metrics_funders.0',
+                 #'metrics_funders.1',
+                 #'metrics_funders.2',
+                 #'metrics_funders.3'
+
                  #'arts_audience_dev',
                  #'arts_audience_dev_results',
                  #'arts_grantmaking_practices',

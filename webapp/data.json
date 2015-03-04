@@ -273,7 +273,7 @@
       },
 
       "past_demand_serv": {
-        "title": "In 2013,<br/>service/program demand...",
+        "title": "In 2014,<br/>service/program demand...",
         "renderer": "bar",
         "highchart_formatting": {
           chart: { marginLeft: 140, spacingLeft: 0 }
@@ -296,7 +296,7 @@
       },
 
       "met_past_demand_serv": {
-        "title": "Able to meet 2013 demand?",
+        "title": "Able to meet 2014 demand?",
         "renderer": "stacked_single_bar",
         "color_by_key": {
           'Yes': chroma(window.nfforg.colors.DISPARAGINGYES).hex(),
@@ -306,7 +306,7 @@
       },
 
       "fut_demand_serv": {
-        "title": "In 2014, service/program<br/>demand will...",
+        "title": "In 2015, service/program<br/>demand will...",
         "renderer": "bar",
         "value_massager": function(val){
           return val.replace('will ','');
@@ -332,7 +332,7 @@
       },
 
       "meet_fut_demand_serv": {
-        "title": "Will be able to meet<br/>2014 demand?",
+        "title": "Will be able to meet<br/>2015 demand?",
         "renderer": "stacked_single_bar",
         "color_by_key": {
           'Yes': chroma(window.nfforg.colors.DISPARAGINGYES).hex(),
@@ -687,7 +687,7 @@
 
       "aicr_fed_trend": {
         "title--notsure": "In last 3 years, average indirect cost rate paid by government has...",
-        "title": "In last 5 years, my NPO's gov't funding has...",
+        "title": "In last 3 years, gov't funding/contracts, as % of total revenue, has...",
         "info-tip": "This graph represents recent trends in the average allowable indirect cost rate (AICR) or overhead/administrative cost rate that nonprofits say the government covers when they receive a contract or grant. Every organization must budget for overhead, which includes things like facility maintenance, phones, savings, and all the diffused costs that aren’t strictly tied to program delivery.",
         "renderer": "barset",
         "show-percentage-only": true,
@@ -838,33 +838,33 @@
 
 
 
-      'funding_reporting_hours_range': {
-        "title": "Hours-per-month spent managing government grants/contracts",
-        "renderer": "bar",
-        "info-tip": "These hours per month are <i>not</i> time spent on delivering services to people in need. Instead, it represents the time the entire staff spends on applications, reports, documentation, and other administration activities.",
-        value_massager: function(val) {
-          if (val=="19-Oct")
-            return "10-19";
-          return val.replace('_',' ');
-        },
-        "key_order": [
-          "0-9",
-          "10-19",
-          "20-29",
-          "30-39",
-          "40-49",
-          "50-59",
-          "60-69",
-          "70-79",
-          "80-89",
-          "90-99",
-          "100-150",
-          "151-299",
-          "> 300"
-        ],
-        "css": { width: FULLWIDTH }
-      },
-
+//      'funding_reporting_hours_range': {
+//        "title": "Hours-per-month spent managing government grants/contracts",
+//        "renderer": "bar",
+//        "info-tip": "These hours per month are <i>not</i> time spent on delivering services to people in need. Instead, it represents the time the entire staff spends on applications, reports, documentation, and other administration activities.",
+//        value_massager: function(val) {
+//          if (val=="19-Oct")
+//            return "10-19";
+//          return val.replace('_',' ');
+//        },
+//        "key_order": [
+//          "0-9",
+//          "10-19",
+//          "20-29",
+//          "30-39",
+//          "40-49",
+//          "50-59",
+//          "60-69",
+//          "70-79",
+//          "80-89",
+//          "90-99",
+//          "100-150",
+//          "151-299",
+//          "> 300"
+//        ],
+//        "css": { width: FULLWIDTH }
+//      },
+//
 
 
 
@@ -876,53 +876,67 @@
 
       // DATA AND IMPACT
 
-      "impact_action_eval": {
+      "metrics_collection.0": {
         "section": "Data and Impact",
-        "title": "Uses external evaluator<br/>to assess effectiveness",
+        "title": "Has a theory of change<br/>or logic model",
         "renderer": "bar",
         "key_order": [
-          "Regularly",
-          "Sometimes",
-          "Rarely",
-          "Never"
+          "Yes",
+          "No",
+          "Don't know"
         ],
         "css": { width: HALFWIDTH }
       },
-      "impact_action_prog_data": {
-        "title": "Collects data on<br/>program productivity",
+
+      "metrics_collection.1": {
+        "section": "Data and Impact",
+        "title": "Collects output data on<br/>program productivity",
         "renderer": "bar",
         "key_order": [
-          "Regularly",
-          "Sometimes",
-          "Rarely",
-          "Never"
+          "Yes",
+          "No",
+          "Don't know"
         ],
         "css": { width: HALFWIDTH }
       },
-      "impact_action_lives_data": {
-        "title": "Collects long-term data on<br/>impact on clients",
+
+      "metrics_collection.2": {
+        "section": "Data and Impact",
+        "title": "Collects outcomes data on<br/>impact on clients",
         "renderer": "bar",
         "key_order": [
-          "Regularly",
-          "Sometimes",
-          "Rarely",
-          "Never"
+          "Yes",
+          "No",
+          "Don't know"
         ],
         "css": { width: HALFWIDTH }
       },
-      "impact_action_cmty_data": {
-        "title": "Collects long-term data on<br/>impact on communities",
+
+      "metrics_collection.3": {
+        "section": "Data and Impact",
+        "title": "Has staff dedicated to metrics<br/>collection and analysis",
         "renderer": "bar",
         "key_order": [
-          "Regularly",
-          "Sometimes",
-          "Rarely",
-          "Never"
+          "Yes",
+          "No",
+          "Don't know"
+        ],
+        "css": { width: HALFWIDTH }
+      },
+
+      "metrics_collection.4": {
+        "section": "Data and Impact",
+        "title": "Uses metrics to make decisions<br/>(strategic and programmatic)",
+        "renderer": "bar",
+        "key_order": [
+          "Yes",
+          "No",
+          "Don't know"
         ],
         "css": { width: HALFWIDTH }
       },
       
-      "impact_funder_request": {
+      "funders_want_metrics_in_reports": {
         "title": "# of Funders asking for<br/>impact metrics in reports",
         "renderer": "bar",
         "key_order": [
@@ -937,16 +951,44 @@
         "css": { width: HALFWIDTH }
       },
 
-      "impact_funder_metrics": {
-        "title": "\"Do metrics funders ask for<br/>help us assess impact?\"",
+      "funders_ask_for_metrics": {
+        "title": "# of Funders using our metrics<br/>to assess our effectiveness",
         "renderer": "bar",
         "key_order": [
-          "Strongly Agree",
-          "Mostly Agree",
-          "Somewhat Agree",
-          "Somewhat Disagree",
-          "Mostly Disagree",
-          "Strongly Disagree"
+          "All",
+          "Half or more",
+          "Less than half",
+          "None"
+        ],
+        "highchart_formatting": {
+          chart: { marginLeft: 150, spacingLeft: 0 }
+        },
+        "css": { width: HALFWIDTH }
+      },
+
+      "funders_demand_metrics_goals_output": {
+        "title": "How often is funding contingent<br/>on certain output levels?",
+        "renderer": "bar",
+        "key_order": [
+          "All",
+          "Half or more",
+          "Less than half",
+          "None"
+        ],
+        "highchart_formatting": {
+          chart: { marginLeft: 150, spacingLeft: 0 }
+        },
+        "css": { width: HALFWIDTH }
+      },
+
+      "funders_demand_metrics_goals_outcome": {
+        "title": "How often is funding contingent<br/>on certain outcome levels?",
+        "renderer": "bar",
+        "key_order": [
+          "All",
+          "Half or more",
+          "Less than half",
+          "None"
         ],
         "highchart_formatting": {
           chart: { marginLeft: 150, spacingLeft: 0 }
@@ -967,20 +1009,20 @@
         "css": { width: HALFWIDTH }
       },
 
-      "data_collect_": {
-        "title": "Top Barriers to impact measurement",
-        "key_order": Object.keys(window.nfforg.MAPenumToEnglish.data_collect_),
-        "highchart_formatting": {
-          chart: { marginLeft: 425, spacingLeft: 0 }
-        },
-        "value_massager": function(val){
-          if (val.has('not sure'))
-            return 'Not sure';
-          return val;
-        },
-        "renderer": "one_or_more",
-        "css": { width: FULLWIDTH }
-      },
+//      "data_collect_": {
+//        "title": "Top Barriers to impact measurement",
+//        "key_order": Object.keys(window.nfforg.MAPenumToEnglish.data_collect_),
+//        "highchart_formatting": {
+//          chart: { marginLeft: 425, spacingLeft: 0 }
+//        },
+//        "value_massager": function(val){
+//          if (val.has('not sure'))
+//            return 'Not sure';
+//          return val;
+//        },
+//        "renderer": "one_or_more",
+//        "css": { width: FULLWIDTH }
+//      },
 
 
 
