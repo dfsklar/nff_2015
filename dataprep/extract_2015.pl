@@ -448,15 +448,17 @@ while (<STDIN>) {
   # For now, ignore all incomplete survey-result rows
   next if ($fields[0] =~ /^Incomplete/i);
 
-
+  
   if ( ! ($fields[1] =~ /\d\d\d\d\d\d\d\d/) ) {
     print STDERR "Row seen that did not have a valid internal ID, so ceasing processing.\n";
-    print STDERR $fields[1] . "\n";
+    print STDERR "The last one handled had this internal ID: $internalIDhandled\n";
+    print STDERR $_ . "\n";
     last;
   }
 
-  print "{\n";
+  $internalIDhandled = $fields[1];
 
+  print "{\n";
 
   &emitTimeframeBasedValue("action_staff");
   &emitTimeframeBasedValue("action_prog_service");
