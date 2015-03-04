@@ -185,6 +185,15 @@
       none: "None of the above"
     },
 
+    unmet_demand_svc_: {
+      otherorg: "Seek similar services from another organization",
+      family: "Seek assistance from personal networks (family, friends, etc.)",
+      govprograms: "Access direct government assistance through programs not outsourced to nonprofits",
+      remainunmet: "Likely remain unmet",
+      dontknow: "Don't know",
+      other: "Other"
+    },
+
     data_collect_: {
       no_staff: "Not enough staff or time",
       no_experts: "Don't have right staff expertise",
