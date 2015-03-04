@@ -454,8 +454,8 @@ while (<STDIN>) {
   @fields = split(/\t/, $_);
   next if ($fields[0] =~ /^status$/i);
 
-  # For now, ignore all incomplete survey-result rows
-  next if ($fields[0] =~ /^Incomplete/i);
+  # WE CONSIDER ALL ROWS EVEN INCOMPLETE
+  # next if ($fields[0] =~ /^Incomplete/i);
 
   
   if ( ! ($fields[1] =~ /\d\d\d\d\d\d\d\d/) ) {
