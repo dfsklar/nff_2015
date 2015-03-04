@@ -1475,14 +1475,14 @@
         "css": { width: FULLWIDTH }
       },
 
-      "arts_action_staff": {
-        "denominator_required_field": "arts_org_type",
-        "key_order": Object.keys(window.nfforg.MAPenumToEnglish.arts_action_staff),
-        "title": "Arts & Culture: Human Capital Actions Taken and Planned",
-        "usagetip": "This survey question was presented to all NPOs across all sectors (see the 'Challenges and Responses' section above).  However, Arts/Culture/Humanities respondents received additional options related to their management of artists. Below, you’ll see this group's responses to these sector-specific options in addition to their responses to the full set.",
-        "renderer": "actions_planned_taken",
-        "css": { width: FULLWIDTH }
-      },
+//      "arts_action_staff": {
+//        "denominator_required_field": "arts_org_type",
+//        "key_order": Object.keys(window.nfforg.MAPenumToEnglish.arts_action_staff),
+//        "title": "Arts & Culture: Human Capital Actions Taken and Planned",
+//        "usagetip": "This survey question was presented to all NPOs across all sectors (see the 'Challenges and Responses' section above).  However, Arts/Culture/Humanities respondents received additional options related to their management of artists. Below, you’ll see this group's responses to these sector-specific options in addition to their responses to the full set.",
+//        "renderer": "actions_planned_taken",
+//        "css": { width: FULLWIDTH }
+//      },
 
       "arts_aud_": {
         "denominator_required_field": "arts_org_type",
@@ -1498,7 +1498,21 @@
         "css": { width: FULLWIDTH }
       },
 
-      "arts_aud_rslts_": {
+      "arts_source_competition_": {
+        "denominator_required_field": "arts_org_type",
+        "key_order": Object.keys(window.nfforg.MAPenumToEnglish.arts_source_competition_),
+        "title": "Arts & Culture: Source of competition",
+        "renderer": "one_or_more",
+        "highchart_formatting": {
+          chart: { marginLeft: 250, spacingLeft: 0 }
+        },
+        "value_massager": function(val){
+          return val.replace(", please explain","");
+        },
+        "css": { width: FULLWIDTH }
+      },
+
+      "arts_audience_dev_results_": {
         "denominator_required_field": "arts_aud_",
         "denominator_required_field__negative_values": [ "none" ],
         "title": "Arts & Culture: Result of investments in <br/>audience/visitor development strategies",
@@ -1506,7 +1520,7 @@
         "highchart_formatting": {
           chart: { marginLeft: 450, spacingLeft: 0 }
         },
-        "key_order": Object.keys(window.nfforg.MAPenumToEnglish.arts_aud_rslts_),
+        "key_order": Object.keys(window.nfforg.MAPenumToEnglish.arts_audience_dev_results_),
         NONEED_value_massager: function(val){
           if (val.has('know'))
             return val; //return "Don't know";

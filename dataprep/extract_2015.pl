@@ -135,7 +135,6 @@ foreach $strPattern (@fieldsMultChoice) {
                  #'metrics_funders.3'
 
                  #'arts_audience_dev',
-                 #'arts_audience_dev_results',
                  #'arts_grantmaking_practices',
                 );
 
