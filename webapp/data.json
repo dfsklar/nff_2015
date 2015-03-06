@@ -1490,10 +1490,22 @@
 //        "css": { width: FULLWIDTH }
 //      },
 
+      "arts_audience_dev": {
+        "denominator_required_field": "arts_org_type",
+        "title": "Arts & Culture: In 2013, my NPO made meaningful investment in <br/>audience/visitor development strategies",
+        "renderer": "stacked_single_bar",
+        "key_order": [ 'No', 'Yes' ],
+        "color_by_key": {
+          'Yes': chroma(window.nfforg.colors.YES).hex(),
+          'No' : chroma(window.nfforg.colors.NO).hex()
+        },
+        "css": { width: FULLWIDTH }
+      },
+
       "arts_aud_": {
         "denominator_required_field": "arts_org_type",
         "key_order": Object.keys(window.nfforg.MAPenumToEnglish.arts_aud_),
-        "title": "Arts & Culture: In 2013, my NPO made meaningful investment in <br/>the following audience/visitor development strategies",
+        "title": "Arts & Culture: In 2013, my NPO made meaningful investment in <br/>these audience/visitor development strategies",
         "renderer": "one_or_more",
         "highchart_formatting": {
           chart: { marginLeft: 450, spacingLeft: 0 }

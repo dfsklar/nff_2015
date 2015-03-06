@@ -127,14 +127,14 @@ foreach $strPattern (@fieldsMultChoice) {
                  'metrics_collection.1',
                  'metrics_collection.2',
                  'metrics_collection.3',
-                 'metrics_collection.4'
+                 'metrics_collection.4',
 
                  #'metrics_funders.0',
                  #'metrics_funders.1',
                  #'metrics_funders.2',
                  #'metrics_funders.3'
 
-                 #'arts_audience_dev',
+                 'arts_audience_dev'
                  #'arts_grantmaking_practices',
                 );
 
