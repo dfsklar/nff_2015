@@ -1503,9 +1503,10 @@
       },
 
       "arts_aud_": {
-        "denominator_required_field": "arts_org_type",
+        "denominator_required_field": "arts_audience_dev",
+        "denominator_required_field__negative_values": [ "No" ],
         "key_order": Object.keys(window.nfforg.MAPenumToEnglish.arts_aud_),
-        "title": "Arts & Culture: In 2013, my NPO made meaningful investment in <br/>these audience/visitor development strategies",
+        "title": "Followup: The specific investment types made in <br/>audience/visitor development strategies",
         "renderer": "one_or_more",
         "highchart_formatting": {
           chart: { marginLeft: 450, spacingLeft: 0 }
