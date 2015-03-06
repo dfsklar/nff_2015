@@ -1,0 +1,394 @@
+	Status
+	Internal ID
+	Language
+	Created At
+	Updated At
+	Location
+	Browser Name
+	Device Type
+	Username
+	GET Variables
+	Referrer
+	Number of Saves
+	Weighted Score
+	Completion Time
+	IP Address
+	Invite Code
+	Invite Email
+	Invite Name
+	Collector
+	Collector: qualitative
+	Collector: artstext
+	[state] In what state is your organization located?*
+	[zip] In what zip code is your organization located? (Please include your 'plus-four' if you know it!)*
+	[org_type] What type of organization are you? Choose the category that is most applicable.*
+org_type_other_text	[org_type] What type of organization are you? Choose the category that is most applicable.* [other]
+	[arts_org_type] What type of cultural organization are you? Please check the one discipline that is most representative:*
+arts_org_type_fillin	[arts_org_type] What type of cultural organization are you? Please check the one discipline that is most representative:* [other]
+year_founded_range	[year_founded] In what year was your organization founded?
+	[opp_exp_max] What was your total annual operating expense for the fiscal year ending in 2014?*
+lmi_serve_expanded	[lmi_serve] Does your organization serve low-income communities? Please select the option that is most applicable to you:*
+	[lmi_loc] Is your organization located in a predominantly low-income area or neighborhood?*
+	"[lifeline] Do you consider yourself a 'lifeline' organization (i.e., providing critical services or programs to people in need)?"
+lmi_culture	"[lmi_needs] What do you think are the 3 most critical need(s) of the communities your organization serves? Please select no more than 3 needs. [Access to cultural opportunities (theater, museums, etc.)]"
+lmi_health	[lmi_needs] What do you think are the 3 most critical need(s) of the communities your organization serves? Please select no more than 3 needs. [Access to healthcare]
+lmi_food	[lmi_needs] What do you think are the 3 most critical need(s) of the communities your organization serves? Please select no more than 3 needs. [Access to healthy foods]
+lmi_housing	[lmi_needs] What do you think are the 3 most critical need(s) of the communities your organization serves? Please select no more than 3 needs. [Affordable housing]
+lmi_retail	"[lmi_needs] What do you think are the 3 most critical need(s) of the communities your organization serves? Please select no more than 3 needs. [Availability of commercial goods and services (access to retail, restaurants, pharmacies, etc.)]"
+lmi_transit	[lmi_needs] What do you think are the 3 most critical need(s) of the communities your organization serves? Please select no more than 3 needs. [Availability of public transportation]
+lmi_childcare	[lmi_needs] What do you think are the 3 most critical need(s) of the communities your organization serves? Please select no more than 3 needs. [Early childhood education]
+lmi_jobs	[lmi_needs] What do you think are the 3 most critical need(s) of the communities your organization serves? Please select no more than 3 needs. [Job availability]
+lmi_job_training	[lmi_needs] What do you think are the 3 most critical need(s) of the communities your organization serves? Please select no more than 3 needs. [Job training]
+lmi_mentalhealth	[lmi_needs] What do you think are the 3 most critical need(s) of the communities your organization serves? Please select no more than 3 needs. [Mental health services]
+lmi_recreation	"[lmi_needs] What do you think are the 3 most critical need(s) of the communities your organization serves? Please select no more than 3 needs. [Recreational opportunities (e.g., spaces for physical fitness activities)]"
+lmi_seniorcare	[lmi_needs] What do you think are the 3 most critical need(s) of the communities your organization serves? Please select no more than 3 needs. [Senior care]
+lmi_schools	"[lmi_needs] What do you think are the 3 most critical need(s) of the communities your organization serves? Please select no more than 3 needs. [Access to strong, well-performing schools]"
+lmi_substanceabuse	[lmi_needs] What do you think are the 3 most critical need(s) of the communities your organization serves? Please select no more than 3 needs. [Substance abuse services]
+lmi_veteransvc	[lmi_needs] What do you think are the 3 most critical need(s) of the communities your organization serves? Please select no more than 3 needs. [Veterans' Services]
+lmi_youthdevel	[lmi_needs] What do you think are the 3 most critical need(s) of the communities your organization serves? Please select no more than 3 needs. [Youth development programs]
+lmi_other_yn	"[lmi_needs] What do you think are the 3 most critical need(s) of the communities your organization serves? Please select no more than 3 needs. [Other, please specify...]"
+lmi_other_text	"[lmi_needs] What do you think are the 3 most critical need(s) of the communities your organization serves? Please select no more than 3 needs. [Other, please specify...] [text]"
+	"[past_demand_serv] In 2014, demand for my organization's services or programs:"
+	"[met_past_demand_serv] In 2014, were you able to fully meet demand for your services or programs?"
+unmet_demand_svc_otherorg	"[unmet_demand_serv] When you cannot meet community demand for services, how are client needs met? Select all that apply. [They seek similar services from another organization]"
+unmet_demand_svc_remainunmet	"[unmet_demand_serv] When you cannot meet community demand for services, how are client needs met? Select all that apply. [Their needs remain unmet]"
+unmet_demand_svc_family	"[unmet_demand_serv] When you cannot meet community demand for services, how are client needs met? Select all that apply. [They seek assistance from personal networks (family, friends, etc.)]"
+unmet_demand_svc_govprograms	"[unmet_demand_serv] When you cannot meet community demand for services, how are client needs met? Select all that apply. [They access direct government assistance through government programs that are not outsourced to nonprofits]"
+unmet_demand_svc_dontknow	"[unmet_demand_serv] When you cannot meet community demand for services, how are client needs met? Select all that apply. [Don't know]"
+unmet_demand_svc_other_yn	"[unmet_demand_serv] When you cannot meet community demand for services, how are client needs met? Select all that apply. [Other, please specify...]"
+	"[unmet_demand_serv] When you cannot meet community demand for services, how are client needs met? Select all that apply. [Other, please specify...] [text]"
+	"[fut_demand_serv] In 2015, I anticipate that demand for my organization's services or programs:"
+	"[meet_fut_demand_serv] In 2015, do you anticipate that you will be able to fully meet demand for your services or programs?"
+	"[arts_audience_dev] In 2014, did your organization make a meaningful investment in activities to develop/engage audiences?"
+arts_aud_data_inform_programs	[arts_audience_dev_strategies] Please select no more than 3 top investments made to develop/engage audiences: [Data collection on audience/visitor preferences and behaviors to inform programs]
+arts_aud_data_inform_fundr	[arts_audience_dev_strategies] Please select no more than 3 top investments made to develop/engage audiences: [Data collection on audiences and visitors to inform fundraising ]
+arts_aud_tech	[arts_audience_dev_strategies] Please select no more than 3 top investments made to develop/engage audiences: [Engaging audiences/visitors through technology]
+arts_aud_participation	[arts_audience_dev_strategies] Please select no more than 3 top investments made to develop/engage audiences: [Participatory programs]
+arts_aud_targeting	[arts_audience_dev_strategies] Please select no more than 3 top investments made to develop/engage audiences: [Programs for specific target audiences or visitor segments]
+arts_aud_planning	[arts_audience_dev_strategies] Please select no more than 3 top investments made to develop/engage audiences: [Audiences/visitors involvement in program planning]
+arts_aud_mkting	[arts_audience_dev_strategies] Please select no more than 3 top investments made to develop/engage audiences: [New marketing strategy(ies)]
+arts_aud_pricing	[arts_audience_dev_strategies] Please select no more than 3 top investments made to develop/engage audiences: [Implementation of new pricing model(s)]
+arts_aud_oddspaces	[arts_audience_dev_strategies] Please select no more than 3 top investments made to develop/engage audiences: [Cultural experiences in unconventional spaces]
+arts_aud_educollab	[arts_audience_dev_strategies] Please select no more than 3 top investments made to develop/engage audiences: [Arts education programs or partnerships with schools]
+arts_aud_other_yn	"[arts_audience_dev_strategies] Please select no more than 3 top investments made to develop/engage audiences: [Other, please specify...]"
+arts_aud_other_text	"[arts_audience_dev_strategies] Please select no more than 3 top investments made to develop/engage audiences: [Other, please specify...] [text]"
+arts_audience_dev_results_audgrew	[arts_audience_dev_results] Please select no more than the 3 top results from audience/visitor development and engagement: [Some audience/visitor segments grew]
+arts_audience_dev_results_audshrank	[arts_audience_dev_results] Please select no more than the 3 top results from audience/visitor development and engagement: [Some audience/visitor segments declined]
+arts_audience_dev_results_youth	[arts_audience_dev_results] Please select no more than the 3 top results from audience/visitor development and engagement: [We attracted younger audiences/visitors]
+arts_audience_dev_results_representative	[arts_audience_dev_results] Please select no more than the 3 top results from audience/visitor development and engagement: [We attracted an audience/visitor segment that is more representative of our community]
+arts_audience_dev_results_nochange	[arts_audience_dev_results] Please select no more than the 3 top results from audience/visitor development and engagement: [The number and composition of audiences/visitors did not change]
+arts_audience_dev_results_moretix	[arts_audience_dev_results] Please select no more than the 3 top results from audience/visitor development and engagement: [Ticket revenue grew]
+arts_audience_dev_results_moredonors	[arts_audience_dev_results] Please select no more than the 3 top results from audience/visitor development and engagement: [Donor base grew]
+arts_audience_dev_results_finimpv	[arts_audience_dev_results] Please select no more than the 3 top results from audience/visitor development and engagement: [Surplus/deficit improved]
+arts_audience_dev_results_nofinimpv	[arts_audience_dev_results] Please select no more than the 3 top results from audience/visitor development and engagement: [Financial results have not improved]
+arts_audience_dev_results_dontknow	[arts_audience_dev_results] Please select no more than the 3 top results from audience/visitor development and engagement: [Don’t know]
+arts_audience_dev_results_other_yn	"[arts_audience_dev_results] Please select no more than the 3 top results from audience/visitor development and engagement: [Other, please explain]"
+arts_audience_dev_results_othertext	"[arts_audience_dev_results] Please select no more than the 3 top results from audience/visitor development and engagement: [Other, please explain] [text]"
+	"[debt_fin] Do you currently have one or more types of debt financing (i.e., loans or lines of credit)?"
+	"[debt_fin_amt] How much debt do you currently have outstanding, or are you able to access via an existing line of credit?"
+loan_yes_exp_prog	[debt_fin_use] How do you use or have you used your current loan or line of credit? Please check all that apply. [To expand programs or services]
+loan_yes_facility_exp	[debt_fin_use] How do you use or have you used your current loan or line of credit? Please check all that apply. [To expand or renovate a facility my organization leases or owns]
+loan_yes_facility_new	[debt_fin_use] How do you use or have you used your current loan or line of credit? Please check all that apply. [To purchase a facility]
+loan_yes_delays_gov	[debt_fin_use] How do you use or have you used your current loan or line of credit? Please check all that apply. [To manage delays in payment from our government contracts]
+loan_yes_tech	[debt_fin_use] How do you use or have you used your current loan or line of credit? Please check all that apply. [To invest in technology such as computers or IT systems]
+loan_yes_cashflow	[debt_fin_use] How do you use or have you used your current loan or line of credit? Please check all that apply. [To manage gaps or unevenness in revenue]
+loan_yes_delays_grant	[debt_fin_use] How do you use or have you used your current loan or line of credit? Please check all that apply. [To cover costs while waiting for a grant to come in]
+loan_yes_delays_emergencyloc	[debt_fin_use] How do you use or have you used your current loan or line of credit? Please check all that apply. [To have access to a line of credit for emergencies]
+loan_yes_other_yn	"[debt_fin_use] How do you use or have you used your current loan or line of credit? Please check all that apply. [Other, please specify...]"
+loan_yes_other_text	"[debt_fin_use] How do you use or have you used your current loan or line of credit? Please check all that apply. [Other, please specify...] [text]"
+	[addtl_debt_fin] Does your organization currently need  or anticipate needing additional debt or financing?
+	[addtl_debt_fin_amt] How much additional debt financing do you need or anticipate needing?
+addtl_debt_fin_use_exp_prog	[addtl_debt_fin_use] How would you use an additional loan or line of credit? Please check all that apply: [To expand programs or services]
+addtl_debt_fin_use_facility_exp	[addtl_debt_fin_use] How would you use an additional loan or line of credit? Please check all that apply: [To expand or renovate a facility my organization leases or owns]
+addtl_debt_fin_use_facility_new	[addtl_debt_fin_use] How would you use an additional loan or line of credit? Please check all that apply: [To purchase a facility]
+addtl_debt_fin_use_delays_gov	[addtl_debt_fin_use] How would you use an additional loan or line of credit? Please check all that apply: [To manage delays in payment from our government contracts]
+addtl_debt_fin_use_tech	[addtl_debt_fin_use] How would you use an additional loan or line of credit? Please check all that apply: [To invest in technology such as computers or IT systems]
+addtl_debt_fin_use_cashflow	[addtl_debt_fin_use] How would you use an additional loan or line of credit? Please check all that apply: [To manage gaps or unevenness in revenue]
+addtl_debt_fin_use_delays_grant	[addtl_debt_fin_use] How would you use an additional loan or line of credit? Please check all that apply: [To cover costs while waiting for a grant to come in]
+addtl_debt_fin_use_emergloc	[addtl_debt_fin_use] How would you use an additional loan or line of credit? Please check all that apply: [To have access to a line of credit for emergencies]
+addtl_debt_fin_use_other_yn	"[addtl_debt_fin_use] How would you use an additional loan or line of credit? Please check all that apply: [Other, please specify...]"
+addtl_debt_fin_use_othertext	"[addtl_debt_fin_use] How would you use an additional loan or line of credit? Please check all that apply: [Other, please specify...] [text]"
+	"[future_debt_fin] Does your organization currently need or anticipate needing debt financing (i.e., loans or lines of credit)?"
+	[future_debt_fin_amt] How much additional debt financing do you need or anticipate needing?
+future_debt_fin_use_expandprog	[future_debt_fin_use] How would you use an additional loan or line of credit? Please check all that apply: [To expand programs or services]
+future_debt_fin_use_improvefacility	[future_debt_fin_use] How would you use an additional loan or line of credit? Please check all that apply: [To expand or renovate a facility my organization leases or owns]
+future_debt_fin_use_newfacility	[future_debt_fin_use] How would you use an additional loan or line of credit? Please check all that apply: [To purchase a facility]
+future_debt_fin_use_managedelays	[future_debt_fin_use] How would you use an additional loan or line of credit? Please check all that apply: [To manage delays in payment from our government contracts]
+future_debt_fin_use_newtech	[future_debt_fin_use] How would you use an additional loan or line of credit? Please check all that apply: [To invest in technology such as computers or IT systems]
+future_debt_fin_use_cashflow	[future_debt_fin_use] How would you use an additional loan or line of credit? Please check all that apply: [To manage gaps or unevenness in revenue]
+future_debt_fin_use_waitgrant	[future_debt_fin_use] How would you use an additional loan or line of credit? Please check all that apply: [To cover costs while waiting for a grant to come in]
+future_debt_fin_use_emergloc	[future_debt_fin_use] How would you use an additional loan or line of credit? Please check all that apply: [To have access to a line of credit for emergencies]
+future_debt_fin_use_otheryn	"[future_debt_fin_use] How would you use an additional loan or line of credit? Please check all that apply: [Other, please specify...]"
+future_debt_fin_use_othertext	"[future_debt_fin_use] How would you use an additional loan or line of credit? Please check all that apply: [Other, please specify...] [text]"
+	[debt_fin_applied] Have you applied for debt financing (a loan or line of credit) in the last two years?
+debt_fin_applied_no_debt_statuspending	"[debt_fin_applied_no_debt] You shared that your organization applied for debt financing in the last two years, but does not have any debt outstanding. Why not? Please check all that apply. [Status is still pending]"
+debt_fin_applied_no_debt_highinterest	"[debt_fin_applied_no_debt] You shared that your organization applied for debt financing in the last two years, but does not have any debt outstanding. Why not? Please check all that apply. [The interest rates were too high]"
+debt_fin_applied_no_debt_highclosing	"[debt_fin_applied_no_debt] You shared that your organization applied for debt financing in the last two years, but does not have any debt outstanding. Why not? Please check all that apply. [The closing fees were too high]"
+debt_fin_applied_no_debt_badrepayschedule	"[debt_fin_applied_no_debt] You shared that your organization applied for debt financing in the last two years, but does not have any debt outstanding. Why not? Please check all that apply. [The repayment schedule did not meet our needs (e.g., loan had to be repaid too quickly)]"
+debt_fin_applied_no_debt_conditionsexcessive	"[debt_fin_applied_no_debt] You shared that your organization applied for debt financing in the last two years, but does not have any debt outstanding. Why not? Please check all that apply. [Other conditions of the loan were too restrictive (e.g., personal guaranty required, no prepayment allowed)]"
+debt_fin_applied_no_debt_nofindtypedesired	"[debt_fin_applied_no_debt] You shared that your organization applied for debt financing in the last two years, but does not have any debt outstanding. Why not? Please check all that apply. [We could not find the type of debt financing we need (e.g., for a start-up or organizational growth) ]"
+debt_fin_applied_no_debt_aversion	"[debt_fin_applied_no_debt] You shared that your organization applied for debt financing in the last two years, but does not have any debt outstanding. Why not? Please check all that apply. [Organizational leadership ultimately was averse to taking on debt]"
+debt_fin_applied_no_debt_asktoosmall	"[debt_fin_applied_no_debt] You shared that your organization applied for debt financing in the last two years, but does not have any debt outstanding. Why not? Please check all that apply. [Our operating budget was too small to meet the lenders' minimums]"
+debt_fin_applied_no_debt_asktoomuch	"[debt_fin_applied_no_debt] You shared that your organization applied for debt financing in the last two years, but does not have any debt outstanding. Why not? Please check all that apply. [The lender indicated that we were asking for more debt than we could manage]"
+debt_fin_applied_no_debt_nocollateral	"[debt_fin_applied_no_debt] You shared that your organization applied for debt financing in the last two years, but does not have any debt outstanding. Why not? Please check all that apply. [We could not provide sufficient collateral]"
+debt_fin_applied_no_debt_priordebtburden	"[debt_fin_applied_no_debt] You shared that your organization applied for debt financing in the last two years, but does not have any debt outstanding. Why not? Please check all that apply. [We struggled to repay prior debt on time]"
+debt_fin_applied_no_debt_nonprofitsbanned	"[debt_fin_applied_no_debt] You shared that your organization applied for debt financing in the last two years, but does not have any debt outstanding. Why not? Please check all that apply. [Lenders in our community would not lend to nonprofits]"
+debt_fin_applied_no_debt_rejectedunknownreason	"[debt_fin_applied_no_debt] You shared that your organization applied for debt financing in the last two years, but does not have any debt outstanding. Why not? Please check all that apply. [We were rejected and don't know why]"
+debt_fin_applied_no_debt_otheryn	"[debt_fin_applied_no_debt] You shared that your organization applied for debt financing in the last two years, but does not have any debt outstanding. Why not? Please check all that apply. [Other, please specify...]"
+debt_fin_applied_no_debt_othertext	"[debt_fin_applied_no_debt] You shared that your organization applied for debt financing in the last two years, but does not have any debt outstanding. Why not? Please check all that apply. [Other, please specify...] [text]"
+debt_fin_no_noneedcurrently	"[debt_fin_no] Why is your organization not considering debt financing? Please check all that apply: [We do not need debt currently or in the near-term, but it may be needed in the future]"
+debt_fin_no_never	[debt_fin_no] Why is your organization not considering debt financing? Please check all that apply: [We do not currently need or foresee a need to take on debt at any time]
+debt_fin_no_averse	[debt_fin_no] Why is your organization not considering debt financing? Please check all that apply: [Organizational leadership is averse to taking on debt]
+debt_fin_no_noqual	[debt_fin_no] Why is your organization not considering debt financing? Please check all that apply: [We don't think we would meet a lender's qualifications to take on debt]
+debt_fin_no_pasttrauma	[debt_fin_no] Why is your organization not considering debt financing? Please check all that apply: [Our organization has had a bad experience taking on or managing debt in the past]
+debt_fin_no_other	"[debt_fin_no] Why is your organization not considering debt financing? Please check all that apply: [Other, please specify...]"
+	"[debt_fin_no] Why is your organization not considering debt financing? Please check all that apply: [Other, please specify...] [text]"
+	"[debt_fin_no_3A] Why has your organization not applied for debt financing? Please check all that apply: [We do not need debt currently or in the near-term, but it may be needed in the future]"
+	[debt_fin_no_3A] Why has your organization not applied for debt financing? Please check all that apply: [We do not currently need or foresee a need to take on debt at any time]
+	[debt_fin_no_3A] Why has your organization not applied for debt financing? Please check all that apply: [Organizational leadership is averse to taking on debt]
+	[debt_fin_no_3A] Why has your organization not applied for debt financing? Please check all that apply: [We don't think we would meet a lender's qualifications to take on debt]
+	[debt_fin_no_3A] Why has your organization not applied for debt financing? Please check all that apply: [Our organization has had a bad experience taking on or managing debt in the past]
+	"[debt_fin_no_3A] Why has your organization not applied for debt financing? Please check all that apply: [Other, please specify...]"
+	"[debt_fin_no_3A] Why has your organization not applied for debt financing? Please check all that apply: [Other, please specify...] [text]"
+	[surplus_deficit_prior] We finished our fiscal year ending in 2014 with:*
+	[surplus_prior_perc] Please approximate your 2014 operating surplus as a percent of annual expense:
+	[deficit_prior_perc] Please approximate your 2014 operating deficit as a percent of annual expense:
+	[deficit_rationale] This deficit was...
+	"[surplus_deficit_current] For our fiscal year ending in 2015, we currently anticipate that we will end the year with:"
+current_year_org_outlook_easier	"[financial_outlook_2015] What is your financial outlook for your organization in 2015? ""For our organization, 2015 will be..."" [Easier than 2014]"
+current_year_org_outlook_harder	"[financial_outlook_2015] What is your financial outlook for your organization in 2015? ""For our organization, 2015 will be..."" [Harder than 2014]"
+current_year_org_outlook_same	"[financial_outlook_2015] What is your financial outlook for your organization in 2015? ""For our organization, 2015 will be..."" [More or less the same as 2014]"
+	[months_cash] Please indicate how many months of cash the organization has in reserve.  
+challenge_demand	[greatest_challenges] What are the 3 greatest challenges your organization is facing? Please select no more than 3 challenges: [Meeting community demand for services or programs]
+challenge_cut_gov_fund	[greatest_challenges] What are the 3 greatest challenges your organization is facing? Please select no more than 3 challenges: [Cuts in government funding]
+challenge_delay_gov_fund	[greatest_challenges] What are the 3 greatest challenges your organization is facing? Please select no more than 3 challenges: [Delays in government funding]
+challenge_longterm_sust	[greatest_challenges] What are the 3 greatest challenges your organization is facing? Please select no more than 3 challenges: [Achieving long-term financial sustainability]
+challenge_cover_full_costs	[greatest_challenges] What are the 3 greatest challenges your organization is facing? Please select no more than 3 challenges: [Raising funding that covers full costs]
+challenge_raise_gos	[greatest_challenges] What are the 3 greatest challenges your organization is facing? Please select no more than 3 challenges: [Raising unrestricted revenue/ GOS]
+challenge_cashflow	"[greatest_challenges] What are the 3 greatest challenges your organization is facing? Please select no more than 3 challenges: [Having regular, reliable cash flow]"
+challenge_cash_reserve	[greatest_challenges] What are the 3 greatest challenges your organization is facing? Please select no more than 3 challenges: [Developing cash reserves]
+challenge_revenue	[greatest_challenges] What are the 3 greatest challenges your organization is facing? Please select no more than 3 challenges: [Insufficient revenue]
+challenge_fixed_assets	[greatest_challenges] What are the 3 greatest challenges your organization is facing? Please select no more than 3 challenges: [Managing a facility or fixed asset]
+challenge_growth	[greatest_challenges] What are the 3 greatest challenges your organization is facing? Please select no more than 3 challenges: [Managing or pursuing growth]
+challenge_impact_meas	[greatest_challenges] What are the 3 greatest challenges your organization is facing? Please select no more than 3 challenges: [Measuring impact]
+challenge_program_innov	[greatest_challenges] What are the 3 greatest challenges your organization is facing? Please select no more than 3 challenges: [Pursuing program innovation]
+challenge_board_support	[greatest_challenges] What are the 3 greatest challenges your organization is facing? Please select no more than 3 challenges: [Not enough support from board]
+challenge_need_staff	[greatest_challenges] What are the 3 greatest challenges your organization is facing? Please select no more than 3 challenges: [Not enough staff]
+challenge_marketing	"[greatest_challenges] What are the 3 greatest challenges your organization is facing? Please select no more than 3 challenges: [Marketing, outreach, and community engagement]"
+challenge_it_needs	[greatest_challenges] What are the 3 greatest challenges your organization is facing? Please select no more than 3 challenges: [IT concerns]
+challenge_demographics	[greatest_challenges] What are the 3 greatest challenges your organization is facing? Please select no more than 3 challenges: [Adapting to changing community demographics]
+challenge_aca_changes	[greatest_challenges] What are the 3 greatest challenges your organization is facing? Please select no more than 3 challenges: [Adapting to changes due to the Affordable Care Act]
+challenge_volunteers	[greatest_challenges] What are the 3 greatest challenges your organization is facing? Please select no more than 3 challenges: [Engaging and mobilizing volunteers]
+challenge_staff_retain	[greatest_challenges] What are the 3 greatest challenges your organization is facing? Please select no more than 3 challenges: [Ability to offer competitive staff pay and/or retain staff]
+challenge_staff_environ_health	[greatest_challenges] What are the 3 greatest challenges your organization is facing? Please select no more than 3 challenges: [Environmental health hazards and risks]
+challenge_staff_unavoidable_costs	"[greatest_challenges] What are the 3 greatest challenges your organization is facing? Please select no more than 3 challenges: [Increases in unavoidable costs (e.g., employee benefits, utilities, or rent)]"
+challenge_other_yn	"[greatest_challenges] What are the 3 greatest challenges your organization is facing? Please select no more than 3 challenges: [Other, please specify...]"
+challenge_other_text	"[greatest_challenges] What are the 3 greatest challenges your organization is facing? Please select no more than 3 challenges: [Other, please specify...] [text]"
+	[action_prog_service.0] Programs & Services | Add or expand programs or services [TAKEN in past 12 mos.]
+	[action_prog_service.0] Programs & Services | Add or expand programs or services [PLANNING for next 12 mos.]
+	[action_prog_service.1] Programs & Services | Reduce or eliminate programs or services [TAKEN in past 12 mos.]
+	[action_prog_service.1] Programs & Services | Reduce or eliminate programs or services [PLANNING for next 12 mos.]
+	[action_prog_service.2] Programs & Services | Expand geographies served [TAKEN in past 12 mos.]
+	[action_prog_service.2] Programs & Services | Expand geographies served [PLANNING for next 12 mos.]
+	[action_prog_service.3] Programs & Services | Reduce or significantly restructure geographies served [TAKEN in past 12 mos.]
+	[action_prog_service.3] Programs & Services | Reduce or significantly restructure geographies served [PLANNING for next 12 mos.]
+	[action_prog_service.4] Programs & Services | Increase the number of people served or audience reached [TAKEN in past 12 mos.]
+	[action_prog_service.4] Programs & Services | Increase the number of people served or audience reached [PLANNING for next 12 mos.]
+	[action_prog_service.5] Programs & Services | Decrease the number of people served or audience reached [TAKEN in past 12 mos.]
+	[action_prog_service.5] Programs & Services | Decrease the number of people served or audience reached [PLANNING for next 12 mos.]
+	[action_prog_service.6] Programs & Services | Increase amount of service per client or programs per visitor/audience member [TAKEN in past 12 mos.]
+	[action_prog_service.6] Programs & Services | Increase amount of service per client or programs per visitor/audience member [PLANNING for next 12 mos.]
+	[action_prog_service.7] Programs & Services | Decrease amount of service per client or programs per visitor/audience member [TAKEN in past 12 mos.]
+	[action_prog_service.7] Programs & Services | Decrease amount of service per client or programs per visitor/audience member [PLANNING for next 12 mos.]
+	[action_prog_service.8] Programs & Services | Collaborate with another organization to improve or increase programs or services offered [TAKEN in past 12 mos.]
+	[action_prog_service.8] Programs & Services | Collaborate with another organization to improve or increase programs or services offered [PLANNING for next 12 mos.]
+	"[action_prog_service.9] Programs & Services | Use, purchase, or upgrade software specifically to capture data on program impact [TAKEN in past 12 mos.]"
+	"[action_prog_service.9] Programs & Services | Use, purchase, or upgrade software specifically to capture data on program impact [PLANNING for next 12 mos.]"
+	"[action_prog_service.10] Programs & Services | Upgrade hardware or software (computers, IT systems, applications) to improve service or program delivery [TAKEN in past 12 mos.]"
+	"[action_prog_service.10] Programs & Services | Upgrade hardware or software (computers, IT systems, applications) to improve service or program delivery [PLANNING for next 12 mos.]"
+	[action_prog_service.11] Programs & Services | Modify demographics of target clients or audience [TAKEN in past 12 mos.]
+	[action_prog_service.11] Programs & Services | Modify demographics of target clients or audience [PLANNING for next 12 mos.]
+	[action_prog_service.12] Programs & Services | Employ an integrated approach to holistically address client needs [TAKEN in past 12 mos.]
+	[action_prog_service.12] Programs & Services | Employ an integrated approach to holistically address client needs [PLANNING for next 12 mos.]
+	[action_prog_service.13] Programs & Services | None of the above [TAKEN in past 12 mos.]
+	[action_prog_service.13] Programs & Services | None of the above [PLANNING for next 12 mos.]
+	[action_ops_finance.0] Operations & Finance | Collaborate with another organization to reduce administrative expenses [TAKEN in past 12 mos.]
+	[action_ops_finance.0] Operations & Finance | Collaborate with another organization to reduce administrative expenses [PLANNING for next 12 mos.]
+	[action_ops_finance.1] Operations & Finance | Merge with another organization [TAKEN in past 12 mos.]
+	[action_ops_finance.1] Operations & Finance | Merge with another organization [PLANNING for next 12 mos.]
+	[action_ops_finance.2] Operations & Finance | Change the main ways in which you raise and spend money [TAKEN in past 12 mos.]
+	[action_ops_finance.2] Operations & Finance | Change the main ways in which you raise and spend money [PLANNING for next 12 mos.]
+	[action_ops_finance.3] Operations & Finance | Pursue an earned revenue venture [TAKEN in past 12 mos.]
+	[action_ops_finance.3] Operations & Finance | Pursue an earned revenue venture [PLANNING for next 12 mos.]
+	[action_ops_finance.4] Operations & Finance | Advocate to government on behalf of your organization's cause [TAKEN in past 12 mos.]
+	[action_ops_finance.4] Operations & Finance | Advocate to government on behalf of your organization's cause [PLANNING for next 12 mos.]
+	"[action_ops_finance.5] Operations & Finance | Seek funding other than grants and contracts, such as loans or other investments [TAKEN in past 12 mos.]"
+	"[action_ops_finance.5] Operations & Finance | Seek funding other than grants and contracts, such as loans or other investments [PLANNING for next 12 mos.]"
+	[action_ops_finance.6] Operations & Finance | Add to reserve funds [TAKEN in past 12 mos.]
+	[action_ops_finance.6] Operations & Finance | Add to reserve funds [PLANNING for next 12 mos.]
+	[action_ops_finance.7] Operations & Finance | Use reserve funds [TAKEN in past 12 mos.]
+	[action_ops_finance.7] Operations & Finance | Use reserve funds [PLANNING for next 12 mos.]
+	[action_ops_finance.8] Operations & Finance | Launch a capital campaign [TAKEN in past 12 mos.]
+	[action_ops_finance.8] Operations & Finance | Launch a capital campaign [PLANNING for next 12 mos.]
+	[action_ops_finance.9] Operations & Finance | Undergo organizational restructuring [TAKEN in past 12 mos.]
+	[action_ops_finance.9] Operations & Finance | Undergo organizational restructuring [PLANNING for next 12 mos.]
+	[action_ops_finance.10] Operations & Finance | Conduct long-term strategic or financial planning [TAKEN in past 12 mos.]
+	[action_ops_finance.10] Operations & Finance | Conduct long-term strategic or financial planning [PLANNING for next 12 mos.]
+	[action_ops_finance.11] Operations & Finance | Use outside help to improve financial knowledge or capacity [TAKEN in past 12 mos.]
+	[action_ops_finance.11] Operations & Finance | Use outside help to improve financial knowledge or capacity [PLANNING for next 12 mos.]
+	"[action_ops_finance.12] Operations & Finance | Upgrade hardware or software (computers, IT systems, applications) to improve organizational efficiency [TAKEN in past 12 mos.]"
+	"[action_ops_finance.12] Operations & Finance | Upgrade hardware or software (computers, IT systems, applications) to improve organizational efficiency [PLANNING for next 12 mos.]"
+	[action_ops_finance.13] Operations & Finance | Delay vendor payments [TAKEN in past 12 mos.]
+	[action_ops_finance.13] Operations & Finance | Delay vendor payments [PLANNING for next 12 mos.]
+	[action_ops_finance.14] Operations & Finance | Purchase a facility [TAKEN in past 12 mos.]
+	[action_ops_finance.14] Operations & Finance | Purchase a facility [PLANNING for next 12 mos.]
+	[action_ops_finance.15] Operations & Finance | Lease a facility [TAKEN in past 12 mos.]
+	[action_ops_finance.15] Operations & Finance | Lease a facility [PLANNING for next 12 mos.]
+	[action_ops_finance.16] Operations & Finance | Sell a facility [TAKEN in past 12 mos.]
+	[action_ops_finance.16] Operations & Finance | Sell a facility [PLANNING for next 12 mos.]
+	[action_ops_finance.17] Operations & Finance | Renovate a facility you lease or own [TAKEN in past 12 mos.]
+	[action_ops_finance.17] Operations & Finance | Renovate a facility you lease or own [PLANNING for next 12 mos.]
+	[action_ops_finance.18] Operations & Finance | Pursue funding that requires you to measure and achieve outcomes [TAKEN in past 12 mos.]
+	[action_ops_finance.18] Operations & Finance | Pursue funding that requires you to measure and achieve outcomes [PLANNING for next 12 mos.]
+	[action_ops_finance.19] Operations & Finance | Receive funding that requires you to measure and achieve outcomes [TAKEN in past 12 mos.]
+	[action_ops_finance.19] Operations & Finance | Receive funding that requires you to measure and achieve outcomes [PLANNING for next 12 mos.]
+	[action_ops_finance.20] Operations & Finance | None of the above [TAKEN in past 12 mos.]
+	[action_ops_finance.20] Operations & Finance | None of the above [PLANNING for next 12 mos.]
+	[action_staff.0] Personnel/Human Capital | Hire staff for new positions [TAKEN in past 12 mos.]
+	[action_staff.0] Personnel/Human Capital | Hire staff for new positions [PLANNING for next 12 mos.]
+	[action_staff.1] Personnel/Human Capital | Reduce staff [TAKEN in past 12 mos.]
+	[action_staff.1] Personnel/Human Capital | Reduce staff [PLANNING for next 12 mos.]
+	[action_staff.2] Personnel/Human Capital | Make replacement hires [TAKEN in past 12 mos.]
+	[action_staff.2] Personnel/Human Capital | Make replacement hires [PLANNING for next 12 mos.]
+	[action_staff.3] Personnel/Human Capital | Freeze all replacement hires [TAKEN in past 12 mos.]
+	[action_staff.3] Personnel/Human Capital | Freeze all replacement hires [PLANNING for next 12 mos.]
+	[action_staff.4] Personnel/Human Capital | Retain all existing personnel [TAKEN in past 12 mos.]
+	[action_staff.4] Personnel/Human Capital | Retain all existing personnel [PLANNING for next 12 mos.]
+	[action_staff.5] Personnel/Human Capital | Rely more on volunteers [TAKEN in past 12 mos.]
+	[action_staff.5] Personnel/Human Capital | Rely more on volunteers [PLANNING for next 12 mos.]
+	"[action_staff.6] Personnel/Human Capital | Reduce staff hours (short weeks, furloughs, etc.) [TAKEN in past 12 mos.]"
+	"[action_staff.6] Personnel/Human Capital | Reduce staff hours (short weeks, furloughs, etc.) [PLANNING for next 12 mos.]"
+	[action_staff.7] Personnel/Human Capital | Engage more closely with your board through more frequent reports and meetings [TAKEN in past 12 mos.]
+	[action_staff.7] Personnel/Human Capital | Engage more closely with your board through more frequent reports and meetings [PLANNING for next 12 mos.]
+	[action_staff.8] Personnel/Human Capital | Leadership succession planning [TAKEN in past 12 mos.]
+	[action_staff.8] Personnel/Human Capital | Leadership succession planning [PLANNING for next 12 mos.]
+	[action_staff.9] Personnel/Human Capital | Invest money or time in professional development for staff [TAKEN in past 12 mos.]
+	[action_staff.9] Personnel/Human Capital | Invest money or time in professional development for staff [PLANNING for next 12 mos.]
+	"[action_staff.10] Personnel/Human Capital | Give ""cost of living adjustment"" (COLA) salary increases to staff [TAKEN in past 12 mos.]"
+	"[action_staff.10] Personnel/Human Capital | Give ""cost of living adjustment"" (COLA) salary increases to staff [PLANNING for next 12 mos.]"
+	[action_staff.11] Personnel/Human Capital | Give raises beyond cost of living adjustment (COLA) [TAKEN in past 12 mos.]
+	[action_staff.11] Personnel/Human Capital | Give raises beyond cost of living adjustment (COLA) [PLANNING for next 12 mos.]
+	[action_staff.12] Personnel/Human Capital | Freeze or reduce salaries [TAKEN in past 12 mos.]
+	[action_staff.12] Personnel/Human Capital | Freeze or reduce salaries [PLANNING for next 12 mos.]
+	"[action_staff.13] Personnel/Human Capital | Spend more on staff benefits (e.g., health benefits) [TAKEN in past 12 mos.]"
+	"[action_staff.13] Personnel/Human Capital | Spend more on staff benefits (e.g., health benefits) [PLANNING for next 12 mos.]"
+	"[action_staff.14] Personnel/Human Capital | Spend less on staff benefits (e.g., health benefits) [TAKEN in past 12 mos.]"
+	"[action_staff.14] Personnel/Human Capital | Spend less on staff benefits (e.g., health benefits) [PLANNING for next 12 mos.]"
+	[action_staff.15] Personnel/Human Capital | None of the above [TAKEN in past 12 mos.]
+	[action_staff.15] Personnel/Human Capital | None of the above [PLANNING for next 12 mos.]
+	[arts_decline_revenue] Is your organization experiencing declines in revenue due to increased competition from any source?
+arts_source_competition_movies	[arts_source_competition] Please select no more than 2 top sources of competition from any source. [Movie Theatres]
+arts_source_competition_tv	[arts_source_competition] Please select no more than 2 top sources of competition from any source. [Television]
+arts_source_competition_sports	[arts_source_competition] Please select no more than 2 top sources of competition from any source. [Sports & recreation]
+arts_source_competition_newcult	[arts_source_competition] Please select no more than 2 top sources of competition from any source. [New culture organizations in your area]
+arts_source_competition_freecult	[arts_source_competition] Please select no more than 2 top sources of competition from any source. [Free cultural alternatives in your area]
+arts_source_competition_onlinecult	[arts_source_competition] Please select no more than 2 top sources of competition from any source. [Online cultural alternatives]
+arts_source_competition_onlinecommunities	[arts_source_competition] Please select no more than 2 top sources of competition from any source. [Online communities]
+arts_source_competition_videogames	[arts_source_competition] Please select no more than 2 top sources of competition from any source. [Video games]
+arts_source_competition_dontknow	[arts_source_competition] Please select no more than 2 top sources of competition from any source. [Don't know]
+arts_source_competition_other	"[arts_source_competition] Please select no more than 2 top sources of competition from any source. [Other, please specify...]"
+arts_source_competition_othertext	"[arts_source_competition] Please select no more than 2 top sources of competition from any source. [Other, please specify...] [text]"
+gov_payment_sources_fed	[gov_payment_sources] Do you have funding or contracts from any of the following government sources? Select all that apply:* [Federal government]
+gov_payment_sources_state	[gov_payment_sources] Do you have funding or contracts from any of the following government sources? Select all that apply:* [State government]
+gov_payment_sources_local	[gov_payment_sources] Do you have funding or contracts from any of the following government sources? Select all that apply:* [Local government]
+gov_payment_sources_none	[gov_payment_sources] Do you have funding or contracts from any of the following government sources? Select all that apply:* [None of the above]
+funding_gov_days_late	[gov_delay.0] How many days after submitting an invoice do you usually receive payment from government for services? | Federal Government
+funding_gov_state_days_late	[gov_delay.1] How many days after submitting an invoice do you usually receive payment from government for services? | State Government
+funding_gov_loc_days_late	[gov_delay.2] How many days after submitting an invoice do you usually receive payment from government for services? | Local Government
+funding_all_gov_delay_resp	"[gov_delay_response] If you experience delays in payments from government, how does your organization primarily cover the gap? Please select no more than 3 actions you take to manage delays. [Use reserves]"
+funding_all_gov_delay_vendors	"[gov_delay_response] If you experience delays in payments from government, how does your organization primarily cover the gap? Please select no more than 3 actions you take to manage delays. [Delay payments to vendors and/or creditors]"
+funding_all_gov_delay_board_loan	"[gov_delay_response] If you experience delays in payments from government, how does your organization primarily cover the gap? Please select no more than 3 actions you take to manage delays. [Borrow from personal funds of our leadership or board]"
+funding_all_gov_delay_partner_loan	"[gov_delay_response] If you experience delays in payments from government, how does your organization primarily cover the gap? Please select no more than 3 actions you take to manage delays. [Borrow from partner or parent organization]"
+funding_all_gov_delay_loc	"[gov_delay_response] If you experience delays in payments from government, how does your organization primarily cover the gap? Please select no more than 3 actions you take to manage delays. [Rely on a loan, line of credit, or other type of debt]"
+funding_all_gov_delay_red_serv	"[gov_delay_response] If you experience delays in payments from government, how does your organization primarily cover the gap? Please select no more than 3 actions you take to manage delays. [Reduce services]"
+funding_all_gov_delay_red_staff	"[gov_delay_response] If you experience delays in payments from government, how does your organization primarily cover the gap? Please select no more than 3 actions you take to manage delays. [Downsize staff-related costs]"
+funding_all_gov_delay_red_opp_cost	"[gov_delay_response] If you experience delays in payments from government, how does your organization primarily cover the gap? Please select no more than 3 actions you take to manage delays. [Downsize non-staff-related operating costs (e.g., rent, office supplies)]"
+funding_all_gov_delay_emergency_grant	"[gov_delay_response] If you experience delays in payments from government, how does your organization primarily cover the gap? Please select no more than 3 actions you take to manage delays. [Ask for emergency grant or pull from other program funding]"
+funding_all_gov_delay_ready	"[gov_delay_response] If you experience delays in payments from government, how does your organization primarily cover the gap? Please select no more than 3 actions you take to manage delays. [We budget for delays in advance]"
+funding_all_gov_delay_payroll	"[gov_delay_response] If you experience delays in payments from government, how does your organization primarily cover the gap? Please select no more than 3 actions you take to manage delays. [Delay payroll for all or part of the staff]"
+funding_all_gov_delay_reserves	"[gov_delay_response] If you experience delays in payments from government, how does your organization primarily cover the gap? Please select no more than 3 actions you take to manage delays. [Use other unrestricted or earned income]"
+funding_all_gov_delay_na	"[gov_delay_response] If you experience delays in payments from government, how does your organization primarily cover the gap? Please select no more than 3 actions you take to manage delays. [Not applicable]"
+funding_all_gov_delay_other_yn	"[gov_delay_response] If you experience delays in payments from government, how does your organization primarily cover the gap? Please select no more than 3 actions you take to manage delays. [Other, please specify...]"
+funding_all_gov_delay_other_text	"[gov_delay_response] If you experience delays in payments from government, how does your organization primarily cover the gap? Please select no more than 3 actions you take to manage delays. [Other, please specify...] [text]"
+aicr_fed_range	"[avg_icr.0] In 2014, what was the average indirect cost rate (i.e., allowable indirect cost rate or overhead/administrative cost rate) that government paid? | Federal Government"
+aicr_state_range	"[avg_icr.1] In 2014, what was the average indirect cost rate (i.e., allowable indirect cost rate or overhead/administrative cost rate) that government paid? | State Government"
+aicr_loc_range	"[avg_icr.2] In 2014, what was the average indirect cost rate (i.e., allowable indirect cost rate or overhead/administrative cost rate) that government paid? | Local Government"
+aicr_fed_trend	"[gov_aicr_trend.0] ""In the last 3 years, the amount of government funding/contracts as a percentage of my nonprofit's total revenue has..."" | Federal Government"
+aicr_state_trend	"[gov_aicr_trend.1] ""In the last 3 years, the amount of government funding/contracts as a percentage of my nonprofit's total revenue has..."" | State Government"
+aicr_loc_trend	"[gov_aicr_trend.2] ""In the last 3 years, the amount of government funding/contracts as a percentage of my nonprofit's total revenue has..."" | Local Government"
+plan_replace_gov_funding_fed	[gov_fund_trend.0] Is your organization planning to replace any type of government funding with revenue from non-governmental sources? | Federal Government
+plan_replace_gov_funding_state	[gov_fund_trend.1] Is your organization planning to replace any type of government funding with revenue from non-governmental sources? | State Government
+plan_replace_gov_funding_loc	[gov_fund_trend.2] Is your organization planning to replace any type of government funding with revenue from non-governmental sources? | Local Government
+	[metrics_collection.0] My organization... | Has a theory of change or logic model
+	"[metrics_collection.1] My organization... | Collects output data: measures of program productivity, such as # of clients or size of audience "
+	[metrics_collection.2] My organization... | Collects outcomes data: measures of how our services improve the lives of our clients or audience members
+	[metrics_collection.3] My organization... | Has staff dedicated or partially dedicated to collecting and analyzing outputs and outcomes data
+	[metrics_collection.4] My organization... | Uses outputs and outcomes data to inform strategic and programmatic decision-making
+funders_want_metrics_in_reports	[metrics_funders.0] Approximately how many of your funders pursue the practices below? Please give your best estimate: | Ask us to include output or outcomes data in our reports to them
+funders_ask_for_metrics	[metrics_funders.1] Approximately how many of your funders pursue the practices below? Please give your best estimate: | Ask for output or outcomes data to assess the effectiveness of our programs
+funders_demand_metrics_goals_output	[metrics_funders.2] Approximately how many of your funders pursue the practices below? Please give your best estimate: | Provide funding that is contingent on our organization achieving specific outputs
+funders_demand_metrics_goals_outcome	[metrics_funders.3] Approximately how many of your funders pursue the practices below? Please give your best estimate: | Provide funding that is contingent on our organization achieving specific outcomes
+impact_funder_cost	[impact_funding] How often do funders cover the costs associated with measuring program outputs or outcomes?
+	"[impact_funder_request] In 2014, the number of funders asking us to measure or provide program outputs or outcomes..."
+dialog_exp_prog	"[funder_dialogue] Overall, do you feel the majority of your funders are willing to engage in open dialogue on funding for any of the purposes below? Please select all that apply: [Expanding programs]"
+dialog_new_facility	"[funder_dialogue] Overall, do you feel the majority of your funders are willing to engage in open dialogue on funding for any of the purposes below? Please select all that apply: [Acquiring or renovating a facility]"
+dialog_op_reserve	"[funder_dialogue] Overall, do you feel the majority of your funders are willing to engage in open dialogue on funding for any of the purposes below? Please select all that apply: [Developing reserves for operating needs (money for a rainy day)]"
+dialog_facility_needs	"[funder_dialogue] Overall, do you feel the majority of your funders are willing to engage in open dialogue on funding for any of the purposes below? Please select all that apply: [Developing reserves for long-term facility or fixed asset needs]"
+dialog_working_cash_flow	"[funder_dialogue] Overall, do you feel the majority of your funders are willing to engage in open dialogue on funding for any of the purposes below? Please select all that apply: [Working capital (cash flow needs)]"
+dialog_change_capital	"[funder_dialogue] Overall, do you feel the majority of your funders are willing to engage in open dialogue on funding for any of the purposes below? Please select all that apply: [Flexible capital for organizational change/growth (including impact investing products)]"
+dialog_pay_off_loans	"[funder_dialogue] Overall, do you feel the majority of your funders are willing to engage in open dialogue on funding for any of the purposes below? Please select all that apply: [Paying off loans]"
+dialog_gos	"[funder_dialogue] Overall, do you feel the majority of your funders are willing to engage in open dialogue on funding for any of the purposes below? Please select all that apply: [General operating support]"
+dialog_multi_year	"[funder_dialogue] Overall, do you feel the majority of your funders are willing to engage in open dialogue on funding for any of the purposes below? Please select all that apply: [Multi-year funding]"
+dialog_orgadapt	"[funder_dialogue] Overall, do you feel the majority of your funders are willing to engage in open dialogue on funding for any of the purposes below? Please select all that apply: [Organizational change or adaptation]"
+dialog_measureoutcome	"[funder_dialogue] Overall, do you feel the majority of your funders are willing to engage in open dialogue on funding for any of the purposes below? Please select all that apply: [Measuring program outcomes]"
+dialog_none	"[funder_dialogue] Overall, do you feel the majority of your funders are willing to engage in open dialogue on funding for any of the purposes below? Please select all that apply: [I do not feel that my funders are willing to engage in open dialogue about these topics]"
+dialog_other_yn	"[funder_dialogue] Overall, do you feel the majority of your funders are willing to engage in open dialogue on funding for any of the purposes below? Please select all that apply: [Other financial or operational issues]"
+	"[funder_dialogue] Overall, do you feel the majority of your funders are willing to engage in open dialogue on funding for any of the purposes below? Please select all that apply: [Other financial or operational issues] [text]"
+funding_fed_full_cost	"[funding_sources_full_cost.0] In 2014, how often did funding from the following sources cover the full costs (including indirect/overhead costs) of the program/project they intended to support?  | Federal government"
+funding_state_full_cost	"[funding_sources_full_cost.1] In 2014, how often did funding from the following sources cover the full costs (including indirect/overhead costs) of the program/project they intended to support?  | State government"
+funding_loc_full_cost	"[funding_sources_full_cost.2] In 2014, how often did funding from the following sources cover the full costs (including indirect/overhead costs) of the program/project they intended to support?  | Local government"
+funding_foundation_full_cost	"[funding_sources_full_cost.3] In 2014, how often did funding from the following sources cover the full costs (including indirect/overhead costs) of the program/project they intended to support?  | Foundations"
+funding_individual_full_cost	"[funding_sources_full_cost.4] In 2014, how often did funding from the following sources cover the full costs (including indirect/overhead costs) of the program/project they intended to support?  | Individuals"
+funding_vs_reporting_fed	[funding_reporting.0] Please describe the relationship between reporting requirements and funding amounts from the following sources:   | Federal government
+funding_vs_reporting_state	[funding_reporting.1] Please describe the relationship between reporting requirements and funding amounts from the following sources:   | State government
+funding_vs_reporting_local	[funding_reporting.2] Please describe the relationship between reporting requirements and funding amounts from the following sources:   | Local government
+funding_vs_reporting_foundation	[funding_reporting.3] Please describe the relationship between reporting requirements and funding amounts from the following sources:   | Foundations
+funding_vs_reporting_individual	[funding_reporting.4] Please describe the relationship between reporting requirements and funding amounts from the following sources:   | Individuals
+arts_grants_open_dialog	"[arts_funder] In 2014, did your funders carry out any of the following practices? Please select all that apply: [Invite your nonprofit to discuss financial health and long-term financial needs]"
+arts_grants_strategy_input	"[arts_funder] In 2014, did your funders carry out any of the following practices? Please select all that apply: [Invite your nonprofit to give input on a funder's strategy]"
+arts_grants_non_monetary	"[arts_funder] In 2014, did your funders carry out any of the following practices? Please select all that apply: [Provide useful non-monetary resources or knowledge (e.g., convenings, referrals, advice)]"
+arts_grants_streamline	"[arts_funder] In 2014, did your funders carry out any of the following practices? Please select all that apply: [Simplify the grant application and/or due diligence process]"
+arts_grants_reporting_burden	"[arts_funder] In 2014, did your funders carry out any of the following practices? Please select all that apply: [Require reporting that was outsized relative to the size of the grant]"
+arts_grants_overhead_restr	"[arts_funder] In 2014, did your funders carry out any of the following practices? Please select all that apply: [Restrict allowable overhead rate on grants]"
+arts_grants_got_unrestr	"[arts_funder] In 2014, did your funders carry out any of the following practices? Please select all that apply: [Give unrestricted funding]"
+arts_grants_help_change_habits	"[arts_funder] In 2014, did your funders carry out any of the following practices? Please select all that apply: [Give your organization capital to help change the way you raise or spend money]"
+ arts_grants_help_build_reserves	"[arts_funder] In 2014, did your funders carry out any of the following practices? Please select all that apply: [Give your organization capital to build reserves]"
+arts_grants_surplus_bad	"[arts_funder] In 2014, did your funders carry out any of the following practices? Please select all that apply: [Deny your grant because your nonprofit had a surplus or savings]"
+arts_grants_surplus_good	"[arts_funder] In 2014, did your funders carry out any of the following practices? Please select all that apply: [Approve your grant because your nonprofit had a surplus or savings]"
+arts_grants_none	"[arts_funder] In 2014, did your funders carry out any of the following practices? Please select all that apply: [My funders did not carry out any of the aforementioned practices]"
+	"[arts_funder] In 2014, did your funders carry out any of the following practices? Please select all that apply: [My funders did not carry out any of the aforementioned practices] [text]"
+	"[qual_demand_services] What kinds of services are you seeing the greatest demand for, and what trends do you think are driving that demand?"
+	[qual_org_challenge] Please tell us more about your organization's greatest challenge and the actions you are taking to respond to it.
+	"[qual_policy_issue] Which government policy issues are affecting your organization the most, and how?"
+	[receive_survey] How did you receive this survey? [Email directly from Nonprofit Finance Fund]
+	[receive_survey] How did you receive this survey? [From a funder]
+	[receive_survey] How did you receive this survey? [From someone at your organization]
+	[receive_survey] How did you receive this survey? [From someone at another nonprofit]
+	[receive_survey] How did you receive this survey? [Twitter]
+	[receive_survey] How did you receive this survey? [Facebook]
+	"[receive_survey] How did you receive this survey? [Other, please specify:]"
+	"[receive_survey] How did you receive this survey? [Other, please specify:] [text]"
+	"[contact_info.0] If you’re comfortable sharing it, please include your contact info so we can send you survey results directly. We will never share this information without your prior written permission, and we will never share your individual results. | Organization name (optional):"
+	"[contact_info.1] If you’re comfortable sharing it, please include your contact info so we can send you survey results directly. We will never share this information without your prior written permission, and we will never share your individual results. | Your name (optional): "
+	"[contact_info.2] If you’re comfortable sharing it, please include your contact info so we can send you survey results directly. We will never share this information without your prior written permission, and we will never share your individual results. | Your title (optional): "
+	"[contact_info.3] If you’re comfortable sharing it, please include your contact info so we can send you survey results directly. We will never share this information without your prior written permission, and we will never share your individual results. | Email address (optional): "
