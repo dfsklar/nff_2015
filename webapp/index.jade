@@ -18,18 +18,20 @@ html
     ///START-AGGREGATE aggregate01
 
     // STABLE SET OF JS UTILITIES (no NFF semantics)
+    /// MINIFY=off
     script(src='jquery-1.11.0.min.js')
     script(src='jquery.svg.min.js')
-    script(src='utils/qtips.js')
-    script(src='sugar.min.js')
-    script(src='raphael.js')
-    script(src='highcharts/highcharts-3.0.10-full.js')
     script(src='utils/chroma.min.js')
+    script(src='sugar.min.js')
+    script(src='utils/history.js')
+    script(src='raphael.js')
+    /// MINIFY=on
+    script(src='utils/qtips.js')
+    script(src='highcharts/highcharts-3.0.10-full.js')
     script(src='utils/fontspy.js')
     script(src='utils/rgbcolor.js')
     script(src='utils/StackBlur.js')
     script(src='utils/canvg.js')
-    script(src='utils/history.js')
     script(src='namespaces.js')
     script(src='colors.js')
 
