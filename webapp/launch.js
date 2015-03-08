@@ -1,6 +1,14 @@
-$(function() {
+/* THIS IS IT -- THE main() FOR THIS APPLICATION! */
 
-  var alreadyLoaded = false;
+
+jQuery.ajax("realdata.json", {complete: function(jqXHR, txtStatus) {
+
+  if (jqXHR.readyState != 4) {
+      alert("Failure in loading survey data -- please try again later.");
+      return;
+  }else{
+      window.nfforg.database_unindexed.respondents = JSON.parse(jqXHR.responseText);
+  }
 
   var boolAutoOpenTOC = ( ! (window.nfforg.queryParams['mode'] == "print") );
 
@@ -71,6 +79,7 @@ $(function() {
   // Needed to await font loading?  Maybe not.  Need a better approach
   // to ensure geometries are calculated properly.
   setTimeout(function(){
+
     window.nfforg.recreateEntireVizArea();
     window.nfforg.layoutUX();
     window.nfforg.configureSidebarInteraction();  
@@ -93,6 +102,7 @@ $(function() {
     });
 
   }, 
-             (window.location.href.has("localhost")?10:1800));
+             (window.location.href.has("localhost")?10:800));
 
-});
+}});
+

@@ -1,7 +1,9 @@
 # This next line declares that the incoming file is in Mac format (line ending is just a ^R).
 local $/ = "\r";
 
-print "window.nfforg.database_unindexed.respondents = [ \n";
+# print "window.nfforg.database_unindexed.respondents = [ \n";
+
+print "[ \n";
 
 $processingLimit = 9999999;
 if ($ARGV[0]) {
@@ -317,7 +319,7 @@ sub emitTimeframeBasedValue {
 
   # PREVIOUS YEAR
   $prefix = "";
-  $result .= "\t\tlast: [ ";
+  $result .= "\t\t\"last\": [ ";
   $onlyHandleIf = qr/(.*)\.TAKEN/;
   
   #print STDERR $base . "\n";
@@ -357,7 +359,7 @@ sub emitTimeframeBasedValue {
   # NEXT:  HANDLE "planned" (future tense)
 
   $prefix = "";
-  $result .= "\t\tnext: [ ";
+  $result .= "\t\t\"next\": [ ";
   $onlyHandleIf = qr/(.*)\.PLANNING/;
   foreach $_generatedfieldname (@{$multchoicesets{$base}}) {
     next if ( ! ($_generatedfieldname =~ $onlyHandleIf) );
@@ -469,6 +471,9 @@ while (<STDIN>) {
     last;
   }
 
+  if ($internalIDhandled) {
+      print ",";
+  }
   $internalIDhandled = $fields[1];
 
   print "{\n";
@@ -517,7 +522,7 @@ while (<STDIN>) {
     }
   }
   print "\t\"fin\" : 0\n";
-  print "},\n";
+  print "}\n";
 }
 
-print "];\n";
+print "]\n";

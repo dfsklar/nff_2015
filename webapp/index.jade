@@ -1,27 +1,35 @@
 <!DOCTYPE html>
 html
   head
+
     title NFF 2015 Survey Analyzer
+
     meta(charset='utf-8')
     meta(property="og:image", content="http://nffdemo.sklardevelopment.com/assets/images/nff_logo_square_noBG.png")
+
     link(rel='stylesheet', href='style.css')
     link(rel='stylesheet', href='print.css')
     link(rel='stylesheet', href='compare.css')
     link(rel='stylesheet', href='utils/qtips.css')
+
     script(src='jquery-1.11.0.js')
     script(src='jquery.svg.min.js')
     script(src='utils/qtips.js')
     script(src='sugar.min.js')
     script(src='raphael.js')
+
     script(src='highcharts/highcharts-3.0.10-full.js')
     // script(src='highcharts/highcharts.js')
+
     script(src='utils/chroma.min.js')
     script(src='utils/fontspy.js')
     script(src='utils/rgbcolor.js')
     script(src='utils/StackBlur.js')
     script(src='utils/canvg.js')
     script(src='utils/history.js')
+
     include sharethis.html
+
     script(src='namespaces.js')
     script(src='colors.js')
 
@@ -32,8 +40,8 @@ html
     script(src='slopeidea/data_acted_services.js')
 
     script(src='data.json')
-    script(src='realdata.json')
 
+    //script(src='realdata.json')
 
     script(src='indexer.js')
 
@@ -56,15 +64,22 @@ html
     script(src='export.js')
     script(src='filterarea.js')
     script(src='launch.js')
+
     link(href='http://fonts.googleapis.com/css?family=Old+Standard+TT:400italic|Open+Sans:300,600|Roboto+Condensed:400,700|Roboto:400,700' rel='stylesheet' type='text/css')
+
     include googleanalytics.html
+
+
+
   body
+
     // Next line simply helps ensure pinnable image is found by pinterest even when on localhost server
-    img.offscreen(src='http://nffdemo.sklardevelopment.com/assets/images/nff_logo_square_noBG.png')
+    img.offscreen(src='http://nff.sklardevelopment.com/assets/images/nff_logo_square_noBG.png')
+
     .fontspy-tester-hidden Testing width of hidden text to determine font-loading
     .offscreen.div-for-highchart
-    canvas.offscreen.canvas-for-export
 
+    canvas.offscreen.canvas-for-export
 
     .testarea
       .foo
