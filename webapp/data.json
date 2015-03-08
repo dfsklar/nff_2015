@@ -311,7 +311,10 @@
         "key_order": Object.keys(window.nfforg.MAPenumToEnglish.unmet_demand_svc_),
         "css": { width: FULLWIDTH, height: "120px" },
         "denominator_required_field": "met_past_demand_serv",
-        "denominator_required_field__negative_values": [ "Yes" ]
+        "denominator_required_field__negative_values": [ "Yes" ],
+        "highchart_formatting": {
+          chart: { marginLeft: 430, spacingLeft: 0 }
+        }
       },
 
       "fut_demand_serv": {

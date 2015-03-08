@@ -4,6 +4,9 @@ local $/ = "\r";
 print "window.nfforg.database_unindexed.respondents = [ \n";
 
 $processingLimit = 9999999;
+if ($ARGV[0]) {
+    $processingLimit = $ARGV[0];
+}
 
 @fieldsMultChoice = (
                      'lmi_(.*)',   # 1 or blank are the only legal values

@@ -1,2 +1,4 @@
 cd dataprep
-sh extract.sh
+sh extract.sh $*
+
+
