@@ -12,41 +12,33 @@ html
     link(rel='stylesheet', href='compare.css')
     link(rel='stylesheet', href='utils/qtips.css')
 
+
+
+    //*******************************
+    // STABLE SET OF JS UTILITIES (no NFF semantics)
     script(src='jquery-1.11.0.js')
     script(src='jquery.svg.min.js')
     script(src='utils/qtips.js')
     script(src='sugar.min.js')
     script(src='raphael.js')
-
     script(src='highcharts/highcharts-3.0.10-full.js')
-    // script(src='highcharts/highcharts.js')
-
     script(src='utils/chroma.min.js')
     script(src='utils/fontspy.js')
     script(src='utils/rgbcolor.js')
     script(src='utils/StackBlur.js')
     script(src='utils/canvg.js')
     script(src='utils/history.js')
-
-    include sharethis.html
-
     script(src='namespaces.js')
     script(src='colors.js')
 
-    script(src='enum_expander.js')
+    // STABLE CLIENT-SIDE INDEXING LOGIC
+    script(src='indexer.js')
 
+    // FAIRLY-STABLE SET OF RENDERERS
     script(src='slopeidea/data_acted_human_capital.js')
     script(src='slopeidea/data_acted_management.js')
     script(src='slopeidea/data_acted_services.js')
-
-    script(src='data.json')
-
-    //script(src='realdata.json')
-
-    script(src='indexer.js')
-
     script(src='slopeidea/engine.js')
-
     script(src='renderers/table.js')
     script(src='renderers/bar.js')
     script(src='renderers/forthcoming.js')
@@ -56,8 +48,15 @@ html
     script(src='renderers/stacked_single_bar.js')
     script(src='renderers/actions_planned_taken.js')
     script(src='renderers/trendslope.js')
-
     script(src='render_manager.js')
+
+    //
+    //*********************************
+
+
+    script(src='enum_expander.js')
+
+    script(src='data.json')
 
     script(src='filter.js')
     script(src='events.js')
@@ -69,7 +68,7 @@ html
 
     include googleanalytics.html
 
-
+    include sharethis.html
 
   body
 
