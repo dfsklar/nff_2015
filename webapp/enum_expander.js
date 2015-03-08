@@ -190,8 +190,8 @@
       family: "Seek assistance from personal networks (family, friends, etc.)",
       govprograms: "Access direct government assistance through programs not outsourced to nonprofits",
       remainunmet: "Likely remain unmet",
-      dontknow: "Don't know",
-      other: "Other"
+      dontknow: "Don't know"
+//      other: "Other"
     },
 
     data_collect_: {

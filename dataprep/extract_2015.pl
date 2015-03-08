@@ -49,6 +49,7 @@ foreach $strPattern (@fieldsMultChoice) {
                  'orgid', 'state', 'zip',
                  'org_type', 
                  'debt_fin',
+                 'deficit_rationale',
                  'debt_fin_amt',
                  'addtl_debt_fin',
                  'addtl_debt_fin_amt',

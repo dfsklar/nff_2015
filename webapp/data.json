@@ -309,7 +309,9 @@
         "title": "When you cannot meet demand, how do your clients cope?",
         "renderer": "one_or_more",
         "key_order": Object.keys(window.nfforg.MAPenumToEnglish.unmet_demand_svc_),
-        "css": { width: FULLWIDTH, height: "120px" }
+        "css": { width: FULLWIDTH, height: "120px" },
+        "denominator_required_field": "met_past_demand_serv",
+        "denominator_required_field__negative_values": [ "Yes" ]
       },
 
       "fut_demand_serv": {
@@ -359,7 +361,7 @@
       "surplus_deficit_prior": {
         "section": "Financial Story",
         "css": { width: "317px" },
-        "title": "Ended FY'14 with...",
+        "title": "Ended FY 2014 with...",
         "renderer": "bar",
         "highchart_formatting": {
           chart: { marginLeft: 140, spacingLeft: 0 }
@@ -375,6 +377,19 @@
           'operating deficit'
         ],
         "css": { width: HALFWIDTH }
+      },
+
+      "deficit_rationale": {
+        "title": "Our FY2014 deficit was...",
+        "denominator_required_field": "surplus_deficit_prior",
+        "denominator_required_field__negative_values": [ "operating surplus", "break-even financials" ],
+        "renderer": "stacked_single_bar",
+        "key_order": [ 'Unplanned', 'Planned' ],
+        "color_by_key": {
+          'Planned': chroma(window.nfforg.colors.YES).hex(),
+          'Unplanned' : chroma(window.nfforg.colors.NO).hex()
+        },
+        "css": { width: HALFWIDTH, height: "110px" }
       },
 
       "surplus_deficit_current": {
