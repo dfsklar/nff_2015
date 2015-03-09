@@ -114,8 +114,9 @@ $(function() {
 
     $('#viz-area').addClass('invisible');
     $activeform.removeClass('dirty').addClass('computing');
-    window.scrollTo(0,0);
-    // Ensure the UI feedback occurs immediately since processing takes a long time:
+
+    window.scrollTo(0,0);  // Ensure the UI feedback occurs immediately since processing takes a long time:
+
     setTimeout(function(){
       // THIS IS "FILTER" (not compare)
       if ($activeform.attr('id') == 'filter') {
@@ -350,6 +351,12 @@ $(function() {
 
     var $activeform = $($sect.parents('.sidebar.form').get(0));
 
+    filtrationToManage[sectionName] = [];
+
+    if ($sect == "zip") {
+	// filtrationToManage["zip"] = $('
+    }
+
     // Special case for the SECTOR section: its arts/culture choice has subchoices so it is "tri-state"
     if (sectionName == "org_type") {
       filtrationToManage["arts_org_type"] = [];
@@ -367,7 +374,6 @@ $(function() {
       }
     }
 
-    filtrationToManage[sectionName] = [];
     var toDisplay = "";
     var doConsiderArtsSubsectors = $sect.find('.sector-arts.partial').size();
     var atLeastOneArtsSubsectorSpecificFilter = false;
@@ -413,8 +419,7 @@ $(function() {
 
   window.nfforg.configureSidebarInteraction = function() {
 
-    // EVENT: CLICKING ON A CHECKBOX
-    //
+    // EVENT: CLICKING ON A CHECKBOX IN THE FILTER/COMPARE SECTION!!!
     $('.sidebar.form input').change(function(){
       $form = $('.sidebar.form.active');
       var filtrationToManage = 
@@ -453,6 +458,26 @@ $(function() {
     });
 
 
+    // EVENT: CHANGING TEXT IN THE SPECIAL ZIP-CODE FILTER
+    $('.sidebar.form textarea').bind('input propertychange', function() {
+      $form = $('.sidebar.form.active');
+      var filtrationToManage = 
+          ($form.attr('id')=='filter') 
+          ?
+          window.nfforg.filtrationCurrent
+          :
+          filtrationToManage = window.nfforg.filtrationForCompareCurrent;
+      $form.addClass('dirty');
+      $form.find('.button.apply').addClass('throb');
+      setTimeout(function(){
+        $form.find('.button.apply').removeClass('throb');
+      }, 400);
+      var $sect = $(this).parents('.section');
+      window.nfforg.displayListOfActiveFilterValues($sect, filtrationToManage);
+      setTimeout(function(){
+        window.nfforg.filterSidebar.respondToHeightChanges($form);
+      }, 200);
+    });
 
 
     // CLICKING ON OPEN/CLOSE TOGGLE FOR A FILTER SECTION
@@ -468,19 +493,6 @@ $(function() {
     });
 
   }
-
-
-
-  // Delayed adding of events to the sharing buttons
-  // Not sure why this is here so tring to disable
-  if (false) 
-  setTimeout(function(){
-    $('.menu-horiz-share').click(function(){
-      $('.menu-horiz-share').removeClass('visible');
-      
-    });
-  }, 2000);
-
-
+  // END OF: window.nfforg.configureSidebarInteraction()
 
 });

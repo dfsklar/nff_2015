@@ -203,9 +203,30 @@ $(function() {
 
 
 
+  window.nfforg.createTextboxFilterSection = function($rootdiv, sectionName, layout_alg, arrValues, curFilterDatabase) {
+
+    if (!curFilterDatabase)
+      curFilterDatabase = {};
+
+    var $section = $("<div class='section "+layout_alg+"'><div class='hidden chart-name'>"+sectionName+"</div><div class=title>"
+                     +
+		     sectionName
+                     +
+                         ("<a class=infotip href=# title='Contact NFF for tips on how to use this textbox to filter by zipcode.'></a>")
+                     +
+                     "</div><div class='button-openclose'>&#x25B7</div></div>");
+    $section.append($("<div class='textareaholder'><textarea/></div>"));
+    var $areachks = $section.find('textarea');
+    //$areachks.text("");
+    $section.appendTo($rootdiv);
+  };
+
+
+
+
 
   window.nfforg.createFilterGUI = function($rootdiv, curFiltration) {
-    try {
+//    try {
     if ($rootdiv.find('.section').length < 1) {
       window.nfforg.createFilterSection($rootdiv, "state", "span", 
                                         Object.keys(window.nfforg.database.charts.state.valueSet).sortBy().exclude("Other").include("Other"),
@@ -243,14 +264,16 @@ $(function() {
                                        curFiltration);
       }
 
+      window.nfforg.createTextboxFilterSection($rootdiv, "zip", "div", null, curFiltration);
+
       setTimeout(function(){
         $('#filter-area').addClass('ready');
       }, 2000);
     }
-    }
-    catch(e){
-      console.log("FILTER SECTION could not be constructed -- exception occurred in filter.js");
-    }
+//    }
+//    catch(e){
+//      console.log("FILTER SECTION could not be constructed -- exception occurred in filter.js");
+//    }
   };
 
 
