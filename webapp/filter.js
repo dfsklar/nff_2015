@@ -217,7 +217,9 @@ $(function() {
                      "</div><div class='button-openclose'>&#x25B7</div></div>");
     $section.append($("<div class='textareaholder'><textarea/></div>"));
     var $areachks = $section.find('textarea');
-    //$areachks.text("");
+    if (curFilterDatabase.zip) {
+      $areachks.text(curFilterDatabase.zip[0]);
+    }
     $section.appendTo($rootdiv);
   };
 

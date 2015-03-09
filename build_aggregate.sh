@@ -17,6 +17,7 @@ sh minify.sh utils/StackBlur.js >> $DEST
 sh minify.sh utils/canvg.js >> $DEST
 sh minify.sh namespaces.js >> $DEST
 sh minify.sh colors.js >> $DEST
+sh minify.sh numericrange.js >> $DEST
 
 sh minify.sh indexer.js >> $DEST
 

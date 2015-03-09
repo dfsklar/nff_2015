@@ -163,7 +163,7 @@ is used at runtime when filtering is applied.
                 // We have a zipcode filter in effect!
                 if (org[X]) {
                   if (legalZipcodes) {
-                    if (0 > legalZipcodes.indexOf(org[X])) {
+                    if (0 > legalZipcodes.indexOf(parseInt(org[X]))) {
                       ok = false;
                     }
                   }
