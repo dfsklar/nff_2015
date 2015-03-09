@@ -16,7 +16,7 @@
     
 
   window.nfforg.filterCategories = 
-    ["state","org_type","lifeline","opp_exp_max","lmi_loc","lmi_serve_expanded","year_founded_range","employee_count_fte_range","employee_count_pte_range"];
+    ["state","org_type","lifeline","opp_exp_max","lmi_loc","lmi_serve_expanded","year_founded_range","zip"];
 
   var hasValueMassageBeenDone = false;
 

@@ -339,11 +339,12 @@ $(function() {
 
 
 
-
-  // This *also* maintains the global current-filtration database
-  // This *also* maintains the global current-filtration database
-  // This *also* maintains the global current-filtration database
-  // This *also* maintains the global current-filtration database
+  // HANDLES REACTING TO USER'S MODIFICATION OF THE FILTRATION UI STATE!
+  // HANDLES REACTING TO USER'S MODIFICATION OF THE FILTRATION UI STATE!
+  // HANDLES REACTING TO USER'S MODIFICATION OF THE FILTRATION UI STATE!
+  //
+  // This maintains the global current-filtration database
+  // The name is a misnomer.
 
   window.nfforg.displayListOfActiveFilterValues = function($sect, filtrationToManage)
   {
@@ -353,8 +354,14 @@ $(function() {
 
     filtrationToManage[sectionName] = [];
 
-    if ($sect == "zip") {
-	// filtrationToManage["zip"] = $('
+    if (sectionName == "zip") {
+	var patternZip = $sect.find('textarea').val().trim();
+	if (patternZip) {
+	    filtrationToManage["zip"] = patternZip.trim();
+	}else{
+	    delete filtrationToManage["zip"];
+	}
+	return patternZip;
     }
 
     // Special case for the SECTOR section: its arts/culture choice has subchoices so it is "tri-state"
