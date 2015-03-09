@@ -439,7 +439,7 @@
       },
 
       "surplus_prior_perc": {
-        "title": "% Surplus/Deficit for FY'14",
+        "title": "% Surplus for FY'14",
         "info-tip": "Organizations were asked to share the size of their surpluses or deficits.",
         "renderer": "bar",
         "highchart_formatting": {
@@ -468,7 +468,38 @@
           'surplus 10%-25%',
           'surplus 5%-10%',
           'surplus 1%-5%',
-          'surplus 1% or less',
+          'surplus 1% or less'
+        ],
+        "css": { width: HALFWIDTH }
+      },
+
+
+      "deficit_prior_perc": {
+        "title": "% Deficit for FY'14",
+        "info-tip": "Organizations were asked to share the size of their surpluses or deficits.",
+        "renderer": "bar",
+        "highchart_formatting": {
+          chart: { marginLeft: 125, spacingLeft: 0 }
+        },
+        "value_massager": function(val) {
+          if (!(val.has("surplus")))
+            val = "deficit " + val;
+          val = val.replace('.01','').replace('greater than','>');
+          return val;
+        },
+        "color_by_key": {
+          'surplus > 25%': chroma(window.nfforg.colors.GOODVERY).hex(),
+          'surplus 10%-25%': chroma(window.nfforg.colors.GOODVERY).hex(),
+          'surplus 5%-10%': chroma(window.nfforg.colors.GOOD).hex(),
+          'surplus 1%-5%': chroma(window.nfforg.colors.GOOD).hex(),
+          'surplus 1% or less':  chroma(window.nfforg.colors.NEUTRAL).hex(),
+          'deficit 1% or less':  chroma(window.nfforg.colors.NEUTRAL).hex(),
+          'deficit 1%-5%': chroma(window.nfforg.colors.BAD).hex(),
+          'deficit 5%-10%': chroma(window.nfforg.colors.BAD).hex(),
+          'deficit 10%-25%': chroma(window.nfforg.colors.BADVERY).hex(),
+          'deficit > 25%': chroma(window.nfforg.colors.BADVERY).hex()
+        },
+        "key_order": [
           'deficit 1% or less',
           'deficit 1%-5%',
           'deficit 5%-10%',

@@ -115,7 +115,8 @@ foreach $strPattern (@fieldsMultChoice) {
                  'surplus_deficit_prior',
                  'surplus_deficit_current',
                  'surplus_prior_perc',  #This and its deficit compatriot are mut-excl to be considered a single chart
-                 #      'deficit_prior_perc',   #See comment on previous line
+                 # Next line must be commented-out if we are collapsing surplus_prior and deficit_prior (e.g. 2014 analyzer)
+                 'deficit_prior_perc',   #See comment on previous line
                  'months_cash',
 
                  'current_year_client_outlook',
@@ -500,13 +501,18 @@ while (<STDIN>) {
     }
     else{
       $value = $fields[$fieldkeys{$goodfield}];
-      if ($goodfield eq "surplus_prior_perc") {
-        if (!($value)) {
-          $value = $fields[$fieldkeys{"deficit_prior_perc"}];
-          if ($value) {
-            $value = "deficit " . $fields[$fieldkeys{"deficit_prior_perc"}];
-          }
-        }
+      #
+      # Next line only if collapsing surplus_prior and deficit_prior
+      if ('') {
+	  die "We don't do this no more";
+	  if ($goodfield eq "surplus_prior_perc") {
+	      if (!($value)) {
+		  $value = $fields[$fieldkeys{"deficit_prior_perc"}];
+		  if ($value) {
+		      $value = "deficit " . $fields[$fieldkeys{"deficit_prior_perc"}];
+		  }
+	      }
+	  }
       }
       if ($value) {
         $value =~ s/^\"//;
