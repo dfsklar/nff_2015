@@ -178,9 +178,9 @@ sub autogenMultChoiceSet_takenplanned {
 
 $algconverters{"zip"} = sub { 
   my($x) = $_[0];
-  $x =~ s/\-.*$//;
-  $x = sprintf("%05d", $x);
-  die "BAD ZIP CODE: $x" if ! ($x =~ /^\d\d\d\d\d$/);
+  $x =~ s/\-.*$//;  # Remove the +4 portion of the zipcode if found
+  # $x = sprintf("%05d", $x);
+  die "BAD ZIP CODE: $x" if ! ( ($x <= 99999) && ($x > 1) );
   return $x;
 };
 

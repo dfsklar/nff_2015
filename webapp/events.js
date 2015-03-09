@@ -357,7 +357,7 @@ $(function() {
     if (sectionName == "zip") {
 	var patternZip = $sect.find('textarea').val().trim();
 	if (patternZip) {
-	    filtrationToManage["zip"] = patternZip.trim();
+	    filtrationToManage["zip"] = [ patternZip.trim() ];
 	}else{
 	    delete filtrationToManage["zip"];
 	}

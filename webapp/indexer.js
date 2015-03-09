@@ -150,6 +150,8 @@ is used at runtime when filtering is applied.
 
       // THIS IS A GIANT ELSE CLAUSE!!!  WARNING!
 
+      var legalZipcodes = (filtration && filtration.zip && filtration.zip[0]) ? window.nfforg.parseNumericRange(filtration.zip[0]) : null;
+
       if (filtration) {
         respondentsFiltered = [];
         markChartsAsFiltered = true;
@@ -157,7 +159,19 @@ is used at runtime when filtering is applied.
           var ok = true;
           window.nfforg.filterCategories.each(function(X){
             if (filtration[X]) {
-              if (filtration[X].length > 0) {
+              if (X == "zip") {
+                // We have a zipcode filter in effect!
+                if (org[X]) {
+                  if (legalZipcodes) {
+                    if (0 > legalZipcodes.indexOf(org[X])) {
+                      ok = false;
+                    }
+                  }
+                }else{
+                  ok = false;  // Filter out any organization with NO zipcode info
+                }
+              }
+              else if (filtration[X].length > 0) {
                 if (! (filtration[X].some(org[X])))
                   ok = false;
               }else{
