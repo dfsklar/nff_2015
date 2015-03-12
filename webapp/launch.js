@@ -28,6 +28,60 @@ jQuery.ajax({
     success: function(data){
 	window.nfforg.database_unindexed.respondents = data;
 
+	var boolAutoOpenTOC = ( ! (window.nfforg.queryParams['mode'] == "print") );
+
+	window.nfforg.filtrationCurrent = new Object();
+	window.nfforg.filtrationForCompareCurrent = new Object();
+
+	window.nfforg.database = {};
+	window.nfforg.indexAndFilterDatabase();
+
+	if (window.nfforg.queryParams['filter']) {
+	    $('.form.sidebar#filter').addClass('active');
+	    window.nfforg.setFiltersFromString(window.nfforg.filtrationCurrent, decodeURI(window.nfforg.queryParams['filter']));
+	    window.nfforg.createFilterGUI($('#filter-area #filter .section-holder'),
+					  window.nfforg.filtrationCurrent);
+	    window.nfforg.indexAndFilterDatabase(window.nfforg.database, 'chartsForPrez', window.nfforg.filtrationCurrent);
+	    window.nfforg.createFilterGUI(
+		$('#filter-area .form#compare .section-holder'),
+		window.nfforg.filtrationForCompareCurrent
+	    );
+	    boolAutoOpenTOC = false;
+	}
+	else if (window.nfforg.queryParams['compareleft']) {
+	    $('.form.sidebar#compare').addClass('active');
+	    // Create two copies of the unfiltered chart specs:
+	    window.nfforg.database.chartsComparison = {
+		left: Object.clone(window.nfforg.database.charts, true),
+		right: Object.clone(window.nfforg.database.charts, true)
+	    };
+	    // Initially, we are ignoring the "right" side and making that be an unfiltered respondent pool.
+	    window.nfforg.filtrationForCompareCurrent = new Object();  // eventually this may be a right-side thing
+	    window.nfforg.setFiltersFromString(new Object(), "");  //decodeURI(window.nfforg.queryParams['compareright']));
+	    window.nfforg.indexAndFilterDatabase(window.nfforg.database.chartsComparison, 'right', new Object());
+	    window.nfforg.setFiltersFromString(window.nfforg.filtrationForCompareCurrent, decodeURI(window.nfforg.queryParams['compareleft']));
+	    window.nfforg.createFilterGUI(
+		$('#filter-area .form#compare .section-holder'),
+		window.nfforg.filtrationForCompareCurrent
+	    );
+	    window.nfforg.indexAndFilterDatabase(window.nfforg.database.chartsComparison, 'left', window.nfforg.filtrationForCompareCurrent);
+	    $('#filter-area .form#compare').addClass('active');
+	    $('#filter-area .tab.compare').addClass('active');
+	    window.nfforg.createFilterGUI($('#filter-area #filter .section-holder'), new Object());
+	    boolAutoOpenTOC = false;
+	}else{
+	    $('.form.sidebar#filter').addClass('active');
+	    window.nfforg.createFilterGUI($('#filter-area #filter .section-holder'), new Object());
+	    window.nfforg.createFilterGUI(
+		$('#filter-area .form#compare .section-holder'),
+		window.nfforg.filtrationForCompareCurrent
+	    );
+	    window.nfforg.database.chartsForPrez = Object.clone(window.nfforg.database.charts, true);
+	    window.nfforg.indexAndFilterDatabase(window.nfforg.database, 'chartsForPrez', window.nfforg.filtrationCurrent);
+	}
+
+	window.nfforg.layoutUX();
+
 	// Make sure at least one of the sidebar subareas is active
 	if ($('#filter-area .tab.active').length == 0) {
 	    $('#filter-area .tab.filter').addClass('active');
