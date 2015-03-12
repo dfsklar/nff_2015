@@ -1,4 +1,3 @@
-$(function() {
 
   window.nfforg.mapFilterSectionIdToHumanText = {
     "state": "State",
@@ -277,8 +276,3 @@ $(function() {
 //      console.log("FILTER SECTION could not be constructed -- exception occurred in filter.js");
 //    }
   };
-
-
-});
-
-
