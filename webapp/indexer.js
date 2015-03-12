@@ -155,7 +155,11 @@ is used at runtime when filtering is applied.
       if (filtration) {
         respondentsFiltered = [];
         markChartsAsFiltered = true;
+	var countOrgs = DB.respondents.length;
+	var idxThisOrg = 0;
         DB.respondents.each(function(org){
+  	  idxThisOrg++;
+	  window.nfforg.updateProgressBar(idxThisOrg, countOrgs);
           var ok = true;
           window.nfforg.filterCategories.each(function(X){
             if (filtration[X]) {
@@ -210,7 +214,11 @@ is used at runtime when filtering is applied.
 
       }else{
 
+	var countOrgs = Object.keys(chartArrayToModify).length;
+	var idxThisOrg = 0;
         Object.keys(chartArrayToModify).each(function(chartname){
+  	  idxThisOrg++;
+	  window.nfforg.updateProgressBar(idxThisOrg, countOrgs);
           var chart = chartArrayToModify[chartname];
           chart.yValueTotal = 0;
           chart.valueSet = {};
