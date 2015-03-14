@@ -8,7 +8,7 @@ window.nfforg.updateProgressBar = function (num,denom) {
 jQuery.ajax({
     xhr: function() {
 	var totalUncompressed = 15063700;
-	var totalCompressed =     839303;
+	var totalCompressed =     797745;
 	var total = totalUncompressed;
         var xhr = new window.XMLHttpRequest();
 	var handleProgress = function(evt) {
