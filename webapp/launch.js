@@ -7,9 +7,12 @@ window.nfforg.updateProgressBar = function (num,denom) {
 
 jQuery.ajax({
     xhr: function() {
-	var total = 15063700;
+	var totalUncompressed = 15063700;
+	var totalCompressed =     839303;
+	var total = totalUncompressed;
         var xhr = new window.XMLHttpRequest();
 	var handleProgress = function(evt) {
+	    total = evt.position ? totalUncompressed : totalCompressed;
 	    window.nfforg.updateProgressBar(evt.loaded, total);
 	};
         xhr.upload.addEventListener("progress", handleProgress, false);
@@ -17,7 +20,7 @@ jQuery.ajax({
 	return xhr;
     },
     type: 'GET',
-    url: "realdata.json",
+    url: "//s3.amazonaws.com/sklardevel/realdata.json",
     data: {},
 
     // SUCCESS !!!
