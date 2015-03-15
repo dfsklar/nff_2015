@@ -1,6 +1,7 @@
-sh extract.sh
+# sh extract.sh
 sh build_aggregate.sh
 /bin/rm -rf /home/nffusa/www
 harp compile webapp /home/nffusa/www
+cp webapp/htaccess /home/nffusa/www/.htaccess
 cd /home/nffusa/www
 /bin/mv indexproduction.html index.html
