@@ -17,8 +17,8 @@ jQuery.ajax({
 	    total = evt.position ? totalUncompressed : totalCompressed;
 	    window.nfforg.updateProgressBar(evt.loaded, total);
 	};
-	if (xhr.upload) xhr.upload.addEventListener("progress", handleProgress, false);
-	else            xhr.addEventListener("progress", handleProgress, false);
+	if (xhr.upload)    xhr.upload.addEventListener("progress", handleProgress, false);
+	if (xhr.addEventListener) xhr.addEventListener("progress", handleProgress, false);
 	return xhr;
     },
     type: 'GET',
