@@ -294,10 +294,12 @@ $(function() {
     setTimeout(function(){
       // THIS IS "FILTER" (not compare)
       if ($activeform.attr('id') == 'filter') {
-        History.replaceState("filterset", null, 
-                             "/?filter=" + encodeURI(window.nfforg.filterSetAsString(window.nfforg.filtrationCurrent)));
+	var newURL = "/?filter=" + encodeURI(window.nfforg.filterSetAsString(window.nfforg.filtrationCurrent));
+        History.replaceState("filterset", null, newURL);
         if (window.nfforg.indexAndFilterDatabase(window.nfforg.database, 'chartsForPrez', window.nfforg.filtrationCurrent))
           window.nfforg.recreateEntireVizArea();
+	  ga /*window.googleAnalytics__GA*/ ('set', 'page', newURL);
+	  ga /*window.googleAnalytics__GA*/ ('send', 'pageview', {page: newURL});
       }else{
         // THIS IS "COMPARE"
         History.replaceState("filterset", null, 
