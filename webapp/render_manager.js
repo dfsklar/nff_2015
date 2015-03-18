@@ -1,5 +1,5 @@
-// Called after DOM is ready:
-$(function() {
+
+  window.nfforg.doSingleChart = false;
 
   window.nfforg.px = function(VAL) { return String(VAL) + 'px'; }
 
@@ -20,17 +20,6 @@ $(function() {
       return "<1%";
     else
       return result;
-  };
-
-
-
-  if (window.nfforg.queryParams['mode'] == 'print') {
-    $('body').addClass('print');
-  }
-
-  var doSingleChart = false;
-  if (window.nfforg.queryParams['chart']) {
-    doSingleChart = window.nfforg.queryParams['chart'];
   };
 
 
@@ -142,7 +131,7 @@ $(function() {
         $root.append($section);
         if (DB.sections[chart.section]["extra-class"])
           $section.addClass(DB.sections[chart.section]["extra-class"]);
-        if (!doSingleChart) {
+        if (!window.nfforg.doSingleChart) {
           $section.append($('<a name=SECT'+idx_cur_section+ ' class=section-title>'+chart.section+'</a>'));
           if (DB.sections[chart.section]) {
             if (DB.sections[chart.section].commentary) {
@@ -214,8 +203,8 @@ $(function() {
         // !!!!!!!!!!!! RETURN !!!!!!!!!!!!
       }
 
-      if (doSingleChart) {
-        if (chartname != doSingleChart) {
+      if (window.nfforg.doSingleChart) {
+        if (chartname != window.nfforg.doSingleChart) {
           return;
           // !!!!!!!!! RETURN !!!!!!!!
         }
@@ -283,5 +272,17 @@ $(function() {
     window.nfforg.configureChartInteraction();
   };
 
+
+
+// Called after DOM is ready:
+$(function() {
+
+  if (window.nfforg.queryParams['mode'] == 'print') {
+    $('body').addClass('print');
+  }
+
+  if (window.nfforg.queryParams['chart']) {
+    window.nfforg.doSingleChart = window.nfforg.queryParams['chart'];
+  };
 
 });

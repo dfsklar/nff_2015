@@ -1,5 +1,7 @@
 /* THIS IS IT -- THE main() FOR THIS APPLICATION! */
 
+var canDoCORS = !(window.navigator.userAgent.match(/MSIE /));
+
 window.nfforg.updateProgressBar = function (num,denom) {
     var pct = Math.round(num*100/denom);
     $('.progress-bar-inner').css({width: String(pct)+"%"});
@@ -7,18 +9,27 @@ window.nfforg.updateProgressBar = function (num,denom) {
 
 jQuery.ajax({
     xhr: function() {
-	var total = 15063700;
+	var totalUncompressed = 15063700;
+	var totalCompressed =     797745;
+	var total = totalUncompressed;
         var xhr = new window.XMLHttpRequest();
 	var handleProgress = function(evt) {
+	    total = evt.position ? totalUncompressed : totalCompressed;
 	    window.nfforg.updateProgressBar(evt.loaded, total);
 	};
-        xhr.upload.addEventListener("progress", handleProgress, false);
-	xhr.addEventListener("progress", handleProgress, false);
+	if (xhr.upload) xhr.upload.addEventListener("progress", handleProgress, false);
+	else            xhr.addEventListener("progress", handleProgress, false);
 	return xhr;
     },
     type: 'GET',
-    url: "realdata.json",
+    url: canDoCORS ? "http://s3.amazonaws.com/sklardevel/realdata.json" : "realdata.json",
     data: {},
+
+
+    error: function (jqXHR, textStatus, errorThrown) {
+	console.log(textStatus);
+	console.log(errorThrown);
+    },
 
     // SUCCESS !!!
     // SUCCESS !!!

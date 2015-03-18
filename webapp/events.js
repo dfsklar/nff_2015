@@ -1,5 +1,173 @@
-$(function() {
 
+
+  window.nfforg.configureSidebarInteraction = function() {
+
+    // EVENT: CLICKING ON A CHECKBOX IN THE FILTER/COMPARE SECTION!!!
+    $('.sidebar.form input').change(function(){
+      $form = $('.sidebar.form.active');
+      var filtrationToManage = 
+          ($form.attr('id')=='filter') 
+          ?
+          window.nfforg.filtrationCurrent
+          :
+          filtrationToManage = window.nfforg.filtrationForCompareCurrent;
+      $form.addClass('dirty');
+      $form.find('.button.apply').addClass('throb');
+      setTimeout(function(){
+        $form.find('.button.apply').removeClass('throb');
+      }, 400);
+      var newvalue = this.checked;
+      if (newvalue)
+        $(this).parent().addClass('checked');
+      else
+        $(this).parent().removeClass('checked');
+      var $sect = $(this).parents('.section');
+      if ($(this).parent().hasClass('sector-arts')) {
+        if (newvalue) {
+          $(this).parent().parent().find('.subarea-value-checkboxes').addClass('opened');
+          //$(this).parent().parent().find('.subarea-value-checkboxes .chkholder').find('input').attr('checked','checked');
+          $(this).parent().parent().find('.subarea-value-checkboxes .chkholder').find('input').prop('checked',true);
+          $(this).parent().parent().find('.subarea-value-checkboxes .chkholder').addClass('checked');
+        } else {
+          $(this).parent().parent().find('.subarea-value-checkboxes').removeClass('opened');
+          $(this).parent().parent().find('.subarea-value-checkboxes .chkholder').removeClass('checked');
+          $(this).parent().parent().find('.subarea-value-checkboxes .chkholder').find('input').removeAttr('checked');
+        }
+      }
+      window.nfforg.displayListOfActiveFilterValues($sect, filtrationToManage);
+      setTimeout(function(){
+        window.nfforg.filterSidebar.respondToHeightChanges($form);
+      }, 200);
+    });
+
+
+    // EVENT: CHANGING TEXT IN THE SPECIAL ZIP-CODE FILTER
+    $('.sidebar.form textarea').bind('input propertychange', function() {
+      $form = $('.sidebar.form.active');
+      var filtrationToManage = 
+          ($form.attr('id')=='filter') 
+          ?
+          window.nfforg.filtrationCurrent
+          :
+          filtrationToManage = window.nfforg.filtrationForCompareCurrent;
+      $form.addClass('dirty');
+      $form.find('.button.apply').addClass('throb');
+      setTimeout(function(){
+        $form.find('.button.apply').removeClass('throb');
+      }, 400);
+      var $sect = $(this).parents('.section');
+      window.nfforg.displayListOfActiveFilterValues($sect, filtrationToManage);
+      setTimeout(function(){
+        window.nfforg.filterSidebar.respondToHeightChanges($form);
+      }, 200);
+    });
+
+
+    // CLICKING ON OPEN/CLOSE TOGGLE FOR A FILTER SECTION
+    $('#filter-area .form .section .title,.button-openclose').click(function(e){
+      var $sect = $(this).parent('.section');
+      var currentlyOpen = $sect.hasClass('opened');
+      $sect.parent().find('.section').removeClass('opened');
+      if (!currentlyOpen) {
+        $sect.addClass('opened');
+      }
+      window.nfforg.filterSidebar.respondToHeightChanges($($sect.parents('.form').get(0)));
+      e.preventDefault();
+    });
+
+  }
+  // END OF: window.nfforg.configureSidebarInteraction()
+
+
+
+  // REACTING TO WINDOW-WIDTH CHANGES
+  //
+  window.nfforg.layoutUX = function() {
+
+    $('.sidebar.form').each(function(){
+      window.nfforg.filterSidebar.respondToHeightChanges($(this));
+    });
+
+    var newWidth = $(window).width();
+    var boolForceContentRedraw = false;
+
+    if (newWidth < 930) {
+      if ( ! ($('body').hasClass('narrow-width'))) {
+        // HA!  This is a CHANGE from full width to narrow width
+        $('body').addClass('narrow-width');
+        $('.header.fixed').addClass('shown');
+        boolForceContentRedraw = true;
+        // The fixed header is not part of the flow of the content area.
+        // Thus, the content area must be given padding to ensure the top
+        // of the TOC (for example) is visible past the fixed header's area
+        $('.content-area').css( 'padding-top', window.nfforg.px($('.header.fixed').height()) );
+        $('#table-of-contents').removeClass('opened');
+        $('#nav-bar .button.toc').removeClass('opened');
+      }
+    }else{
+      $('.content-area').css( 'padding-top', window.nfforg.px(0) );
+      if (($('body').hasClass('narrow-width'))) {
+        $('body').removeClass('narrow-width');
+        $('.header.fixed').removeClass('shown');
+        boolForceContentRedraw = true;
+      }
+    }
+    window.nfforg.reactToWindowScroll();
+
+    var newContentAreaWidth = Math.min( parseInt($('.content-area').css('maxWidth')), newWidth - $('#filter-area').width() - 10   );
+    $('.content-area').css('width', window.nfforg.px(newContentAreaWidth));
+
+    // Re-establish the fixed filter area
+    var calculatedOffsetLeftForFilter = 
+      $('.body-inner').offset()['left'] + $('.body-inner').width()
+      - $('#filter-area').width();
+    $('#filter-area').css(
+      {
+        display: "block",
+        position: "fixed",
+        left: calculatedOffsetLeftForFilter,
+        top: 0
+      });
+    $('.overlay').css(
+      {
+        left: (newWidth/2 - $('.overlay').width()/2)|0
+      });
+    $('.header.fixed').css(
+      {
+        left: calculatedOffsetLeftForFilter - newContentAreaWidth,
+        width: newContentAreaWidth
+      });
+
+    if (boolForceContentRedraw) {
+      window.nfforg.recreateEntireVizArea();
+    }
+   
+  };
+
+
+
+
+  // REACTING TO WINDOW SCROLLING
+  window.nfforg.reactToWindowScroll = function(){
+    if ($('body').hasClass('narrow-width')) {
+      $('.header.fixed').addClass('shown');
+      $('.header.full-height').addClass('betrayed');
+      $('#nav-bar').appendTo($('.header.fixed .holder-nav-bar'));
+    }else{
+      if ($(window).scrollTop() > 130) {
+        $('.header.fixed').addClass('shown');
+        $('.header.full-height').addClass('betrayed');
+        $('#nav-bar').appendTo($('.header.fixed .holder-nav-bar'));
+        $('#nav-bar .button.toc').removeClass('opened');
+        $('#table-of-contents').removeClass('opened');
+      }
+      else {
+        $('.header.fixed').removeClass('shown');
+        $('.header.full-height').removeClass('betrayed');
+        $('#nav-bar').appendTo($('.header.full-height .holder-nav-bar'));
+      }
+    }
+  };
 
   window.onpopstate = function(event) {
     if (window.nfforg.queryParams['mode'] != 'print') {
@@ -25,6 +193,12 @@ $(function() {
       $('html').addClass('frozen');
     }, 500);
   }
+
+
+
+
+
+$(function() {
 
 
   // SIDEBAR TABS
@@ -240,98 +414,11 @@ $(function() {
 
 
 
-  // REACTING TO WINDOW SCROLLING
-  window.nfforg.reactToWindowScroll = function(){
-    if ($('body').hasClass('narrow-width')) {
-      $('.header.fixed').addClass('shown');
-      $('.header.full-height').addClass('betrayed');
-      $('#nav-bar').appendTo($('.header.fixed .holder-nav-bar'));
-    }else{
-      if ($(window).scrollTop() > 130) {
-        $('.header.fixed').addClass('shown');
-        $('.header.full-height').addClass('betrayed');
-        $('#nav-bar').appendTo($('.header.fixed .holder-nav-bar'));
-        $('#nav-bar .button.toc').removeClass('opened');
-        $('#table-of-contents').removeClass('opened');
-      }
-      else {
-        $('.header.fixed').removeClass('shown');
-        $('.header.full-height').removeClass('betrayed');
-        $('#nav-bar').appendTo($('.header.full-height .holder-nav-bar'));
-      }
-    }
-  };
-
   $(window).scroll(window.nfforg.reactToWindowScroll);
 
 
 
 
-
-
-  // REACTING TO WINDOW-WIDTH CHANGES
-  //
-  window.nfforg.layoutUX = function() {
-
-    $('.sidebar.form').each(function(){
-      window.nfforg.filterSidebar.respondToHeightChanges($(this));
-    });
-
-    var newWidth = $(window).width();
-    var boolForceContentRedraw = false;
-
-    if (newWidth < 930) {
-      if ( ! ($('body').hasClass('narrow-width'))) {
-        // HA!  This is a CHANGE from full width to narrow width
-        $('body').addClass('narrow-width');
-        $('.header.fixed').addClass('shown');
-        boolForceContentRedraw = true;
-        // The fixed header is not part of the flow of the content area.
-        // Thus, the content area must be given padding to ensure the top
-        // of the TOC (for example) is visible past the fixed header's area
-        $('.content-area').css( 'padding-top', window.nfforg.px($('.header.fixed').height()) );
-        $('#table-of-contents').removeClass('opened');
-        $('#nav-bar .button.toc').removeClass('opened');
-      }
-    }else{
-      $('.content-area').css( 'padding-top', window.nfforg.px(0) );
-      if (($('body').hasClass('narrow-width'))) {
-        $('body').removeClass('narrow-width');
-        $('.header.fixed').removeClass('shown');
-        boolForceContentRedraw = true;
-      }
-    }
-    window.nfforg.reactToWindowScroll();
-
-    var newContentAreaWidth = Math.min( parseInt($('.content-area').css('maxWidth')), newWidth - $('#filter-area').width() - 10   );
-    $('.content-area').css('width', window.nfforg.px(newContentAreaWidth));
-
-    // Re-establish the fixed filter area
-    var calculatedOffsetLeftForFilter = 
-      $('.body-inner').offset()['left'] + $('.body-inner').width()
-      - $('#filter-area').width();
-    $('#filter-area').css(
-      {
-        display: "block",
-        position: "fixed",
-        left: calculatedOffsetLeftForFilter,
-        top: 0
-      });
-    $('.overlay').css(
-      {
-        left: (newWidth/2 - $('.overlay').width()/2)|0
-      });
-    $('.header.fixed').css(
-      {
-        left: calculatedOffsetLeftForFilter - newContentAreaWidth,
-        width: newContentAreaWidth
-      });
-
-    if (boolForceContentRedraw) {
-      window.nfforg.recreateEntireVizArea();
-    }
-    
-  };
 
 
   $(window).resize(window.nfforg.layoutUX);
@@ -421,85 +508,7 @@ $(function() {
     return toDisplay;
   };
 
-
-
-
-  window.nfforg.configureSidebarInteraction = function() {
-
-    // EVENT: CLICKING ON A CHECKBOX IN THE FILTER/COMPARE SECTION!!!
-    $('.sidebar.form input').change(function(){
-      $form = $('.sidebar.form.active');
-      var filtrationToManage = 
-          ($form.attr('id')=='filter') 
-          ?
-          window.nfforg.filtrationCurrent
-          :
-          filtrationToManage = window.nfforg.filtrationForCompareCurrent;
-      $form.addClass('dirty');
-      $form.find('.button.apply').addClass('throb');
-      setTimeout(function(){
-        $form.find('.button.apply').removeClass('throb');
-      }, 400);
-      var newvalue = this.checked;
-      if (newvalue)
-        $(this).parent().addClass('checked');
-      else
-        $(this).parent().removeClass('checked');
-      var $sect = $(this).parents('.section');
-      if ($(this).parent().hasClass('sector-arts')) {
-        if (newvalue) {
-          $(this).parent().parent().find('.subarea-value-checkboxes').addClass('opened');
-          //$(this).parent().parent().find('.subarea-value-checkboxes .chkholder').find('input').attr('checked','checked');
-          $(this).parent().parent().find('.subarea-value-checkboxes .chkholder').find('input').prop('checked',true);
-          $(this).parent().parent().find('.subarea-value-checkboxes .chkholder').addClass('checked');
-        } else {
-          $(this).parent().parent().find('.subarea-value-checkboxes').removeClass('opened');
-          $(this).parent().parent().find('.subarea-value-checkboxes .chkholder').removeClass('checked');
-          $(this).parent().parent().find('.subarea-value-checkboxes .chkholder').find('input').removeAttr('checked');
-        }
-      }
-      window.nfforg.displayListOfActiveFilterValues($sect, filtrationToManage);
-      setTimeout(function(){
-        window.nfforg.filterSidebar.respondToHeightChanges($form);
-      }, 200);
-    });
-
-
-    // EVENT: CHANGING TEXT IN THE SPECIAL ZIP-CODE FILTER
-    $('.sidebar.form textarea').bind('input propertychange', function() {
-      $form = $('.sidebar.form.active');
-      var filtrationToManage = 
-          ($form.attr('id')=='filter') 
-          ?
-          window.nfforg.filtrationCurrent
-          :
-          filtrationToManage = window.nfforg.filtrationForCompareCurrent;
-      $form.addClass('dirty');
-      $form.find('.button.apply').addClass('throb');
-      setTimeout(function(){
-        $form.find('.button.apply').removeClass('throb');
-      }, 400);
-      var $sect = $(this).parents('.section');
-      window.nfforg.displayListOfActiveFilterValues($sect, filtrationToManage);
-      setTimeout(function(){
-        window.nfforg.filterSidebar.respondToHeightChanges($form);
-      }, 200);
-    });
-
-
-    // CLICKING ON OPEN/CLOSE TOGGLE FOR A FILTER SECTION
-    $('#filter-area .form .section .title,.button-openclose').click(function(e){
-      var $sect = $(this).parent('.section');
-      var currentlyOpen = $sect.hasClass('opened');
-      $sect.parent().find('.section').removeClass('opened');
-      if (!currentlyOpen) {
-        $sect.addClass('opened');
-      }
-      window.nfforg.filterSidebar.respondToHeightChanges($($sect.parents('.form').get(0)));
-      e.preventDefault();
-    });
-
-  }
-  // END OF: window.nfforg.configureSidebarInteraction()
-
 });
+
+
+
