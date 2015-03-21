@@ -8,17 +8,17 @@
   window.nfforg.colors = 
     {
       /* Dark to light */
-      Blue1: '#162682',  // vivid blue
-      Blue2: '#24B2FF',
-      Blue3: '#A1E0FF',  // desaturated
-      MidnightBlue: "#0000B0",
-      MediumBlue: "#2A7AE0",
-      DarkerGray: '#5D7683',
-      LightGray: '#d2d3de',
-      Orange1: '#FF9980',
-      Orange2: '#FF724F',
-      Orange3: '#FFAE15',
-      FilterRed: '#FF2445'
+	Blue1: '#3EC160', // vivid blue
+	Blue2: '#558A7A',
+	Blue3: '#b2e7bf', // desaturated
+	MidnightBlue: "#385b50",
+	MediumBlue: "#99B9AF",
+	DarkerGray: '#5D7683',
+	LightGray: '#d2d3de',
+	Orange1: '#ff6e69',
+	Orange2: '#ff3c36',
+	Orange3: '#FFAE15',
+	FilterRed: '#FF2445'
     };
 
   window.nfforg.colors.DEFAULT = window.nfforg.colors.Blue1;
