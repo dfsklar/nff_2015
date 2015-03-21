@@ -1593,7 +1593,8 @@
       },
 
       "arts_source_competition_": {
-        "denominator_required_field": "arts_org_type",
+        "denominator_required_field": "arts_decline_revenue",
+        "denominator_required_field__negative_values": [ "No" ],
         "key_order": Object.keys(window.nfforg.MAPenumToEnglish.arts_source_competition_),
         "title": "Arts & Culture: Source of competition",
         "renderer": "one_or_more",
