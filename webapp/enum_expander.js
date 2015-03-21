@@ -189,8 +189,8 @@
     },
 
     unmet_demand_svc_: {
-      remainunmet: "Likely remain unmet",
       otherorg: "Seek similar services from another organization",
+      remainunmet: "Needs remain unmet",
       family: "Seek assistance from personal networks (family, friends, etc.)",
       govprograms: "Access direct government assistance through programs not outsourced to nonprofits",
       dontknow: "Don't know",
@@ -351,7 +351,7 @@
     current_year_org_outlook_: {
       harder: "Harder than 2014",
       easier: "Easier than 2014",
-      same: "About the same as 2014"
+      same: "More or less the same as 2014"
     },
 
     action_service: {
