@@ -1581,6 +1581,24 @@
         "css": { width: FULLWIDTH }
       },
 
+      "arts_audience_dev_results_": {
+        "denominator_required_field": "arts_audience_dev",
+        "denominator_required_field__negative_values": [ "No" ],
+        "title": "Arts & Culture: Result of investments in <br/>audience/visitor development strategies",
+        "renderer": "one_or_more",
+        "highchart_formatting": {
+          chart: { marginLeft: 450, spacingLeft: 0 }
+        },
+        "key_order": Object.keys(window.nfforg.MAPenumToEnglish.arts_audience_dev_results_),
+        NONEED_value_massager: function(val){
+          if (val.has('know'))
+            return val; //return "Don't know";
+          else
+            return val.replace(", please explain","");
+        },
+        "css": { width: FULLWIDTH }
+      },
+
       "arts_decline_revenue": {
         "title": "Arts & Culture: Experienced revenue decline",
         "renderer": "stacked_single_bar",
@@ -1603,24 +1621,6 @@
         },
         "value_massager": function(val){
           return val.replace(", please explain","");
-        },
-        "css": { width: FULLWIDTH }
-      },
-
-      "arts_audience_dev_results_": {
-        "denominator_required_field": "arts_aud_",
-        "denominator_required_field__negative_values": [ "none" ],
-        "title": "Arts & Culture: Result of investments in <br/>audience/visitor development strategies",
-        "renderer": "one_or_more",
-        "highchart_formatting": {
-          chart: { marginLeft: 450, spacingLeft: 0 }
-        },
-        "key_order": Object.keys(window.nfforg.MAPenumToEnglish.arts_audience_dev_results_),
-        NONEED_value_massager: function(val){
-          if (val.has('know'))
-            return val; //return "Don't know";
-          else
-            return val.replace(", please explain","");
         },
         "css": { width: FULLWIDTH }
       },
