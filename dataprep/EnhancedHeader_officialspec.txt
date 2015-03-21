@@ -372,7 +372,7 @@ arts_grants_reporting_burden	"[arts_funder] In 2014, did your funders carry out 
 arts_grants_overhead_restr	"[arts_funder] In 2014, did your funders carry out any of the following practices? Please select all that apply: [Restrict allowable overhead rate on grants]"
 arts_grants_got_unrestr	"[arts_funder] In 2014, did your funders carry out any of the following practices? Please select all that apply: [Give unrestricted funding]"
 arts_grants_help_change_habits	"[arts_funder] In 2014, did your funders carry out any of the following practices? Please select all that apply: [Give your organization capital to help change the way you raise or spend money]"
- arts_grants_help_build_reserves	"[arts_funder] In 2014, did your funders carry out any of the following practices? Please select all that apply: [Give your organization capital to build reserves]"
+arts_grants_help_build_reserves	"[arts_funder] In 2014, did your funders carry out any of the following practices? Please select all that apply: [Give your organization capital to build reserves]"
 arts_grants_surplus_bad	"[arts_funder] In 2014, did your funders carry out any of the following practices? Please select all that apply: [Deny your grant because your nonprofit had a surplus or savings]"
 arts_grants_surplus_good	"[arts_funder] In 2014, did your funders carry out any of the following practices? Please select all that apply: [Approve your grant because your nonprofit had a surplus or savings]"
 arts_grants_none	"[arts_funder] In 2014, did your funders carry out any of the following practices? Please select all that apply: [My funders did not carry out any of the aforementioned practices]"

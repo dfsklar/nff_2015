@@ -426,14 +426,14 @@
           chart: { marginLeft: 90, spacingLeft: 0 }
         },
         "key_order": [
-          '> 6 months',
-          '6 months',
-          '5 months',
-          '4 months',
-          '3 months',
-          '2 months',
+          '< 1 month',
           '1 month',
-          '< 1 month'
+          '2 months',
+          '3 months',
+          '4 months',
+          '5 months',
+          '6 months',
+          '> 6 months'
         ],
         "css": { width: HALFWIDTH }
       },
@@ -698,7 +698,7 @@
             return "10-15%";
           return val;  //.replace('_',' ')+"%";
         },
-        "key_order": [ '0-3%', '4-9%', '10-15%', '16-25%', '26-50%', '> 51%' ],
+        "key_order": [ '0-3%', '4-9%', '10-15%', '16-25%', '26-50%', '>51%' ],
         "otherCharts": [ "aicr_state_range", "aicr_loc_range"],
         "css": { width: FULLWIDTH }
       },
@@ -715,7 +715,7 @@
             return "10-15%";
           return val.replace('_',' ')+"%";
         },
-        "key_order": [ '0-3%', '4-9%', '10-15%', '16-25%', '26-50%', '> 51%' ],
+        "key_order": [ '0-3%', '4-9%', '10-15%', '16-25%', '26-50%', '>51%' ],
         "css": { width: HALFWIDTH }
       },
       "aicr_loc_range": {
@@ -730,7 +730,7 @@
             return "10-15%";
           return val.replace('_',' ')+"%";
         },
-        "key_order": [ '0-3%', '4-9%', '10-15%', '16-25%', '26-50%', '> 51%' ],
+        "key_order": [ '0-3%', '4-9%', '10-15%', '16-25%', '26-50%', '>51%' ],
         "css": { width: HALFWIDTH }
       },
 
@@ -795,8 +795,9 @@
         "renderer": "barset",
         "show-percentage-only": true,
         "title-subchart": "FEDERAL",
-        "key_order": [ 'Yes', 'No' ],
+        "key_order": [ 'Yes', 'No', 'Maybe'],
         "color_by_key": {
+          'Maybe': chroma(window.nfforg.colors.NEUTRAL).hex(),
           'No': chroma(window.nfforg.colors.GOODVERY).hex(),
           'Yes': chroma(window.nfforg.colors.BADVERY).hex()
         },
@@ -811,8 +812,9 @@
         "renderer": "none",
         "show-percentage-only": true,
         "title-subchart": "STATE",
-        "key_order": [ 'Yes', 'No' ],
+        "key_order": [ 'Yes', 'No', 'Maybe'],
         "color_by_key": {
+          'Maybe': chroma(window.nfforg.colors.NEUTRAL).hex(),
           'No': chroma(window.nfforg.colors.GOODVERY).hex(),
           'Yes': chroma(window.nfforg.colors.BADVERY).hex()
         },
@@ -823,8 +825,9 @@
         "renderer": "none",
         "show-percentage-only": true,
         "title-subchart": "LOCAL",
-        "key_order": [ 'Yes', 'No' ],
+        "key_order": [ 'Yes', 'No', 'Maybe'],
         "color_by_key": {
+          'Maybe': chroma(window.nfforg.colors.NEUTRAL).hex(),
           'No': chroma(window.nfforg.colors.GOODVERY).hex(),
           'Yes': chroma(window.nfforg.colors.BADVERY).hex()
         },
@@ -1365,7 +1368,7 @@
 //      },
 
       "current_year_org_outlook_": {
-        "title": "2015 Outlook for the NPO<br/>&nbsp;",
+        "title": "2015 Outlook for the NPO",
         "renderer": "one_or_more",
         // "renderer": "bar",
         "highchart_formatting": {
@@ -1396,8 +1399,8 @@
 
       "debt_fin_amt": {
         "title": "Amount of outstanding debt<br/>or line of credit",
-        "denominator_required_field": "debt_fin",
-        "denominator_required_field__negative_values": [ "No" ],
+        //"denominator_required_field": "debt_fin",
+        //"denominator_required_field__negative_values": [ "No" ],
         "renderer": "bar",
         "value_massager": function(val){
           val = val.replace(",000,000","M");
@@ -1424,6 +1427,7 @@
         "css": { width: HALFWIDTH }
       },
 
+/*
       "addtl_debt_fin": {
         "title": "Needs or anticipates<br/>additional debt/financing",
         "renderer": "stacked_single_bar",
@@ -1434,7 +1438,10 @@
         },
         "css": { width: HALFWIDTH, height: "110px" }
       },
+*/
 
+
+/*
       "addtl_debt_fin_amt": {
         "title": "Amount of additional debt",
         "title-mini": "Operating Expense",
@@ -1463,7 +1470,10 @@
         ],
         "css": { width: HALFWIDTH }
       },
+*/
 
+
+/*
       "addtl_debt_fin_use_": {
         "title": "Planned Uses of additional debt",
         "renderer": "one_or_more",
@@ -1475,6 +1485,9 @@
         },
         "css": { width: FULLWIDTH }
       },
+*/
+
+
 
       "debt_fin_no_": {
         "title": "Reasons an NPO currently has no debt",
@@ -1513,7 +1526,7 @@
 
       "arts_org_type": {
         "section": "Feature: Arts & Culture NPOs",
-        "denominator_required_field": "arts_org_type",
+        //"denominator_required_field": "arts_org_type",
         "title": "Arts & Culture: Respondents by Sub-Sector",
         "renderer": "bar",
         "key_order": Object.keys(window.nfforg.MAPenumToEnglish.arts_org_type),
@@ -1522,6 +1535,8 @@
             .replace(/^Visual.*non-museum/, "Visual art / craft - non-museum")
             .replace(/^Music.*non-orchestra/, "Music - non-orchestra")
             .replace(/, please specify/, "")
+            .replace("Performing Arts", "Performing arts")
+            .replace("ony Orch", "ony orch")
             .replace("and/or", "/")
             .replace("Other", "Other arts/culture/humanities")
             .replace(/:/, "")

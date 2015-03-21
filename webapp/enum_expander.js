@@ -24,8 +24,8 @@
       seniorcare: "Senior care",
       schools: "Strong, well-performing schools",
       substanceabuse: "Substance abuse services",
-      youthdevel: "Youth development",
       veteransvc: "Veterans' services",
+      youthdevel: "Youth development",
       other_yn: "Other"
     },
 
@@ -122,6 +122,9 @@
       demographics: "Adapting to changing community demographics",
       aca_changes: "Adapting to changes due to the Affordable Care Act",
       volunteers: "Engaging and mobilizing volunteers",
+      staff_retain: "Ability to retain staff / offer competitive staff",
+      staff_environ_health: "Environmental health hazarsds and risks",
+      staff_unavoidable_costs: "Increases in unavoidable costs",
       other_yn: "Other"
     },
 
@@ -186,12 +189,12 @@
     },
 
     unmet_demand_svc_: {
+      remainunmet: "Likely remain unmet",
       otherorg: "Seek similar services from another organization",
       family: "Seek assistance from personal networks (family, friends, etc.)",
       govprograms: "Access direct government assistance through programs not outsourced to nonprofits",
-      remainunmet: "Likely remain unmet",
-      dontknow: "Don't know"
-//      other: "Other"
+      dontknow: "Don't know",
+      other_yn: "Other"
     },
 
     data_collect_: {
