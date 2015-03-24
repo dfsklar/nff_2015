@@ -308,7 +308,7 @@
       },
 
       "unmet_demand_svc_": {
-        "title": "When you cannot meet demand, how do your clients cope?",
+        "title": "When NPOs can’t meet demand, what do clients do?",
         "renderer": "one_or_more",
         "key_order": Object.keys(window.nfforg.MAPenumToEnglish.unmet_demand_svc_),
         "css": { width: FULLWIDTH, height: "120px" },
@@ -385,7 +385,7 @@
       },
 
       "deficit_rationale": {
-        "title": "Our FY2014 deficit was...",
+        "title": "Our FY 2014 deficit was...",
         "denominator_required_field": "surplus_deficit_prior",
         "denominator_required_field__negative_values": [ "operating surplus", "break-even financials" ],
         "renderer": "stacked_single_bar",
@@ -397,25 +397,70 @@
         "css": { width: HALFWIDTH, height: "110px" }
       },
 
-      "surplus_deficit_current": {
-        "css": { width: "317px" },
-        "title": "Anticipate ending FY'15 with...",
+
+
+      "surplus_prior_perc": {
+        "title": "% Surplus for FY 2014",
+        "info-tip": "Organizations were asked to share the size of their surpluses or deficits.",
         "renderer": "bar",
         "highchart_formatting": {
-          chart: { marginLeft: 140, spacingLeft: 0 }
+          chart: { marginLeft: 125, spacingLeft: 0 }
         },
         "value_massager": function(val) {
-          if (val.has('break-even'))
-            return 'break-even financials';
+          if (!(val.has("deficit")))
+            val = "surplus " + val;
+          val = val.replace('.01','').replace('greater than','>');
           return val;
         },
+        "color_by_key": {
+          'surplus > 25%': chroma(window.nfforg.colors.GOODVERY).hex(),
+          'surplus 10%-25%': chroma(window.nfforg.colors.GOODVERY).hex(),
+          'surplus 5%-10%': chroma(window.nfforg.colors.GOOD).hex(),
+          'surplus 1%-5%': chroma(window.nfforg.colors.GOOD).hex(),
+          'surplus 1% or less':  chroma(window.nfforg.colors.NEUTRAL).hex()
+        },
         "key_order": [
-          'operating surplus',
-          'break-even financials',
-          'operating deficit',
-          'unable to predict'
-        ]
+          'surplus > 25%',
+          'surplus 10%-25%',
+          'surplus 5%-10%',
+          'surplus 1%-5%',
+          'surplus 1% or less'
+        ],
+        "css": { width: HALFWIDTH }
       },
+
+
+      "deficit_prior_perc": {
+        "title": "% Deficit for FY 2014",
+        "info-tip": "Organizations were asked to share the size of their surpluses or deficits.",
+        "renderer": "bar",
+        "highchart_formatting": {
+          chart: { marginLeft: 125, spacingLeft: 0 }
+        },
+        "value_massager": function(val) {
+          if (!(val.has("surplus")))
+            val = "deficit " + val;
+          val = val.replace('.01','').replace('greater than','>');
+          return val;
+        },
+        "color_by_key": {
+          'deficit 1% or less':  chroma(window.nfforg.colors.NEUTRAL).hex(),
+          'deficit 1%-5%': chroma(window.nfforg.colors.BAD).hex(),
+          'deficit 5%-10%': chroma(window.nfforg.colors.BAD).hex(),
+          'deficit 10%-25%': chroma(window.nfforg.colors.BADVERY).hex(),
+          'deficit > 25%': chroma(window.nfforg.colors.BADVERY).hex()
+        },
+        "key_order": [
+          'deficit 1% or less',
+          'deficit 1%-5%',
+          'deficit 5%-10%',
+          'deficit 10%-25%',
+          'deficit > 25%'
+        ],
+        "css": { width: HALFWIDTH }
+      },
+
+
 
       "months_cash": {
         "title": "Months of Cash<br/>Readily Available",
@@ -440,78 +485,37 @@
         "css": { width: HALFWIDTH }
       },
 
-      "surplus_prior_perc": {
-        "title": "% Surplus for FY'14",
-        "info-tip": "Organizations were asked to share the size of their surpluses or deficits.",
+
+      "surplus_deficit_current": {
+        "css": { width: "317px" },
+        "title": "Anticipate ending FY 2015 with...",
         "renderer": "bar",
         "highchart_formatting": {
-          chart: { marginLeft: 125, spacingLeft: 0 }
+          chart: { marginLeft: 140, spacingLeft: 0 }
         },
         "value_massager": function(val) {
-          if (!(val.has("deficit")))
-            val = "surplus " + val;
-          val = val.replace('.01','').replace('greater than','>');
+          if (val.has('break-even'))
+            return 'break-even financials';
           return val;
         },
-        "color_by_key": {
-          'surplus > 25%': chroma(window.nfforg.colors.GOODVERY).hex(),
-          'surplus 10%-25%': chroma(window.nfforg.colors.GOODVERY).hex(),
-          'surplus 5%-10%': chroma(window.nfforg.colors.GOOD).hex(),
-          'surplus 1%-5%': chroma(window.nfforg.colors.GOOD).hex(),
-          'surplus 1% or less':  chroma(window.nfforg.colors.NEUTRAL).hex(),
-          'deficit 1% or less':  chroma(window.nfforg.colors.NEUTRAL).hex(),
-          'deficit 1%-5%': chroma(window.nfforg.colors.BAD).hex(),
-          'deficit 5%-10%': chroma(window.nfforg.colors.BAD).hex(),
-          'deficit 10%-25%': chroma(window.nfforg.colors.BADVERY).hex(),
-          'deficit > 25%': chroma(window.nfforg.colors.BADVERY).hex()
-        },
         "key_order": [
-          'surplus > 25%',
-          'surplus 10%-25%',
-          'surplus 5%-10%',
-          'surplus 1%-5%',
-          'surplus 1% or less'
-        ],
-        "css": { width: HALFWIDTH }
+          'operating surplus',
+          'break-even financials',
+          'operating deficit',
+          'unable to predict'
+        ]
       },
 
 
-      "deficit_prior_perc": {
-        "title": "% Deficit for FY'14",
-        "info-tip": "Organizations were asked to share the size of their surpluses or deficits.",
+      "current_year_org_outlook_": {
+        "title": "FY 2015 for my NPO will be...",
         "renderer": "bar",
         "highchart_formatting": {
-          chart: { marginLeft: 125, spacingLeft: 0 }
+          chart: { marginLeft: 180, spacingLeft: 0 }
         },
-        "value_massager": function(val) {
-          if (!(val.has("surplus")))
-            val = "deficit " + val;
-          val = val.replace('.01','').replace('greater than','>');
-          return val;
-        },
-        "color_by_key": {
-          'surplus > 25%': chroma(window.nfforg.colors.GOODVERY).hex(),
-          'surplus 10%-25%': chroma(window.nfforg.colors.GOODVERY).hex(),
-          'surplus 5%-10%': chroma(window.nfforg.colors.GOOD).hex(),
-          'surplus 1%-5%': chroma(window.nfforg.colors.GOOD).hex(),
-          'surplus 1% or less':  chroma(window.nfforg.colors.NEUTRAL).hex(),
-          'deficit 1% or less':  chroma(window.nfforg.colors.NEUTRAL).hex(),
-          'deficit 1%-5%': chroma(window.nfforg.colors.BAD).hex(),
-          'deficit 5%-10%': chroma(window.nfforg.colors.BAD).hex(),
-          'deficit 10%-25%': chroma(window.nfforg.colors.BADVERY).hex(),
-          'deficit > 25%': chroma(window.nfforg.colors.BADVERY).hex()
-        },
-        "key_order": [
-          'deficit 1% or less',
-          'deficit 1%-5%',
-          'deficit 5%-10%',
-          'deficit 10%-25%',
-          'deficit > 25%'
-        ],
+        "key_order": Object.keys(window.nfforg.MAPenumToEnglish.current_year_org_outlook_),
         "css": { width: HALFWIDTH }
       },
-
-
 
 
 
@@ -1373,37 +1377,6 @@
 //        ],
 //        "css": { width: HALFWIDTH }
 //      },
-
-
-
-
-      // FINANCIAL OUTLOOK
-
-//      "current_year_client_outlook": {
-//        "section": "Financial Outlook",
-//        "title": "2015 Outlook for the<br/>Community the NPO Serves",
-//        "renderer": "bar",
-//        "key_order": [ 
-//          'Harder than 2013', 
-//          'More or less the same as 2013', 
-//          'Easier than 2013'
-//        ],
-//        "highchart_formatting": {
-//          chart: { marginLeft: 180, spacingLeft: 0 }
-//        },
-//        "css": { width: HALFWIDTH }
-//      },
-
-      "current_year_org_outlook_": {
-        "title": "2015 Outlook for the NPO",
-        "renderer": "bar",
-        "highchart_formatting": {
-          chart: { marginLeft: 180, spacingLeft: 0 }
-        },
-        "key_order": Object.keys(window.nfforg.MAPenumToEnglish.current_year_org_outlook_),
-        "css": { width: HALFWIDTH }
-      },
-
 
 
 
