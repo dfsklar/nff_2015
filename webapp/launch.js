@@ -2,6 +2,10 @@
 
 var canDoCORS = !(window.navigator.userAgent.match(/MSIE /));
 
+//if (window.location.hostname == 'localhost')
+  // Would be nice to always use local data.json when working on development machine
+//  canDoCORS = false;
+
 /* IMPORTANT S3 INFORMATION:
    The gzipped file uploaded to S3:
    > Content-encoding:  gzip

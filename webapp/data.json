@@ -21,15 +21,15 @@
     "sections": {
       "About the Respondents": {
         "showcase": "overview",
-        "commentary": "Nonprofit Finance Fund’s annual survey asks nonprofits in the US about their programs, financial health, and management strategies. In this first section is a profile of the core characteristics of respondents, such their state, sector, and size."
+        "commentary": "This first section is a profile of the core characteristics of respondents, including state, sector, size, and communities served."
       },
       "Demand for Programs/Services": {
         "showcase": "demand",
-        "commentary": "Nonprofits understand how the people in their communities are doing. More demand for services suggests that a greater number of people need help than they did the year before. Reports of increase in demand for services have continued since 2008."
+        "commentary": "The majority of nonprofits have reported increases in demand for services every year since 2008, confirming that their communities are not necessarily seeing the benefits of an improved economy."
       },
       "Financial Story": {
         "showcase": "finanstory",
-        commentary: "Every organization has different financial needs. But no matter what you do, it’s critical to have cash in the bank to pay your bills, with some extra left over in case a disaster hits &mdash; whether it’s an economic downturn, hurricane, or broken boiler."
+        commentary: "Financial dynamics fluctuate for every organization. Navigating change necessitates having cash on hand to pay the bills, as well as reserves for unexpected circumstances &mdash; whether that’s an opportunity to grow, a weather-related disaster or a facility repair."
       },
       "Challenges and Responses": {
         "showcase": "challresp",
@@ -37,11 +37,11 @@
       },
       "Government Funding": {
         showcase: "govfund",
-        "commentary": "Our government plays a critical role in protecting us from poverty, hunger, and much more. And it pays nonprofits to carry out many of these services. Unfortunately, government funding comes with hidden costs for many nonprofits."
+        "commentary": "Government and nonprofits are often highly effective partners in providing a social safety net for those in need. At the same time, this partnership can presents nonprofits with real challenges, including payment delays and low allowable indirect cost rates for programs and services."
       },
       "Data and Impact": {
         showcase: "dataimpact",
-        "commentary": "The people serving our communities want to do more than cope with social problems. They want to eliminate them. But understanding what works takes significant resources, coordination, and permission from supporters that failure is OK on the road to success."
+        "commentary": "Measuring impact can help us understand what works. We must ensure that nonprofits are adequately resourced to capture metrics, especially as funding shifts towards outcomes-based models."
       },
       "Funder Practices": {
         "showcase": "fundprac",
@@ -143,7 +143,7 @@
 
 
       "opp_exp_max": {
-        "title": "FY2014 Operating Expense",
+        "title": "FY 2014 Operating Expense",
         "title-mini": "Operating Expense",
         "info-tip": "Operating expense is a useful measure for understanding an organization’s size.",
         "renderer": "bar",
@@ -581,7 +581,7 @@
 
 
       "funding_gov_days_late": {
-        "title": "Gov’t payments are received...",
+        "title": "Government payments are received...",
         "renderer": "barset",
         "show-percentage-only": true,
         "title-subchart": "FEDERAL",

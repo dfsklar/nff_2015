@@ -86,6 +86,8 @@
 
     var $tocToFill = $toc.find('.toc-body-left');
 
+    $root.append($('<div class=section-commentary style="text-align:left">Nonprofit Finance Fund’s annual survey asks nonprofits in the US about their programs, financial health, and management strategies. Our hope is that this data will be used to spark dialogue in service of change.</div>'));
+
     Object.keys(DB.charts).each(function(chartname){
 
       if (abort) return;
