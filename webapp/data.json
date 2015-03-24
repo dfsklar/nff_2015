@@ -1394,8 +1394,7 @@
 
       "current_year_org_outlook_": {
         "title": "2015 Outlook for the NPO",
-        "renderer": "one_or_more",
-        // "renderer": "bar",
+        "renderer": "bar",
         "highchart_formatting": {
           chart: { marginLeft: 180, spacingLeft: 0 }
         },
@@ -1498,6 +1497,18 @@
 */
 
 
+      "loan_yes_": {
+        "title": "How using current loans",
+        "denominator_required_field": "debt_fin",
+        "denominator_required_field__negative_values": [ "No" ],
+        "renderer": "one_or_more",
+        "key_order": Object.keys(window.nfforg.MAPenumToEnglish.loan_yes_),
+        "highchart_formatting": {
+          chart: { marginLeft: 300, spacingLeft: 0 }
+        },
+        "css": { width: FULLWIDTH }
+      },
+
 /*
       "addtl_debt_fin_use_": {
         "title": "Planned Uses of additional debt",
@@ -1517,8 +1528,8 @@
       "debt_fin_no_": {
         "title": "Reasons an NPO currently has no debt",
         "renderer": "one_or_more",
-        //"denominator_required_field": "loan_yn",
-        //"denominator_required_field__negative_values": [ "No" ],
+        "denominator_required_field": "debt_fin",
+        "denominator_required_field__negative_values": [ "Yes" ],
         "key_order": Object.keys(window.nfforg.MAPenumToEnglish.debt_fin_no_),
         "highchart_formatting": {
           chart: { marginLeft: 340, spacingLeft: 0 }
