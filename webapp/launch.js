@@ -2,6 +2,13 @@
 
 var canDoCORS = !(window.navigator.userAgent.match(/MSIE /));
 
+var jsonPath = "realdata.json";
+
+if (window.nfforg.queryParams['brief']) {
+  jsonPath = "briefdata.json";
+  canDoCORS = false;
+}
+
 //if (window.location.hostname == 'localhost')
   // Would be nice to always use local data.json when working on development machine
 //  canDoCORS = false;
@@ -35,7 +42,7 @@ jQuery.ajax({
 	return xhr;
     },
     type: 'GET',
-    url: canDoCORS ? "http://s3.amazonaws.com/sklardevel/realdata.json" : "realdata.json",
+    url: (canDoCORS ? ("http://s3.amazonaws.com/sklardevel/"+jsonPath) : jsonPath),
     data: {},
 
 
