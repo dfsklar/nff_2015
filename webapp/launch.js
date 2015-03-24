@@ -2,6 +2,15 @@
 
 var canDoCORS = !(window.navigator.userAgent.match(/MSIE /));
 
+/* IMPORTANT S3 INFORMATION:
+   The gzipped file uploaded to S3:
+   > Content-encoding:  gzip
+   > Content-type: application/json
+
+   Uploading new versions always ruins these headers so they must
+   be reset!
+*/
+
 window.nfforg.updateProgressBar = function (num,denom) {
     var pct = Math.round(num*100/denom);
     $('.progress-bar-inner').css({width: String(pct)+"%"});

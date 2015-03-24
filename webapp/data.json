@@ -1068,6 +1068,31 @@
         "css": { width: HALFWIDTH }
       },
 
+      "impact_funder_request": {
+        "title": "In 2014, the number funders<br/>asking for metrics...",
+        "highchart_formatting": {
+          chart: { marginLeft: 140, spacingLeft: 0 }
+        },
+        "color_by_key": {
+          'Significantly increased': chroma(window.nfforg.colors.BADVERY).hex(),
+          'Slightly increased':  chroma(window.nfforg.colors.BAD).hex(),
+          'Stayed the same': chroma(window.nfforg.colors.NEUTRAL).hex(),
+          'Slightly decreased': chroma(window.nfforg.colors.GOOD).hex(),
+          'Significantly decreased': chroma(window.nfforg.colors.GOODVERY).hex(),
+          'Don\'t know': chroma(window.nfforg.colors.NEUTRAL).hex()
+        },
+        "key_order": [
+          'Significantly increased', 
+          'Slightly increased', 
+          'Stayed the same',
+          'Slightly decreased', 
+          'Significantly decreased',
+	        'Don\'t know'
+        ],
+        "renderer": "bar",
+        "css": { width: HALFWIDTH }
+      },
+
 //      "data_collect_": {
 //        "title": "Top Barriers to impact measurement",
 //        "key_order": Object.keys(window.nfforg.MAPenumToEnglish.data_collect_),
