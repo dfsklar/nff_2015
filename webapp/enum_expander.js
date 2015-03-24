@@ -174,17 +174,17 @@
     },
 
     arts_grants_: {
-      overhead_restr: "Applied for a grant that restricted allowable overhead rate",
-      got_unrestr: "Received unrestricted funding",
-      surplus_bad: "Denied because of a track record of surpluses and savings",
-      surplus_good: "Approved due to track record of strong financial management & surpluses",
-      open_dialog: "Invited to discuss financial health and long-term financial needs",
-      strategy_input: "Invited to give input on a funder's strategy",
-      help_change_habits: "Received capital to help change the way we raise/spend money",
-      help_build_reserves: "Received capital to build reserves",
-      non_monetary: "Benefited from a funder's non-monetary resources or knowledge",
-      streamline: "Benefited from a streamlined application/due-diligence process",
-      reporting_burden: "Faced reporting requirements that were outsized relative to the size of the grant",
+      open_dialog: "Invite your nonprofit to discuss financial health and long-term financial needs",
+      strategy_input: "Invite your nonprofit to give input on a funder's strategy",
+      non_monetary: "Provide useful non-monetary resources or knowledge (e.g., convenings, referrals, advice)",
+      streamline: "Simplify the grant application and/or due diligence process",
+      reporting_burden: "Require reporting that was outsized relative to the size of the grant",
+      overhead_restr: "Restrict allowable overhead rate on grants",
+      got_unrestr: "Give unrestricted funding",
+      help_change_habits: "Give your organization capital to help change the way you raise or spend money",
+      help_build_reserves: "Give your organization capital to build reserves",
+      surplus_bad: "Deny your grant because your nonprofit had a surplus or savings",
+      surplus_good: "Approve your grant because your nonprofit had a surplus or savings",
       none: "None of the above"
     },
 
