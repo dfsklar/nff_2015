@@ -34,5 +34,4 @@ sh minify.sh renderers/highchartspec.js >> $DEST
 sh minify.sh renderers/stacked_single_bar.js >> $DEST
 sh minify.sh renderers/actions_planned_taken.js >> $DEST
 sh minify.sh renderers/trendslope.js >> $DEST
-sh minify.sh render_manager.js >> $DEST
 
