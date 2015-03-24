@@ -82,8 +82,7 @@
       "Symphony orchestra": "Symphony orchestra",
       "Theatre": "Theatre",
       "Visual art / craft - non-museum": "Visual art / craft - non-museum",
-      "Other arts/culture/humanities": "Other arts/culture/humanities",
-      "Unidentified": "Unidentified"
+      "Other arts/culture/humanities": "Other arts/culture/humanities"
     },
 
     arts_audience_dev_results_: {

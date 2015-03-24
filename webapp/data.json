@@ -1577,6 +1577,7 @@
             .replace("ony Orch", "ony orch")
             .replace("and/or", "/")
             .replace("Other", "Other arts/culture/humanities")
+            .replace("Unidentified", "Other arts/culture/humanities")
             .replace(/:/, "")
           ;
         },
