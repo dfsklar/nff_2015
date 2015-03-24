@@ -16,7 +16,7 @@
       housing: "Affordable housing",
       retail: "Availability of commercial goods/services",
       transit: "Availability of public transportation",
-      childcare: "Childcare / after-school care",
+      childcare: "Early childhood education",
       jobs: "Job availability",
       job_training: "Job training",
       mentalhealth: "Mental health services",
@@ -25,7 +25,7 @@
       schools: "Strong, well-performing schools",
       substanceabuse: "Substance abuse services",
       veteransvc: "Veterans' services",
-      youthdevel: "Youth development",
+      youthdevel: "Youth development programs",
       other_yn: "Other"
     },
 
@@ -121,9 +121,9 @@
       demographics: "Adapting to changing community demographics",
       aca_changes: "Adapting to changes due to the Affordable Care Act",
       volunteers: "Engaging and mobilizing volunteers",
-      staff_retain: "Ability to retain staff / offer competitive staff",
-      staff_environ_health: "Environmental health hazarsds and risks",
-      staff_unavoidable_costs: "Increases in unavoidable costs",
+      staff_retain: "Offering competitive pay and/or retain staff",
+      staff_environ_health: "Environmental health hazards/risks",
+      staff_unavoidable_costs: "Increases in unavoidable costs (e.g., benefits, rents)",
       other_yn: "Other"
     },
 
@@ -326,7 +326,7 @@
     action_ops_finance: {
       ".0": "Collaborate with another organization\n to reduce administrative expenses",
       ".1": "Merge with another organization",
-      ".2": "Change how you raise and spend money",
+      ".2": "Change main ways in which you raise/spend money",
       ".3": "Pursue an earned revenue venture",
       ".4": "Advocate to government on behalf\n of your organization's cause", //?
       ".5": "Seek funding other than grants and contracts,\n such as loans or other investments",  //?
@@ -338,8 +338,8 @@
       ".11": "Use outside help to improve financial knowledge or capacity",
       ".12": "Upgrade hardware or software to improve organizational efficiency",
       ".13": "Delay vendor payments",
-      ".14": "Purchase a facility, or renovate a facility you own",
-      ".15": "Lease a facility, or renovate a facility you lease",
+      ".14": "Purchase a facility",
+      ".15": "Lease a facility",
       ".16": "Sell a facility",
       ".17": "Renovate a facility that you lease or own",
       ".18": "Pursue funding that requires measurement/achievement of outcomes",
