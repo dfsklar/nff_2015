@@ -14,6 +14,8 @@ $(function() {
       var chartkey = $chartdiv.data('key');
       var chart = $chartdiv.data('chart-source');  // window.nfforg.database.charts[chartkey];
 
+      ga('send', 'event', 'button', 'download', chartkey);
+
       // IF THERE IS ANY RAPHAEL OBJECT NEEDING REMOVAL FOR PRINT PURPOSES...
       try {
         $chartdiv.find('.raphael-paper-is-attached').each(function(){
