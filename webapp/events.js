@@ -257,6 +257,8 @@ $(function() {
           window.nfforg.recreateEntireVizArea();
         $activeform.find('.section').removeClass('opened');
         History.replaceState("filterclear", null, "/");
+	ga /*window.googleAnalytics__GA*/ ('set', 'page', "/");
+	ga /*window.googleAnalytics__GA*/ ('send', 'pageview', {page: "/"});
         window.nfforg.filterSidebar.respondToHeightChanges($activeform);
       }, 100);
     }else{
@@ -269,6 +271,8 @@ $(function() {
         window.nfforg.recreateEntireVizArea();
         $activeform.find('.section').removeClass('opened');
         History.replaceState("filterclear", null, "/");
+	ga /*window.googleAnalytics__GA*/ ('set', 'page', "/");
+	ga /*window.googleAnalytics__GA*/ ('send', 'pageview', {page: "/"});
         window.nfforg.filterSidebar.respondToHeightChanges($activeform);
       }, 100);
     }
