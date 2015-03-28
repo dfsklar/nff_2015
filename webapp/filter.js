@@ -1,3 +1,10 @@
+if (window.nfforg.queryParams['enablezipfilter']) {
+    $.cookie('enablezipfilter', 'true');
+    window.nfforg.enablezipfilter = true;
+}
+if ($.cookie('enablezipfilter')) {
+    window.nfforg.enablezipfilter = true;
+}
 
   window.nfforg.mapFilterSectionIdToHumanText = {
     "state": "State",
@@ -265,7 +272,8 @@
                                        curFiltration);
       }
 
-      window.nfforg.createTextboxFilterSection($rootdiv, "zip", "div", null, curFiltration);
+      if (window.nfforg.enablezipfilter)
+        window.nfforg.createTextboxFilterSection($rootdiv, "zip", "div", null, curFiltration);
 
       setTimeout(function(){
         $('#filter-area').addClass('ready');
