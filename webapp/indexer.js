@@ -55,7 +55,7 @@
 
 	hasArtsSubsectorMassageBeenDone = true;
 
-	alert("MAS 1");
+	//alert("MAS 1");
 
 	// ARTS
 	var cnt = 0;
@@ -80,7 +80,7 @@
 	    }
 	});
 
-	alert("MAS 2");
+	//alert("MAS 2");
 
 	// DO NOT HAVE A LOAN
 	var DB2 = window.nfforg.database_unindexed.respondents.each(function(X){
@@ -112,7 +112,7 @@
 	    }
 	});
 
-	alert("MAS 3");
+	//alert("MAS 3");
 
 	return;
     };
@@ -123,12 +123,10 @@
 
 	var DB = window.nfforg.database_unindexed;
 
-	alert(DB.length);
-
 	if (!hasArtsSubsectorMassageBeenDone) {
-	    alert("about to massage arts sector");
+	    //alert("about to massage arts sector");
 	    massageArtsSubsector();
-	    alert("done from massage arts sector");
+	    //alert("done from massage arts sector");
 	}
 
 	window.nfforg.database = DB;
@@ -139,16 +137,16 @@
 
 	var chartArrayToModify;
 
-	alert("Next alert should be false when first seen");
-	alert(!!chartArrayToModify_base);
+	//alert("Next alert should be false when first seen");
+	//alert(!!chartArrayToModify_base);
 	if (!chartArrayToModify_base) {
-	    alert("INITIALIZING THE CLONEABLE CHART SET");
+	    //alert("INITIALIZING THE CLONEABLE CHART SET");
 	    console.log("INITIALIZING THE CLONEABLE CHART SET");
 	    chartArrayToModify = window.nfforg.database.charts;
 	    useCacheIfPossible = false;
 	    if (Object.size(filtration) > 0) {
-		alert("UNEXPECTED DAMAGE TO THE VANILLA CHARTS");
-		console.log("UNEXPECTED DAMAGE TO THE VANILLA CHARTS");
+		//alert("UNEXPECTED DAMAGE TO THE VANILLA CHARTS");
+		//console.log("UNEXPECTED DAMAGE TO THE VANILLA CHARTS");
 	    }
 	}
 	else {
@@ -161,7 +159,6 @@
 	if (useCacheIfPossible && (Object.size(filtration)==0)) {
 	    // No filtration is desired, and we are allowed to simply
 	    // use the cache!
-	    alert("USING CACHE");
 	    console.log("USING CACHE");
 	}
 
@@ -171,7 +168,7 @@
 
 	    var legalZipcodes = (filtration && filtration.zip && filtration.zip[0]) ? window.nfforg.parseNumericRange(filtration.zip[0]) : null;
 
-	    alert("ELSE 1");
+	    //alert("ELSE 1");
 
 	    if (filtration) {
 		respondentsFiltered = [];
@@ -268,7 +265,7 @@
 						shouldDisqual = true;
 					});
 					if (shouldDisqual) {
-					    alert("DISQUAL");
+					    //alert("DISQUAL");
 					    return;
 					}
 				    }

@@ -78,9 +78,9 @@ jQuery.ajax({
 	//alert("Sklar debug: about to index and filter");
 	if (window.nfforg.indexAndFilterDatabase) {
 	    window.nfforg.indexAndFilterDatabase();
-            alert("Sklar debug: returned from index and filter");
+            //alert("Sklar debug: returned from index and filter");
 	} else {
-	    alert("Warning: no indexer loaded yet.");
+	    //alert("Warning: no indexer loaded yet.");
 	}
 
 	if (window.nfforg.queryParams['filter']) {
@@ -117,7 +117,7 @@ jQuery.ajax({
 	    window.nfforg.createFilterGUI($('#filter-area #filter .section-holder'), new Object());
 	    boolAutoOpenTOC = false;
 	}else{
-	    alert("Sklar debug: Option default");
+	    //alert("Sklar debug: Option default");
 	    $('.form.sidebar#filter').addClass('active');
 	    window.nfforg.createFilterGUI($('#filter-area #filter .section-holder'), new Object());
 	    window.nfforg.createFilterGUI(
@@ -128,7 +128,7 @@ jQuery.ajax({
 	    window.nfforg.indexAndFilterDatabase(window.nfforg.database, 'chartsForPrez', window.nfforg.filtrationCurrent);
 	}
 
-	alert("Sklar debug: about layoutUX");
+	//alert("Sklar debug: about layoutUX");
 	window.nfforg.layoutUX();
 
 	// Make sure at least one of the sidebar subareas is active
@@ -145,10 +145,10 @@ jQuery.ajax({
 
 	// Needed to await font loading?  Maybe not.  Need a better approach
 	// to ensure geometries are calculated properly.
-	alert("Sklar debug: about to setTimeout");
+	//alert("Sklar debug: about to setTimeout");
 	setTimeout(function(){
 
-	    alert("Sklar debug: in setTimeout");
+	    //alert("Sklar debug: in setTimeout");
 	    window.nfforg.recreateEntireVizArea();
 	    window.nfforg.layoutUX();
 	    window.nfforg.configureSidebarInteraction();  
