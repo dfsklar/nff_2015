@@ -587,7 +587,6 @@
       "funding_gov_days_late": {
         "title": "Government payments are received...",
         "renderer": "barset",
-        "show-percentage-only": true,
         "title-subchart": "FEDERAL",
         "value_massager": function(val) {
           return val.replace('scheduled payment date','schedule').replace("More than", ">");
@@ -614,7 +613,6 @@
       },
 
       "funding_gov_state_days_late": {
-        "show-percentage-only": true,
         "title": "When receive<br/>STATE payments",
         "title-subchart": "STATE",
         "renderer": "none",  // Merged with FEDERAL by the barset renderer
@@ -642,7 +640,6 @@
       },
 
       "funding_gov_loc_days_late": {
-        "show-percentage-only": true,
         "section": "Government Funding",
         "title": "When receive<br/>LOCAL payments",
         "title-subchart": "LOCAL",

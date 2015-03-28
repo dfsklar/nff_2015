@@ -74,7 +74,7 @@ $(function () {
       bar: {
         dataLabels: {
           formatter: function(){
-            return this.y + "%";
+            return this.y; // + "%";
           }
         }
       }
