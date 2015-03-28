@@ -1,13 +1,22 @@
-if (navigator.userAgent.indexOf('Firefox') != -1 && parseFloat(navigator.userAgent.substring(navigator.userAgent.indexOf('Firefox') + 8)) >= 3.6){//Firefox
- //Allow
-}else if (navigator.userAgent.indexOf('Chrome') != -1 && parseFloat(navigator.userAgent.substring(navigator.userAgent.indexOf('Chrome') + 7).split(' ')[0]) >= 15){//Chrome
- //Allow
-}else if(navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Version') != -1 && parseFloat(navigator.userAgent.substring(navigator.userAgent.indexOf('Version') + 8).split(' ')[0]) >= 5){//Safari
- //Allow
-}else if (navigator.userAgent.indexOf('MSIE') != -1 && parseFloat(navigator.userAgent.substring(navigator.userAgent.indexOf('MSIE') + 5)) >= 9.0) {
- //Allow
-}else{
-  window.location.href = "modernbrowser.html";
+var SklarVersionChecker = function(prefix, minver) {
+    return (navigator.userAgent.indexOf(prefix) != -1) && (parseFloat(navigator.userAgent.substring(navigator.userAgent.indexOf(prefix) + prefix.length+1)) >= minver);
+};
+
+
+if ( ! (
+    SklarVersionChecker('Firefox', 20.6)
+    ||
+    SklarVersionChecker('Chrome', 15)
+    ||
+    SklarVersionChecker('MSIE', 9.0)
+    ||
+    SklarVersionChecker('Safari', 5.0)
+    ||
+    SklarVersionChecker('Trident', 5.0)
+    ||
+    SklarVersionChecker('Opera', 12.0)
+)) {
+    window.location.href = "modernbrowser.html";
 }
 
 
