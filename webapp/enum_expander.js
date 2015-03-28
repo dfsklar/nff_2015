@@ -251,6 +251,8 @@
       pay_off_loans: "Paying off loans",
       gos: "General operating support",
       multi_year: "Multi-year funding",
+      orgadapt: "Organizational change or adaptation",
+      measureoutcome: "Measuring program outcomes",
       other_yn: "Other reserves or topics",
       none: "My funders are not willing to engage on any of these"
     },
