@@ -1,3 +1,5 @@
+"use strict";
+
 /* THIS IS IT -- THE main() FOR THIS APPLICATION! */
 
 var canDoCORS = !(window.navigator.userAgent.match(/MSIE /));
@@ -50,7 +52,7 @@ jQuery.ajax({
 
 
     error: function (jqXHR, textStatus, errorThrown) {
-	alert("XHR error");
+	//alert("XHR error");
 	console.log(textStatus);
 	console.log(errorThrown);
     },
@@ -61,8 +63,8 @@ jQuery.ajax({
     // SUCCESS !!!
     // SUCCESS !!!
     success: function(data){
-	alert("Sklar debug info: XHR success");
-	alert(data.length);
+	//alert("Sklar debug info: XHR success");
+	//alert(data.length);
 
 	window.nfforg.database_unindexed.respondents = data;
 
@@ -73,12 +75,13 @@ jQuery.ajax({
 
 	window.nfforg.database = {};
 
-	alert("Sklar debug: about to index and filter");
-	if (window.nfforg.indexAndFilterDatabase) 
+	//alert("Sklar debug: about to index and filter");
+	if (window.nfforg.indexAndFilterDatabase) {
 	    window.nfforg.indexAndFilterDatabase();
-	else
-	    alert("Sklar warning: no indexer loaded yet.");
-	alert("Sklar debug: returned from index and filter");
+            alert("Sklar debug: returned from index and filter");
+	} else {
+	    alert("Warning: no indexer loaded yet.");
+	}
 
 	if (window.nfforg.queryParams['filter']) {
 	    $('.form.sidebar#filter').addClass('active');

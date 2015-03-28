@@ -1,3 +1,5 @@
+"use strict";
+
 $(function() {
 
   /* This simple approach currently does not yield a high-res image.

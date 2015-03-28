@@ -1,3 +1,5 @@
+"use strict";
+
 /*
 
 This approach allows 3 barcharts to be side-by-side horizontally, sharing a single Xaxis label set at far left!

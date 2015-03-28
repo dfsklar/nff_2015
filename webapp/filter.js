@@ -1,3 +1,5 @@
+"use strict";
+
 if (window.nfforg.queryParams['enablezipfilter']) {
     $.cookie('enablezipfilter', 'true');
     window.nfforg.enablezipfilter = true;

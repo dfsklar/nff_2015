@@ -1,3 +1,5 @@
+"use strict";
+
 (function() {
 
   window.nfforg.renderers.stacked_single_bar = function($root, chart, options) {

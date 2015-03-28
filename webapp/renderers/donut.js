@@ -1,3 +1,5 @@
+"use strict";
+
 (function() {
 
   window.nfforg.renderers.donut = function($root, chart) {

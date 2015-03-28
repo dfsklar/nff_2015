@@ -1,3 +1,5 @@
+"use strict";
+
 (function() {
 
   // This type of barset joins several graphs together

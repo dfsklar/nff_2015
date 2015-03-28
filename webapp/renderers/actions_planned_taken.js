@@ -1,3 +1,5 @@
+"use strict";
+
 (function() {
 
   window.nfforg.renderers.actions_planned_taken = function($root, chart, options) {

@@ -1,3 +1,5 @@
+"use strict";
+
 (function() {
 
   window.nfforg.convertEnumToEnglish = function(idChart, enumm) {

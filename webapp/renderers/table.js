@@ -1,3 +1,5 @@
+"use strict";
+
 (function() {
 
   // Must admit: this is currently only used for the table of STATE abbreviations

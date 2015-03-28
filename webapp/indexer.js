@@ -1,3 +1,5 @@
+"use strict";
+
 (function() {
 
   var boolUseColorGradientsOnValueDescending = false
@@ -134,6 +136,8 @@ is used at runtime when filtering is applied.
     var useCacheIfPossible = true;
 
     var markChartsAsFiltered = false;
+
+    var chartArrayToModify;
 
       alert("Next alert should be false when first seen");
       alert(!!chartArrayToModify_base);
@@ -382,7 +386,7 @@ is used at runtime when filtering is applied.
             chart.keyList = Object.keys(window.nfforg.MAPenumToEnglish[chart.ID]);
             //
             ['next','last'].each(function(timeframe){
-              hcseries = {name:timeframe, data:[]};
+	      var hcseries = {name:timeframe, data:[]};
               chart.keyList.each(function(xvalue){
                 var yVal = chart.valueSet[timeframe][xvalue];
                 if (undefined == yVal)
@@ -485,6 +489,7 @@ is used at runtime when filtering is applied.
           }
           else {
             chart.series[0].data.each(function(X){
+	      if (typeof(X) != "number")	
               if (X.color === undefined)
                 X.color = chroma(window.nfforg.colors.Blue2).hex();
             });

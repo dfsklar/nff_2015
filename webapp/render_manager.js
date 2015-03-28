@@ -1,3 +1,4 @@
+"use strict";
 
   window.nfforg.doSingleChart = false;
 
