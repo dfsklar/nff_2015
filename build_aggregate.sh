@@ -19,7 +19,7 @@ sh minify.sh namespaces.js >> $DEST
 sh minify.sh colors.js >> $DEST
 sh minify.sh numericrange.js >> $DEST
 
-sh minify.sh indexer.js >> $DEST
+# sh minify.sh indexer.js >> $DEST
 
 sh minify.sh slopeidea/data_acted_human_capital.js >> $DEST
 sh minify.sh slopeidea/data_acted_management.js >> $DEST

@@ -49,13 +49,15 @@ is used at runtime when filtering is applied.
 
   var hasArtsSubsectorMassageBeenDone = false;
   
-  function massageArtsSubsector() {
+  var massageArtsSubsector = function() {
 
     hasArtsSubsectorMassageBeenDone = true;
 
+    alert("MAS 1");
+
     // ARTS
     var cnt = 0;
-    var DB = window.nfforg.database_unindexed.respondents.each(function(X){
+    var DB1 = window.nfforg.database_unindexed.respondents.each(function(X){
       if (X["org_type"] == "Arts, Culture, and Humanities") {
         if ( ! (X["arts_org_type"]) ) {
           X["arts_org_type"] = "Unidentified";
@@ -76,8 +78,10 @@ is used at runtime when filtering is applied.
       }
     });
 
+    alert("MAS 2");
+
     // DO NOT HAVE A LOAN
-    var DB = window.nfforg.database_unindexed.respondents.each(function(X){
+    var DB2 = window.nfforg.database_unindexed.respondents.each(function(X){
       if (X["loan_yn"] == "No") {
         if ( ! (X["loan_no_"]) ) {
           X["loan_no_"] = [ "unidentified" ];
@@ -106,10 +110,10 @@ is used at runtime when filtering is applied.
       }
     });
 
-    console.log("*******************");
-    console.log(cnt);
+    alert("MAS 3");
 
-  }
+      return;
+  };
 
 
   // Typically, in non-compare mode, the param will be sent:  DB.charts
@@ -117,8 +121,12 @@ is used at runtime when filtering is applied.
 
     var DB = window.nfforg.database_unindexed;
 
+      alert(DB.length);
+
     if (!hasArtsSubsectorMassageBeenDone) {
+      alert("about to massage arts sector");
       massageArtsSubsector();
+      alert("done from massage arts sector");
     }
 
     window.nfforg.database = DB;
@@ -127,12 +135,17 @@ is used at runtime when filtering is applied.
 
     var markChartsAsFiltered = false;
 
+      alert("Next alert should be false when first seen");
+      alert(!!chartArrayToModify_base);
     if (!chartArrayToModify_base) {
+      alert("INITIALIZING THE CLONEABLE CHART SET");
       console.log("INITIALIZING THE CLONEABLE CHART SET");
       chartArrayToModify = window.nfforg.database.charts;
       useCacheIfPossible = false;
-      if (Object.size(filtration) > 0) 
+      if (Object.size(filtration) > 0) {
+        alert("UNEXPECTED DAMAGE TO THE VANILLA CHARTS");
         console.log("UNEXPECTED DAMAGE TO THE VANILLA CHARTS");
+      }
     }
     else {
       chartArrayToModify_base[chartArrayToModify_key] = Object.clone(window.nfforg.database.charts, true);
@@ -144,13 +157,17 @@ is used at runtime when filtering is applied.
     if (useCacheIfPossible && (Object.size(filtration)==0)) {
       // No filtration is desired, and we are allowed to simply
       // use the cache!
+      alert("USING CACHE");
       console.log("USING CACHE");
     }
+
     else {
 
       // THIS IS A GIANT ELSE CLAUSE!!!  WARNING!
 
       var legalZipcodes = (filtration && filtration.zip && filtration.zip[0]) ? window.nfforg.parseNumericRange(filtration.zip[0]) : null;
+
+	alert("ELSE 1");
 
       if (filtration) {
         respondentsFiltered = [];
@@ -353,8 +370,6 @@ is used at runtime when filtering is applied.
 
           // Now create the highcharts-compatible "series.data" object
           chart.series = [];
-
-
 
           switch (chart.renderer) {
 

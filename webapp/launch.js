@@ -34,6 +34,9 @@ jQuery.ajax({
 	var total = totalUncompressed;
         var xhr = new window.XMLHttpRequest();
 	var handleProgress = function(evt) {
+	    console.log('--------------');
+	    console.log(evt.position);
+	    console.log(evt.loaded);
 	    total = evt.position ? totalUncompressed : totalCompressed;
 	    window.nfforg.updateProgressBar(evt.loaded, total);
 	};
@@ -47,6 +50,7 @@ jQuery.ajax({
 
 
     error: function (jqXHR, textStatus, errorThrown) {
+	alert("XHR error");
 	console.log(textStatus);
 	console.log(errorThrown);
     },
@@ -57,6 +61,9 @@ jQuery.ajax({
     // SUCCESS !!!
     // SUCCESS !!!
     success: function(data){
+	alert("Sklar debug info: XHR success");
+	alert(data.length);
+
 	window.nfforg.database_unindexed.respondents = data;
 
 	var boolAutoOpenTOC = ( ! (window.nfforg.queryParams['mode'] == "print") );
@@ -65,7 +72,13 @@ jQuery.ajax({
 	window.nfforg.filtrationForCompareCurrent = new Object();
 
 	window.nfforg.database = {};
-	window.nfforg.indexAndFilterDatabase();
+
+	alert("Sklar debug: about to index and filter");
+	if (window.nfforg.indexAndFilterDatabase) 
+	    window.nfforg.indexAndFilterDatabase();
+	else
+	    alert("Sklar warning: no indexer loaded yet.");
+	alert("Sklar debug: returned from index and filter");
 
 	if (window.nfforg.queryParams['filter']) {
 	    $('.form.sidebar#filter').addClass('active');
@@ -101,6 +114,7 @@ jQuery.ajax({
 	    window.nfforg.createFilterGUI($('#filter-area #filter .section-holder'), new Object());
 	    boolAutoOpenTOC = false;
 	}else{
+	    alert("Sklar debug: Option default");
 	    $('.form.sidebar#filter').addClass('active');
 	    window.nfforg.createFilterGUI($('#filter-area #filter .section-holder'), new Object());
 	    window.nfforg.createFilterGUI(
@@ -111,6 +125,7 @@ jQuery.ajax({
 	    window.nfforg.indexAndFilterDatabase(window.nfforg.database, 'chartsForPrez', window.nfforg.filtrationCurrent);
 	}
 
+	alert("Sklar debug: about layoutUX");
 	window.nfforg.layoutUX();
 
 	// Make sure at least one of the sidebar subareas is active
@@ -127,8 +142,10 @@ jQuery.ajax({
 
 	// Needed to await font loading?  Maybe not.  Need a better approach
 	// to ensure geometries are calculated properly.
+	alert("Sklar debug: about to setTimeout");
 	setTimeout(function(){
 
+	    alert("Sklar debug: in setTimeout");
 	    window.nfforg.recreateEntireVizArea();
 	    window.nfforg.layoutUX();
 	    window.nfforg.configureSidebarInteraction();  
