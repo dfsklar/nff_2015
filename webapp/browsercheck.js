@@ -4,8 +4,8 @@ if (navigator.userAgent.indexOf('Firefox') != -1 && parseFloat(navigator.userAge
  //Allow
 }else if(navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Version') != -1 && parseFloat(navigator.userAgent.substring(navigator.userAgent.indexOf('Version') + 8).split(' ')[0]) >= 5){//Safari
  //Allow
-if (navigator.userAgent.indexOf('MSIE') != -1 && parseFloat(navigator.userAgent.substring(navigator.userAgent.indexOf('MSIE') + 5)) >= 9.0){//Firefox
+}else if (navigator.userAgent.indexOf('MSIE') != -1 && parseFloat(navigator.userAgent.substring(navigator.userAgent.indexOf('MSIE') + 5)) >= 9.0) {
  //Allow
 }else{
   window.location.href = "modernbrowser.html";
- }
+}
