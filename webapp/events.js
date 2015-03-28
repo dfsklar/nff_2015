@@ -258,8 +258,7 @@ $(function() {
 		    window.nfforg.recreateEntireVizArea();
 		$activeform.find('.section').removeClass('opened');
 		History.replaceState("filterclear", null, "/");
-		ga /*window.googleAnalytics__GA*/ ('set', 'page', "/");
-		ga /*window.googleAnalytics__GA*/ ('send', 'pageview', {page: "/"});
+		ga('send', 'event', 'filter', 'clear', '');
 		window.nfforg.filterSidebar.respondToHeightChanges($activeform);
 	    }, 100);
 	}else{
@@ -272,8 +271,7 @@ $(function() {
 		window.nfforg.recreateEntireVizArea();
 		$activeform.find('.section').removeClass('opened');
 		History.replaceState("filterclear", null, "/");
-		ga /*window.googleAnalytics__GA*/ ('set', 'page', "/");
-		ga /*window.googleAnalytics__GA*/ ('send', 'pageview', {page: "/"});
+		ga('send', 'event', 'compare', 'clear', '');
 		window.nfforg.filterSidebar.respondToHeightChanges($activeform);
 	    }, 100);
 	}
@@ -303,12 +301,12 @@ $(function() {
 		History.replaceState("filterset", null, newURL);
 		if (window.nfforg.indexAndFilterDatabase(window.nfforg.database, 'chartsForPrez', window.nfforg.filtrationCurrent))
 		    window.nfforg.recreateEntireVizArea();
-		ga /*window.googleAnalytics__GA*/ ('set', 'page', newURL);
-		ga /*window.googleAnalytics__GA*/ ('send', 'pageview', {page: newURL});
+		ga('send', 'event', 'filter', newURL);
 	    }else{
 		// THIS IS "COMPARE"
-		History.replaceState("filterset", null, 
-				     "/?compareleft=" + encodeURI(window.nfforg.filterSetAsString(window.nfforg.filtrationForCompareCurrent)));
+		var newURL = "/?compareleft=" + encodeURI(window.nfforg.filterSetAsString(window.nfforg.filtrationForCompareCurrent));
+		History.replaceState("filterset", null, newURL);
+		ga('send', 'event', 'compare', newURL);
 		if (window.nfforg.isComparisonInEffect()) {
 		    window.nfforg.database.chartsComparison = {
 			left: Object.clone(window.nfforg.database.charts, true),
