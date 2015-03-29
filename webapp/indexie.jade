@@ -19,18 +19,7 @@ html
 
     script(src='browsercheck.js') 
 
-    script.
-       if ( navigator.userAgent.indexOf("MSIE 9") != -1 ) { 
-          var v = window.location.href;
-          v = v.replace("index.htm","indexie.htm");
-          if (v.indexOf("indexie") == -1) {
-             v = v.replace("com/?", "com/indexie.html/?");
-          }
-          if (v.indexOf("indexie") == -1) {
-             v = v.replace(/com\/?$/, "com/indexie.html");
-          }
-          window.location.href = v;
-       }
+    <script>if ( navigator.userAgent.indexOf("MSIE 9") != -1) { alert("Welcome to the NFF Survey Analyzer 2015! You are using Microsoft Internet Explorer v9, which is extremely slow at loading our application.  Thus, you may experience a blank screen for as long as 10 minutes.  Please be patient while the application loads!");}    </script>
 
     //**************************************
     ///START-AGGREGATE aggregate01
@@ -48,6 +37,9 @@ html
     script(src='events.js')
     script(src='export.js')
     script(src='filterarea.js')
+
+    script(src='realdata.js')
+
     script(src='launch.js')
 
     link(href='http://fonts.googleapis.com/css?family=Old+Standard+TT:400italic|Open+Sans:300,600|Roboto+Condensed:400,700|Roboto:400,700' rel='stylesheet' type='text/css')

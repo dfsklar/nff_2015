@@ -372,7 +372,7 @@ $(function() {
 	    stWidget.addEntry({
 		"service":svc,
 		"element":document.getElementById('share-aswhole'),
-		"url": filtInEffect?window.location.href:window.location.href,
+		"url": window.location.href.replace('indexie.','index.'),
 		"title": shareText[svc],
 		"type":"large",
 		"text": shareText[svc],
