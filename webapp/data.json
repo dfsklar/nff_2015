@@ -213,8 +213,8 @@
         "inner_size": "30%",
         "color_by_key": {
           'Exclusively': chroma(window.nfforg.colors.YES).hex(),
-          'Primarily': chroma(window.nfforg.colors.MIDDLE).hex(),
-          'Neither' : chroma(window.nfforg.colors.NO).hex()
+          'Primarily': chroma(window.nfforg.colors.NO).hex(),
+          'Neither' : chroma(window.nfforg.colors.MIDDLE).hex()
         },
         "value_massager": function(val){
           if (val.has('primarily'))

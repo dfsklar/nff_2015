@@ -25,8 +25,8 @@
 
   window.nfforg.colors.DEFAULT = window.nfforg.colors.Blue1;
   window.nfforg.colors.YES = window.nfforg.colors.Blue1;
-  window.nfforg.colors.MIDDLE = window.nfforg.colors.Blue2;
-  window.nfforg.colors.NO = '#91D0EF';
+  window.nfforg.colors.MIDDLE = window.nfforg.colors.LightGray;
+  window.nfforg.colors.NO = window.nfforg.colors.Blue2;
 
   window.nfforg.colors.DISPARAGINGYES = window.nfforg.colors.Orange1;
   window.nfforg.colors.DISPARAGINGNO = window.nfforg.colors.Orange2;

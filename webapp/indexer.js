@@ -440,7 +440,7 @@
 					    chart.valueSet[xvalue]
 				    )
 				    ,
-				    color: (chart.color_by_key ? (chart.color_by_key[xvalue]) : undefined)
+				    color: (chart.color_by_key ? (chart.color_by_key[xvalue]) : window.nfforg.colors.DEFAULT)
 				} );
 			});
 		    }
