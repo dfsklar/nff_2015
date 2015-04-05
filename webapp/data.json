@@ -1795,7 +1795,7 @@
       },
       
       "trendovertime_acted_services": {
-        "title": "Services and Programs: Actions Taken the Previous Year",
+        "title": "Services and Programs: Actions Taken",
         usagetip: "TIP: Hover your cursor over a line or action to see more detail.",
         "renderer": "trendslope",
         data: window.nfforg.data_acted_services,
@@ -1804,12 +1804,13 @@
           4: -15,
           2: -15,
           36: -20,
-          43: -2,
+          43: 10,
           52: -20,
           47: -35,
           49: -13,
           17: -13,
           15: -13,
+	  16: -20,
           "acted_new_org_tech": {start: -24, end:0}
         },
         preEnumMappings: {
@@ -1817,7 +1818,7 @@
         "css": { width: FULLWIDTH }
       },
 
-
+/*
       "trendovertime_actedhumancapital": {
         "title": "Human Capital: Actions Taken the Previous Year",
         usagetip: "TIP: Hover your cursor over a line or action to see more detail.",
@@ -1838,7 +1839,10 @@
         },
         "css": { width: FULLWIDTH }
       },
-      
+*/
+
+
+/*
       "trendovertime_acted_management": {
         "title": "Finance and Operations: Actions Taken the Previous Year",
         usagetip: "TIP: Hover your cursor over a line or action to see more detail.",
@@ -1873,7 +1877,7 @@
         chartspec: {"legend":{"enabled":true},"credits":{"enabled":false},"chart":{"type":"column","spacingLeft":0,"spacingRight":0,"marginRight":0,"spacingBottom":10},"title":{"text":""},"subtitle":{"text":""},"xAxis":{"categories":["Easier than prior year","Same as prior year","Harder than prior year"]},"yAxis":{"min":0,"title":{"text":"Percentage"}},"tooltip":{"headerFormat":"<span style=\"font-size:10px\">{point.key}</span><table>","pointFormat":"<tr><td style=\"color:{series.color};padding:0\">{series.name}: </td><td style=\"padding:0\"><b>{point.y:.0f}%</b></td></tr>","footerFormat":"</table>","shared":true,"useHTML":true},"plotOptions":{"column":{"pointPadding":0.2,"borderWidth":0}},"series":[{"name":"2010","color":"#a2d2e9","data":[12,39,50]},{"name":"2011","color":"#83caee","data":[14,45,41]},{"name":"2012","color":"#63c2f4","data":[13,46,41]},{"name":"2013","color":"#43baf9","data":[16,47,37]},{"name":"2014","color":"#43baf9","data":[16,44,40]}]},
         "css": {width: FULLWIDTH}
       }
-
+*/
 
 
     }

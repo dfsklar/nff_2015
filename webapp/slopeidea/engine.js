@@ -35,7 +35,7 @@ $(function() {
       fontsizeCategory: 12,
       fontsizePerc: 14,
 
-      yearStart: 2010  // This data wasn't fully avail before then
+      yearStart: 2009  // This really should be dynamic?
     };
 
 
