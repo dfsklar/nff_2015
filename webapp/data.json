@@ -52,7 +52,7 @@
       },
       "Lending to Nonprofits": {
         "showcase": "lending",
-        "commentary": "Common loans for nonprofits are for facilities, working capital and equipment."
+        "commentary": "Loans can be used to help nonprofits manage growth, build or renovate facilities, balance government contract payments and cash flow and bridge capital campaigns, so organizations can better serve their clients and communities."
       },
       "Feature: Arts & Culture NPOs": {
         "showcase": "artsculturecount",
@@ -985,7 +985,7 @@
 
       "metrics_collection.3": {
         "section": "Data and Impact",
-        "title": "Has staff dedicated to metrics<br/>collection and analysis",
+        "title": "Has staff dedicated to<br/>metrics collection and analysis",
         "renderer": "bar",
         "key_order": [
           "Yes",
@@ -997,7 +997,7 @@
 
       "metrics_collection.4": {
         "section": "Data and Impact",
-        "title": "Uses metrics to make decisions<br/>(strategic and programmatic)",
+        "title": "Uses metrics to<br/>make decisions",
         "renderer": "bar",
         "key_order": [
           "Yes",
@@ -1023,7 +1023,7 @@
       },
 
       "funders_ask_for_metrics": {
-        "title": "# of Funders using our metrics<br/>to assess our effectiveness",
+        "title": "# of Funders using metrics<br/>that we provide</br>to assess our effectiveness",
         "renderer": "bar",
         "key_order": [
           "All",
@@ -1038,7 +1038,7 @@
       },
 
       "funders_demand_metrics_goals_output": {
-        "title": "How often is funding contingent<br/>on certain output levels?",
+        "title": "# of funders requiring<br/>certain outputs for funding",
         "renderer": "bar",
         "key_order": [
           "All",
@@ -1053,7 +1053,7 @@
       },
 
       "funders_demand_metrics_goals_outcome": {
-        "title": "How often is funding contingent<br/>on certain outcome levels?",
+        "title": "# of funders requiring<br/>certain outcomes for funding",
         "renderer": "bar",
         "key_order": [
           "All",
@@ -1068,7 +1068,7 @@
       },
 
       "impact_funder_cost": {
-        "title": "How often do funders cover <br/>costs of impact measurement?",
+        "title": "How often do funders cover <br/>impact measurement costs?",
         "key_order": [
           "Always",
           "Often",
@@ -1584,7 +1584,7 @@
 
       "arts_audience_dev": {
         "denominator_required_field": "arts_org_type",
-        "title": "Arts & Culture: In 2013, my NPO made meaningful investment in <br/>audience/visitor development strategies",
+        "title": "Arts & Culture: In 2014, my NPO made a meaningful investment to <br/>develop/engage visitors",
         "renderer": "stacked_single_bar",
         "key_order": [ 'No', 'Yes' ],
         "color_by_key": {
@@ -1598,7 +1598,7 @@
         "denominator_required_field": "arts_audience_dev",
         "denominator_required_field__negative_values": [ "No" ],
         "key_order": Object.keys(window.nfforg.MAPenumToEnglish.arts_aud_),
-        "title": "Followup: The specific investment types made in <br/>audience/visitor development strategies",
+        "title": "Arts & Culture: Activities to develop/engage visitors",
         "renderer": "one_or_more",
         "highchart_formatting": {
           chart: { marginLeft: 450, spacingLeft: 0 }
@@ -1612,7 +1612,7 @@
       "arts_audience_dev_results_": {
         "denominator_required_field": "arts_audience_dev",
         "denominator_required_field__negative_values": [ "No" ],
-        "title": "Arts & Culture: Result of investments in <br/>audience/visitor development strategies",
+        "title": "Arts & Culture: Result of investments made to<br/>develop/engage audience/visitors",
         "renderer": "one_or_more",
         "highchart_formatting": {
           chart: { marginLeft: 450, spacingLeft: 0 }
@@ -1628,7 +1628,7 @@
       },
 
       "arts_decline_revenue": {
-        "title": "Arts & Culture: Experienced revenue decline",
+        "title": "Arts & Culture: Experienced decline in revenue due to<br/>increased competition",
         "renderer": "stacked_single_bar",
         "key_order": [ 'No', 'Yes' ],
         "color_by_key": {
@@ -1642,7 +1642,7 @@
         "denominator_required_field": "arts_decline_revenue",
         "denominator_required_field__negative_values": [ "No" ],
         "key_order": Object.keys(window.nfforg.MAPenumToEnglish.arts_source_competition_),
-        "title": "Arts & Culture: Source of competition",
+        "title": "Arts & Culture: Sources of competition",
         "renderer": "one_or_more",
         "highchart_formatting": {
           chart: { marginLeft: 250, spacingLeft: 0 }

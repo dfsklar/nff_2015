@@ -45,9 +45,9 @@
     },
 
     arts_source_competition_: {
-      movies: "Movies",
+      movies: "Movie theatres",
       tv: "Television",
-      sports: "Sports",
+      sports: "Sports and recreation",
       newcult: "New cultural organizations in your area",
       freecult: "Free cultural alternatives in your area",
       onlinecult: "Online cultural alternatives",
@@ -60,13 +60,13 @@
     arts_aud_: {
       data_inform_programs: "Data collection on audience/visitor preferences/behaviors to inform programs",
       data_inform_fundr: "Data collection on audiences/visitors to inform fundraising",
-      participation: "Offering participatory programming",
-      targeting: "Developing programs that are relevant for target audiences or visitor segments",
+      participation: "Participatory programs",
+      targeting: "Programs for specific target audiences / visitor segments",
       planning: "Involving audiences/visitors in program planning",
       tech: "Engaging audiences/visitors through technology",
-      mkting: "Implementing new marketing strategy(ies)",
-      pricing: "Implementing new pricing model(s)",
-      oddspaces: "Offering cultural experiences in unconventional spaces",
+      mkting: "New marketing strategy(ies)",
+      pricing: "New pricing model(s)",
+      oddspaces: "Cultural experiences in unconventional spaces",
       educollab: "Arts education programs or partnerships with schools",
       // none: "We did not make a meaningful investment in development or engagement strategies",
       other_yn: "Other"
@@ -88,15 +88,15 @@
     },
 
     arts_audience_dev_results_: {
-      audgrew: "We saw some audience/visitor segments grow",
-      audshrank: "We saw some audience/visitor segments decline",
+      audgrew: "Some audience/visitor segments grew",
+      audshrank: "Some audience/visitor segments decreased",
       youth: "We attracted younger audiences/visitors",
       representative: "We attracted an audience/visitor segment that is more representative of our community",
       nochange: "The number and composition of audiences/visitors has not changed",
-      moretix: "Our ticket revenue grew",
-      moredonors: "Our donor base grew",
-      finimpv: "Our surplus/deficit improved",
-      nofinimpv: "Our financial results did not improve",
+      moretix: "Ticket revenue grew",
+      moredonors: "Donor base grew",
+      finimpv: "Surplus/deficit improved",
+      nofinimpv: "Financial results did not improve",
       dontknow: "Don't know",
       other_yn: "Other"
     },
