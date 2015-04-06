@@ -691,6 +691,7 @@
         "renderer": "barset",
         "show-percentage-only": true,
         "title-subchart": "FEDERAL",
+	dataLabelSuffix: "%",
         "highchart_formatting": {
           chart: { marginLeft: 130, spacingLeft: 0 }
         },
@@ -707,6 +708,7 @@
       },
       "aicr_state_range": {
         "title": "Average indirect cost rate<br/>paid by State gov't",
+	dataLabelSuffix: "%",
         "show-percentage-only": true,
         "title-subchart": "STATE",
         "info-tip": "This graph represents the average allowable indirect cost rate (AICR) or overhead/administrative cost rate that nonprofits say the government covers when they receive a contract or grant. Every organization must budget for overhead, which includes things like facility maintenance, phones, savings, and all the diffused costs that aren’t strictly tied to program delivery.",
@@ -724,6 +726,7 @@
       "aicr_loc_range": {
         "title": "Average indirect cost rate<br/>paid by Local gov't",
         "show-percentage-only": true,
+	dataLabelSuffix: "%",
         "title-subchart": "LOCAL",
         "renderer": "none",
         value_massager_NOTNEEDED: function(val) {
@@ -750,6 +753,7 @@
         "info-tip": "This graph represents recent trends in the average allowable indirect cost rate (AICR) or overhead/administrative cost rate that nonprofits say the government covers when they receive a contract or grant. Every organization must budget for overhead, which includes things like facility maintenance, phones, savings, and all the diffused costs that aren’t strictly tied to program delivery.",
         "renderer": "barset",
         "show-percentage-only": true,
+	dataLabelSuffix: "%",
         "title-subchart": "FEDERAL",
         "key_order": [ 'Increased', 'Stayed the Same', 'Decreased' ],
         "color_by_key": {
@@ -766,6 +770,7 @@
       "aicr_state_trend": {
         "title": "Average indirect cost rate<br/>paid by State gov't",
         "show-percentage-only": true,
+	dataLabelSuffix: "%",
         "key_order": [ 'Increased', 'Stayed the Same', 'Decreased' ],
         "title-subchart": "STATE",
         "color_by_key": {
@@ -780,6 +785,7 @@
       "aicr_loc_trend": {
         "title": "Average indirect cost rate<br/>paid by Local gov't",
         "show-percentage-only": true,
+	dataLabelSuffix: "%",
         "key_order": [ 'Increased', 'Stayed the Same', 'Decreased' ],
         "color_by_key": {
           'Increased': chroma(window.nfforg.colors.GOODVERY).hex(),
@@ -797,6 +803,7 @@
         "title": "Plan to replace gov't funding with non-gov't funding",
         "renderer": "barset",
         "show-percentage-only": true,
+	dataLabelSuffix: "%",
         "title-subchart": "FEDERAL",
         "key_order": [ 'Yes', 'No', 'Maybe'],
         "color_by_key": {
@@ -814,6 +821,7 @@
         "title": "Plan to replace gov't funding with non-gov't funding",
         "renderer": "none",
         "show-percentage-only": true,
+	dataLabelSuffix: "%",
         "title-subchart": "STATE",
         "key_order": [ 'Yes', 'No', 'Maybe'],
         "color_by_key": {
@@ -827,6 +835,7 @@
         "title": "Plan to replace gov't funding with non-gov't funding",
         "renderer": "none",
         "show-percentage-only": true,
+	dataLabelSuffix: "%",
         "title-subchart": "LOCAL",
         "key_order": [ 'Yes', 'No', 'Maybe'],
         "color_by_key": {
@@ -1118,6 +1127,7 @@
         "show-percentage-only": true,
         "title": "Reporting Requirements in relation to the funding amounts",
         "title-subchart": "Federal",
+	dataLabelSuffix: "%",
         otherCharts: [ 
           "funding_vs_reporting_state",
           "funding_vs_reporting_local",
@@ -1140,6 +1150,7 @@
       },
       "funding_vs_reporting_state": {
         "show-percentage-only": true,
+	dataLabelSuffix: "%",
         "title": "Reporting Requirements in relation to the funding amounts",
         "title-subchart": "State",
         "renderer": "none",
@@ -1158,6 +1169,7 @@
       },
       "funding_vs_reporting_local": {
         "show-percentage-only": true,
+	dataLabelSuffix: "%",
         "title": "Reporting Requirements in relation to the funding amounts",
         "title-subchart": "Local",
         "renderer": "none",
@@ -1176,6 +1188,7 @@
       },
       "funding_vs_reporting_foundation": {
         "show-percentage-only": true,
+	dataLabelSuffix: "%",
         "title": "Reporting Requirements in relation to the funding amounts",
         "title-subchart": "Foundation",
         "renderer": "none",
@@ -1194,6 +1207,7 @@
       },
       "funding_vs_reporting_individual": {
         "show-percentage-only": true,
+	dataLabelSuffix: "%",
         "title": "Reporting Requirements in relation to the funding amounts",
         "title-subchart": "Individual",
         "renderer": "none",
@@ -1237,6 +1251,7 @@
       // NEXT SET OF CHARTS IS COMBINED INTO ONE MULTI-SERIES BAR CHART
       "funding_fed_full_cost": {
         "show-percentage-only": true,
+	dataLabelSuffix: "%",
         "title": "How often do funders cover the full cost of projects they fund?",
         "usagetip": "TIP: Click on any option in the legend to turn off its visibility.",
         "title-subchart": "Federal",
@@ -1264,6 +1279,7 @@
       },
       "funding_state_full_cost": {
         "show-percentage-only": true,
+	dataLabelSuffix: "%",
         "title": "How often do states <br/>cover the full costs of programs they fund?",
         "title-subchart": "State",
         value_massager: function(val){
@@ -1285,6 +1301,7 @@
 
       "funding_loc_full_cost": {
         "show-percentage-only": true,
+	dataLabelSuffix: "%",
         "title": "How often do localities <br/>cover the full costs of programs they fund?",
         "title-subchart": "Local",
         value_massager: function(val){
@@ -1306,6 +1323,7 @@
 
       "funding_foundation_full_cost": {
         "show-percentage-only": true,
+	dataLabelSuffix: "%",
         "title": "How often do private/community organizations <br/>cover the full costs of programs they fund?",
         "title-subchart": "Foundation",
         value_massager: function(val){
@@ -1327,6 +1345,7 @@
 
       "funding_individual_full_cost": {
         "show-percentage-only": true,
+	dataLabelSuffix: "%",
         "title": "How often do individuals <br/>cover the full costs of programs they fund?",
         "title-subchart": "Individual",
         value_massager: function(val){
