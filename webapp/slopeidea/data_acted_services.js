@@ -1,55 +1,5 @@
 (function() {
 
-var countTotal = 5451;
-
-window.nfforg.decrementYearDisplayAndAppend = function(obj, countYes, percYes) {
-    var root = obj[0].data;
-    var mostRecent_order;
-    var mostRecent_year;
-    var questionKey;
-
-    // Decrement the year displays for every one of the existing years objects
-    root.children.forEach(function(X){
-	mostRecent_order = X.node.order;
-	mostRecent_year = parseInt(X.node.key) - 1;
-        X.node.key = String(mostRecent_year);
-        X.node.label = X.node.key;
-	questionKey = X.children[0].question_key;
-    });
-
-    // Create a new record
-    mostRecent_year++;
-    mostRecent_order++;
-    root.children.push({
-	node: {
-	    count: countTotal,
-	    key: String(mostRecent_year),
-	    label: String(mostRecent_year),
-	    perc: 1,
-	    order: String(mostRecent_order)
-	},
-	children: [
-	    {node:{
-		key: "yes",
-		label: "Yes",
-		count: countYes,
-		perc: percYes,
-		order: String(mostRecent_order),
-		question_key: questionKey
-	    }},
-	    {node:{
-		count: countTotal - countYes,
-		key: "no",
-		label: "No",
-		perc: 1.0 - percYes,
-		order: String(mostRecent_order),
-		question_key: questionKey
-	    }}
-	]
-    });
-};
-
-//////////////////////////////////////////////////////////
 
 window.nfforg.data_acted_services = {}; 
 

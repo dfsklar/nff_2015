@@ -1795,7 +1795,7 @@
       },
       
       "trendovertime_acted_services": {
-        "title": "Services and Programs: Actions Taken",
+        "title": "Services &amp; Programs: Actions Taken",
         usagetip: "TIP: Hover your cursor over a line or action to see more detail.",
         "renderer": "trendslope",
         data: window.nfforg.data_acted_services,
@@ -1818,9 +1818,9 @@
         "css": { width: FULLWIDTH }
       },
 
-/*
+
       "trendovertime_actedhumancapital": {
-        "title": "Human Capital: Actions Taken the Previous Year",
+        "title": "Human Capital: Actions Taken",
         usagetip: "TIP: Hover your cursor over a line or action to see more detail.",
         "renderer": "trendslope",
         data: window.nfforg.data_acted_human_capital,
@@ -1838,9 +1838,7 @@
           froze_staff: "freeze_staff"
         },
         "css": { width: FULLWIDTH }
-      },
-*/
-
+      }
 
 /*
       "trendovertime_acted_management": {

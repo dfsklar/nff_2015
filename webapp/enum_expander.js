@@ -283,7 +283,21 @@
       ".12": "Freeze or reduce salaries",
       ".13": "Spend more on staff benefits",
       ".14": "Spend less on staff benefits",
-      ".15": "None of the above"
+      ".15": "None of the above",
+	///  , "acted_volunteers", "acted_kept_staff", "acted_red_staff", "acted_inc_staff_bens", "acted_red_staff_bens", "acted_red_staff_hours", "acted_froze_staff"]
+	"hire_staff": "Hire staff for new positions",
+	"red_staff": "Reduce staff",
+	"replaced_staff": "Make replacement hires",
+	"kept_staff": "Retain all existing personnel",
+	"froze_staff": "Freeze all replacement hires",
+	"volunteers": "Rely more on volunteers",
+	"board": "Engage more closely with board\n via more frequent reports/meetings",
+	"gave_raises": "Give raises beyond just COLA",
+	"inc_staff_bens": "Spend more on staff benefits",
+	"red_staff_bens": "Spend less on staff benefits",
+	"staff_profdev": "Invest money/time in professional development for staff",
+	"leader_succession": "Leadership succession planning",
+	"red_staff_hours": "Reduce staff hours (short weeks, furloughs, etc.)"
     },
 
     action_prog_service: {
