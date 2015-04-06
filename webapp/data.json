@@ -1838,15 +1838,15 @@
           froze_staff: "freeze_staff"
         },
         "css": { width: FULLWIDTH }
-      }
+      },
 
-/*
+
       "trendovertime_acted_management": {
-        "title": "Finance and Operations: Actions Taken the Previous Year",
+        "title": "Finance and Operations: Actions Taken",
         usagetip: "TIP: Hover your cursor over a line or action to see more detail.",
         "renderer": "trendslope",
         data: window.nfforg.data_acted_management,
-        chartName: "action_management",
+        chartName: "action_ops_finance",  //management",
         yCoordFudgings: {
           23: -15,
           25: 20,
@@ -1856,7 +1856,9 @@
         preEnumMappings: {
         },
         "css": { width: FULLWIDTH }
-      },
+      }
+
+/*
       
       "trendovertime_curyearclientoutlook": {
         "title": "The year ahead: Financial outlook for the community the NPO serves",

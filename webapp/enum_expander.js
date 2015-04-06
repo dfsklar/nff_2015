@@ -343,13 +343,17 @@
 
     action_ops_finance: {
       ".0": "Collaborate with another organization\n to reduce administrative expenses",
+      "collab_admin": "Collaborate with another organization\n to reduce administrative expenses",
       ".1": "Merge with another organization",
+      "merge": "Merge with another organization",
       ".2": "Change main ways in which you raise/spend money",
       ".3": "Pursue an earned revenue venture",
       ".4": "Advocate to government on behalf\n of your organization's cause", //?
       ".5": "Seek funding other than grants and contracts,\n such as loans or other investments",  //?
       ".6": "Add to reserve funds",
+      "add_reserve": "Add to reserve funds",
       ".7": "Use reserve funds",
+      "use_reserve": "Use reserve funds",
       ".8": "Launch a capital campaign",
       ".9": "Undergo organizational restructuring",
       ".10": "Conduct long-term strategic or financial planning",

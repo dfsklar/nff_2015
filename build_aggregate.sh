@@ -22,10 +22,10 @@ sh minify.sh numericrange.js >> $DEST
 
 sh minify.sh indexer.js >> $DEST
 
+sh minify.sh slopeidea/engine.js >> $DEST
+sh minify.sh slopeidea/data_acted_services.js >> $DEST
 sh minify.sh slopeidea/data_acted_human_capital.js >> $DEST
 sh minify.sh slopeidea/data_acted_management.js >> $DEST
-sh minify.sh slopeidea/data_acted_services.js >> $DEST
-sh minify.sh slopeidea/engine.js >> $DEST
 
 sh minify.sh renderers/table.js >> $DEST
 sh minify.sh renderers/bar.js >> $DEST
