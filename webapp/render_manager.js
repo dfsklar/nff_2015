@@ -43,8 +43,10 @@
       case "one_or_more":
         wordingResp = "total respondents: ";
         break;
+      case "barset":
+        wordingResp = null;
       }
-      $chart.find('.respcount').text(wordingResp + String(chart.yValueTotal));
+      $chart.find('.respcount').text( wordingResp ? (wordingResp + String(chart.yValueTotal)) : "" );
     }
     $chart.data('key', chartname);
     
