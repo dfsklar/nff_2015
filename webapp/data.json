@@ -37,7 +37,7 @@
       },
       "Government Funding": {
         showcase: "govfund",
-        "commentary": "Government and nonprofits are often highly effective partners in providing a social safety net for those in need. At the same time, this partnership can presents nonprofits with real challenges, including payment delays and low allowable indirect cost rates for programs and services."
+        "commentary": "Government and nonprofits are often highly effective partners in providing a social safety net for those in need. At the same time, this partnership can present nonprofits with real challenges, including payment delays and low allowable indirect cost rates for programs and services."
       },
       "Data and Impact": {
         showcase: "dataimpact",
@@ -45,7 +45,7 @@
       },
       "Funder Practices": {
         "showcase": "fundprac",
-        "commentary": "What kinds of resources do nonprofits need to succeed? And what are the types of funding that are actually available?"
+        "commentary": "The more nonprofits and funders can have transparent conversations about aligning the right resources to meet financial needs, the closer we step towards a well-capitalized and healthy sector."
       },
       "Financial Outlook": {
         "showcase-bar-goes-here": false
@@ -1001,7 +1001,7 @@
 
       "metrics_collection.4": {
         "section": "Data and Impact",
-        "title": "Uses metrics to<br/>make decisions",
+        "title": "Uses output/outcomes data<br/>to make decisions",
         "renderer": "bar",
         "key_order": [
           "Yes",
@@ -1027,7 +1027,7 @@
       },
 
       "funders_ask_for_metrics": {
-        "title": "# of Funders using metrics<br/>that we provide</br>to assess our effectiveness",
+        "title": "# of Funders using metrics<br/>we provide</br>to assess our effectiveness",
         "renderer": "bar",
         "key_order": [
           "All",
@@ -1085,7 +1085,7 @@
       },
 
       "impact_funder_request": {
-        "title": "In 2014, the number funders<br/>asking for metrics...",
+        "title": "In 2014, # of funders<br/>asking us to measure outputs/outcomes",
         "highchart_formatting": {
           chart: { marginLeft: 140, spacingLeft: 0 }
         },
@@ -1124,110 +1124,6 @@
 //        "css": { width: FULLWIDTH }
 //      },
 
-
-
-
-      "funding_vs_reporting_fed": {
-        "show-percentage-only": true,
-        "title": "Reporting Requirements in relation to the funding amounts",
-        "title-subchart": "Federal",
-	dataLabelSuffix: "%",
-        otherCharts: [ 
-          "funding_vs_reporting_state",
-          "funding_vs_reporting_local",
-          "funding_vs_reporting_foundation",
-          "funding_vs_reporting_individual"
-        ],
-        value_massager: function(val){
-          if (val.has('N/A'))
-            return 'N/A';
-          return val;
-        },
-        "key_order": [
-          "High",
-          "Proportional",
-          "Low",
-          "N/A"
-        ],
-        "renderer": "barset2",
-        "css": { width: FULLWIDTH }
-      },
-      "funding_vs_reporting_state": {
-        "show-percentage-only": true,
-	dataLabelSuffix: "%",
-        "title": "Reporting Requirements in relation to the funding amounts",
-        "title-subchart": "State",
-        "renderer": "none",
-        value_massager: function(val){
-          if (val.has('N/A'))
-            return 'N/A';
-          return val;
-        },
-        "key_order": [
-          "High",
-          "Proportional",
-          "Low",
-          "N/A"
-        ],
-        "css": { width: FULLWIDTH }
-      },
-      "funding_vs_reporting_local": {
-        "show-percentage-only": true,
-	dataLabelSuffix: "%",
-        "title": "Reporting Requirements in relation to the funding amounts",
-        "title-subchart": "Local",
-        "renderer": "none",
-        value_massager: function(val){
-          if (val.has('N/A'))
-            return 'N/A';
-          return val;
-        },
-        "key_order": [
-          "High",
-          "Proportional",
-          "Low",
-          "N/A"
-        ],
-        "css": { width: FULLWIDTH }
-      },
-      "funding_vs_reporting_foundation": {
-        "show-percentage-only": true,
-	dataLabelSuffix: "%",
-        "title": "Reporting Requirements in relation to the funding amounts",
-        "title-subchart": "Foundation",
-        "renderer": "none",
-        value_massager: function(val){
-          if (val.has('N/A'))
-            return 'N/A';
-          return val;
-        },
-        "key_order": [
-          "High",
-          "Proportional",
-          "Low",
-          "N/A"
-        ],
-        "css": { width: FULLWIDTH }
-      },
-      "funding_vs_reporting_individual": {
-        "show-percentage-only": true,
-	dataLabelSuffix: "%",
-        "title": "Reporting Requirements in relation to the funding amounts",
-        "title-subchart": "Individual",
-        "renderer": "none",
-        value_massager: function(val){
-          if (val.has('N/A'))
-            return 'N/A';
-          return val;
-        },
-        "key_order": [
-          "High",
-          "Proportional",
-          "Low",
-          "N/A"
-        ],
-        "css": { width: FULLWIDTH }
-      },
 
 
 
@@ -1397,6 +1293,110 @@
 //        ],
 //        "css": { width: HALFWIDTH }
 //      },
+
+
+      "funding_vs_reporting_fed": {
+        "show-percentage-only": true,
+        "title": "Reporting requirements in relation to funding amounts in 2014",
+        "title-subchart": "Federal",
+	dataLabelSuffix: "%",
+        otherCharts: [ 
+          "funding_vs_reporting_state",
+          "funding_vs_reporting_local",
+          "funding_vs_reporting_foundation",
+          "funding_vs_reporting_individual"
+        ],
+        value_massager: function(val){
+          if (val.has('N/A'))
+            return 'N/A';
+          return val;
+        },
+        "key_order": [
+          "High",
+          "Proportional",
+          "Low",
+          "N/A"
+        ],
+        "renderer": "barset2",
+        "css": { width: FULLWIDTH }
+      },
+      "funding_vs_reporting_state": {
+        "show-percentage-only": true,
+	dataLabelSuffix: "%",
+        "title": "Reporting Requirements in relation to the funding amounts",
+        "title-subchart": "State",
+        "renderer": "none",
+        value_massager: function(val){
+          if (val.has('N/A'))
+            return 'N/A';
+          return val;
+        },
+        "key_order": [
+          "High",
+          "Proportional",
+          "Low",
+          "N/A"
+        ],
+        "css": { width: FULLWIDTH }
+      },
+      "funding_vs_reporting_local": {
+        "show-percentage-only": true,
+	dataLabelSuffix: "%",
+        "title": "Reporting Requirements in relation to the funding amounts",
+        "title-subchart": "Local",
+        "renderer": "none",
+        value_massager: function(val){
+          if (val.has('N/A'))
+            return 'N/A';
+          return val;
+        },
+        "key_order": [
+          "High",
+          "Proportional",
+          "Low",
+          "N/A"
+        ],
+        "css": { width: FULLWIDTH }
+      },
+      "funding_vs_reporting_foundation": {
+        "show-percentage-only": true,
+	dataLabelSuffix: "%",
+        "title": "Reporting Requirements in relation to the funding amounts",
+        "title-subchart": "Foundation",
+        "renderer": "none",
+        value_massager: function(val){
+          if (val.has('N/A'))
+            return 'N/A';
+          return val;
+        },
+        "key_order": [
+          "High",
+          "Proportional",
+          "Low",
+          "N/A"
+        ],
+        "css": { width: FULLWIDTH }
+      },
+      "funding_vs_reporting_individual": {
+        "show-percentage-only": true,
+	dataLabelSuffix: "%",
+        "title": "Reporting Requirements in relation to the funding amounts",
+        "title-subchart": "Individual",
+        "renderer": "none",
+        value_massager: function(val){
+          if (val.has('N/A'))
+            return 'N/A';
+          return val;
+        },
+        "key_order": [
+          "High",
+          "Proportional",
+          "Low",
+          "N/A"
+        ],
+        "css": { width: FULLWIDTH }
+      },
+
 
 
 

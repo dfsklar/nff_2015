@@ -242,7 +242,7 @@ if ($.cookie('enablezipfilter')) {
                                         Object.keys(window.nfforg.database.charts.state.valueSet).sortBy().exclude("Other").include("Other"),
                                        curFiltration);
       window.nfforg.createFilterSection($rootdiv, "org_type", "div",
-                                        Object.keys(window.nfforg.database.charts.org_type.valueSet).sortBy().exclude("Other").exclude('Unknown/Unclassified').include("Other").include("Unknown/Unclassified"),
+                                        Object.keys(window.nfforg.database.charts.org_type.valueSet).sortBy().exclude("Other").exclude('Unknown/Unclassified').include("Other"),
                                        curFiltration);
 
       window.nfforg.createFilterSection($rootdiv, "opp_exp_max", "div",
