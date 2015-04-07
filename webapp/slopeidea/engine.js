@@ -55,7 +55,7 @@ window.nfforg.decrementYearDisplayAndAppend = function(obj, countYes, percYes) {
 
 $(function() {  
 
-  var BLUE = window.nfforg.colors.Blue2;
+  var BLUE = window.nfforg.colors.Blue1;
   var opacityGhost = 0.7;
 
   function formatPercDisplay(percValue) {
