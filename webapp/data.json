@@ -1493,7 +1493,7 @@
 
 
       "loan_yes_": {
-        "title": "How using current loans",
+        "title": "NPOs with loans or lines of credit use them to...",
         "denominator_required_field": "debt_fin",
         "denominator_required_field__negative_values": [ "No" ],
         "renderer": "one_or_more",

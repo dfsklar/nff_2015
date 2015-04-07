@@ -152,12 +152,12 @@
 
     loan_yes_: {
       exp_prog: "Expand programs or services",
-      facility_exp: "Expand or renovate a facility my organization leases or owns",
+      facility_exp: "Expand or renovate a facility",
       facility_new: "Purchase a facility",
-      delays_gov: "Manage delays in payment from our government contracts",
-      tech: "Invest in technology such as computers or IT systems",
-      cashflow: "Manage gaps or unevenness in revenue",
-      delays_grant: "Cover costs while waiting for a grant to come in",
+      delays_gov: "Manage delays in payment from gov't contracts",
+      tech: "Invest in technology (computers / IT systems)",
+      delays_grant: "Cover costs while waiting for a grant",
+      cashflow: "Have access to line of credit for emergencies",
       other_yn: "Other"
     },
 
@@ -255,8 +255,8 @@
       multi_year: "Multi-year funding",
       orgadapt: "Organizational change or adaptation",
       measureoutcome: "Measuring program outcomes",
-      other_yn: "Other reserves or topics",
-      none: "My funders are not willing to engage on any of these"
+      other_yn: "Other financial or operational issues",
+      none: "My funders are not willing to engage on any of these topics"
     },
 
 
