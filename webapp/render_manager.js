@@ -44,6 +44,7 @@
         wordingResp = "total respondents: ";
         break;
       case "barset":
+      case "barset2":
         wordingResp = null;
       }
       $chart.find('.respcount').text( wordingResp ? (wordingResp + String(chart.yValueTotal)) : "" );
