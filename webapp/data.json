@@ -1862,7 +1862,7 @@
         colorRanges: colorRangesForInterleave,
         chartspec: {"legend":{"enabled":true},"credits":{"enabled":false},"chart":{"type":"column","spacingLeft":0,"spacingRight":0,"marginRight":0,"spacingBottom":10},"title":{"text":""},"subtitle":{"text":""},"xAxis":{"categories":["Easier than prior year","Same as prior year","Harder than prior year"]},"yAxis":{"min":0,"title":{"text":"Percentage"}},"tooltip":{"headerFormat":"<span style=\"font-size:10px\">{point.key}</span><table>","pointFormat":"<tr><td style=\"color:{series.color};padding:0\">{series.name}: </td><td style=\"padding:0\"><b>{point.y:.0f}%</b></td></tr>","footerFormat":"</table>","shared":true,"useHTML":true},"plotOptions":{"column":{"pointPadding":0.2,"borderWidth":0}},"series":[{"name":"2010","color":"#a2d2e9","data":[12,39,50]},{"name":"2011","color":"#83caee","data":[14,45,41]},{"name":"2012","color":"#63c2f4","data":[13,46,41]},{"name":"2013","color":"#43baf9","data":[16,47,37]},
          {"name":"2014","color":"#43baf9","data":[16,44,40]},
-         {"name":"2015","color":"#43baf9","data":[18, 35, 47]}
+         {"name":"2015","color":"#43baf9","data":[18, 47, 35]}
         ]},
         "css": {width: FULLWIDTH}
       }

@@ -299,7 +299,8 @@
         "red_staff_bens": "Spend less on staff benefits",
         "staff_profdev": "Invest money/time in professional development for staff",
         "leader_succession": "Leadership succession planning",
-        "red_staff_hours": "Reduce staff hours (short weeks, furloughs, etc.)"
+        "red_staff_hours": "Reduce staff hours (short weeks, furloughs, etc.)",
+	"red_salaries": "Freeze or reduce salaries"
     },
 
     action_prog_service: {
@@ -401,7 +402,7 @@
       dec_clients: "Decrease the number of people served",
       inc_serv_per: "Increase amount of service per client",
       dec_serv_per: "Decrease amount of service per client",
-      collab_serv: "Collaborate with another organization",
+      collab_serv: "Collaborate with another org to provide programs",
       new_org_tech: "Purchase/upgrade software to measure impact", //?
       new_serv_tech: "Purchase/upgrade hardware/software\n to improve service",
       na_serv: "N/A"
