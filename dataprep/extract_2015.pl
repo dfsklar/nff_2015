@@ -7,36 +7,36 @@ print "[ \n";
 
 $processingLimit = 9999999;
 if ($ARGV[0]) {
-    $processingLimit = $ARGV[0];
+  $processingLimit = $ARGV[0];
 }
 
 @fieldsMultChoice = (
-                     'lmi_(.*)',   # 1 or blank are the only legal values
+                     'lmi_(.*)', # 1 or blank are the only legal values
                      'challenge_(.*)',
-                     'gov_payment_sources_(.*)',  # in 2014 was named: 'funding_gov_(.*)'
-                     'funding_all_gov_delay_(.*)',  # seems to be about how the org responds to late incoming payments (e.g. "delay payment to my vendors", etc)
+                     'gov_payment_sources_(.*)', # in 2014 was named: 'funding_gov_(.*)'
+                     'funding_all_gov_delay_(.*)', # seems to be about how the org responds to late incoming payments (e.g. "delay payment to my vendors", etc)
                      # from 2014 but no longer valid: 'data_collect_(.*)',
                      'arts_grants_(.*)',
                      'dialog_(.*)',
-                     'arts_source_competition_(.*)',   # NEW 2015!
+                     'arts_source_competition_(.*)', # NEW 2015!
 
                      'current_year_org_outlook_(.*)',
 
                      # from 2014 but no longer valid: 'loan_no_(.*)', 
                      'loan_yes_(.*)',
-                     'debt_fin_applied_no_debt_(.*)',  # NEW 2015!
+                     'debt_fin_applied_no_debt_(.*)', # NEW 2015!
                      # 'addtl_debt_fin_use_(.*)',  # NEW 2015!
                      'debt_fin_no_3A(.*)',
-                     'debt_fin_no_(.*)',  # "Why aren't you considering taking on debt?"
-                     'addtl_debt_fin_(.*)',  # NEW 2015!
+                     'debt_fin_no_(.*)', # "Why aren't you considering taking on debt?"
+                     'addtl_debt_fin_(.*)',   # NEW 2015!
                      'future_debt_fin_(.*)',  # NEW 2015!
-                     'unmet_demand_svc_(.*)',  # NEW 2015!
+                     'unmet_demand_svc_(.*)', # NEW 2015!
                      # from 2014 but no longer valid: 'loan_want_(.*)',
                      # from 2014 but no longer valid: 'arts_comp_resp_(.*)',
                      # from 2014 but no longer valid: 'arts_comp_(.*)',
-                     'arts_audience_dev_results_(.*)',   # NEW 2015 (or name change)
+                     'arts_audience_dev_results_(.*)', # NEW 2015 (or name change)
                      'arts_aud_(.*)',
-                     'arts_funder_(.*)',   # NEW 2015 (or name change) *** BUT I HAVEN'T TAGGED THESE YET ***
+                     'arts_funder_(.*)', # NEW 2015 (or name change) *** BUT I HAVEN'T TAGGED THESE YET ***
                      # from 2014 but no longer valid: 'arts_funding_(.*)'
                      
                      # New approach for handling the plan/taken mult choice
@@ -61,8 +61,8 @@ foreach $strPattern (@fieldsMultChoice) {
                  'addtl_debt_fin_amt',
                  'arts_org_type',
                  'arts_decline_revenue',
-                 'lmi_serve_expanded',   # Full long text, with <strong>primarily</strong>, <strong>exclusively</strong>, etc
-                 'lmi_loc',  #Yes/No
+                 'lmi_serve_expanded', # Full long text, with <strong>primarily</strong>, <strong>exclusively</strong>, etc
+                 'lmi_loc',            #Yes/No
                  'loan_yn',
                  'lifeline', 
                  'past_demand_serv', 'met_past_demand_serv', 'fut_demand_serv', 'meet_fut_demand_serv', 
@@ -115,9 +115,9 @@ foreach $strPattern (@fieldsMultChoice) {
 
                  'surplus_deficit_prior',
                  'surplus_deficit_current',
-                 'surplus_prior_perc',  #This and its deficit compatriot are mut-excl to be considered a single chart
+                 'surplus_prior_perc', #This and its deficit compatriot are mut-excl to be considered a single chart
                  # Next line must be commented-out if we are collapsing surplus_prior and deficit_prior (e.g. 2014 analyzer)
-                 'deficit_prior_perc',   #See comment on previous line
+                 'deficit_prior_perc', #See comment on previous line
                  'months_cash',
 
                  'current_year_client_outlook',
@@ -127,9 +127,9 @@ foreach $strPattern (@fieldsMultChoice) {
                  'impact_action_lives_data',
                  'impact_action_cmty_data',
 
-                 'impact_funder_request',  # All of our funders, ...
-                 'impact_funder_metrics',  # Strongly Agree, ...
-                 'impact_funder_cost',  # sometimes, never, rarely
+                 'impact_funder_request', # All of our funders, ...
+                 'impact_funder_metrics', # Strongly Agree, ...
+                 'impact_funder_cost',    # sometimes, never, rarely
 
                  'metrics_collection.0',
                  'metrics_collection.1',
@@ -153,7 +153,7 @@ foreach $strPattern (@fieldsMultChoice) {
 
 %multchoicesets;
 
-$multchoicesets{'action_management'} = ["acted_collab_admin",	"plan_collab_admin",	"acted_merge",	"plan_merge",	"acted_change_fundraising",	"plan_change_fundraising",	"acted_earned_revenue",	"plan_earned_revenue",	"acted_advocacy",	"plan_advocacy",	"acted_alt_funds",	"plan_alt_funds",	"acted_add_reserve",	"plan_add_reserve",	"acted_use_reserve",	"plan_use_reserve",	"acted_capital_camp",	"plan_capital_camp",	"acted_org_restructure",	"plan_org_restructure",	"acted_strat_plan",	"plan_strat_plan",	"acted_fin_consultants",	"plan_fin_consultants",	"acted_tech_upgrade",	"plan_tech_upgrade",	"acted_borrow_board",	"plan_borrow_board",	"acted_delay_vendors",	"plan_delay_vendors",	"acted_buy_facility",	"plan_buy_facility",	"acted_lease_facility",	"plan_lease_facility",	"acted_sell_facility",	"plan_sell_facility",	"acted_na_mgmt_2014", "plan_na_mgmt_2014"];
+$multchoicesets{'action_management'} = ["acted_collab_admin", "plan_collab_admin",  "acted_merge",  "plan_merge", "acted_change_fundraising", "plan_change_fundraising",  "acted_earned_revenue", "plan_earned_revenue",  "acted_advocacy", "plan_advocacy",  "acted_alt_funds",  "plan_alt_funds", "acted_add_reserve",  "plan_add_reserve", "acted_use_reserve",  "plan_use_reserve", "acted_capital_camp", "plan_capital_camp",  "acted_org_restructure",  "plan_org_restructure", "acted_strat_plan", "plan_strat_plan",  "acted_fin_consultants",  "plan_fin_consultants", "acted_tech_upgrade", "plan_tech_upgrade",  "acted_borrow_board", "plan_borrow_board",  "acted_delay_vendors",  "plan_delay_vendors", "acted_buy_facility", "plan_buy_facility",  "acted_lease_facility", "plan_lease_facility",  "acted_sell_facility",  "plan_sell_facility", "acted_na_mgmt_2014", "plan_na_mgmt_2014"];
 
 
 
@@ -179,7 +179,7 @@ sub autogenMultChoiceSet_takenplanned {
 
 $algconverters{"zip"} = sub { 
   my($x) = $_[0];
-  $x =~ s/\-.*$//;  # Remove the +4 portion of the zipcode if found
+  $x =~ s/\-.*$//;     # Remove the +4 portion of the zipcode if found
   # $x = sprintf("%05d", $x);
   die "BAD ZIP CODE: $x" if ! ( ($x <= 99999) && ($x > 1) );
   return $x;
@@ -211,7 +211,7 @@ for (my $i=0; $i < $#fields; $i++) {
   if ($fields1[$i]) {
     print STDERR "About to overwrite $fields[$i] with this: $fields1[$i]\n";
     $fields[$i] = $fields1[$i];
-  }else{
+  } else {
     # The only part of the field that is desired if the field came from row #2 is
     # the part that lies in square brackets:
     $origField = $fields[$i];
@@ -221,7 +221,7 @@ for (my $i=0; $i < $#fields; $i++) {
       $fields[$i] .= ".PLANNING" if ($origField =~ /\[PLANN/);
       print STDERR $fields[$i] . "\n";
       # THESE ARE PROPERLY GENERATED AS:  action_prog_service.0.TAKEN  action_prog_service.0.PLANNING ...
-    }else{
+    } else {
       # This is benign.  Some of the very first columns have no "[...]" format e.g. "IP Address".
     }
   }
@@ -296,7 +296,7 @@ sub emitTimeframeBasedValue {
 
   my $atleastone;
 
-  my $tryprefix_arts = '';    # In 2014 this was:  ($base eq "action_staff");  
+  my $tryprefix_arts = ''; # In 2014 this was:  ($base eq "action_staff");  
   my $forceprefix_arts = ($options eq "arts_only");
 
   if ($forceprefix_arts) {
@@ -474,7 +474,7 @@ while (<STDIN>) {
   }
 
   if ($internalIDhandled) {
-      print ",";
+    print ",";
   }
   $internalIDhandled = $fields[1];
 
@@ -496,24 +496,22 @@ while (<STDIN>) {
       
     if ($goodfield =~ /\{timeframe\}/) {
       &emitTimeframeBasedValue($goodfield);
-    }
-    elsif ($fieldsWithMultColumns{$goodfield}) {
+    } elsif ($fieldsWithMultColumns{$goodfield}) {
       &emitMultColBasedValue($goodfield);
-    }
-    else{
+    } else {
       $value = $fields[$fieldkeys{$goodfield}];
       #
       # Next line only if collapsing surplus_prior and deficit_prior
       if ('') {
-	  die "We don't do this no more";
-	  if ($goodfield eq "surplus_prior_perc") {
-	      if (!($value)) {
-		  $value = $fields[$fieldkeys{"deficit_prior_perc"}];
-		  if ($value) {
-		      $value = "deficit " . $fields[$fieldkeys{"deficit_prior_perc"}];
-		  }
-	      }
-	  }
+        die "We don't do this no more";
+        if ($goodfield eq "surplus_prior_perc") {
+          if (!($value)) {
+            $value = $fields[$fieldkeys{"deficit_prior_perc"}];
+            if ($value) {
+              $value = "deficit " . $fields[$fieldkeys{"deficit_prior_perc"}];
+            }
+          }
+        }
       }
       if ($value) {
         $value =~ s/^\"//;
