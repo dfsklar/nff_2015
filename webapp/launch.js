@@ -4,6 +4,10 @@
 
 var canDoCORS = !(window.navigator.userAgent.match(/MSIE /));
 
+// IMPORTANT:  UNTIL FINAL DATA, CORS IS STOPPED!!!
+
+canDoCORS = false;
+
 var jsonPath = "realdata.json";
 
 if (window.nfforg.queryParams['brief']) {
