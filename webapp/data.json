@@ -1516,9 +1516,6 @@
         },
         "css": { width: FULLWIDTH }
       },
-*/
-
-
 
       "debt_fin_no_": {
         "title": "Reasons an NPO currently has no debt",
@@ -1532,8 +1529,6 @@
         "css": { width: FULLWIDTH }
       },
 
-
-/*
       "loan_want_": {
         "title": "NPOs without a loan/line of credit want it to...",
         special: "INTERNAL",

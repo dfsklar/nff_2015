@@ -186,8 +186,10 @@ else {
     data: {},
 
     error: function (jqXHR, textStatus, errorThrown) {
-	alert("XHR error");
-	alert(jqXHR.responseText.length);
+	window.location.href = "indexie.html";
+	//alert(textStatus);
+	//alert(JSONstringify(errorThrown));
+	//alert(jqXHR.responseText);
     }
   });
 }
