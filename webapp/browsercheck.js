@@ -14,7 +14,7 @@ if ( ! (
     ||
     SklarVersionChecker('Trident', 5.0)
     ||
-    SklarVersionChecker('Opera', 12.0)
+    SklarVersionChecker('Opera', 9.5)
 )) {
     window.location.href = "modernbrowser.html";
 }
