@@ -157,7 +157,8 @@
       delays_gov: "Manage delays in payment from gov't contracts",
       tech: "Invest in technology (computers / IT systems)",
       delays_grant: "Cover costs while waiting for a grant",
-      cashflow: "Have access to line of credit for emergencies",
+      cashflow: "Manage gaps/unevenness in revenue",
+      delays_emergencyloc: "Have access to line of credit for emergencies",
       other_yn: "Other"
     },
 
