@@ -256,8 +256,8 @@
       multi_year: "Multi-year funding",
       orgadapt: "Organizational change or adaptation",
       measureoutcome: "Measuring program outcomes",
-      other_yn: "Other financial or operational issues",
-      none: "My funders are not willing to engage on any of these topics"
+      none: "My funders are not willing to engage on any of these topics",
+      other_yn: "Other financial or operational issues"
     },
 
 

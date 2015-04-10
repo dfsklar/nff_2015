@@ -1150,7 +1150,7 @@
       // NEXT SET OF CHARTS IS COMBINED INTO ONE MULTI-SERIES BAR CHART
       // NEXT SET OF CHARTS IS COMBINED INTO ONE MULTI-SERIES BAR CHART
       "funding_fed_full_cost": {
-        // "show-percentage-only": true,
+        "show-percentage-only": true,
 	      dataLabelSuffix: "%",
         "title": "How often do funders cover the full cost of projects they fund?",
         "usagetip": "TIP: Click on any option in the legend to turn off its visibility.",
@@ -1172,8 +1172,8 @@
         "css": { width: FULLWIDTH }
       },
       "funding_state_full_cost": {
-//        "show-percentage-only": true,
-	dataLabelSuffix: "%",
+        "show-percentage-only": true,
+	      dataLabelSuffix: "%",
         "title": "How often do states <br/>cover the full costs of programs they fund?",
         "title-subchart": "State",
         "key_order": [
@@ -1188,7 +1188,7 @@
       },
 
       "funding_loc_full_cost": {
-//        "show-percentage-only": true,
+        "show-percentage-only": true,
 	      dataLabelSuffix: "%",
         "title": "How often do localities <br/>cover the full costs of programs they fund?",
         "title-subchart": "Local",
@@ -1204,7 +1204,7 @@
       },
 
       "funding_foundation_full_cost": {
-//        "show-percentage-only": true,
+        "show-percentage-only": true,
 	      dataLabelSuffix: "%",
         "title": "How often do private/community organizations <br/>cover the full costs of programs they fund?",
         "title-subchart": "Foundation",
@@ -1220,7 +1220,7 @@
       },
 
       "funding_individual_full_cost": {
-//        "show-percentage-only": true,
+        "show-percentage-only": true,
 	      dataLabelSuffix: "%",
         "title": "How often do individuals <br/>cover the full costs of programs they fund?",
         "title-subchart": "Individual",
