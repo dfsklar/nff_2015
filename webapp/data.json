@@ -1169,6 +1169,7 @@
           "Never"
         ],
         "renderer": "barset2",
+        barset2colorSelector: [0, 1],
         "css": { width: FULLWIDTH }
       },
       "funding_state_full_cost": {
@@ -1184,6 +1185,7 @@
           "Never"
         ],
         "renderer": "none",
+        barset2colorSelector: [0, 0.4],
         "css": { width: FULLWIDTH }
       },
 
@@ -1200,6 +1202,7 @@
           "Never"
         ],
         "renderer": "none",
+        barset2colorSelector: [0, 0.2],
         "css": { width: FULLWIDTH }
       },
 
@@ -1216,6 +1219,7 @@
           "Never"
         ],
         "renderer": "none",
+        barset2colorSelector: [1, 0.75],
         "css": { width: FULLWIDTH }
       },
 
@@ -1232,6 +1236,7 @@
           "Never"
         ],
         "renderer": "none",
+        barset2colorSelector: [1, 0.2],
         "css": { width: FULLWIDTH }
       },
 

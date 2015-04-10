@@ -23,7 +23,7 @@
     if (chart.series.count() == 1) {
 
       chart.series[0].name = chart["title-subchart"];
-      chart.series[0].color = colorRanges[0](0).hex();
+      chart.series[0].color = colorRanges[0](1).hex();
 
       var subchartCount = chart.otherCharts.count() + 1;
 
@@ -31,8 +31,11 @@
       var idx = 0;
       chart.otherCharts.each(function(nameOtherChart){
         idx++;
-        var colorThisSubchart = colorRanges[idx%2](idx/subchartCount).hex();
         var otherChart = options.charthash[nameOtherChart];
+        var colorThisSubchart = colorRanges[idx%2](idx/subchartCount).hex();
+        if (otherChart.barset2colorSelector) {
+          colorThisSubchart = colorRanges[otherChart.barset2colorSelector[0]](otherChart.barset2colorSelector[1]).hex();
+        }
         var seriesClone = Object.clone(otherChart.series[0], true);
         seriesClone.name = otherChart["title-subchart"];
         seriesClone.color = colorThisSubchart;
