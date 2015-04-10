@@ -1,6 +1,89 @@
 "use strict";
 
 
+    // HANDLES REACTING TO USER'S MODIFICATION OF THE FILTRATION UI STATE!
+    // HANDLES REACTING TO USER'S MODIFICATION OF THE FILTRATION UI STATE!
+    // HANDLES REACTING TO USER'S MODIFICATION OF THE FILTRATION UI STATE!
+    //
+    // This maintains the global current-filtration database
+    // The name is a misnomer.
+
+    window.nfforg.displayListOfActiveFilterValues = function($sect, filtrationToManage)
+    {
+	var sectionName = $sect.find('.chart-name').text();
+
+	var $activeform = $($sect.parents('.sidebar.form').get(0));
+
+	filtrationToManage[sectionName] = [];
+
+	if (sectionName == "zip") {
+	    var patternZip = $sect.find('textarea').val().trim();
+	    if (patternZip) {
+		filtrationToManage["zip"] = [ patternZip.trim() ];
+	    }else{
+		delete filtrationToManage["zip"];
+	    }
+	    return patternZip;
+	}
+
+	// Special case for the SECTOR section: its arts/culture choice has subchoices so it is "tri-state"
+	if (sectionName == "org_type") {
+	    filtrationToManage["arts_org_type"] = [];
+	    var $formSectorArts = $sect.find('.sector-arts');
+	    var howManyChecked = $sect.find('.subarea-value-checkboxes .chkholder.checked').size();
+	    if (0 == howManyChecked) {
+		// None of the arts subsectors are checked
+		$formSectorArts.removeClass('checked').removeClass('partial');
+	    }
+	    else if (howManyChecked == $sect.find('.subarea-value-checkboxes .chkholder').size()) {
+		$formSectorArts.addClass('checked').removeClass('partial');
+	    }
+	    else {
+		$formSectorArts.addClass('partial').removeClass('checked');
+	    }
+	}
+
+	var toDisplay = "";
+	var doConsiderArtsSubsectors = $sect.find('.sector-arts.partial').size();
+	var atLeastOneArtsSubsectorSpecificFilter = false;
+	$sect.find('.chkholder').each(function(){
+	    var thisSectionName = sectionName;
+	    if ($(this).hasClass('arts-subsector')) {
+		thisSectionName = "arts_org_type";
+		if (!doConsiderArtsSubsectors)
+		    return;
+	    }
+	    if ($(this).hasClass('checked')) {
+		var $box = $(this).find('input');
+		filtrationToManage[thisSectionName].push($box.siblings().text());
+		toDisplay += $box.siblings().text() + ", ";
+		if (thisSectionName == "arts_org_type")
+		    atLeastOneArtsSubsectorSpecificFilter = true;
+	    }
+	});
+
+	if (atLeastOneArtsSubsectorSpecificFilter) {
+	    filtrationToManage["org_type"].push("Arts/Culture/Humanities");
+	}
+
+	$sect.removeClass('has-active-values');
+	if (toDisplay) {
+	    $sect.addClass('has-active-values');
+	    toDisplay = toDisplay.replace(/, $/,'');
+	}else{
+	    filtrationToManage[sectionName] = null;
+	    delete filtrationToManage[sectionName];
+	}
+	if (sectionName == "org_type") {
+	    if (!atLeastOneArtsSubsectorSpecificFilter)
+		delete filtrationToManage["arts_org_type"];
+	}
+	$sect.find('.list-active-values').text(toDisplay);
+
+	return toDisplay;
+    };
+
+
 window.nfforg.configureSidebarInteraction = function() {
 
     // EVENT: CLICKING ON A CHECKBOX IN THE FILTER/COMPARE SECTION!!!
@@ -435,90 +518,6 @@ $(function() {
 
     $(window).resize(window.nfforg.layoutUX);
 
-
-
-
-    // HANDLES REACTING TO USER'S MODIFICATION OF THE FILTRATION UI STATE!
-    // HANDLES REACTING TO USER'S MODIFICATION OF THE FILTRATION UI STATE!
-    // HANDLES REACTING TO USER'S MODIFICATION OF THE FILTRATION UI STATE!
-    //
-    // This maintains the global current-filtration database
-    // The name is a misnomer.
-
-    window.nfforg.displayListOfActiveFilterValues = function($sect, filtrationToManage)
-    {
-	var sectionName = $sect.find('.chart-name').text();
-
-	var $activeform = $($sect.parents('.sidebar.form').get(0));
-
-	filtrationToManage[sectionName] = [];
-
-	if (sectionName == "zip") {
-	    var patternZip = $sect.find('textarea').val().trim();
-	    if (patternZip) {
-		filtrationToManage["zip"] = [ patternZip.trim() ];
-	    }else{
-		delete filtrationToManage["zip"];
-	    }
-	    return patternZip;
-	}
-
-	// Special case for the SECTOR section: its arts/culture choice has subchoices so it is "tri-state"
-	if (sectionName == "org_type") {
-	    filtrationToManage["arts_org_type"] = [];
-	    var $formSectorArts = $sect.find('.sector-arts');
-	    var howManyChecked = $sect.find('.subarea-value-checkboxes .chkholder.checked').size();
-	    if (0 == howManyChecked) {
-		// None of the arts subsectors are checked
-		$formSectorArts.removeClass('checked').removeClass('partial');
-	    }
-	    else if (howManyChecked == $sect.find('.subarea-value-checkboxes .chkholder').size()) {
-		$formSectorArts.addClass('checked').removeClass('partial');
-	    }
-	    else {
-		$formSectorArts.addClass('partial').removeClass('checked');
-	    }
-	}
-
-	var toDisplay = "";
-	var doConsiderArtsSubsectors = $sect.find('.sector-arts.partial').size();
-	var atLeastOneArtsSubsectorSpecificFilter = false;
-	$sect.find('.chkholder').each(function(){
-	    var thisSectionName = sectionName;
-	    if ($(this).hasClass('arts-subsector')) {
-		thisSectionName = "arts_org_type";
-		if (!doConsiderArtsSubsectors)
-		    return;
-	    }
-	    if ($(this).hasClass('checked')) {
-		var $box = $(this).find('input');
-		filtrationToManage[thisSectionName].push($box.siblings().text());
-		toDisplay += $box.siblings().text() + ", ";
-		if (thisSectionName == "arts_org_type")
-		    atLeastOneArtsSubsectorSpecificFilter = true;
-	    }
-	});
-
-	if (atLeastOneArtsSubsectorSpecificFilter) {
-	    filtrationToManage["org_type"].push("Arts/Culture/Humanities");
-	}
-
-	$sect.removeClass('has-active-values');
-	if (toDisplay) {
-	    $sect.addClass('has-active-values');
-	    toDisplay = toDisplay.replace(/, $/,'');
-	}else{
-	    filtrationToManage[sectionName] = null;
-	    delete filtrationToManage[sectionName];
-	}
-	if (sectionName == "org_type") {
-	    if (!atLeastOneArtsSubsectorSpecificFilter)
-		delete filtrationToManage["arts_org_type"];
-	}
-	$sect.find('.list-active-values').text(toDisplay);
-
-	return toDisplay;
-    };
 
 });
 

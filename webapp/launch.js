@@ -152,18 +152,26 @@ window.nfforg.handleSuccessfulDataAcquisition = function(data) {
 window.nfforg.updateProgressBar = function (num,denom) {
     var pct = Math.round(num*100/denom);
     $('.progress-bar-inner').css({width: String(pct)+"%"});
-}
+};
+
+window.nfforg.TRUELAUNCH = function(data) {
+    setTimeout(function(){
+	if ($('.body-inner').length) {
+	    window.nfforg.handleSuccessfulDataAcquisition(data);
+	}else{
+	    window.nfforg.TRUELAUNCH(data);
+	}
+    }, 1200);
+};
 
 if (window.nfforg.INGRAINEDREALDATA) {
-    setTimeout(function(){
-	window.nfforg.handleSuccessfulDataAcquisition(window.nfforg.INGRAINEDREALDATA);
-    }, 5000);
+    window.nfforg.TRUELAUNCH(window.nfforg.INGRAINEDREALDATA);
 }
 else {
   jQuery.ajax({
 
     success: function(data) {
-	window.nfforg.handleSuccessfulDataAcquisition(data);
+	window.nfforg.TRUELAUNCH(data);
     },
 
     xhr: function() {
