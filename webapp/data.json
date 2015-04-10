@@ -1272,20 +1272,15 @@
 
       "funding_vs_reporting_fed": {
         "show-percentage-only": true,
-        "title": "Reporting requirements in relation to funding amounts in 2014<br/><span style=\"color:red\"'>NOT FOR REVIEW AT THIS TIME.  AWAITING VERDICT ON THE CHART IMMEDIATELY ABOVE.</span>",
+        "title": "Reporting requirements in relation to funding amounts in 2014",
         "title-subchart": "Federal",
-	dataLabelSuffix: "%",
+	      dataLabelSuffix: "%",
         otherCharts: [ 
           "funding_vs_reporting_state",
           "funding_vs_reporting_local",
           "funding_vs_reporting_foundation",
           "funding_vs_reporting_individual"
         ],
-        value_massager: function(val){
-          if (val.has('N/A'))
-            return 'N/A';
-          return val;
-        },
         "key_order": [
           "High",
           "Proportional",
@@ -1293,82 +1288,67 @@
           "N/A"
         ],
         "renderer": "barset2",
+        barset2colorSelector: [0, 1],
         "css": { width: FULLWIDTH }
       },
       "funding_vs_reporting_state": {
         "show-percentage-only": true,
-	dataLabelSuffix: "%",
+	      dataLabelSuffix: "%",
         "title": "Reporting Requirements in relation to the funding amounts",
         "title-subchart": "State",
         "renderer": "none",
-        value_massager: function(val){
-          if (val.has('N/A'))
-            return 'N/A';
-          return val;
-        },
         "key_order": [
           "High",
           "Proportional",
           "Low",
           "N/A"
         ],
+        barset2colorSelector: [0, 0.4],
         "css": { width: FULLWIDTH }
       },
       "funding_vs_reporting_local": {
         "show-percentage-only": true,
-	dataLabelSuffix: "%",
+	      dataLabelSuffix: "%",
         "title": "Reporting Requirements in relation to the funding amounts",
         "title-subchart": "Local",
         "renderer": "none",
-        value_massager: function(val){
-          if (val.has('N/A'))
-            return 'N/A';
-          return val;
-        },
         "key_order": [
           "High",
           "Proportional",
           "Low",
           "N/A"
         ],
+        barset2colorSelector: [0, 0.4],
         "css": { width: FULLWIDTH }
       },
       "funding_vs_reporting_foundation": {
         "show-percentage-only": true,
-	dataLabelSuffix: "%",
+	      dataLabelSuffix: "%",
         "title": "Reporting Requirements in relation to the funding amounts",
         "title-subchart": "Foundation",
         "renderer": "none",
-        value_massager: function(val){
-          if (val.has('N/A'))
-            return 'N/A';
-          return val;
-        },
         "key_order": [
           "High",
           "Proportional",
           "Low",
           "N/A"
         ],
+        barset2colorSelector: [1, 0.75],
         "css": { width: FULLWIDTH }
       },
       "funding_vs_reporting_individual": {
         "show-percentage-only": true,
-	dataLabelSuffix: "%",
+	      dataLabelSuffix: "%",
         "title": "Reporting Requirements in relation to the funding amounts",
         "title-subchart": "Individual",
         "renderer": "none",
-        value_massager: function(val){
-          if (val.has('N/A'))
-            return 'N/A';
-          return val;
-        },
         "key_order": [
           "High",
           "Proportional",
           "Low",
           "N/A"
         ],
+        barset2colorSelector: [1, 0.2],
         "css": { width: FULLWIDTH }
       },
 
