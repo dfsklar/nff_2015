@@ -52,7 +52,7 @@
       },
       "Lending to Nonprofits": {
         "showcase": "lending",
-        "commentary": "Loans can be used to help nonprofits manage growth, build or renovate facilities, balance government contract payments and cash flow and bridge capital campaigns, so organizations can better serve their clients and communities."
+        "commentary": "Loans can be used to help nonprofits manage growth and cash flow needs, or build or renovate facilities, so that organizations can better serve their clients and communities."
       },
       "Feature: Arts & Culture NPOs": {
         "showcase": "artsculturecount",
@@ -584,6 +584,7 @@
 
       "funding_gov_days_late": {
         "title": "Government payments are received...",
+        "info-tip": "Total number of respondents vary for each type of funding.",
         "renderer": "barset",
         "title-subchart": "FEDERAL",
         "value_massager": function(val) {
@@ -685,7 +686,7 @@
 
       "aicr_fed_range": {
         "title": "Average indirect cost rate paid by government",
-        "info-tip": "This graph represents the average allowable indirect cost rate (AICR) or overhead/administrative cost rate that nonprofits say the government covers when they receive a contract or grant. Every organization must budget for overhead, which includes things like facility maintenance, phones, savings, and all the diffused costs that aren’t strictly tied to program delivery.",
+        "info-tip": "This graph represents the average allowable indirect cost rate (AICR) or overhead/administrative cost rate that nonprofits say the government covers when they receive a contract or grant. Every organization must budget for overhead, which includes things like facility maintenance, phones, savings, and all the diffused costs that aren’t strictly tied to program delivery.<br/>Total number of respondents vary for each type of funding.",
         "renderer": "barset",
         "show-percentage-only": true,
         "title-subchart": "FEDERAL",
@@ -753,6 +754,7 @@
 
       "aicr_fed_trend": {
         "title": "In last 3 years, gov't funding/contracts, as % of total revenue, has...",
+        "info-tip": "Total number of respondents vary for each type of funding.",
         "renderer": "barset",
         "show-percentage-only": true,
 	dataLabelSuffix: "%",
@@ -803,6 +805,7 @@
 
       "plan_replace_gov_funding_fed": {
         "title": "Plan to replace gov't funding with non-gov't funding",
+        "info-tip": "Total number of respondents vary for each type of funding.",
         "renderer": "barset",
         "show-percentage-only": true,
 	dataLabelSuffix: "%",
@@ -1151,7 +1154,8 @@
       // NEXT SET OF CHARTS IS COMBINED INTO ONE MULTI-SERIES BAR CHART
       "funding_fed_full_cost": {
         "show-percentage-only": true,
-	      dataLabelSuffix: "%",
+        "info-tip": "(Excludes respondents who identified N/A for any particular funding source.)",
+	dataLabelSuffix: "%",
         "title": "How often do funders cover the full cost of projects they fund?",
         "usagetip": "TIP: Click on any option in the legend to turn off its visibility.",
         "title-subchart": "Federal",
@@ -1273,6 +1277,8 @@
       "funding_vs_reporting_fed": {
         "show-percentage-only": true,
         "title": "Reporting requirements in relation to funding amounts in 2014",
+        "info-tip": "(Excludes respondents who identified N/A for any particular funding source.)",
+        "usagetip": "TIP: Click on any option in the legend to turn off its visibility.",
         "title-subchart": "Federal",
         dataLabelSuffix: "%",
         otherCharts: [ 

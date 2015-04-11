@@ -96,7 +96,7 @@ $(function() {
 
       ctx.fillStyle = 'grey';
       ctx.font = 'italic 12pt Arial';
-      ctx.fillText("Nonprofit Finance Fund 2014 State of the Sector http://survey.nonprofitfinancefund.org/2014", widthImage-580, heightImage+heightExtra-20);
+      ctx.fillText("Nonprofit Finance Fund 2015 State of the Sector http://survey.nff.org", widthImage-580, heightImage+heightExtra-20);
 
 
       // The canvas is now populated and ready to turn into a data:image URL.
