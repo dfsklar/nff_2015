@@ -686,7 +686,7 @@
 
       "aicr_fed_range": {
         "title": "Average indirect cost rate paid by government",
-        "info-tip": "This graph represents the average allowable indirect cost rate (AICR) or overhead/administrative cost rate that nonprofits say the government covers when they receive a contract or grant. Every organization must budget for overhead, which includes things like facility maintenance, phones, savings, and all the diffused costs that aren’t strictly tied to program delivery.<br/>Total number of respondents vary for each type of funding.",
+        "info-tip": "This graph represents the average allowable indirect cost rate (AICR) or overhead/administrative cost rate that nonprofits say the government covers when they receive a contract or grant. Every organization must budget for overhead, which includes things like facility maintenance, phones, savings, and all the diffused costs that aren’t strictly tied to program delivery.<br/>&nbsp;<br/>Total number of respondents vary for each type of funding.",
         "renderer": "barset",
         "show-percentage-only": true,
         "title-subchart": "FEDERAL",
@@ -1820,7 +1820,7 @@
         usagetip: "TIP: Hover your cursor over a line or action to see more detail.",
         "renderer": "trendslope",
         data: window.nfforg.data_acted_management,
-        chartName: "action_ops_finance",  //management",
+        chartName: "action_ops_finance_for_trend_charts",
         yCoordFudgings: {
           23: -15,
           25: 20,
