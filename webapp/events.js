@@ -175,6 +175,8 @@ window.nfforg.layoutUX = function() {
     var newWidth = $(window).width();
     var boolForceContentRedraw = false;
 
+    console.log("NEW WINDOW WIDTH: " + newWidth);
+
     if (newWidth < 930) {
 	if ( ! ($('body').hasClass('narrow-width'))) {
             // HA!  This is a CHANGE from full width to narrow width
@@ -205,6 +207,11 @@ window.nfforg.layoutUX = function() {
     var calculatedOffsetLeftForFilter = 
 	$('.body-inner').offset()['left'] + $('.body-inner').width()
 	- $('#filter-area').width();
+
+
+    console.log("calculated offset for filter: " + calculatedOffsetLeftForFilter);
+    console.log("calculated newcontentareawidth: " + newContentAreaWidth);
+
     $('#filter-area').css(
 	{
             display: "block",
