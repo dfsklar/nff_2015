@@ -11,13 +11,14 @@ if ($.cookie('enablezipfilter')) {
   window.nfforg.mapFilterSectionIdToHumanText = {
     "state": "State",
     "org_type": "Sector",
-    //"opp_exp_max": "Operating expense",
-    //"lifeline": "Lifeline",
-    //"lmi_serve_expanded": "Serves low-income communities",
-    //"lmi_loc": "Located in low-income communities",
-    //"year_founded_range": "Year founded",
-    //"employee_count_fte_range": "# full-time employees",
-    //"employee_count_pte_range": "# part-time employees"
+    "arts_org_type": "Arts org.",
+    "opp_exp_max": "Operating expense",
+    "lifeline": "Lifeline",
+    "lmi_serve_expanded": "Serves low-income communities",
+    "lmi_loc": "Located in low-income communities",
+    "year_founded_range": "Year founded",
+    "employee_count_fte_range": "# full-time employees",
+    "employee_count_pte_range": "# part-time employees"
   };
 
 
@@ -121,7 +122,7 @@ if ($.cookie('enablezipfilter')) {
   window.nfforg.representationOfFilterSet = function(filtration) {
     var result = "";
     Object.keys(filtration).each(function(KEY) {
-      var title = window.nfforg.mapFilterSectionIdToHumanText[KEY];
+      var title = window.nfforg.mapFilterSectionIdToHumanText[KEY] || KEY;
       var descr = String(filtration[KEY]);
       result += "<div class=descr><span class=upper>"+title+"</span>: "+descr+"</div>";
     });
