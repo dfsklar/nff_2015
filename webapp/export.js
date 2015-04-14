@@ -2,6 +2,28 @@
 
 $(function() {
 
+    // FROM html5canvastutorials.com:
+    function wrapText(context, text, x, y, maxWidth, lineHeight) {
+        var words = text.split(' ');
+        var line = '';
+
+        for(var n = 0; n < words.length; n++) {
+            var testLine = line + words[n] + ' ';
+            var metrics = context.measureText(testLine);
+            var testWidth = metrics.width;
+            if (testWidth > maxWidth && n > 0) {
+		context.fillText(line, x, y);
+		line = words[n] + ' ';
+		y += lineHeight;
+            }
+            else {
+		line = testLine;
+            }
+        }
+        context.fillText(line, x, y);
+	return y;
+    }
+
   /* This simple approach currently does not yield a high-res image.
      Rather, the resolution is identical to screen/webpage resolution.
      In reality, we should be calling highcharts to re-render the chart
@@ -74,12 +96,13 @@ $(function() {
       if (chart.yValueTotal) {
         ctx.fillText("Number of respondents: " + String(chart.yValueTotal), 25, 70);
         var yCur = 94;
+	var xCur = 25;
         if (chart.wasFiltered) {
           ctx.fillText("Only the respondents matching all these criteria:", 25, yCur);
+          ctx.font = '15pt Arial';
           $($('.dynamic-area').get(0)).children().each(function(){
-            ctx.font = '15pt Arial';
             yCur += 22;
-            ctx.fillText($(this).text(), 25, yCur);
+            yCur = wrapText(ctx, $(this).text(), xCur, yCur, canvas.width-40, 22);
           });
         }
       }
@@ -96,7 +119,7 @@ $(function() {
 
       ctx.fillStyle = 'grey';
       ctx.font = 'italic 12pt Arial';
-      ctx.fillText("Nonprofit Finance Fund 2015 State of the Sector http://survey.nff.org", widthImage-580, heightImage+heightExtra-20);
+      ctx.fillText("Nonprofit Finance Fund 2015 State of the Sector Survey.  Visit nff.org/survey to learn more.", widthImage-600, heightImage+heightExtra-20);
 
 
       // The canvas is now populated and ready to turn into a data:image URL.

@@ -11,7 +11,7 @@ if ($.cookie('enablezipfilter')) {
   window.nfforg.mapFilterSectionIdToHumanText = {
     "state": "State",
     "org_type": "Sector",
-    "arts_org_type": "Arts org.",
+    "arts_org_type": "Arts subsector",
     "opp_exp_max": "Operating expense",
     "lifeline": "Lifeline",
     "lmi_serve_expanded": "Serves low-income communities",
@@ -123,7 +123,7 @@ if ($.cookie('enablezipfilter')) {
     var result = "";
     Object.keys(filtration).each(function(KEY) {
       var title = window.nfforg.mapFilterSectionIdToHumanText[KEY] || KEY;
-      var descr = String(filtration[KEY]);
+      var descr = String(filtration[KEY]).replace(/,/g, ', ',true);
       result += "<div class=descr><span class=upper>"+title+"</span>: "+descr+"</div>";
     });
     return result;
