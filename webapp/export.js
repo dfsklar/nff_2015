@@ -94,8 +94,11 @@ $(function() {
 
       ctx.font = '17pt Arial';
       if (chart.yValueTotal) {
-        ctx.fillText("Number of respondents: " + String(chart.yValueTotal), 25, 70);
-        var yCur = 94;
+        var yCur = 94-22;
+	if (!(chart.renderer.has('barset'))) {
+            ctx.fillText("Number of respondents: " + String(chart.yValueTotal), 25, 70);
+	    yCur += 22;
+	}
 	var xCur = 25;
         if (chart.wasFiltered) {
           ctx.fillText("Only the respondents matching all these criteria:", 25, yCur);
