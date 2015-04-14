@@ -586,6 +586,8 @@
         "title": "Government payments are received...",
         "info-tip": "Total number of respondents vary for each type of funding.",
         "renderer": "barset",
+        "show-percentage-only": true,
+	dataLabelSuffix: "%",
         "title-subchart": "FEDERAL",
         "value_massager": function(val) {
           return val.replace('scheduled payment date','schedule').replace("More than", ">");
@@ -614,6 +616,8 @@
       "funding_gov_state_days_late": {
         "title": "When receive<br/>STATE payments",
         "title-subchart": "STATE",
+        "show-percentage-only": true,
+	dataLabelSuffix: "%",
         "renderer": "none",  // Merged with FEDERAL by the barset renderer
         "value_massager": function(val) {
           return val.replace('scheduled payment date','schedule');
@@ -643,6 +647,8 @@
         "title": "When receive<br/>LOCAL payments",
         "title-subchart": "LOCAL",
         "renderer": "none",
+        "show-percentage-only": true,
+	dataLabelSuffix: "%",
         "value_massager": function(val) {
           return val.replace('scheduled payment date','schedule');
         },
