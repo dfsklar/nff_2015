@@ -52,7 +52,7 @@
       },
       "Lending to Nonprofits": {
         "showcase": "lending",
-        "commentary": "Loans can be used to help nonprofits manage growth and cash flow needs, or build or renovate facilities, so that organizations can better serve their clients and communities."
+        "commentary": "Loans can be used to help nonprofits manage growth and cash flow needs, or build or renovate facilities, in order to better serve their clients and communities."
       },
       "Feature: Arts & Culture NPOs": {
         "showcase": "artsculturecount",
@@ -61,7 +61,7 @@
       },
       "Feature: Trends over Time": {
         "disable-when-filters-on": true,
-        "commentary": "Since 2009, we’ve asked a core set of the same questions every year. These responses can draw attention to what has changed or stayed the same over time. For more detail, reach out to us at <a href=\"mailto:survey@nff.org\">survey@nff.org</a>.",
+        "commentary": "Since 2009, we’ve asked a core set of the same questions every year. These responses highlight changes over time. For more detail, reach out to us at <a href=\"mailto:survey@nff.org\">survey@nff.org</a>.",
         "extra-class": "feature"
       }
     },
