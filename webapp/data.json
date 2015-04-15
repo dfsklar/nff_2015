@@ -1160,7 +1160,7 @@
       // NEXT SET OF CHARTS IS COMBINED INTO ONE MULTI-SERIES BAR CHART
       "funding_fed_full_cost": {
         "show-percentage-only": true,
-        "info-tip": "(Excludes respondents who identified N/A for any particular funding source.)",
+        "info-tip": "(Excludes respondents who identified N/A for any particular funding source. Total number of respondents varies for each type of funding.)",
 	dataLabelSuffix: "%",
         "title": "How often do funders cover the full cost of projects they fund?",
         "usagetip": "TIP: Click on any option in the legend to turn off its visibility.",
@@ -1283,7 +1283,7 @@
       "funding_vs_reporting_fed": {
         "show-percentage-only": true,
         "title": "Reporting requirements in relation to funding amounts in 2014",
-        "info-tip": "(Excludes respondents who identified N/A for any particular funding source.)",
+        "info-tip": "(Excludes respondents who identified N/A for any particular funding source. Total number of respondents varies for each type of funding.)",
         "usagetip": "TIP: Click on any option in the legend to turn off its visibility.",
         "title-subchart": "Federal",
         dataLabelSuffix: "%",
