@@ -127,7 +127,7 @@ window.nfforg.configureSidebarInteraction = function() {
 
     // EVENT: CHANGING TEXT IN THE SPECIAL ZIP-CODE FILTER
     $('.sidebar.form textarea').bind('input propertychange', function() {
-	$form = $('.sidebar.form.active');
+	var $form = $('.sidebar.form.active');
 	var filtrationToManage = 
             ($form.attr('id')=='filter') 
             ?
