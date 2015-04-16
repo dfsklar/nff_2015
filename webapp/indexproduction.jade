@@ -24,13 +24,14 @@ html
           var v = window.location.href;
           v = v.replace("index.htm","indexie.htm");
           if (v.indexOf("indexie") == -1) {
-             v = v.replace("com/?", "com/indexie.html/?");
+             v = v.replace(/com\/?\?/, "com/indexie.html?");
           }
           if (v.indexOf("indexie") == -1) {
-             v = v.replace(/com\/?$/, "com/indexie.html");
+             v = v.replace(/com.*$/, "com/indexie.html");
           }
           window.location.href = v;
        }
+
 
     //**************************************
     ///START-AGGREGATE aggregate01
