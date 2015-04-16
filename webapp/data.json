@@ -1573,7 +1573,7 @@
       "arts_audience_dev_results_": {
         "denominator_required_field": "arts_audience_dev",
         "denominator_required_field__negative_values": [ "No" ],
-        "title": "Arts & Culture: Result of investments made to<br/>develop/engage audience/visitors",
+        "title": "Arts & Culture: Result of investments made to<br/>develop/engage visitors",
         "renderer": "one_or_more",
         "highchart_formatting": {
           chart: { marginLeft: 450, spacingLeft: 0 }
