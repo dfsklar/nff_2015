@@ -145,7 +145,7 @@ if ($.cookie('enablezipfilter')) {
                      (
                        tooltips[sectionName] 
                          ? 
-                         ("<a class=infotip href=# title='" + tooltips[sectionName] + "'></a>")
+                         ("<div class=infotip href=# title='" + tooltips[sectionName] + "'></div>")
                          :
                          ""
                      )
@@ -221,7 +221,7 @@ if ($.cookie('enablezipfilter')) {
                      +
 		     sectionName
                      +
-                         ("<a class=infotip href=# title='Contact NFF for tips on how to use this textbox to filter by zipcode.'></a>")
+                         ("<div class=infotip href=# title='Contact NFF for tips on how to use this textbox to filter by zipcode.'></div>")
                      +
                      "</div><div class='button-openclose'>&#x25B7</div></div>");
     $section.append($("<div class='textareaholder'><textarea/></div>"));
@@ -279,7 +279,13 @@ if ($.cookie('enablezipfilter')) {
         window.nfforg.createTextboxFilterSection($rootdiv, "zip", "div", null, curFiltration);
 
       setTimeout(function(){
-        $('#filter-area').addClass('ready');
+          $('#filter-area').addClass('ready');
+	  // SET UP TOOLTIPS
+	  //
+	  // IMPORTANT NOTE ABOUT TOOLTIPS:  we are NOT implementing the show-on-hover tooltips via
+	  // the feature of browsers that automatically shows a "title" on any ANCHOR tag.
+	  // We are TRULY relying on qtip to provide that functionality. 
+	  $('#filter-area .infotip').qtip({position:{my: 'top right', at: 'bottom left'}});
       }, 2000);
     }
 //    }

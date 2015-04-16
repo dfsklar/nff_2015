@@ -51,13 +51,11 @@
     }
     $chart.data('key', chartname);
     
-    // OPTIONAL TOOLTIP
-    // IMPORTANT NOTE ABOUT TOOLTIPS:  we are implementing the show-on-hover tooltips via
-    // a feature of browsers that automatically shows a "title" on any ANCHOR tag.
-    // We are *not* relying on qtip to provide that functionality.  I think qtip is
-    // present only? to handle old browsers? that don't have the "title" feature???  (very unsure)
+    // We are implementing the show-on-hover tooltips *not* via
+    // the browser feature ("title" on any ANCHOR tag").
+    // We are using qtip.
     if (chart["info-tip"]) {
-      $chart.append($('<a class=infotip href=# title="' + chart["info-tip"] + '"></a>'));
+      $chart.append($('<div class="infotip chartinfotip" href=# title="' + chart["info-tip"] + '"></div>'));
     }
 
     // WIDTH OF THE CHART'S REAL-ESTATE DOMAIN
@@ -276,15 +274,16 @@
     });
 
 
+    window.nfforg.configureChartInteraction();
+
+
     // SET UP TOOLTIPS
     //
-    // IMPORTANT NOTE ABOUT TOOLTIPS:  we are implementing the show-on-hover tooltips via
-    // a feature of browsers that automatically shows a "title" on any ANCHOR tag.
-    // We are *not* relying on qtip to provide that functionality.  I think qtip is
-    // present only? to handle old browsers? that don't have the "title" feature???  (very unsure)
-    $('a.infotip').qtip();
+    // IMPORTANT NOTE ABOUT TOOLTIPS:  we are NOT implementing the show-on-hover tooltips via
+    // the feature of browsers that automatically shows a "title" on any ANCHOR tag.
+    // We are TRULY relying on qtip to provide that functionality. 
+    $('.chartinfotip').qtip();
 
-    window.nfforg.configureChartInteraction();
   };
 
 
