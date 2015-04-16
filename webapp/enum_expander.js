@@ -88,11 +88,11 @@
     },
 
     arts_audience_dev_results_: {
-      audgrew: "Some visitor segments grew",
-      audshrank: "Some visitor segments decreased",
-      youth: "We attracted younger visitors",
-      representative: "We attracted a visitor segment that is more representative of our community",
-      nochange: "The number and composition of visitors has not changed",
+      audgrew: "Some audience/visitor segments grew",
+      audshrank: "Some audience/visitor segments decreased",
+      youth: "We attracted younger audiences/visitors",
+      representative: "We attracted an audience/visitor segment that is more representative of our community",
+      nochange: "The number and composition of audiences/visitors has not changed",
       moretix: "Ticket revenue grew",
       moredonors: "Donor base grew",
       finimpv: "Surplus/deficit improved",
