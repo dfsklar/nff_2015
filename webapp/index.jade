@@ -14,7 +14,7 @@ html
     link(rel='stylesheet', href='style.css')
     link(rel='stylesheet', href='print.css')
     link(rel='stylesheet', href='compare.css')
-    link(rel='stylesheet', href='utils/qtips.css')
+    link(rel='stylesheet', href='utils/jquery.qtip.css')
 
     script(src='browsercheck.js') 
 
@@ -33,7 +33,7 @@ html
     script(src='utils/history.js')
     script(src='raphael.js')
     /// MINIFY=on
-    script(src='utils/qtips.js')
+    script(src='utils/jquery.qtip.js')
     script(src='highcharts/highcharts-3.0.10-full.js')
     // script(src='highcharts/highcharts-4.1.4.js')
     script(src='utils/fontspy.js')
@@ -382,8 +382,8 @@ html
           .showcase-bar-table#challresp
             .showcase-bar-row
               .showcase
-                .title Top challenges<br/>&nbsp;
-                .bigdata.smaller Sustainability and Staff Retention
+                .title Top challenges
+                .bigdata.smaller Sustainability & Staff Retention
               .showcase
                 .title Collaborated
                 .bigdata.super 51%
@@ -391,7 +391,7 @@ html
               .showcase
                 .title Received funding
                 .bigdata.super 39%
-                .comment that requires outcomes
+                .comment requiring outcomes measurement / achievement
 
 
           .showcase-bar-table#finanstory
@@ -421,69 +421,53 @@ html
           .showcase-bar-table#dataimpact
             .showcase-bar-row
               .showcase
-                .title Support
-                .bigdata.super 71%
-                .bar-horiz
-                .comment say funders rarely/never fund impact measurement costs
+                .title Receiving funding<br/>&nbsp;
+                .bigdata.super 35%
+                .comment contingent on outcomes
               .showcase
-                .title Program productivity
-                .bigdata.super 78%
-                .bar-horiz
-                .comment collect program data
+                .title Funders rarely/never fund
+                .bigdata.super 69%
+                .comment impact measurement costs
               .showcase
-                .title Challenges
-                .bigdata.super 46%
-                .bar-horiz
-                .comment say insufficient staff/time hinder impact measurement
+                .title Use metrics to make decisions
+                .bigdata.super 81%
 
 
           .showcase-bar-table#fundprac
             .showcase-bar-row
               .showcase
-                .title Dialogue with Funders<br/>&nbsp;
-                .bigdata.super 53%
+                .title What are the right...
+                .bigdata Kinds of Capital
                 .bar-horiz
-                .comment say "program expansion" is the easiest topic to broach
+                .comment ...to match NPO needs?<br/><a href='http://nonprofitfinancefund.org/files/docs/service-brochures/kinds-of-capital-2pg6-3-14.pdf' target='_nffkindsofcap'>Click here to learn more.</a>
               .showcase
-                .title most funding sources...<br/>&nbsp;
-                .bigdata never or<br/>rarely
+                .title Most funding sources...
+                .bigdata never or rarely
                 .bar-horiz
                 .comment ...cover the full cost of programs
-              .showcase.force-width
-                .title Are you covering full costs?
-                .showcase-diagram.full-costs
-                  .box-top
-                    .contents Program Costs
-                  .box-bottom
-                    .contents
-                       p Operating Expenses
-                       p Fixed Asset Additions
-                       p Debt Principal
-                       p Depreciation
-                       p Working Capital
-                       p Reserves
 
 
 
           .showcase-bar-table#lending
             .showcase-bar-row
               .showcase
-                .title NPOs primarily used
-                .bigdata Debt as a tool
-                .bar-horiz
-                .comment to manage revenue gaps/unevenness
+                .title NPOs primarily used...
+                .bigdata Debt as a Tool
+                .bar-horiz.silent
+                .comment ...to manage gaps/unevenness<br/>in revenue
               .showcase
                 .title Learn about
-                .bigdata Nonprofit financing
-                .bar-horiz
-                .comment in <a href='https://thespectrumofnonprofitfinancingoptions.eventbrite.com'>NFF's webinar courses</a>
+                .bigdata Nonprofit Financing
+                .bar-horiz.silent
+                .comment <a target='_nfflinktoeventbrite' href='https://thespectrumofnonprofitfinancingoptions.eventbrite.com'>Click here for NFF's webinar courses.</a>
+
 
 
       #filter-area-placeholder
       #filter-area
         .tabs
-          .tab.filter FILTER<a class=infotip href=# title="Applying filters can reveal how different groups of respondents compare. You can select any number of filters at once."></a>
-          .tab.compare COMPARE<a class=infotip href=# title="Want to compare Lifeline organizations in New England to the nation as a whole?  You can use this section to compare a given subset of respondents against the entire pool of respondents.  Just select and apply filtering criteria to specify the subset that you want to compare against the whole survey pool."></a>
+          .tab.filter FILTER<div class=infotip title="Applying filters can reveal how different groups of respondents compare. You can select any number of filters at once."></div>
+          .tab.compare COMPARE<div class=marketcompare title="Now that you've got the hang of using the analyzer's filtering feature, you might want to try using our 'compare' feature to compare a filtered subset of respondents against the entire pool of respondents.  Just click this tab to give it a try!"/><div class=infotip title="Want to compare Lifeline organizations in New England to the nation as a whole?  You can use this section to compare a given subset of respondents against the entire pool of respondents.  Just select and apply filtering criteria to specify the subset that you want to compare against the whole survey pool."></div>
         .forms
           .form.sidebar#filter
             .hint.scroll-up
@@ -560,7 +544,7 @@ html
         .button-close
         .title About NFF
         .message
-          p <a href="http://nff.org" target="_blank">Nonprofit Finance Fund<sup>&reg;</sup></a> (NFF<sup>&reg;</sup>) unlocks the potential of mission-driven organizations through <a href="http://nff.org/loans-financing/loans" target=_blank>tailored investments</a>, <a href="http://nonprofitfinancefund.org/nff-consulting-1-1-advice-and-guidance" target=_blank>strategic advice</a>, and <a href="http://nonprofitfinancefund.org/tools-resources" target=_blank>accessible insights</a>.  Our mission is to help great organizations stay in balance, so that they’re able to adapt to changing financial circumstances and grown and innovate when they’re ready. (To learn more, visit <a target=_blank href='http://nff.org'>nff.org</a>!) When the recession hit in 2008, we saw a ripple of trauma spread across the nonprofit sector. Communities were suffering, leading to compounding challenges for the people and organizations dedicated to serving them. We asked ourselves: how could NFF activate the community into a collective response, help source solutions, and blend our heart-felt reactions to human experiences with a more unbiased point of view? Thus began our Annual State of the Nonprofit Sector Survey, which gathers anonymous data on nonprofit challenges and strategies. Leaders have come to view the survey as a loudspeaker for the sector, taking great care to share their story. Our Survey is intended to combine practical advice, data, and action: <a target=_blank href='http://nonprofitfinancefund.org/state-of-the-sector-survey-usage'>click here to see how the survey has been used by nonprofits, funders, and advocates to support change</a>.
+          p <a href="http://nff.org" target="_blank">Nonprofit Finance Fund<sup>&reg;</sup></a> (NFF<sup>&reg;</sup>) unlocks the potential of mission-driven organizations through <a href="http://nff.org/loans-financing/loans" target=_blank>tailored investments</a>, <a href="http://nonprofitfinancefund.org/nff-consulting-1-1-advice-and-guidance" target=_blank>strategic advice</a>, and <a href="http://nonprofitfinancefund.org/tools-resources" target=_blank>accessible insights</a>.  Our mission is to help great organizations stay in balance, so that they’re able to adapt to changing financial circumstances and grow and innovate when they’re ready. (To learn more, visit <a target=_blank href='http://nff.org'>nff.org</a>!) When the recession hit in 2008, we saw a ripple of trauma spread across the nonprofit sector. Communities were suffering, leading to compounding challenges for the people and organizations dedicated to serving them. We asked ourselves: how could NFF activate the community into a collective response, help source solutions, and blend our heart-felt reactions to human experiences with a more unbiased point of view? Thus began our Annual State of the Nonprofit Sector Survey, which gathers anonymous data on nonprofit challenges and strategies. Leaders have come to view the survey as a loudspeaker for the sector, taking great care to share their story. Our Survey is intended to combine practical advice, data, and action: <a target=_blank href='http://nonprofitfinancefund.org/state-of-the-sector-survey-usage'>click here to see how the survey has been used by nonprofits, funders, and advocates to support change</a>.
           p NFF’s deepest thanks to the thousands of participating nonprofits and our many survey partners, who have all made the survey possible over the last 7 years. <a target=_blank href='http://nonprofitfinancefund.org/past-survey-results'>Click here to see previous years’ results.</a> If you’re a nonprofit, funder, advocate, or umbrella organization, please email us at <a href="mailto:survey@nff.org">survey@nff.org</a> if you’d like to participate in the future!
           p <b>Special Features in 2015</b>
           ul

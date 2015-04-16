@@ -286,6 +286,13 @@ if ($.cookie('enablezipfilter')) {
 	  // the feature of browsers that automatically shows a "title" on any ANCHOR tag.
 	  // We are TRULY relying on qtip to provide that functionality. 
 	  $('#filter-area .infotip').qtip({position:{my: 'top right', at: 'bottom left'}});
+	  $('#filter-area .marketcompare').qtip({
+	      style:{
+		  tip: {width: 30, height: 30},
+		  classes:'qtip-market-compare'
+	      },
+	      position:{my: 'top right', at: 'bottom left'}});
+	  window.nfforg.apiQtipMarketingComparison = $('#filter-area .marketcompare').qtip('api');
       }, 2000);
     }
 //    }
