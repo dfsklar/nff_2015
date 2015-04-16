@@ -291,6 +291,7 @@ if ($.cookie('enablezipfilter')) {
 		  tip: {width: 30, height: 30},
 		  classes:'qtip-market-compare'
 	      },
+	      show:{event:false},  // This qtip will only be shown via programmatic decision
 	      position:{my: 'top right', at: 'bottom left'}});
 	  window.nfforg.apiQtipMarketingComparison = $('#filter-area .marketcompare').qtip('api');
       }, 2000);

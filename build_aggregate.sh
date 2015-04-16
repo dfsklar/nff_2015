@@ -10,7 +10,7 @@ cat webapp/utils/history.js >> $DEST
 cat webapp/raphael.js >> $DEST
 
 sh minify.sh jquery.cookie.js >> $DEST
-sh minify.sh utils/qtips.js >> $DEST
+sh minify.sh utils/jquery.qtip.js >> $DEST
 sh minify.sh highcharts/highcharts-3.0.10-full.js >> $DEST
 sh minify.sh utils/fontspy.js >> $DEST
 sh minify.sh utils/rgbcolor.js >> $DEST
