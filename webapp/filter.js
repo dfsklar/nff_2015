@@ -279,21 +279,37 @@ if ($.cookie('enablezipfilter')) {
         window.nfforg.createTextboxFilterSection($rootdiv, "zip", "div", null, curFiltration);
 
       setTimeout(function(){
-          $('#filter-area').addClass('ready');
-	  // SET UP TOOLTIPS
-	  //
-	  // IMPORTANT NOTE ABOUT TOOLTIPS:  we are NOT implementing the show-on-hover tooltips via
-	  // the feature of browsers that automatically shows a "title" on any ANCHOR tag.
-	  // We are TRULY relying on qtip to provide that functionality. 
-	  $('#filter-area .infotip').qtip({position:{my: 'top right', at: 'bottom left'}});
-	  $('#filter-area .marketcompare').qtip({
-	      style:{
-		  tip: {width: 30, height: 30},
-		  classes:'qtip-market-compare'
-	      },
-	      show:{event:false},  // This qtip will only be shown via programmatic decision
-	      position:{my: 'top right', at: 'bottom left'}});
-	  window.nfforg.apiQtipMarketingComparison = $('#filter-area .marketcompare').qtip('api');
+
+        $('#filter-area').addClass('ready');
+
+	      // SET UP TOOLTIPS
+	      //
+	      // IMPORTANT NOTE ABOUT TOOLTIPS:  we are NOT implementing the show-on-hover tooltips via
+	      // the feature of browsers that automatically shows a "title" on any ANCHOR tag.
+	      // We are TRULY relying on qtip to provide that functionality. 
+	      $('#filter-area .infotip').qtip({position:{my: 'top right', at: 'bottom left'}});
+	      $('#filter-area .tab.compare').qtip({
+	        content: "<p>Now that you've worked with the analyzer's filtering feature, you might want to try out our comparison features.<p>Click on the 'Compare' tab to compare a filtered subset of respondents against the entire pool of respondents.  Just use the filtering criteria to specify the subset that you want to compare against the whole survey pool.",
+	        style:{
+		        tip: {width: 30, height: 30},
+		        classes:'qtip-market-compare'
+	        },
+	        show:{
+            event: false, // disable show-on-hover; this will be shown programmatically
+            modal: {
+              on: true
+            }
+          },
+	        position:{
+            my: 'top right', 
+            at: 'bottom left',
+            adjust: {
+              x: 45,
+              y: -12
+            }
+          }});
+	      window.nfforg.apiQtipMarketingComparison = 
+          ($.cookie('alreadyTriedToUpsellToCompareFeature')) ? null : ($('#filter-area .tab.compare').qtip('api'));
       }, 2000);
     }
 //    }
