@@ -1,2 +1,5 @@
 tstamp=`date '+%Y%m%d%H%M%S'`
-tar cvfz /var/www/SKLARDEVELOPMENT/nff/nff_analyzer2015_$tstamp.taz /home/nffusa/www
+dest=/var/www/SKLARDEVELOPMENT/nff/nff_analyzer2015_$tstamp.taz
+tar cvfz $dest   /home/nffusa/www
+echo Has been constructed in: $dest
+

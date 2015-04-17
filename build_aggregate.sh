@@ -37,3 +37,10 @@ sh minify.sh renderers/stacked_single_bar.js >> $DEST
 sh minify.sh renderers/actions_planned_taken.js >> $DEST
 sh minify.sh renderers/trendslope.js >> $DEST
 
+sh minify.sh render_manager.js >> $DEST
+sh minify.sh enum_expander.js >> $DEST
+
+sh minify.sh filter.js >> $DEST
+sh minify.sh events.js >> $DEST
+sh minify.sh export.js >> $DEST
+sh minify.sh filterarea.js >> $DEST
