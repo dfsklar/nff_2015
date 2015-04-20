@@ -341,6 +341,10 @@ $(function() {
 	  $activeform.find('input').attr('checked', false);
 	  $('.filtration-active-reminder').removeClass('opened');
 	  window.nfforg.filtrationCurrent = {};
+
+    // CLEARING OUT THE ZIP TEXTAREA
+    $activeform.find('.section.div .textareaholder textarea').val('');
+
 	  if ($activeform.attr('id') == ('filter')) {
 	    // THIS REGARDS THE FILTERING SIDE
 	    setTimeout(function(){
