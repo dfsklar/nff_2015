@@ -17,8 +17,8 @@ if (window.nfforg.queryParams['nocors']) {
 
 if (window.nfforg.queryParams['killcookies']) {
   $.removeCookie('alreadyTriedToUpsellToCompareFeature');
+  $.removeCookie('enablezipfilter');
 }
-
 
 
 window.nfforg.handleSuccessfulDataAcquisition = function(data) {

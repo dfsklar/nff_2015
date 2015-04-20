@@ -4,6 +4,16 @@ if (window.nfforg.queryParams['enablezipfilter']) {
     $.cookie('enablezipfilter', 'true');
     window.nfforg.enablezipfilter = true;
 }
+
+if (window.nfforg.queryParams['filter']) {
+  if (window.nfforg.queryParams['filter'].has) {
+    if (window.nfforg.queryParams['filter'].has('zip:')) {
+      $.cookie('enablezipfilter', 'true');
+      window.nfforg.enablezipfilter = true;
+    }
+  }
+}
+
 if ($.cookie('enablezipfilter')) {
     window.nfforg.enablezipfilter = true;
 }
