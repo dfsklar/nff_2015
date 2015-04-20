@@ -69,7 +69,8 @@ if ($.cookie('enablezipfilter')) {
       strFilt.split("|").each(function(X){
         // Example value of X:   state:AR,LA
         var arrCriteria = X.split(":");
-        filtset[arrCriteria[0]] = arrCriteria[1].split(",");
+        var nameCrit = arrCriteria[0];
+        filtset[nameCrit] = (nameCrit == 'zip') ? [ arrCriteria[1] ] : arrCriteria[1].split(",");
       });
 
       // Arts must appear in the org_type filter even if it is being divided by subsectors
