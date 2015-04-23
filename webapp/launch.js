@@ -156,7 +156,8 @@ window.nfforg.updateProgressBar = function (num,denom) {
 
 window.nfforg.TRUELAUNCH = function(data) {
   setTimeout(function(){
-	  if ($('.body-inner').length) {
+    // We must check to make sure all dependencies are loaded.     
+	  if ( ($('.body-inner').length) && (window.nfforg.database_unindexed) ) {
 	    window.nfforg.handleSuccessfulDataAcquisition(data);
 	  }else{
 	    window.nfforg.TRUELAUNCH(data);
