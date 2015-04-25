@@ -464,7 +464,7 @@ $(function() {
 	  var title = "Explore the trends & challenges nonprofits faced in 2014. #NonprofitFinanceFund";
 
 	  var shareText = {
-	    "twitter": "Explore trends & challenges #nonprofits faced in 2014 from NFF’s #NPOSurvey15. http://survey.nff.org/",
+	    "twitter": "Explore trends & challenges #nonprofits faced in 2014 from NFF’s #NPOSurvey15. ",
 	    "facebook": "Explore the trends and challenges faced by #nonprofits in 2014, and the strategies they used to adapt and succeed in Nonprofit Finance Fund’s 2015 State of the Sector Survey results: http://survey.nff.org/",
 	    "linkedin": "Explore the trends and challenges faced by #nonprofits in 2014, and the strategies they used to adapt and succeed in Nonprofit Finance Fund’s 2015 State of the Sector Survey results: http://survey.nff.org/"
 	  };
